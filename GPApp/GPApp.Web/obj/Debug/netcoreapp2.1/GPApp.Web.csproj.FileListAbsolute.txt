@@ -1,0 +1,14 @@
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Web\obj\Debug\netcoreapp2.1\GPApp.Web.csprojAssemblyReference.cache
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Web\obj\Debug\netcoreapp2.1\GPApp.Web.csproj.CoreCompileInputs.cache
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Web\obj\Debug\netcoreapp2.1\GPApp.Web.RazorAssemblyInfo.cache
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Web\obj\Debug\netcoreapp2.1\GPApp.Web.RazorAssemblyInfo.cs
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Web\obj\Debug\netcoreapp2.1\GPApp.Web.AssemblyInfoInputs.cache
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Web\obj\Debug\netcoreapp2.1\GPApp.Web.AssemblyInfo.cs
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Web\bin\Debug\netcoreapp2.1\GPApp.Web.deps.json
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Web\bin\Debug\netcoreapp2.1\GPApp.Web.runtimeconfig.json
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Web\bin\Debug\netcoreapp2.1\GPApp.Web.runtimeconfig.dev.json
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Web\bin\Debug\netcoreapp2.1\GPApp.Web.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Web\bin\Debug\netcoreapp2.1\GPApp.Web.pdb
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Web\obj\Debug\netcoreapp2.1\GPApp.Web.RazorTargetAssemblyInfo.cache
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Web\obj\Debug\netcoreapp2.1\GPApp.Web.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Web\obj\Debug\netcoreapp2.1\GPApp.Web.pdb
