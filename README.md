@@ -1,2 +1,2 @@
 # Gestão de Produtos
-Sistema de cadastro de produtos utilizando conhecimentos C# em conjunto ASPNET.CORE
+Sistema de cadastro de produtos utilizando conhecimentos C# e ASPNET.CORE
