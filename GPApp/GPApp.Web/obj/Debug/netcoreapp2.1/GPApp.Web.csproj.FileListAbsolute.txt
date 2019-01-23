@@ -12,3 +12,6 @@ D:\Repositorio\gestaoprodutos\GPApp\GPApp.Web\bin\Debug\netcoreapp2.1\GPApp.Web.
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Web\obj\Debug\netcoreapp2.1\GPApp.Web.RazorTargetAssemblyInfo.cache
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Web\obj\Debug\netcoreapp2.1\GPApp.Web.dll
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Web\obj\Debug\netcoreapp2.1\GPApp.Web.pdb
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Web\bin\Debug\netcoreapp2.1\GPApp.Model.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Web\bin\Debug\netcoreapp2.1\GPApp.Model.pdb
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Web\obj\Debug\netcoreapp2.1\GPApp.Web.csproj.CopyComplete

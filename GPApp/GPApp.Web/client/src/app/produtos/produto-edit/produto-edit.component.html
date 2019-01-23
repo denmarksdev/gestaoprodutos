@@ -1,0 +1,102 @@
+<div class="container-principal">
+  <h2>Novo produto</h2>
+  <!-- Expander -->
+  <mat-accordion>
+    <!-- Principal -->
+    <mat-expansion-panel [expanded]="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Principal
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="campos-container">
+        <mat-form-field>
+            <input matInput placeholder="Código" 
+                 (input)="produto.codigo = $event.target.value"
+                 [value]="produto.codigo">
+        </mat-form-field>
+        <mat-form-field>
+           <input matInput placeholder="Nome" 
+              (input)="produto.nome = $event.target.value"
+              [value]="produto.nome">
+        </mat-form-field>
+        <mat-form-field>
+          <textarea matInput placeholder="Descrição" class="campo-descricao" 
+              (input)="produto.descricao = $event.target.value"
+              [value]="produto.descricao">
+          </textarea>
+        </mat-form-field>
+        <mat-form-field class="campo-numerico">
+          <input matInput placeholder="Preço" 
+              [textMask]="{mask: maskDecimal}"
+              (input)="produto.preco = $event.target.value"
+              [value]="produto.preco" />
+        </mat-form-field>
+        <mat-form-field class="campo-numerico">
+          <input matInput placeholder="Custo" 
+              [textMask]="{mask: maskDecimal}"
+              (input)="produto.custo = $event.target.value"
+              [value]="produto.custo" />
+        </mat-form-field>
+        <mat-form-field class="campo-numerico">
+          <input matInput placeholder="Quantidade" 
+              [textMask]="{mask: maskInteiro}"
+              (input)="produto.estoqueAtual.quantidade = $event.target.value"
+              [value]="produto.estoqueAtual.quantidade" />
+        </mat-form-field>
+        
+      </div>
+    </mat-expansion-panel>
+    <!-- Fim Principal -->
+    <!-- Imagens -->
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Imagens
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <app-foto-upload #fotoUpload texto="Incluir" [url]="url" (change)="OnFotoChange($event)"></app-foto-upload>
+      <mat-card *ngFor="let imagem of produto.imagens" id="image{{imagem.ordem}}" [ngClass]="{'item-selecionado': imagem === imagemSelecionada}"
+        (click)="defineImagemSelecionada(imagem)">
+        <div class="imagem-row ">
+          <span>Imagem <strong>nº{{ imagem.ordem }}</strong></span>
+          <img class="imagem-reduzida" [src]="imagem.preview">
+          <div class="acoes">
+            <button mat-raised-button (click)="onAlterarImagem(imagem)">Alterar</button>
+            <button mat-raised-button color="warn" (click)="onExcluirImagem(imagem)">Excluir</button>
+          </div>
+        </div>
+      </mat-card>
+    </mat-expansion-panel>
+    <!-- Fim Imagens -->
+    <!-- Especificações -->
+    <mat-expansion-panel >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Especificações
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <button mat-raised-button color='accent' (click)="incluirEspecificacao()">Incluir</button>
+      <mat-card *ngFor="let item of produto.especificacoes" id="espeficicacao{{item.ordem}}" [ngClass]="{'item-selecionado': espeficicacaoSelecionada === item}">
+        <div class="espec-row">
+          <span>Espec. nº {{ item.ordem }} </span>
+          <mat-form-field class="espec-nome">
+            <input matInput placeholder="Nome" (input)="item.nome = $event.target.value" [value]="item.nome">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Descrição" (input)="item.descricao = $event.target.value" [value]="item.descricao">
+          </mat-form-field>
+          <button mat-raised-button color="warn" (click)="onExcluirEspecificacao(item)">Excluir</button>
+        </div>
+      </mat-card>
+    </mat-expansion-panel>
+    <!-- Fim Especificações -->
+  </mat-accordion>
+  <!-- Fim Expander -->
+  <button [disabled]="dadosInvalidos" ng-en mat-raised-button color="primary" (click)="onSalvar()">Salvar</button>
+  <h3 class="erro" *ngIf="erros && erros.length > 0" >Erros</h3>
+  <ul>
+    <li class="erro" *ngFor="let erro of erros"><strong>{{ erro.campo }}</strong> {{ erro.descricao}}</li>
+  </ul>
+  <mat-progress-bar *ngIf="salvandoProduto" mode="indeterminate" aria-label="Salvando produto"></mat-progress-bar>
+</div>

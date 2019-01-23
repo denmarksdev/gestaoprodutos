@@ -1,0 +1,63 @@
+$cor-primaria:#3f51b5;
+
+.container-principal {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.mat-card {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.mat-raised-button {
+    margin-top: 10px;
+}
+
+.campos-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo-descricao {
+    min-height: 50px;
+}
+
+.campo-numerico {
+    max-width: 100px;
+}
+
+.imagem-reduzida {
+    max-width: 50px;
+    max-height: 50px;
+    margin: 10px;
+}
+
+.imagem-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around
+}
+
+.espec-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.item-selecionado {
+    background: $cor-primaria;
+}
+
+.acoes {
+    display: flex;
+    width: 160px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.espec-nome {
+    max-width: 80px;
+}

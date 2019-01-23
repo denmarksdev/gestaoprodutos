@@ -1,0 +1,8 @@
+<div class="foto-container">
+    
+  <button #buttonImage class="botao-foto"  (click)='fileInput.click()' mat-raised-button color="accent">{{ texto }}</button>
+  <picture class="foto-preview">
+    <img [src]='url' class="foto-preview">
+    <input accept="image/*" name="pic"   #fileInput class="esconde-input" type='file' (change)='onFileChanged($event)'>
+  </picture>
+</div>

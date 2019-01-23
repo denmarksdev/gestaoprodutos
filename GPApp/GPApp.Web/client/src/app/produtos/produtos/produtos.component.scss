@@ -1,0 +1,29 @@
+p {
+    margin: 5px;
+}
+
+.titulo {
+    border-bottom: 1px solid black;
+}
+
+.mat-card {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.mat-raised-button {
+    margin-bottom: 10px;
+}
+
+.primeira-linha {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width:450px){
+    .primeira-linha{
+        flex-direction: column;
+    }
+}
