@@ -1,11 +1,12 @@
-<h1 class='titulo'>Produtos</h1>
-<button mat-raised-button color='primary' (click)="incluirProduto()" >Incluir</button>
-<mat-card *ngFor='let produto of store.produtos | async'
-   (click)='editarProduto(produto.id)'>
-    <div class="primeira-linha">
-        <p><strong>Código:</strong> {{ produto.codigo }}</p>
-        <p><strong>Cadastrado em:</strong> {{ produto.dataCadastro }}</p>
-    </div>
-    <p><strong>Nome:</strong> {{ produto.nome }}</p>
-    <p><strong>Preço:</strong> R$ {{ produto.preco | number: '1.2-2' }}</p>
-</mat-card>
+<div class="container-principal">
+    <h1 class='titulo'>Produtos</h1>
+    <button mat-raised-button color='primary' (click)="incluirProduto()">Incluir</button>
+    <mat-card *ngFor='let produto of store.produtos | async' (click)='editarProduto(produto.id)'>
+        <div class="primeira-linha">
+            <p><strong>Código:</strong> {{ produto.codigo }}</p>
+            <p><strong>Cadastrado em:</strong> {{ produto.dataCadastro }}</p>
+        </div>
+        <p><strong>Nome:</strong> {{ produto.nome }}</p>
+        <p><strong>Preço:</strong> R$ {{ produto.preco | number: '1.2-2' }}</p>
+    </mat-card>
+</div>

@@ -16,7 +16,7 @@ export interface Produto extends ProdutoLookup {
 
 export interface ProdutoImagem {
     id:string,
-    dados:Array<Number>,
+    dados:string,
     preview:string,
     ordem:number
 }

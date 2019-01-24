@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router' 
 import { ProdutoStoreService } from '../produto-store.service';
-import { store } from '@angular/core/src/render3';
 
 @Component({
   selector: 'app-produtos',
@@ -26,5 +25,4 @@ export class ProdutosComponent implements OnInit {
   incluirProduto(){
     this._router.navigate(['/produto']);
   }
-
 }

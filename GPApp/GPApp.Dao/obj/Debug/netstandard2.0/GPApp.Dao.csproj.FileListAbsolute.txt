@@ -1,0 +1,9 @@
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Dao\bin\Debug\netstandard2.0\GPApp.Dao.deps.json
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Dao\bin\Debug\netstandard2.0\GPApp.Dao.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Dao\obj\Debug\netstandard2.0\GPApp.Dao.csproj.CoreCompileInputs.cache
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Dao\obj\Debug\netstandard2.0\GPApp.Dao.AssemblyInfoInputs.cache
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Dao\obj\Debug\netstandard2.0\GPApp.Dao.AssemblyInfo.cs
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Dao\bin\Debug\netstandard2.0\GPApp.Model.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Dao\bin\Debug\netstandard2.0\GPApp.Model.pdb
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Dao\obj\Debug\netstandard2.0\GPApp.Dao.csprojAssemblyReference.cache
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Dao\obj\Debug\netstandard2.0\GPApp.Dao.csproj.CopyComplete

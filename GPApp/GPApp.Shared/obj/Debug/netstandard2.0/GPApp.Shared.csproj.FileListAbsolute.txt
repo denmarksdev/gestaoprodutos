@@ -1,0 +1,12 @@
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Shared\bin\Debug\netstandard2.0\GPApp.Shared.deps.json
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Shared\bin\Debug\netstandard2.0\GPApp.Shared.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Shared\bin\Debug\netstandard2.0\GPApp.Shared.pdb
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Shared\bin\Debug\netstandard2.0\GPApp.Model.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Shared\bin\Debug\netstandard2.0\GPApp.Model.pdb
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Shared\obj\Debug\netstandard2.0\GPApp.Shared.csproj.CoreCompileInputs.cache
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Shared\obj\Debug\netstandard2.0\GPApp.Shared.AssemblyInfoInputs.cache
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Shared\obj\Debug\netstandard2.0\GPApp.Shared.AssemblyInfo.cs
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Shared\obj\Debug\netstandard2.0\GPApp.Shared.csproj.CopyComplete
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Shared\obj\Debug\netstandard2.0\GPApp.Shared.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Shared\obj\Debug\netstandard2.0\GPApp.Shared.pdb
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Shared\obj\Debug\netstandard2.0\GPApp.Shared.csprojAssemblyReference.cache

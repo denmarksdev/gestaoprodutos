@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GPApp.Dao\GPApp.Dal.csproj" />
+    <ProjectReference Include="..\GPApp.Model\GPApp.Model.csproj" />
+    <ProjectReference Include="..\GPApp.Shared\GPApp.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

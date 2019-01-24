@@ -1,4 +1,4 @@
 export interface FotoInfo {
-    byteArray:Array<Number>
+    byteArray:Uint8Array
     preview:string
 }

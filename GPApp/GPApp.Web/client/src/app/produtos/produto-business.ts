@@ -25,7 +25,7 @@ export class ProdutoBo {
             estoqueAtual: {
                 id:EMPTY_GUID,
                 lancamento : new DateHelper().geraDataAtual(),
-                produtoId: '',
+                produtoId: EMPTY_GUID,
                 quantidade:0
             }
           }

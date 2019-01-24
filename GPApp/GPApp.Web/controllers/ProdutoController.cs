@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GPApp.Model;
-using Microsoft.AspNetCore.Http;
+using GPApp.Service;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GPApp.Web.controllers
@@ -12,13 +12,19 @@ namespace GPApp.Web.controllers
     [ApiController]
     public class ProdutoController : ControllerBase
     {
+        public ProdutoController(IProdutoService service)
+        {
+            _service = service;
+        }
+
         private static List<Produto> _produtos = new List<Produto>();
+        private readonly IProdutoService _service;
 
         // GET: api/Produto
         [HttpGet]
-        public IEnumerable<Produto> Get()
+        public async Task<IActionResult> Get()
         {
-            return _produtos;
+            return await _service.Todos();
         }
 
         // GET: api/Produto/5
@@ -30,14 +36,15 @@ namespace GPApp.Web.controllers
 
         // POST: api/Produto
         [HttpPost]
-        public void Post([FromBody] Produto produto) {
-            _produtos.Add(produto);
+        public async Task<IActionResult> Post([FromBody] Produto produto) {
+           return await _service.IncluiAsync(produto);
         }
 
         // PUT: api/Produto/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
+            
         }
 
         // DELETE: api/ApiWithActions/5

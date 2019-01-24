@@ -32,12 +32,12 @@ export class ImagemService {
     });
   }
 
-  converBase64TotBytes(base64:string):Array<Number>{
-    var bytes = new Array(base64.length);
+  converBase64TotBytes(base64:string):Uint8Array{
+    var bytes = new Uint8Array(new ArrayBuffer(base64.length));
     for (var i = 0; i < base64.length; i++) {
       bytes[i] = base64.charCodeAt(i);
     }
-    return bytes;
+    return  bytes;
   }
   
   // comprimir(file: File , width = 600): Observable<any> {

@@ -78,13 +78,13 @@ export class ProdutoEditComponent implements OnInit {
     if (info.preview == undefined) return;
 
     if (this._alteracaoImagem) {
-      this.imagemSelecionada.dados = info.byteArray;
+      this.imagemSelecionada.dados = info.preview;
       this.imagemSelecionada.preview = info.preview;
       this._alteracaoImagem = false;
     } else {
       let novaImagem: ProdutoImagem = {
         id: EMPTY_GUID,
-        dados: info.byteArray,
+        dados: info.preview,
         ordem: this._produtoBo.geraProximaOrdemDaImagem(),
         preview: info.preview,
       }
