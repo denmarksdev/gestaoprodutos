@@ -16,7 +16,16 @@ export class ProdutoService {
     return this._htpp.get<Array<ProdutoLookup>>(BASE_URL);
   }
 
+  get(id:string):Observable<Produto> {
+    return this._htpp.get<Produto>(BASE_URL+ "/" + id);
+  }
+
   post(produto:Produto){
     return this._htpp.post(BASE_URL,produto);
   }
+
+  put(produto:Produto){
+    return this._htpp.put(BASE_URL + "/" + produto.id, produto);
+  }
+
 }

@@ -892,6 +892,7 @@
       "GPApp.Service/1.0.0": {
         "dependencies": {
           "GPApp.Model": "1.0.0",
+          "GPApp.Repository": "1.0.0",
           "GPApp.Shared": "1.0.0",
           "Microsoft.AspNetCore.Mvc": "2.2.0"
         },

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using GPApp.Model;
 using GPApp.Service;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GPApp.Web.controllers
@@ -29,9 +30,9 @@ namespace GPApp.Web.controllers
 
         // GET: api/Produto/5
         [HttpGet("{id}", Name = "Get")]
-        public Produto Get(Guid id)
+        public async Task<Produto> Get(Guid id)
         {
-            return _produtos.FirstOrDefault(p=> p.Id == id);
+            return await _service.GetProduto(id);
         }
 
         // POST: api/Produto
@@ -42,9 +43,10 @@ namespace GPApp.Web.controllers
 
         // PUT: api/Produto/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task<IActionResult> Put(Guid id, [FromBody] Produto produto)
         {
-            
+            if (id != produto.Id) return new StatusCodeResult((int) StatusCodes.Status404NotFound) ;
+            return await _service.Atualiza(produto);
         }
 
         // DELETE: api/ApiWithActions/5

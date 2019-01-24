@@ -21,14 +21,23 @@ export class ProdutoStoreService {
   carregarDadosIniciais() {
     this._service.getAll()
       .subscribe(
-        produtos => {
+      produtos => {
           this._produtos.next(produtos);
         },
         erro => console.log(erro)
       );
   }
 
+  getProduto (id:string) {
+    return this._service.get(id);
+  }
+
   post(produto: Produto) {
     return this._service.post(produto);
   }
+
+  put(produto: Produto) {
+    return this._service.put(produto);
+  }
+
 }

@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GPApp.Model\GPApp.Model.csproj" />
+    <ProjectReference Include="..\GPApp.Repository\GPApp.Repository.csproj" />
     <ProjectReference Include="..\GPApp.Shared\GPApp.Shared.csproj" />
   </ItemGroup>
 

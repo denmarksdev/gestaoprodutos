@@ -18,7 +18,8 @@ export interface ProdutoImagem {
     id:string,
     dados:string,
     preview:string,
-    ordem:number
+    ordem:number,
+    sufixo:string
 }
 
 export interface ProdutoEspecificacao {

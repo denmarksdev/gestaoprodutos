@@ -36,7 +36,7 @@ namespace GPApp.Web
         {
             services.AddSpaStaticFiles(spa => spa.RootPath = "wwwroot/dist/client");
             services.AddMvc();
-            services.AddTransient<IGenericRepository<Produto>, GenericRepository<Produto>>();
+            services.AddTransient<IProdutoRepository,ProdutoRepository>();
             services.AddTransient<IDataBaseRepository, DataBaseRepository>();
             services.AddTransient<IProdutoService, ProdutoService>();
         }
@@ -51,8 +51,9 @@ namespace GPApp.Web
 
             await ConfiguraBaseDados(app);
 
-            app.UseMvc();
             app.UseStaticFiles();
+            app.UseSpaStaticFiles();
+            app.UseMvc();
             app.UseSpa(spa =>
             {
                 if (env.IsDevelopment())

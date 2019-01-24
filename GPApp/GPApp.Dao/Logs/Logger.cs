@@ -73,8 +73,9 @@ namespace GPApp.Dal.Logs
 
             public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception exception, Func<TState, Exception, string> formatter)
             {
+                var mensagem = formatter(state, exception);
                 Console.WriteLine("");
-                Console.WriteLine(formatter(state, exception));
+                Console.WriteLine(mensagem);
                 Console.WriteLine("");
             }
         }

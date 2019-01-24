@@ -5,14 +5,14 @@ import { DateHelper } from '../shared/helpers/date.helper';
 
 export class ProdutoBo {
 
-    private _produto:Produto;
+    public produto:Produto;
 
     constructor() {
         this.init();
     }
 
     private init(){
-        this._produto = {
+        this.produto = {
             id: EMPTY_GUID,
             codigo: '',
             nome: '',
@@ -31,14 +31,10 @@ export class ProdutoBo {
           }
     }
 
-    get produto(): Produto {
-        return this._produto;
-    }
-
     geraProximaOrdemDaEspecificacao(): number {
 
         let totalOrdem = 0;
-        this._produto.imagens.forEach(imagem => {
+        this.produto.imagens.forEach(imagem => {
             totalOrdem += 1
         });
         return totalOrdem + 1;
@@ -52,21 +48,21 @@ export class ProdutoBo {
 
     geraProximaOrdemDaImagem(): number {
         let totalOrdem = 0;
-        this._produto.imagens.forEach(imagem => {
+        this.produto.imagens.forEach(imagem => {
             totalOrdem += 1
         });
         return totalOrdem + 1;
     }
 
     excluirImagem(imagem: ProdutoImagem): any {
-        const indice = this._produto.imagens.indexOf(imagem);
-        this._produto.imagens.splice(indice, 1)
-        this.reordenar(this._produto.imagens);
+        const indice = this.produto.imagens.indexOf(imagem);
+        this.produto.imagens.splice(indice, 1)
+        this.reordenar(this.produto.imagens);
     }
 
     excluirEspecificacao(especificacao:ProdutoEspecificacao){
-        const indice = this._produto.especificacoes.indexOf(especificacao);
-        this._produto.especificacoes.splice(indice, 1)
+        const indice = this.produto.especificacoes.indexOf(especificacao);
+        this.produto.especificacoes.splice(indice, 1)
         this.reordenar(this.produto.especificacoes);
     }
 
@@ -90,7 +86,7 @@ export class ProdutoBo {
 
         if (this.produto.custo == 0){
             erros.push(new ErroValidacao("Custo", "Deve ser maior que zero"));
-        }else if (this.produto.custo > this._produto.preco){
+        }else if (this.produto.custo > this.produto.preco){
             erros.push(new ErroValidacao("Custo", "Deve ser menor ou igual ao preço"));
         }
         

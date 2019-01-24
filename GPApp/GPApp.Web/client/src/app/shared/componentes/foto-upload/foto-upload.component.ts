@@ -18,7 +18,7 @@ export class FotoUploadComponent implements OnInit {
 
   @ViewChild("buttonImage") button: MatButton
   @ViewChild("fileInput") fileInput: HTMLInputElement
-  
+
   private _url: string = '';
   @Input()
   set url(url: string) {
@@ -52,13 +52,18 @@ export class FotoUploadComponent implements OnInit {
     event.target.value = "";
     reader.onload = (event: any) => {
 
+      let extensaoArquivo = file.name
+        .substring(file.name.length - 4)
+        .replace('.', '');
+
       let base64Image = event.target.result;
       this.url = base64Image;
       this._imagemService.comprimir(file).subscribe(base64 => {
 
         const informacoes: FotoInfo = {
           byteArray: this._imagemService.converBase64TotBytes(base64Image),
-          preview: base64
+          preview: base64,
+          extensaoArquivo: extensaoArquivo
         }
         this.change.emit(informacoes)
         event.target.value = "";

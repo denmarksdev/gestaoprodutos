@@ -12,3 +12,7 @@ D:\Repositorio\gestaoprodutos\GPApp\GPApp.Service\obj\Debug\netstandard2.0\GPApp
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Service\obj\Debug\netstandard2.0\GPApp.Service.pdb
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Service\bin\Debug\netstandard2.0\GPApp.Shared.dll
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Service\bin\Debug\netstandard2.0\GPApp.Shared.pdb
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Service\bin\Debug\netstandard2.0\GPApp.Dal.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Service\bin\Debug\netstandard2.0\GPApp.Repository.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Service\bin\Debug\netstandard2.0\GPApp.Repository.pdb
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Service\bin\Debug\netstandard2.0\GPApp.Dal.pdb

@@ -9,7 +9,7 @@ import { FotoInfo } from 'src/app/shared/componentes/foto-upload/foto-upload-mod
 import createNumberMask from 'text-mask-addons/dist/createNumberMask'
 import { ProdutoStoreService } from '../produto-store.service';
 import { EMPTY_GUID } from 'src/app/shared/helpers/guid.helper';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-produto-edit',
@@ -22,7 +22,8 @@ export class ProdutoEditComponent implements OnInit {
     public snack: MatSnackBar,
     public imagemService: ImagemService,
     private _store:ProdutoStoreService,
-    private _router:Router
+    private _router:Router,
+    private _route:ActivatedRoute
   ) { }
 
   @ViewChild('fotoUpload') fotoUpload: FotoUploadComponent;
@@ -34,11 +35,18 @@ export class ProdutoEditComponent implements OnInit {
     return this._produtoBo.produto;
   }
 
+  set produto(produto:Produto){
+    this._produtoBo.produto = produto;
+  }
+
   public imagemSelecionada: ProdutoImagem;
   public especificacaoSelecionada: ProdutoEspecificacao;
   public url: string = "";
   public erros: Array<ErroValidacao>;
   public salvandoProduto:boolean;
+  public titulo:string;
+  public alteracaoCasdastral:boolean
+  
   public maskDecimal = createNumberMask({
     prefix:'',
     decimalSymbol:',' ,
@@ -51,10 +59,22 @@ export class ProdutoEditComponent implements OnInit {
     thousandsSeparatorSymbol:'.'
   });  
 
-  public quantidade:number = 0;
 
   ngOnInit() {
+    this.titulo = "Novo produto"
+    this.alteracaoCasdastral = false;
     this._produtoBo = new ProdutoBo();
+
+    this._route.params.subscribe( params=>{
+      if (params.id){
+        this.titulo = "Alterar produto"
+        this.alteracaoCasdastral = true;
+        this._store.getProduto(params.id)
+          .subscribe(p=>{
+            this.produto =p;
+          })
+      }
+    })
   }
 
   onSalvar() {
@@ -62,16 +82,37 @@ export class ProdutoEditComponent implements OnInit {
     if (this.erros.length > 0) return;
     this.salvandoProduto = true;
 
-    this._store.post(this.produto)
-    .subscribe(()=>{
-      this.salvandoProduto = false;
-      this._router.navigate(['/produtos']);
-    }, error=> {
-      console.log(error);
-      this.snack.open("Falha ao enviar os dados do produto.")
-      this.salvandoProduto = false;
-    })
+    if (this.alteracaoCasdastral){
+      this.put();
+
+    }else{
+      this.post();
+    }
   }
+
+  private post() {
+    this._store.post(this.produto)
+      .subscribe(() => {
+        this.salvandoProduto = false;
+        this._router.navigate(['/produtos']);
+      }, error => {
+        console.log(error);
+        this.snack.open("Falha ao enviar os dados do produto.");
+        this.salvandoProduto = false;
+      });
+  }
+
+  private put(){
+    this._store.put(this.produto)
+      .subscribe(() => {
+        this.salvandoProduto = false;
+        this._router.navigate(['/produtos']);
+      }, error => {
+        console.log(error);
+        this.snack.open("Falha ao atualizar os dados do produto.");
+        this.salvandoProduto = false;
+      });
+  } 
 
   //#region Imagens
   OnFotoChange(info: FotoInfo) {
@@ -87,6 +128,7 @@ export class ProdutoEditComponent implements OnInit {
         dados: info.preview,
         ordem: this._produtoBo.geraProximaOrdemDaImagem(),
         preview: info.preview,
+        sufixo: info.extensaoArquivo
       }
       this.imagemSelecionada = novaImagem;
       this.produto.imagens.push(novaImagem);
@@ -95,7 +137,7 @@ export class ProdutoEditComponent implements OnInit {
 
   defineImagemSelecionada(imagem: ProdutoImagem) {
     this.imagemSelecionada = imagem;
-    this.url = imagem.preview;
+    this.url = imagem.dados;
   }
 
   onExcluirImagem(imagem: ProdutoImagem) {

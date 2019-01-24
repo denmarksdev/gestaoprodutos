@@ -14,6 +14,8 @@ namespace GPApp.Dal.Configurations
                 .HasMaxLength(15);
             entity.Property(i => i.Sufixo)
                   .HasMaxLength(4);
+
+            entity.Ignore(i => i.Preview);
         }
     }
 }
