@@ -75,5 +75,15 @@ namespace GPApp.Dal.Dao
                 return imagensExcluidas;
             }
         }
+
+        public async Task<IEnumerable<Produto>> TodosComimagemAsync()
+        {
+            using (var db = DatabaseManager.GetContext())
+            {
+                return await db.Produtos
+                    .Include(p=> p.Imagens)
+                    .ToListAsync();
+            }
+        }
     }
 }

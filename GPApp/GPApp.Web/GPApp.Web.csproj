@@ -20,8 +20,4 @@
     <ProjectReference Include="..\GPApp.Shared\GPApp.Shared.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\imagens\produtos\" />
-  </ItemGroup>
-
 </Project>

@@ -9,6 +9,7 @@ export interface ProdutoLookup {
 export interface Produto extends ProdutoLookup {
     descricao:string,
     custo:number,
+    precoPromocional:number,
     imagens : Array<ProdutoImagem>,
     especificacoes: Array<ProdutoEspecificacao>,
     estoqueAtual: ProdutoEstoque

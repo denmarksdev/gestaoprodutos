@@ -12,5 +12,6 @@ namespace GPApp.Repository
         Task<Resultado<Produto>> LocalizaPorChavePrimariaAsync(Guid id);
         Task<Resultado<IEnumerable<Produto>>> TodosAsyc();
         Task<Resultado<List<string>>> AtualizaAsync(Produto produto);
+        Task<Resultado<IEnumerable<Produto>>> TodosComImagemAsyc();
     }
 }

@@ -1,5 +1,5 @@
 <div class="container-principal">
-  <h2>{{ titulo }}</h2>
+  <h1 class="titulo" >{{ titulo }}</h1>
   <!-- Expander -->
   <mat-accordion>
     <!-- Principal -->
@@ -32,6 +32,12 @@
               (input)="produto.preco = $event.target.value"
               [value]="produto.preco" />
         </mat-form-field>
+        <mat-form-field class="campo-numerico">
+            <input matInput placeholder="Preço promocional" 
+                [textMask]="{mask: maskDecimal}"
+                (input)="produto.precoPromocional = $event.target.value"
+                [value]="produto.precoPromocional" />
+          </mat-form-field>
         <mat-form-field class="campo-numerico">
           <input matInput placeholder="Custo" 
               [textMask]="{mask: maskDecimal}"
@@ -94,6 +100,7 @@
   </mat-accordion>
   <!-- Fim Expander -->
   <button [disabled]="dadosInvalidos" ng-en mat-raised-button color="primary" (click)="onSalvar()">Salvar</button>
+  <a mat-button  (click)="onVoltar()" >Voltar</a>
   <h3 class="erro" *ngIf="erros && erros.length > 0" >Erros</h3>
   <ul>
     <li class="erro" *ngFor="let erro of erros"><strong>{{ erro.campo }}</strong> {{ erro.descricao}}</li>

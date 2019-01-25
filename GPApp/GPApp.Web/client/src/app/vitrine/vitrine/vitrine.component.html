@@ -1,0 +1,27 @@
+<button mat-button (click)="onProdutos()">Produtos</button>
+
+<div class="container-header titulo">
+  <h1>Vitrine</h1>
+  <input class="input-pesquisa" placeholder="Pesquisar ...">
+</div>
+
+<div class="container-principal">
+  <div class="item-vitrine" *ngFor="let item of service.vitrine$ | async">
+    <img class="imagem"  src="{{ item.imagemUrl }}" [alt]="item.nome" />
+    <p class="content">
+      {{ item.nome }}
+    </p>
+    <div class="item-preco">
+      <div *ngIf="item.precoPromocional > 0; else preco">
+        <p>
+          <span class="item-preco-anterior">
+            De {{ item.preco | moeda }}
+          </span> {{ item.precoPromocional | moeda }}
+        </p>
+      </div>
+      <ng-template #preco>
+        <p>{{ item.preco | moeda }}</p>
+      </ng-template>
+    </div>
+  </div>
+</div>

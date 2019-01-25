@@ -9,6 +9,7 @@ namespace GPApp.Model
         public string Nome { get; set; }
         public string Descricao { get; set; }
         public decimal Preco { get; set; }
+        public decimal PrecoPromocional { get; set; }
         public decimal Custo { get; set; }
         public DateTime DataCadastro { get; set; }
         public ProdutoEstoque EstoqueAtual { get; set; }

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace GPApp.Dal.Migrations
 {
-    public partial class init : Migration
+    public partial class Inicio : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -18,6 +18,7 @@ namespace GPApp.Dal.Migrations
                     Nome = table.Column<string>(maxLength: 80, nullable: true),
                     Descricao = table.Column<string>(nullable: true),
                     Preco = table.Column<decimal>(nullable: false),
+                    PrecoPromocional = table.Column<decimal>(nullable: false),
                     Custo = table.Column<decimal>(nullable: false),
                     DataCadastro = table.Column<DateTime>(nullable: false)
                 },
@@ -52,8 +53,8 @@ namespace GPApp.Dal.Migrations
                     UltimaAtualizacao = table.Column<DateTime>(nullable: false),
                     Nome = table.Column<string>(maxLength: 40, nullable: true),
                     Descricao = table.Column<string>(nullable: true),
-                    Ordem = table.Column<short>(nullable: false),
-                    ProdutoId = table.Column<Guid>(nullable: true)
+                    ProdutoId = table.Column<Guid>(nullable: false),
+                    Ordem = table.Column<short>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -63,7 +64,7 @@ namespace GPApp.Dal.Migrations
                         column: x => x.ProdutoId,
                         principalTable: "Produto",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -97,7 +98,7 @@ namespace GPApp.Dal.Migrations
                     UltimaAtualizacao = table.Column<DateTime>(nullable: false),
                     Prefixo = table.Column<string>(maxLength: 15, nullable: true),
                     Sufixo = table.Column<string>(maxLength: 4, nullable: true),
-                    Dados = table.Column<byte[]>(nullable: true),
+                    Dados = table.Column<string>(nullable: true),
                     Ordem = table.Column<short>(nullable: false),
                     ProdutoId = table.Column<Guid>(nullable: true)
                 },

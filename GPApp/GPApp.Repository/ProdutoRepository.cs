@@ -23,6 +23,18 @@ namespace GPApp.Repository
             }
         }
 
+        public async Task<Resultado<IEnumerable<Produto>>> TodosComImagemAsyc()
+        {
+            try
+            {
+                return new Resultado<IEnumerable<Produto>>(await _dao.TodosComimagemAsync());
+            }
+            catch (Exception ex)
+            {
+                return new Resultado<IEnumerable<Produto>>("Falha ao buscar os produtos", ex);
+            }
+        }
+
         public async Task<Resultado> IncluirAsync (Produto produto)
         {
             try
@@ -62,5 +74,9 @@ namespace GPApp.Repository
                 return new Resultado<List<string>>("Falha ao atualizar o produto o " +  produto.Nome, ex);
             }
         }
+
+        
+
+        
     }
 }

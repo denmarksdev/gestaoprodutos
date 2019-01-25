@@ -38,6 +38,8 @@ namespace GPApp.Dal.Migrations
 
                     b.Property<decimal>("Preco");
 
+                    b.Property<decimal>("PrecoPromocional");
+
                     b.Property<bool>("Sincronizado");
 
                     b.Property<DateTime>("UltimaAtualizacao");
@@ -59,7 +61,7 @@ namespace GPApp.Dal.Migrations
 
                     b.Property<short>("Ordem");
 
-                    b.Property<Guid?>("ProdutoId");
+                    b.Property<Guid>("ProdutoId");
 
                     b.Property<bool>("Sincronizado");
 
@@ -99,7 +101,7 @@ namespace GPApp.Dal.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<byte[]>("Dados");
+                    b.Property<string>("Dados");
 
                     b.Property<short>("Ordem");
 
@@ -155,7 +157,8 @@ namespace GPApp.Dal.Migrations
                 {
                     b.HasOne("GPApp.Model.Produto")
                         .WithMany("Especificacoes")
-                        .HasForeignKey("ProdutoId");
+                        .HasForeignKey("ProdutoId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("GPApp.Model.ProdutoEstoque", b =>

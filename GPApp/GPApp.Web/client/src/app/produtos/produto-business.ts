@@ -19,6 +19,7 @@ export class ProdutoBo {
             descricao: '',
             custo: 0,
             preco: 0,
+            precoPromocional:0,
             dataCadastro: new DateHelper().geraDataAtual(),
             imagens: new Array<ProdutoImagem>(),
             especificacoes: new Array<ProdutoEspecificacao>(),
@@ -34,7 +35,7 @@ export class ProdutoBo {
     geraProximaOrdemDaEspecificacao(): number {
 
         let totalOrdem = 0;
-        this.produto.imagens.forEach(imagem => {
+        this.produto.especificacoes.forEach(esp => {
             totalOrdem += 1
         });
         return totalOrdem + 1;
@@ -69,9 +70,6 @@ export class ProdutoBo {
     valida():Array<ErroValidacao> {
         let erros = new Array<ErroValidacao>();
 
-        console.log("Preco " + this.produto.preco + " " + this.produto.custo + " " + (this.produto.preco < this.produto.custo));
-        console.log("Custo " + this.produto.custo);
-
         if (this.produto.nome.length == 0){
             erros.push(new ErroValidacao("Nome", "Campo obrigatório"));
         }
@@ -88,6 +86,10 @@ export class ProdutoBo {
             erros.push(new ErroValidacao("Custo", "Deve ser maior que zero"));
         }else if (this.produto.custo > this.produto.preco){
             erros.push(new ErroValidacao("Custo", "Deve ser menor ou igual ao preço"));
+        }
+
+        if (this.produto.precoPromocional >  this.produto.preco ){
+            erros.push(new ErroValidacao("PrecoPromocional", "Preço promocional deve ser menor que o preco de venda"));
         }
         
         return erros;

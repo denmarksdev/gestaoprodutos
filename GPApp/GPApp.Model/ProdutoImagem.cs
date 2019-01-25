@@ -7,5 +7,6 @@
         public string Dados { get; set; }
         public string Preview { get; set; }
         public short Ordem { get; set; }
+
     }
 }

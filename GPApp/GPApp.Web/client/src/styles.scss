@@ -3,6 +3,14 @@
 
 $cor-danger:#f44336;
 
+html, body {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+}
+
+.titulo {
+    border-bottom: 1px solid black;
+}
+
 .erro {
     color: $cor-danger;
 }

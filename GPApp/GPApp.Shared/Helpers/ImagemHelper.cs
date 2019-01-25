@@ -36,17 +36,12 @@ namespace GPApp.Shared.Helpers
         public static string GeraCaminho(ProdutoImagem imagem, Tamanho tamanho, Guid produtoId)
         {
             var path = ArquivoHelper.GetDiretorioDeImagensDeProdutos();
-            return FormaCaminho(imagem, tamanho, produtoId, path);
+            return $"{path}/{produtoId.ToString()}_{GetTamanhaoAbreviado(tamanho)}{imagem.Ordem}.{imagem.Sufixo}";
         }
 
         public static string GeraCaminhoNoClient(ProdutoImagem imagem, Tamanho tamanho, Guid produtoId)
         {
-            return FormaCaminho(imagem, tamanho, produtoId, "imagens/produtos"); ;
-        }
-
-        private static string FormaCaminho(ProdutoImagem imagem, Tamanho tamanho, Guid produtoId, string path)
-        {
-            return $@"{path}\{produtoId.ToString()}_{GetTamanhaoAbreviado(tamanho)}{imagem.Ordem}.{imagem.Sufixo}";
+            return $"imagens/produtos/{produtoId.ToString()}_{GetTamanhaoAbreviado(tamanho)}{imagem.Ordem}.{imagem.Sufixo}";
         }
 
         private static string GetTamanhaoAbreviado(Tamanho tamanho)

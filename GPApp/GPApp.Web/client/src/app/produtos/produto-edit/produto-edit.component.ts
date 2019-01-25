@@ -49,8 +49,8 @@ export class ProdutoEditComponent implements OnInit {
   
   public maskDecimal = createNumberMask({
     prefix:'',
-    decimalSymbol:',' ,
-    period:'.',
+    decimalSymbol:'.' ,
+    period:',',
     allowDecimal:true
   });  
   public maskInteiro = createNumberMask({
@@ -113,6 +113,10 @@ export class ProdutoEditComponent implements OnInit {
         this.salvandoProduto = false;
       });
   } 
+
+  onVoltar (){
+    this._router.navigate(["/produtos"]);
+  }
 
   //#region Imagens
   OnFotoChange(info: FotoInfo) {
