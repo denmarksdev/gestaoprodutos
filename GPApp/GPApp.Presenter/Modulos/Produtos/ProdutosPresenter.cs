@@ -1,6 +1,4 @@
-﻿using System;
-using GPApp.Helpers;
-using GPApp.Presenter.Base;
+﻿using GPApp.Presenter.Base;
 using GPApp.Presenter.Grid;
 using GPApp.Service;
 using GPApp.Wrapper;
@@ -48,10 +46,10 @@ namespace GPApp.Presenter.Modulos.Produtos
         }
         private async void OnEnviarEmail()
         {
-            var resultado =  await _emailService.Envia(GridTemplate.GetEmailMarketing());
-            if (!resultado.Valido)
-            {
-            }
+            //var resultado =  await _emailService.Envia(  EmailTemplate.GetEmailMarketing());
+            //if (!resultado.Valido)
+            //{
+            //}
         }
 
         #endregion

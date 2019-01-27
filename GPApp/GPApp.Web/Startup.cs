@@ -9,6 +9,8 @@ using GPApp.Model.Database;
 using Microsoft.Extensions.Configuration;
 using GPApp.Service;
 using GPApp.Web.Middleware;
+using GPApp.Shared.Services;
+using GPApp.Web.Services;
 
 namespace GPApp.Web
 {
@@ -40,6 +42,7 @@ namespace GPApp.Web
             services.AddTransient<IProdutoRepository,ProdutoRepository>();
             services.AddTransient<IDataBaseRepository, DataBaseRepository>();
             services.AddTransient<IProdutoService, ProdutoService>();
+            services.AddTransient<IConfiguracaoService,ConfigurationService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

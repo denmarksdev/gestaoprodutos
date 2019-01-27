@@ -1,4 +1,8 @@
-﻿using GPApp.Model.Helpers;
+﻿using GPApp.Model;
+using GPApp.Model.Helpers;
+using GPApp.Shared.Services;
+using Microsoft.Extensions.Configuration;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Mail;
 using System.Threading.Tasks;
@@ -7,32 +11,42 @@ namespace GPApp.Service
 {
     public class EmailService : IEmailService
     {
-        public Task<Resultado> Envia(string mensagem)
+        private readonly IConfiguracaoService _config;
+
+        public EmailService(IConfiguracaoService configuration)
+        {
+            _config = configuration;
+        }
+
+        public Task<Resultado> Envia( List<Cliente> clientes , string assunto, string from , string propaganda ,  string mensagem)
         {
             return Task.Run(() =>
             {
                 try
                 {
-                    SmtpClient client = new SmtpClient("smtp provider")
+                    SmtpClient client = new SmtpClient(_config.SMTP)
                     {
                         UseDefaultCredentials = false,
-                        Credentials = new NetworkCredential("test@teste", "password"),
+                        Credentials = new NetworkCredential(_config.EmailSMTP, _config.PasswordSMTP),
                         Port = 587,
                         EnableSsl = true
                     };
 
                     MailMessage mailMessage = new MailMessage
                     {
-                        From = new MailAddress("test@teste", "Nome"),
+                        From = new MailAddress(from, propaganda),
                     };
-                    mailMessage.To.Add(new MailAddress("test@teste", "Nome"));
-                    mailMessage.Body =  mensagem;
-                    mailMessage.Subject = "subject";
+
+                    foreach (var cliente in clientes)
+                    {
+                        mailMessage.To.Add(new MailAddress(cliente.Email, cliente.Nome));
+                    }
+                    mailMessage.Body = mensagem;
+                    mailMessage.Subject = assunto;
                     mailMessage.IsBodyHtml = true;
                     client.Send(mailMessage);
 
                     return new Resultado();
-
                 }
                 catch (System.Exception ex)
                 {
