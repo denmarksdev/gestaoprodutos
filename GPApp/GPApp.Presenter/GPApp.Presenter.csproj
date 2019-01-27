@@ -52,6 +52,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GPApp.Helpers\GPApp.Helpers.vbproj">
+      <Project>{81AA59EA-05EA-402A-9A6F-842541765CC2}</Project>
+      <Name>GPApp.Helpers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GPApp.Model\GPApp.Model.csproj">
       <Project>{E39F996A-1A28-40DD-8993-D46419C7F060}</Project>
       <Name>GPApp.Model</Name>
@@ -59,6 +63,10 @@
     <ProjectReference Include="..\GPApp.Repository\GPApp.Repository.csproj">
       <Project>{BA52AF43-226B-4C14-862F-8C1F368E3F61}</Project>
       <Name>GPApp.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GPApp.Service\GPApp.Service.csproj">
+      <Project>{D39731EE-B0AA-4792-87C8-AA2820B54903}</Project>
+      <Name>GPApp.Service</Name>
     </ProjectReference>
     <ProjectReference Include="..\GPApp.Shared\GPApp.Shared.csproj">
       <Project>{B68BCCB9-BB79-46EF-8563-5476B4881C49}</Project>

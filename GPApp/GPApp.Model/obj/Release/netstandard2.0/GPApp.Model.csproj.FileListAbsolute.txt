@@ -1,0 +1,9 @@
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Model\bin\Release\netstandard2.0\GPApp.Model.deps.json
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Model\bin\Release\netstandard2.0\GPApp.Model.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Model\bin\Release\netstandard2.0\GPApp.Model.pdb
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Model\obj\Release\netstandard2.0\GPApp.Model.csprojAssemblyReference.cache
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Model\obj\Release\netstandard2.0\GPApp.Model.csproj.CoreCompileInputs.cache
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Model\obj\Release\netstandard2.0\GPApp.Model.AssemblyInfoInputs.cache
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Model\obj\Release\netstandard2.0\GPApp.Model.AssemblyInfo.cs
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Model\obj\Release\netstandard2.0\GPApp.Model.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Model\obj\Release\netstandard2.0\GPApp.Model.pdb

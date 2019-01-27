@@ -6,6 +6,6 @@ namespace GPApp.Model
     {
         public Guid Id { get; set; }
         public bool Sincronizado { get; set; }
-        public DateTime UltimaAtualizacao { get; set; }
+        public DateTimeOffset UltimaAtualizacao { get; set; }
     }
 }

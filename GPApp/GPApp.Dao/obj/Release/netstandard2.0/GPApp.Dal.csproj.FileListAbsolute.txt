@@ -1,0 +1,16 @@
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Dao\bin\Release\netstandard2.0\GPApp.Dal.deps.json
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Dao\bin\Release\netstandard2.0\GPApp.Dal.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Dao\bin\Release\netstandard2.0\GPApp.Dal.pdb
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Dao\bin\Release\netstandard2.0\GPApp.Helpers.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Dao\bin\Release\netstandard2.0\GPApp.Model.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Dao\bin\Release\netstandard2.0\GPApp.Shared.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Dao\bin\Release\netstandard2.0\GPApp.Helpers.pdb
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Dao\bin\Release\netstandard2.0\GPApp.Model.pdb
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Dao\bin\Release\netstandard2.0\GPApp.Shared.pdb
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Dao\obj\Release\netstandard2.0\GPApp.Dal.csprojAssemblyReference.cache
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Dao\obj\Release\netstandard2.0\GPApp.Dal.csproj.CoreCompileInputs.cache
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Dao\obj\Release\netstandard2.0\GPApp.Dal.AssemblyInfoInputs.cache
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Dao\obj\Release\netstandard2.0\GPApp.Dal.AssemblyInfo.cs
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Dao\obj\Release\netstandard2.0\GPApp.Dal.csproj.CopyComplete
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Dao\obj\Release\netstandard2.0\GPApp.Dal.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Dao\obj\Release\netstandard2.0\GPApp.Dal.pdb

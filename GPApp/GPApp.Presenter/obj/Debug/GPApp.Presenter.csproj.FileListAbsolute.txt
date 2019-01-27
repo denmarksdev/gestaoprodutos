@@ -113,3 +113,5 @@ D:\Repositorio\gestaoprodutos\GPApp\GPApp.Presenter\bin\Debug\GPApp.Helpers.dll
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Presenter\bin\Debug\GPApp.Repository.pdb
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Presenter\bin\Debug\GPApp.Dal.pdb
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Presenter\bin\Debug\GPApp.Helpers.pdb
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Presenter\bin\Debug\GPApp.Service.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Presenter\bin\Debug\GPApp.Service.pdb

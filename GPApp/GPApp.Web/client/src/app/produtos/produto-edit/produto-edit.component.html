@@ -99,7 +99,7 @@
     <!-- Fim Especificações -->
   </mat-accordion>
   <!-- Fim Expander -->
-  <button [disabled]="dadosInvalidos" ng-en mat-raised-button color="primary" (click)="onSalvar()">Salvar</button>
+  <button ng-en mat-raised-button color="primary" (click)="onSalvar()">Salvar</button>
   <a mat-button  (click)="onVoltar()" >Voltar</a>
   <h3 class="erro" *ngIf="erros && erros.length > 0" >Erros</h3>
   <ul>

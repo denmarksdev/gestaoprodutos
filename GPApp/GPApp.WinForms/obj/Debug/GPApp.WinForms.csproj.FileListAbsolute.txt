@@ -202,3 +202,5 @@ D:\Repositorio\gestaoprodutos\GPApp\GPApp.WinForms\bin\Debug\Npgsql.xml
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.WinForms\bin\Debug\Npgsql.EntityFrameworkCore.PostgreSQL.pdb
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.WinForms\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.WinForms\bin\Debug\System.ValueTuple.xml
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.WinForms\bin\Debug\GPApp.Service.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.WinForms\bin\Debug\GPApp.Service.pdb

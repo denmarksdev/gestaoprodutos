@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Threading.Tasks;
 using static GPApp.Shared.Helpers.ImagemHelper;
 
@@ -57,15 +58,21 @@ namespace GPApp.Service
                 foreach (var imagem in produto.Imagens)
                 {
                     var path = ArquivoHelper.GetDiretorioDeImagensDeProdutos();
-                    imagem.Preview = GeraCaminhoNoClient(imagem, Tamanho.Pequeno, produto.Id); 
+                    imagem.Preview = GeraCaminhoNoClient(imagem, Tamanho.Pequeno, produto.Id);
                 }
             }
-            return produto ;
+            return produto;
         }
 
         public async Task<IActionResult> Todos()
         {
             var resultado = await _repo.TodosAsyc();
+
+            foreach (var item in resultado.Valor)
+            {
+                item.DataCadastro = ReturnTimeOnServer(item.DataCadastro);
+            }
+
             if (resultado.Valido) return new OkObjectResult(resultado.Valor);
 
             return new StatusCodeResult(StatusCodes.Status500InternalServerError);
@@ -77,6 +84,20 @@ namespace GPApp.Service
             {
                 SalvarImagem(imagem, Tamanho.Original, produtoId);
                 SalvarImagem(imagem, Tamanho.Pequeno, produtoId);
+            }
+        }
+
+        public DateTimeOffset ReturnTimeOnServer(DateTimeOffset dateClient)
+        {
+            TimeSpan serverOffset = TimeZoneInfo.Local.GetUtcOffset(DateTimeOffset.Now);
+            try
+            {
+                DateTimeOffset serverTime = dateClient.ToOffset(serverOffset);
+                return serverTime;
+            }
+            catch (FormatException ex)
+            {
+                return DateTimeOffset.MinValue;
             }
         }
     }

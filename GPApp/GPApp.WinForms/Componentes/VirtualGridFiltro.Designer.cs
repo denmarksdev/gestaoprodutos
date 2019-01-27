@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroPanelFiltro = new MetroFramework.Controls.MetroPanel();
             this.metroTextBoxPequisa = new MetroFramework.Controls.MetroTextBox();
             this.metroButtonPesquisar = new MetroFramework.Controls.MetroButton();
             this.tableLayoutPanelGrid = new System.Windows.Forms.TableLayoutPanel();
             this.htmlLabelRodape = new MetroFramework.Drawing.Html.HtmlLabel();
-            this.virtualGridPrincipal = new GPApp.WinForms.Componentes.VirtualGrid();
             this.metroPanelGrid = new MetroFramework.Controls.MetroPanel();
+            this.virtualGridPrincipal = new GPApp.WinForms.Componentes.VirtualGrid();
             this.metroPanelFiltro.SuspendLayout();
             this.tableLayoutPanelGrid.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.virtualGridPrincipal)).BeginInit();
             this.metroPanelGrid.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.virtualGridPrincipal)).BeginInit();
             this.SuspendLayout();
             // 
             // metroPanelFiltro
@@ -59,6 +59,7 @@
             this.metroPanelFiltro.VerticalScrollbarBarColor = true;
             this.metroPanelFiltro.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanelFiltro.VerticalScrollbarSize = 10;
+            this.metroPanelFiltro.Visible = false;
             // 
             // metroTextBoxPequisa
             // 
@@ -121,7 +122,7 @@
             // htmlLabelRodape
             // 
             this.htmlLabelRodape.AutoScroll = true;
-            this.htmlLabelRodape.AutoScrollMinSize = new System.Drawing.Size(71, 23);
+            this.htmlLabelRodape.AutoScrollMinSize = new System.Drawing.Size(131, 34);
             this.htmlLabelRodape.AutoSize = false;
             this.htmlLabelRodape.BackColor = System.Drawing.SystemColors.Window;
             this.htmlLabelRodape.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -131,62 +132,6 @@
             this.htmlLabelRodape.Size = new System.Drawing.Size(672, 29);
             this.htmlLabelRodape.TabIndex = 1;
             this.htmlLabelRodape.Text = "Informações";
-            // 
-            // virtualGridPrincipal
-            // 
-            this.virtualGridPrincipal.AllowUserToAddRows = false;
-            this.virtualGridPrincipal.AllowUserToDeleteRows = false;
-            this.virtualGridPrincipal.AllowUserToResizeColumns = false;
-            this.virtualGridPrincipal.AllowUserToResizeRows = false;
-            this.virtualGridPrincipal.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.virtualGridPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.virtualGridPrincipal.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.virtualGridPrincipal.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(84)))), ((int)(((byte)(94)))), ((int)(((byte)(117)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.virtualGridPrincipal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            this.virtualGridPrincipal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.virtualGridPrincipal.ColunaChave = null;
-            this.virtualGridPrincipal.ConsultaAction = null;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.virtualGridPrincipal.DefaultCellStyle = dataGridViewCellStyle11;
-            this.virtualGridPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.virtualGridPrincipal.EnableHeadersVisualStyles = false;
-            this.virtualGridPrincipal.ErroPaginacao = false;
-            this.virtualGridPrincipal.ErroPagincaoAction = null;
-            this.virtualGridPrincipal.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.virtualGridPrincipal.GetValue = null;
-            this.virtualGridPrincipal.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.virtualGridPrincipal.Inicializa = null;
-            this.virtualGridPrincipal.Location = new System.Drawing.Point(0, 0);
-            this.virtualGridPrincipal.Name = "virtualGridPrincipal";
-            this.virtualGridPrincipal.OrderAction = null;
-            this.virtualGridPrincipal.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.virtualGridPrincipal.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
-            this.virtualGridPrincipal.RowHeadersVisible = false;
-            this.virtualGridPrincipal.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.virtualGridPrincipal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.virtualGridPrincipal.Size = new System.Drawing.Size(672, 263);
-            this.virtualGridPrincipal.TabIndex = 2;
-            this.virtualGridPrincipal.VirtualMode = true;
             // 
             // metroPanelGrid
             // 
@@ -204,6 +149,62 @@
             this.metroPanelGrid.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanelGrid.VerticalScrollbarSize = 10;
             // 
+            // virtualGridPrincipal
+            // 
+            this.virtualGridPrincipal.AllowUserToAddRows = false;
+            this.virtualGridPrincipal.AllowUserToDeleteRows = false;
+            this.virtualGridPrincipal.AllowUserToResizeColumns = false;
+            this.virtualGridPrincipal.AllowUserToResizeRows = false;
+            this.virtualGridPrincipal.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.virtualGridPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.virtualGridPrincipal.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.virtualGridPrincipal.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(84)))), ((int)(((byte)(94)))), ((int)(((byte)(117)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.virtualGridPrincipal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.virtualGridPrincipal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.virtualGridPrincipal.ColunaChave = null;
+            this.virtualGridPrincipal.ConsultaAction = null;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.virtualGridPrincipal.DefaultCellStyle = dataGridViewCellStyle2;
+            this.virtualGridPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.virtualGridPrincipal.EnableHeadersVisualStyles = false;
+            this.virtualGridPrincipal.ErroPaginacao = false;
+            this.virtualGridPrincipal.ErroPagincaoAction = null;
+            this.virtualGridPrincipal.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.virtualGridPrincipal.GetValue = null;
+            this.virtualGridPrincipal.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.virtualGridPrincipal.Inicializa = null;
+            this.virtualGridPrincipal.Location = new System.Drawing.Point(0, 0);
+            this.virtualGridPrincipal.Name = "virtualGridPrincipal";
+            this.virtualGridPrincipal.OrderAction = null;
+            this.virtualGridPrincipal.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.virtualGridPrincipal.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.virtualGridPrincipal.RowHeadersVisible = false;
+            this.virtualGridPrincipal.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.virtualGridPrincipal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.virtualGridPrincipal.Size = new System.Drawing.Size(672, 263);
+            this.virtualGridPrincipal.TabIndex = 2;
+            this.virtualGridPrincipal.VirtualMode = true;
+            // 
             // VirtualGridFiltro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -214,8 +215,8 @@
             this.Size = new System.Drawing.Size(678, 304);
             this.metroPanelFiltro.ResumeLayout(false);
             this.tableLayoutPanelGrid.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.virtualGridPrincipal)).EndInit();
             this.metroPanelGrid.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.virtualGridPrincipal)).EndInit();
             this.ResumeLayout(false);
 
         }

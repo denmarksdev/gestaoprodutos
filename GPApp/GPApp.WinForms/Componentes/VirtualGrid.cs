@@ -79,15 +79,15 @@ namespace GPApp.WinForms.Componentes
         protected override void OnCellFormatting(DataGridViewCellFormattingEventArgs e)
         {
             base.OnCellFormatting(e);
-            e.CellStyle.SelectionBackColor = Color.FromArgb(CoresHelper.Primaria);
-            e.CellStyle.SelectionForeColor = Color.FromArgb(CoresHelper.Selecao);
+            e.CellStyle.SelectionBackColor = ColorTranslator.FromHtml(CoresHelper.Primaria);
+            e.CellStyle.SelectionForeColor = ColorTranslator.FromHtml(CoresHelper.Selecao);
         }
 
         protected override void OnColumnHeadersDefaultCellStyleChanged(EventArgs e)
         {
             base.OnColumnHeadersDefaultCellStyleChanged(e);
             ColumnHeadersDefaultCellStyle.Font = new Font("Verdana", 10, FontStyle.Bold);
-            ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(CoresHelper.Secundaria);
+            ColumnHeadersDefaultCellStyle.ForeColor = ColorTranslator.FromHtml(CoresHelper.Secundaria);
 
             EnableHeadersVisualStyles = false;
             ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
@@ -136,11 +136,11 @@ namespace GPApp.WinForms.Componentes
                     HeaderText = coluna.Titulo,
                     SortMode = DataGridViewColumnSortMode.Programmatic
                 };
-                               
+
                 columnGrid.HeaderCell.Style.Alignment = DefineAlinhamento(coluna.TipoAlinhamento);
                 columnGrid.DefaultCellStyle.Alignment = columnGrid.HeaderCell.Style.Alignment;
-                columnGrid.DefaultCellStyle.SelectionBackColor = Color.FromArgb(CoresHelper.Primaria);
-                columnGrid.HeaderCell.Style.ForeColor =  Color.FromArgb(CoresHelper.Secundaria);
+                columnGrid.DefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml(CoresHelper.Primaria);
+                columnGrid.HeaderCell.Style.ForeColor = ColorTranslator.FromHtml(CoresHelper.Secundaria);
 
                 if (!coluna.PermitirOrdenar)
                     _naoOrdenarColunas.Add(coluna.NomePropriedade);
@@ -154,18 +154,17 @@ namespace GPApp.WinForms.Componentes
 
                 Columns.Add(columnGrid);
             }
-            DefaultCellStyle.SelectionBackColor = Color.FromArgb(CoresHelper.Primaria);
+            DefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml(CoresHelper.Primaria);
         }
 
         public void SetCores()
         {
-            BackgroundColor = Color.FromArgb(CoresHelper.Selecao);
-            DefaultCellStyle.SelectionBackColor = Color.FromArgb(CoresHelper.Primaria);
-            GridColor = Color.FromArgb(CoresHelper.Selecao);
-            RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb( CoresHelper.Primaria);
-            DefaultCellStyle.SelectionBackColor = Color.FromArgb(CoresHelper.Primaria);
-            ColumnHeadersDefaultCellStyle.BackColor = Color.Red; //TODO:Criar cor
-            ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(CoresHelper.Secundaria);
+            BackgroundColor = ColorTranslator.FromHtml(CoresHelper.Selecao);
+            DefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml(CoresHelper.Primaria);
+            GridColor = ColorTranslator.FromHtml(CoresHelper.Selecao);
+            RowsDefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml( CoresHelper.Primaria);
+            DefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml(CoresHelper.Primaria);
+            ColumnHeadersDefaultCellStyle.ForeColor = ColorTranslator.FromHtml(CoresHelper.Selecao);
         }
 
         public void SetNumeroRegistros(int numero)

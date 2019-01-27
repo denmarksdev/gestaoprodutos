@@ -11,7 +11,7 @@ namespace GPApp.Model
         public decimal Preco { get; set; }
         public decimal PrecoPromocional { get; set; }
         public decimal Custo { get; set; }
-        public DateTime DataCadastro { get; set; }
+        public DateTimeOffset DataCadastro { get; set; }
         public ProdutoEstoque EstoqueAtual { get; set; }
 
         public virtual List<ProdutoImagem> Imagens { get; set; }

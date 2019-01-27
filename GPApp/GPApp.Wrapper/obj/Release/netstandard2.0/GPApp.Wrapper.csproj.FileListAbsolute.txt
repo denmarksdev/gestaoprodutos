@@ -1,0 +1,14 @@
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Wrapper\bin\Release\netstandard2.0\GPApp.Wrapper.deps.json
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Wrapper\bin\Release\netstandard2.0\GPApp.Wrapper.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Wrapper\bin\Release\netstandard2.0\GPApp.Wrapper.pdb
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Wrapper\bin\Release\netstandard2.0\GPApp.Model.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Wrapper\bin\Release\netstandard2.0\GPApp.Shared.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Wrapper\bin\Release\netstandard2.0\GPApp.Shared.pdb
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Wrapper\bin\Release\netstandard2.0\GPApp.Model.pdb
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Wrapper\obj\Release\netstandard2.0\GPApp.Wrapper.csprojAssemblyReference.cache
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Wrapper\obj\Release\netstandard2.0\GPApp.Wrapper.csproj.CoreCompileInputs.cache
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Wrapper\obj\Release\netstandard2.0\GPApp.Wrapper.AssemblyInfoInputs.cache
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Wrapper\obj\Release\netstandard2.0\GPApp.Wrapper.AssemblyInfo.cs
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Wrapper\obj\Release\netstandard2.0\GPApp.Wrapper.csproj.CopyComplete
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Wrapper\obj\Release\netstandard2.0\GPApp.Wrapper.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Wrapper\obj\Release\netstandard2.0\GPApp.Wrapper.pdb

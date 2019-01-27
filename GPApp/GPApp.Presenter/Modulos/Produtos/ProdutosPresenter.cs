@@ -1,6 +1,8 @@
 ﻿using System;
+using GPApp.Helpers;
 using GPApp.Presenter.Base;
 using GPApp.Presenter.Grid;
+using GPApp.Service;
 using GPApp.Wrapper;
 
 namespace GPApp.Presenter.Modulos.Produtos
@@ -10,6 +12,7 @@ namespace GPApp.Presenter.Modulos.Produtos
         #region Membros privados
 
         private readonly GridViewPresenter<ProdutoLookupWrapper> _gridViewPresenter;
+        private readonly IEmailService _emailService;
 
         #endregion
 
@@ -17,15 +20,19 @@ namespace GPApp.Presenter.Modulos.Produtos
 
         public ProdutosPresenter(
             IProdutosView view,
-            GridViewPresenter<ProdutoLookupWrapper> gridViewPresenter
+            GridViewPresenter<ProdutoLookupWrapper> gridViewPresenter,
+            IEmailService emailService
         ) : base(view)
         {
             _gridViewPresenter = gridViewPresenter;
+            _emailService = emailService;
 
             view.LoadAction = OnLoad;
             view.IncluirProdutAction = OnIncluirProduto;
+            view.EnviarEmailAction = OnEnviarEmail;
         }
 
+        
         #endregion
 
         #region Ações
@@ -38,6 +45,13 @@ namespace GPApp.Presenter.Modulos.Produtos
         private void OnIncluirProduto()
         {
             View.ExibeAbaEdicao();
+        }
+        private async void OnEnviarEmail()
+        {
+            var resultado =  await _emailService.Envia(GridTemplate.GetEmailMarketing());
+            if (!resultado.Valido)
+            {
+            }
         }
 
         #endregion

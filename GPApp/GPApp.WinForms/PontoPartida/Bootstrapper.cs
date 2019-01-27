@@ -4,8 +4,6 @@ using GPApp.Shared.Dados;
 using GPApp.WinForms.Helpers;
 using MetroFramework.Forms;
 using Ninject;
-using System;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GPApp.WinForms.PontoPartida

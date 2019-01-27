@@ -100,6 +100,7 @@ namespace GPApp.Presenter.Grid
             GridView.SetColunas(_gridInfo.ColumnsInfo);
             GridView.DefineColunaModoLeitura(_gridInfo.ModoLeitura);
             GridView.ColunaChave = gridInfo.ColunaChave;
+            GridView.SetCores();
         }
 
         public Task<bool> LoadAsync()

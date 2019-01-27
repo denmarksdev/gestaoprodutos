@@ -1,3 +1,4 @@
+using System;
 using GPApp.Model.Lookups;
 using GPApp.Wrapper.Base;
 
@@ -45,13 +46,13 @@ namespace GPApp.Wrapper
 		public  System.Decimal PrecoOriginalValue => GetOriginalValue< System.Decimal>(nameof(Preco));
 
 								
-		public System.DateTime DataCadastro
+		public System.DateTimeOffset DataCadastro
 		{
-			get { return GetValue<System.DateTime>(); }
+			get { return GetValue<System.DateTimeOffset>(); }
 			set { SetValue(value); }
 		}
 		public bool DataCadastroIsChanged => GetIsChanged(nameof(DataCadastro));
-		public  System.DateTime DataCadastroOriginalValue => GetOriginalValue< System.DateTime>(nameof(DataCadastro));
+		public  System.DateTimeOffset DataCadastroOriginalValue => GetOriginalValue< System.DateTimeOffset>(nameof(DataCadastro));
 
 								
 		public System.Int32 Estoque
@@ -61,7 +62,5 @@ namespace GPApp.Wrapper
 		}
 		public bool EstoqueIsChanged => GetIsChanged(nameof(Estoque));
 		public  System.Int32 EstoqueOriginalValue => GetOriginalValue< System.Int32>(nameof(Estoque));
-
-			
 	}
 }

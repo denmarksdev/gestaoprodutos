@@ -12,6 +12,8 @@ namespace GPApp.Web.controllers
     [ApiController]
     public class ProdutoController : ControllerBase
     {
+        private static string _id = string.Empty;
+
         public ProdutoController(IProdutoService service)
         {
             _service = service;
@@ -52,6 +54,19 @@ namespace GPApp.Web.controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+        }
+
+        [HttpGet("email/{id}")]
+        public string Email(string id)
+        {
+            _id += id + " ";
+            return "https://gestaoprodutos.azurewebsites.net/imagens/produtos/sem-imagem.jpeg";
+        }
+
+        [HttpGet("email/")]
+        public string GetEmail()
+        {
+            return _id;
         }
     }
 }

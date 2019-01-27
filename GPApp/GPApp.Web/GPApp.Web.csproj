@@ -7,6 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\dist\client\3rdpartylicenses.txt" />
+    <Content Remove="wwwroot\dist\client\assets\imagens\sem-imagem.jpeg" />
+    <Content Remove="wwwroot\dist\client\favicon.ico" />
+    <Content Remove="wwwroot\dist\client\index.html" />
+    <Content Remove="wwwroot\dist\client\main.f3d2738582a752617638.js" />
+    <Content Remove="wwwroot\dist\client\polyfills.20d0bb3b90b253b298ff.js" />
+    <Content Remove="wwwroot\dist\client\runtime.b57bf819d5bdce77f1c7.js" />
+    <Content Remove="wwwroot\dist\client\styles.c88c22fa6aa96a3f7e3a.css" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="2.2.0" />
@@ -18,6 +29,17 @@
     <ProjectReference Include="..\GPApp.Repository\GPApp.Repository.csproj" />
     <ProjectReference Include="..\GPApp.Service\GPApp.Service.csproj" />
     <ProjectReference Include="..\GPApp.Shared\GPApp.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\dist\client\3rdpartylicenses.txt" />
+    <None Include="wwwroot\dist\client\assets\imagens\sem-imagem.jpeg" />
+    <None Include="wwwroot\dist\client\favicon.ico" />
+    <None Include="wwwroot\dist\client\index.html" />
+    <None Include="wwwroot\dist\client\main.f3d2738582a752617638.js" />
+    <None Include="wwwroot\dist\client\polyfills.20d0bb3b90b253b298ff.js" />
+    <None Include="wwwroot\dist\client\runtime.b57bf819d5bdce77f1c7.js" />
+    <None Include="wwwroot\dist\client\styles.c88c22fa6aa96a3f7e3a.css" />
   </ItemGroup>
 
 </Project>

@@ -36,12 +36,13 @@ namespace GPApp.WinForms.Views
 
         public Action LoadAction { get ; set ; }
         public Action IncluirProdutAction { get ; set ; }
+        public Action EnviarEmailAction { get ; set ; }
 
         #endregion
 
         #region Métodos
 
-        
+
         public void AdicionaGrid(IGridViewFiltro gridViewFiltro)
         {
             var control = (Control)gridViewFiltro;
@@ -75,11 +76,16 @@ namespace GPApp.WinForms.Views
 
         private event EventHandler _ativarFiltroHandler;
 
-        private void metroButtonIncluir_Click(object sender, EventArgs e)
+        private void MetroButtonIncluir_Click(object sender, EventArgs e)
         {
             IncluirProdutAction?.Invoke();
         }
 
         #endregion
+
+        private void MetroButtonEmail_Click(object sender, EventArgs e)
+        {
+            EnviarEmailAction?.Invoke();
+        }
     }
 }

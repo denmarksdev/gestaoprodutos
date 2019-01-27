@@ -3,7 +3,10 @@ export class DateHelper {
     // Formato da data yyyy/mm/dd hh:mm:ss PM|AM
     geraDataAtual(){
         var dataAtual = new Date();
-        return `${this.formataValor(dataAtual.getFullYear())}/${ this.formataValor(dataAtual.getMonth() + 1 )}/${this.formataValor(dataAtual.getDay())} ${this.formatAMPM(dataAtual)}`;
+
+        console.log(dataAtual.toISOString());
+
+        return dataAtual.toISOString();
     }
 
     private formatAMPM(date) {

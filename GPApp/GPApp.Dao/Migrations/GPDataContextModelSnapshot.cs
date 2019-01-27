@@ -29,7 +29,7 @@ namespace GPApp.Dal.Migrations
 
                     b.Property<decimal>("Custo");
 
-                    b.Property<DateTime>("DataCadastro");
+                    b.Property<DateTimeOffset>("DataCadastro");
 
                     b.Property<string>("Descricao");
 
@@ -42,7 +42,7 @@ namespace GPApp.Dal.Migrations
 
                     b.Property<bool>("Sincronizado");
 
-                    b.Property<DateTime>("UltimaAtualizacao");
+                    b.Property<DateTimeOffset>("UltimaAtualizacao");
 
                     b.HasKey("Id");
 
@@ -65,7 +65,7 @@ namespace GPApp.Dal.Migrations
 
                     b.Property<bool>("Sincronizado");
 
-                    b.Property<DateTime>("UltimaAtualizacao");
+                    b.Property<DateTimeOffset>("UltimaAtualizacao");
 
                     b.HasKey("Id");
 
@@ -87,7 +87,7 @@ namespace GPApp.Dal.Migrations
 
                     b.Property<bool>("Sincronizado");
 
-                    b.Property<DateTime>("UltimaAtualizacao");
+                    b.Property<DateTimeOffset>("UltimaAtualizacao");
 
                     b.HasKey("Id");
 
@@ -115,7 +115,7 @@ namespace GPApp.Dal.Migrations
                     b.Property<string>("Sufixo")
                         .HasMaxLength(4);
 
-                    b.Property<DateTime>("UltimaAtualizacao");
+                    b.Property<DateTimeOffset>("UltimaAtualizacao");
 
                     b.HasKey("Id");
 
@@ -146,7 +146,7 @@ namespace GPApp.Dal.Migrations
 
                     b.Property<bool>("Sincronizado");
 
-                    b.Property<DateTime>("UltimaAtualizacao");
+                    b.Property<DateTimeOffset>("UltimaAtualizacao");
 
                     b.HasKey("Id");
 

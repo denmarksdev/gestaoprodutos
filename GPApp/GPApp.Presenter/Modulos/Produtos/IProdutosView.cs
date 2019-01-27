@@ -8,6 +8,7 @@ namespace GPApp.Presenter.Modulos.Produtos
     {
         Action LoadAction { get; set; }
         Action IncluirProdutAction { get; set; }
+        Action EnviarEmailAction { get; set; }
         void AdicionaGrid(IGridViewFiltro gridViewFiltro);
         void ExibeAbaEdicao();
         void ExibeAbaManutencao();

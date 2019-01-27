@@ -1,4 +1,3 @@
-using System;
 using GPApp.Model;
 using GPApp.Wrapper.Base;
 
@@ -10,40 +9,40 @@ namespace GPApp.Wrapper
 		 {
 		 }
 		 						
-		public string Nome
+		public System.String Nome
 		{
 			get { return GetValue<System.String>(); }
 			set { SetValue(value); }
 		}
 		public bool NomeIsChanged => GetIsChanged(nameof(Nome));
-		public string NomeOriginalValue => GetOriginalValue<string>(nameof(Nome));
+		public  System.String NomeOriginalValue => GetOriginalValue< System.String>(nameof(Nome));
 
 								
-		public string Senha
+		public System.String Senha
 		{
 			get { return GetValue<System.String>(); }
 			set { SetValue(value); }
 		}
 		public bool SenhaIsChanged => GetIsChanged(nameof(Senha));
-		public string SenhaOriginalValue => GetOriginalValue<string>(nameof(Senha));
+		public  System.String SenhaOriginalValue => GetOriginalValue< System.String>(nameof(Senha));
 
 								
-		public string Email
+		public System.String Email
 		{
 			get { return GetValue<System.String>(); }
 			set { SetValue(value); }
 		}
 		public bool EmailIsChanged => GetIsChanged(nameof(Email));
-		public string EmailOriginalValue => GetOriginalValue<string>(nameof(Email));
+		public  System.String EmailOriginalValue => GetOriginalValue< System.String>(nameof(Email));
 
 								
-		public string Celular
+		public System.String Celular
 		{
 			get { return GetValue<System.String>(); }
 			set { SetValue(value); }
 		}
 		public bool CelularIsChanged => GetIsChanged(nameof(Celular));
-		public  System.String CelularOriginalValue => GetOriginalValue<string>(nameof(Celular));
+		public  System.String CelularOriginalValue => GetOriginalValue< System.String>(nameof(Celular));
 
 								
 		public System.Guid Id
@@ -52,24 +51,24 @@ namespace GPApp.Wrapper
 			set { SetValue(value); }
 		}
 		public bool IdIsChanged => GetIsChanged(nameof(Id));
-		public Guid IdOriginalValue => GetOriginalValue<Guid>(nameof(Id));
+		public  System.Guid IdOriginalValue => GetOriginalValue< System.Guid>(nameof(Id));
 
 								
-		public bool Sincronizado
+		public System.Boolean Sincronizado
 		{
 			get { return GetValue<System.Boolean>(); }
 			set { SetValue(value); }
 		}
 		public bool SincronizadoIsChanged => GetIsChanged(nameof(Sincronizado));
-		public bool SincronizadoOriginalValue => GetOriginalValue< System.Boolean>(nameof(Sincronizado));
+		public  System.Boolean SincronizadoOriginalValue => GetOriginalValue< System.Boolean>(nameof(Sincronizado));
 
 								
-		public DateTime UltimaAtualizacao
+		public System.DateTimeOffset UltimaAtualizacao
 		{
-			get { return GetValue<System.DateTime>(); }
+			get { return GetValue<System.DateTimeOffset>(); }
 			set { SetValue(value); }
 		}
 		public bool UltimaAtualizacaoIsChanged => GetIsChanged(nameof(UltimaAtualizacao));
-		public DateTime UltimaAtualizacaoOriginalValue => GetOriginalValue<DateTime>(nameof(UltimaAtualizacao));
+		public  System.DateTimeOffset UltimaAtualizacaoOriginalValue => GetOriginalValue< System.DateTimeOffset>(nameof(UltimaAtualizacao));
 	}
 }

@@ -30,29 +30,24 @@ namespace GPApp.WinForms.Componentes
         public Action ConsultaAction { get => virtualGridPrincipal.ConsultaAction; set => virtualGridPrincipal.ConsultaAction = value; }
         [System.ComponentModel.ReadOnly(true)]
         public Func<Task<bool>> Inicializa { get => virtualGridPrincipal.Inicializa; set => virtualGridPrincipal.Inicializa = value; }
-
         [System.ComponentModel.ReadOnly(true)]
         public Action AtivarFiltroAction { get; set; }
         [System.ComponentModel.ReadOnly(true)]
         public Action<string> FiltrarAcion { get; set; }
         [System.ComponentModel.ReadOnly(true)]
         public Action RecuperarPaginacaoAction { get; set; }
-               
         [System.ComponentModel.ReadOnly(true)]
         public bool ErroPaginacao
         {
             get => virtualGridPrincipal.ErroPaginacao;
             set => virtualGridPrincipal.ErroPaginacao = value;
         }
-
         [System.ComponentModel.ReadOnly(true)]
         public Action ErroPagincaoAction
         {
             get => virtualGridPrincipal.ErroPagincaoAction;
             set => virtualGridPrincipal.ErroPagincaoAction = value;
         }
-
-        // 
         public string[] RodapeTexto { get; set; } = {"item", "itens"};
 
         #endregion

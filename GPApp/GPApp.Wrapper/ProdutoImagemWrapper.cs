@@ -1,11 +1,9 @@
- using System; 
-	 using System.Linq;
-	 using GPApp.Model;
-	 using GPApp.Wrapper.Base;
+using GPApp.Model;
+using GPApp.Wrapper.Base;
 
 namespace GPApp.Wrapper
 {
-	public partial class ProdutoImagemWrapper:ModelWrapper<ProdutoImagem>
+    public partial class ProdutoImagemWrapper:ModelWrapper<ProdutoImagem>
 	{
 		 public ProdutoImagemWrapper(ProdutoImagem model): base(model)
 		 {
@@ -74,13 +72,13 @@ namespace GPApp.Wrapper
 		public  System.Boolean SincronizadoOriginalValue => GetOriginalValue< System.Boolean>(nameof(Sincronizado));
 
 								
-		public System.DateTime UltimaAtualizacao
+		public System.DateTimeOffset UltimaAtualizacao
 		{
-			get { return GetValue<System.DateTime>(); }
+			get { return GetValue<System.DateTimeOffset>(); }
 			set { SetValue(value); }
 		}
 		public bool UltimaAtualizacaoIsChanged => GetIsChanged(nameof(UltimaAtualizacao));
-		public  System.DateTime UltimaAtualizacaoOriginalValue => GetOriginalValue< System.DateTime>(nameof(UltimaAtualizacao));
+		public  System.DateTimeOffset UltimaAtualizacaoOriginalValue => GetOriginalValue< System.DateTimeOffset>(nameof(UltimaAtualizacao));
 
 			
 	}

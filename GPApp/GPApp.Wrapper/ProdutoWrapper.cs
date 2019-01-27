@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using GPApp.Model;
 using GPApp.Wrapper.Base;
@@ -39,6 +37,7 @@ namespace GPApp.Wrapper
         public bool DescricaoIsChanged => GetIsChanged(nameof(Descricao));
         public System.String DescricaoOriginalValue => GetOriginalValue<System.String>(nameof(Descricao));
 
+
         public System.Decimal Preco
         {
             get { return GetValue<System.Decimal>(); }
@@ -66,13 +65,13 @@ namespace GPApp.Wrapper
         public System.Decimal CustoOriginalValue => GetOriginalValue<System.Decimal>(nameof(Custo));
 
 
-        public System.DateTime DataCadastro
+        public System.DateTimeOffset DataCadastro
         {
-            get { return GetValue<System.DateTime>(); }
+            get { return GetValue<System.DateTimeOffset>(); }
             set { SetValue(value); }
         }
         public bool DataCadastroIsChanged => GetIsChanged(nameof(DataCadastro));
-        public System.DateTime DataCadastroOriginalValue => GetOriginalValue<System.DateTime>(nameof(DataCadastro));
+        public System.DateTimeOffset DataCadastroOriginalValue => GetOriginalValue<System.DateTimeOffset>(nameof(DataCadastro));
 
 
         public System.Guid Id
@@ -93,13 +92,13 @@ namespace GPApp.Wrapper
         public System.Boolean SincronizadoOriginalValue => GetOriginalValue<System.Boolean>(nameof(Sincronizado));
 
 
-        public System.DateTime UltimaAtualizacao
+        public System.DateTimeOffset UltimaAtualizacao
         {
-            get { return GetValue<System.DateTime>(); }
+            get { return GetValue<System.DateTimeOffset>(); }
             set { SetValue(value); }
         }
         public bool UltimaAtualizacaoIsChanged => GetIsChanged(nameof(UltimaAtualizacao));
-        public System.DateTime UltimaAtualizacaoOriginalValue => GetOriginalValue<System.DateTime>(nameof(UltimaAtualizacao));
+        public System.DateTimeOffset UltimaAtualizacaoOriginalValue => GetOriginalValue<System.DateTimeOffset>(nameof(UltimaAtualizacao));
 
         public ProdutoEstoqueWrapper EstoqueAtual { get; private set; }
 
@@ -118,13 +117,16 @@ namespace GPApp.Wrapper
             RegisterComplex(EstoqueAtual);
         }
 
+
         protected override void InitializeCollentionProperties(Produto model)
         {
             if (model.Imagens == null) throw new ArgumentNullException("Imagens não pode ser nulo");
+
             Imagens = new ChangeTrackingCollection<ProdutoImagemWrapper>(model.Imagens.Select(e => new ProdutoImagemWrapper(e)));
-            RegisterCollection( Imagens, model.Imagens);
+            RegisterCollection(Imagens, model.Imagens);
 
             if (model.Especificacoes == null) throw new ArgumentNullException("Especificacoes não pode ser nulo");
+
             Especificacoes = new ChangeTrackingCollection<ProdutoEspecificacaoWrapper>(model.Especificacoes.Select(e => new ProdutoEspecificacaoWrapper(e)));
             RegisterCollection(Especificacoes, model.Especificacoes);
 
@@ -133,5 +135,6 @@ namespace GPApp.Wrapper
             PosicoesEstoque = new ChangeTrackingCollection<ProdutoEstoqueWrapper>(model.PosicoesEstoque.Select(e => new ProdutoEstoqueWrapper(e)));
             RegisterCollection(PosicoesEstoque, model.PosicoesEstoque);
         }
+
     }
 }

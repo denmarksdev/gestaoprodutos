@@ -36,6 +36,7 @@ namespace GPApp.WinForms.Views
             this.tabPageManutencao = new System.Windows.Forms.TabPage();
             this.tabPageEdicao = new System.Windows.Forms.TabPage();
             this.metroButtonIncluir = new MetroFramework.Controls.MetroButton();
+            this.metroButtonEmail = new MetroFramework.Controls.MetroButton();
             this.tabControlProdutos.SuspendLayout();
             this.tabPageManutencao.SuspendLayout();
             this.SuspendLayout();
@@ -74,12 +75,12 @@ namespace GPApp.WinForms.Views
             this.tabControlProdutos.Size = new System.Drawing.Size(984, 648);
             this.tabControlProdutos.TabIndex = 3;
             // 
-            // tabPage1
+            // tabPageManutencao
             // 
             this.tabPageManutencao.BackColor = System.Drawing.Color.White;
             this.tabPageManutencao.Controls.Add(this.metroPanelGrid);
             this.tabPageManutencao.Location = new System.Drawing.Point(4, 22);
-            this.tabPageManutencao.Name = "tabPage1";
+            this.tabPageManutencao.Name = "tabPageManutencao";
             this.tabPageManutencao.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageManutencao.Size = new System.Drawing.Size(976, 622);
             this.tabPageManutencao.TabIndex = 0;
@@ -103,13 +104,24 @@ namespace GPApp.WinForms.Views
             this.metroButtonIncluir.TabIndex = 4;
             this.metroButtonIncluir.Text = "Incluir";
             this.metroButtonIncluir.UseSelectable = true;
-            this.metroButtonIncluir.Click += new System.EventHandler(this.metroButtonIncluir_Click);
+            this.metroButtonIncluir.Click += new System.EventHandler(this.MetroButtonIncluir_Click);
+            // 
+            // metroButtonEmail
+            // 
+            this.metroButtonEmail.Location = new System.Drawing.Point(357, 27);
+            this.metroButtonEmail.Name = "metroButtonEmail";
+            this.metroButtonEmail.Size = new System.Drawing.Size(75, 23);
+            this.metroButtonEmail.TabIndex = 5;
+            this.metroButtonEmail.Text = "Enviar email";
+            this.metroButtonEmail.UseSelectable = true;
+            this.metroButtonEmail.Click += new System.EventHandler(this.MetroButtonEmail_Click);
             // 
             // ProdutosView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 728);
+            this.Controls.Add(this.metroButtonEmail);
             this.Controls.Add(this.metroButtonIncluir);
             this.Controls.Add(this.tabControlProdutos);
             this.Controls.Add(this.metroButtonFiltrar);
@@ -129,5 +141,6 @@ namespace GPApp.WinForms.Views
         private System.Windows.Forms.TabPage tabPageManutencao;
         private System.Windows.Forms.TabPage tabPageEdicao;
         private MetroFramework.Controls.MetroButton metroButtonIncluir;
+        private MetroFramework.Controls.MetroButton metroButtonEmail;
     }
 }

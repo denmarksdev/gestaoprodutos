@@ -8,6 +8,7 @@ using GPApp.Repository;
 using GPApp.Model.Database;
 using Microsoft.Extensions.Configuration;
 using GPApp.Service;
+using GPApp.Web.Middleware;
 
 namespace GPApp.Web
 {
@@ -51,6 +52,7 @@ namespace GPApp.Web
 
             await ConfiguraBaseDados(app);
 
+            app.UseMiddleware<RequestResponseLoggingMiddleware>();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
             app.UseMvc();
