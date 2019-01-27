@@ -12,3 +12,5 @@ D:\Repositorio\gestaoprodutos\GPApp\GPApp.Dao\bin\Debug\netstandard2.0\GPApp.Sha
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Dao\bin\Debug\netstandard2.0\GPApp.Shared.pdb
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Dao\obj\Debug\netstandard2.0\GPApp.Dal.dll
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Dao\obj\Debug\netstandard2.0\GPApp.Dal.pdb
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Dao\bin\Debug\netstandard2.0\GPApp.Helpers.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Dao\bin\Debug\netstandard2.0\GPApp.Helpers.pdb

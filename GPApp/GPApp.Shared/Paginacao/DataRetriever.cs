@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace GestaoEficaz.Infraestrutura.Paginacao
+namespace GPApp.Shared.Paginacao
 {
     public class DataRetriever<T> : IDataPageRetriever<T>
     {
@@ -10,8 +10,8 @@ namespace GestaoEficaz.Infraestrutura.Paginacao
 
         public string Order
         {
-            get => _repo.Order;
-            set => _repo.Order = value;
+            get => _repo.Ordem;
+            set => _repo.Ordem = value;
         }
 
         public string WhereFiltro { get ; set ; }

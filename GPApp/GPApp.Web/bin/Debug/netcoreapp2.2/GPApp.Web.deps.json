@@ -852,6 +852,7 @@
       "System.ValueTuple/4.5.0": {},
       "GPApp.Dal/1.0.0": {
         "dependencies": {
+          "GPApp.Helpers": "1.0.0",
           "GPApp.Model": "1.0.0",
           "GPApp.Shared": "1.0.0",
           "Microsoft.EntityFrameworkCore": "2.2.1",
@@ -868,6 +869,14 @@
           "GPApp.Dal.dll": {}
         }
       },
+      "GPApp.Helpers/1.0.0": {
+        "runtime": {
+          "GPApp.Helpers.dll": {}
+        },
+        "compile": {
+          "GPApp.Helpers.dll": {}
+        }
+      },
       "GPApp.Model/1.0.0": {
         "runtime": {
           "GPApp.Model.dll": {}
@@ -880,7 +889,8 @@
         "dependencies": {
           "GPApp.Dal": "1.0.0",
           "GPApp.Model": "1.0.0",
-          "GPApp.Shared": "1.0.0"
+          "GPApp.Shared": "1.0.0",
+          "GPApp.Wrapper": "1.0.0"
         },
         "runtime": {
           "GPApp.Repository.dll": {}
@@ -914,6 +924,18 @@
         },
         "compile": {
           "GPApp.Shared.dll": {}
+        }
+      },
+      "GPApp.Wrapper/1.0.0": {
+        "dependencies": {
+          "GPApp.Shared": "1.0.0",
+          "System.ComponentModel.Annotations": "4.5.0"
+        },
+        "runtime": {
+          "GPApp.Wrapper.dll": {}
+        },
+        "compile": {
+          "GPApp.Wrapper.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -4183,6 +4205,11 @@
       "serviceable": false,
       "sha512": ""
     },
+    "GPApp.Helpers/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "GPApp.Model/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -4199,6 +4226,11 @@
       "sha512": ""
     },
     "GPApp.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GPApp.Wrapper/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -5522,7 +5554,7 @@
     "System.ComponentModel.Annotations/4.5.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-IjDa643EO77A4CL9dhxfZ6zzGu+pM8Ar0NYPRMN3TvDiga4uGDzFHOj/ArpyNxxKyO5IFT2LZ0rK3kUog7g3jA==",
+      "sha512": "sha512-UxYQ3FGUOtzJ7LfSdnYSFd7+oEv6M8NgUatatIN2HxNtDdlcvFAf+VIq4Of9cDMJEJC0aSRv/x898RYhB4Yppg==",
       "path": "system.componentmodel.annotations/4.5.0",
       "hashPath": "system.componentmodel.annotations.4.5.0.nupkg.sha512"
     },

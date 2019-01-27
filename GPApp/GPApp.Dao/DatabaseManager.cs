@@ -1,4 +1,4 @@
-﻿using GPApp.Dal.Dao;
+﻿using GPApp.Dal.Base;
 using GPApp.Model.Database;
 using GPApp.Shared.Dados;
 using System;

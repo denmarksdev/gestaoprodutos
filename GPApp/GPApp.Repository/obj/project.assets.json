@@ -1228,6 +1228,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "GPApp.Helpers": "1.0.0",
           "GPApp.Model": "1.0.0",
           "GPApp.Shared": "1.0.0",
           "Microsoft.EntityFrameworkCore": "2.2.1",
@@ -1242,6 +1243,16 @@
         },
         "runtime": {
           "bin/placeholder/GPApp.Dal.dll": {}
+        }
+      },
+      "GPApp.Helpers/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/GPApp.Helpers.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GPApp.Helpers.dll": {}
         }
       },
       "GPApp.Model/1.0.0": {
@@ -1267,6 +1278,20 @@
         },
         "runtime": {
           "bin/placeholder/GPApp.Shared.dll": {}
+        }
+      },
+      "GPApp.Wrapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "GPApp.Shared": "1.0.0",
+          "System.ComponentModel.Annotations": "4.5.0"
+        },
+        "compile": {
+          "bin/placeholder/GPApp.Wrapper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GPApp.Wrapper.dll": {}
         }
       }
     }
@@ -2241,7 +2266,7 @@
       ]
     },
     "System.ComponentModel.Annotations/4.5.0": {
-      "sha512": "IjDa643EO77A4CL9dhxfZ6zzGu+pM8Ar0NYPRMN3TvDiga4uGDzFHOj/ArpyNxxKyO5IFT2LZ0rK3kUog7g3jA==",
+      "sha512": "UxYQ3FGUOtzJ7LfSdnYSFd7+oEv6M8NgUatatIN2HxNtDdlcvFAf+VIq4Of9cDMJEJC0aSRv/x898RYhB4Yppg==",
       "type": "package",
       "path": "system.componentmodel.annotations/4.5.0",
       "files": [
@@ -4748,6 +4773,11 @@
       "path": "../GPApp.Dao/GPApp.Dal.csproj",
       "msbuildProject": "../GPApp.Dao/GPApp.Dal.csproj"
     },
+    "GPApp.Helpers/1.0.0": {
+      "type": "project",
+      "path": "../GPApp.Helpers/GPApp.Helpers.vbproj",
+      "msbuildProject": "../GPApp.Helpers/GPApp.Helpers.vbproj"
+    },
     "GPApp.Model/1.0.0": {
       "type": "project",
       "path": "../GPApp.Model/GPApp.Model.csproj",
@@ -4757,6 +4787,11 @@
       "type": "project",
       "path": "../GPApp.Shared/GPApp.Shared.csproj",
       "msbuildProject": "../GPApp.Shared/GPApp.Shared.csproj"
+    },
+    "GPApp.Wrapper/1.0.0": {
+      "type": "project",
+      "path": "../GPApp.Wrapper/GPApp.Wrapper.csproj",
+      "msbuildProject": "../GPApp.Wrapper/GPApp.Wrapper.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4764,6 +4799,7 @@
       "GPApp.Dal >= 1.0.0",
       "GPApp.Model >= 1.0.0",
       "GPApp.Shared >= 1.0.0",
+      "GPApp.Wrapper >= 1.0.0",
       "NETStandard.Library >= 2.0.3"
     ]
   },
@@ -4805,6 +4841,9 @@
             },
             "D:\\Repositorio\\gestaoprodutos\\GPApp\\GPApp.Shared\\GPApp.Shared.csproj": {
               "projectPath": "D:\\Repositorio\\gestaoprodutos\\GPApp\\GPApp.Shared\\GPApp.Shared.csproj"
+            },
+            "D:\\Repositorio\\gestaoprodutos\\GPApp\\GPApp.Wrapper\\GPApp.Wrapper.csproj": {
+              "projectPath": "D:\\Repositorio\\gestaoprodutos\\GPApp\\GPApp.Wrapper\\GPApp.Wrapper.csproj"
             }
           }
         }

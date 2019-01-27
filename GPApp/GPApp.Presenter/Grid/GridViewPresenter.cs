@@ -24,6 +24,7 @@ namespace GPApp.Presenter.Grid
             GridView.GetValue = OnGetValueGrid;
             GridView.OrderAction = OnOrderAction;
             GridView.FiltrarAcion = OnFiltrarAction;
+            GridView.AtivarFiltroAction = OnAtivarAction;
             GridView.ErroPagincaoAction = OnErroPaginacaoAction;
         }
 
@@ -33,23 +34,20 @@ namespace GPApp.Presenter.Grid
 
         private Task<bool> OnInicializaGrid()
         {
-            var tarefa = Task.Run<bool>(() =>
+            var tarefa = Task.Run(() =>
             {
                 _gridInfo.Cache.CarregarDuasPaginas();
                 return true;
-
             });
 
             var continueUi = tarefa.ContinueWith(async (t) =>
             {
-
                 var continuar = await t;
                 if (!continuar) return;
 
                 AtualizaRowGridView();
 
             }, TaskScheduler.FromCurrentSynchronizationContext());
-
 
             return tarefa;
         }
@@ -65,12 +63,12 @@ namespace GPApp.Presenter.Grid
             GridView.AtualizarDesign();
         }
 
-        private void OnFiltrarAction(string textoPesquisa)
+        private async void OnFiltrarAction(string textoPesquisa)
         {
-            Filtra(textoPesquisa);
+            await Filtra(textoPesquisa);
             GridView.ExibePainelPesquisa(false);
             FiltroAtivo = !string.IsNullOrWhiteSpace(textoPesquisa);
-            FiltrouEvent.Invoke(this, FiltroAtivo);
+            FiltrouEvent?.Invoke(this, FiltroAtivo);
         }
 
         private void OnOrderAction(string nomePropriedade)
@@ -104,14 +102,14 @@ namespace GPApp.Presenter.Grid
             GridView.ColunaChave = gridInfo.ColunaChave;
         }
 
-        public Task<bool> Load()
+        public Task<bool> LoadAsync()
         {
             return GridView.Inicializa();
         }
 
-        public void LimpaFiltro()
+        public async void LimpaFiltro()
         {
-            Filtra(string.Empty);
+            await Filtra(string.Empty);
             FiltroAtivo = false;
         }
 
@@ -125,10 +123,17 @@ namespace GPApp.Presenter.Grid
             return _gridInfo.DataRetriever.Getids<M>();
         }
 
-        private void Filtra(string textoPesquisa)
+        private async Task Filtra(string textoPesquisa)
         {
             _gridInfo.DataRetriever.Pesquisa = textoPesquisa;
             GridView.SetNumeroRegistros(0);
+            await LoadAsync();
+        }
+
+        private void OnAtivarAction()
+        {
+            FiltroAtivo = !FiltroAtivo;
+            GridView.ExibePainelPesquisa(FiltroAtivo);
         }
 
         #endregion

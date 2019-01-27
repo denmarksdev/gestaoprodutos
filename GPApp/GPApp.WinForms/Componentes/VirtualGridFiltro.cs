@@ -1,4 +1,5 @@
-﻿using GPApp.Presenter.Grid;
+﻿using GPApp.Helpers;
+using GPApp.Presenter.Grid;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -36,8 +37,7 @@ namespace GPApp.WinForms.Componentes
         public Action<string> FiltrarAcion { get; set; }
         [System.ComponentModel.ReadOnly(true)]
         public Action RecuperarPaginacaoAction { get; set; }
-
-
+               
         [System.ComponentModel.ReadOnly(true)]
         public bool ErroPaginacao
         {
@@ -52,15 +52,17 @@ namespace GPApp.WinForms.Componentes
             set => virtualGridPrincipal.ErroPagincaoAction = value;
         }
 
+        // 
+        public string[] RodapeTexto { get; set; } = {"item", "itens"};
+
         #endregion
 
         #region Métodos
 
         public void AtualizarDesign()
         {
-
-            this.virtualGridPrincipal.AtualizarDesign();
-            this.Update();
+            virtualGridPrincipal.AtualizarDesign();
+            Update();
         }
 
         public void DefineColunaModoLeitura(bool permitir)
@@ -93,11 +95,7 @@ namespace GPApp.WinForms.Componentes
         public void SetNumeroRegistros(int numero)
         {
             virtualGridPrincipal.SetNumeroRegistros(numero);
-        }
-
-        private void ButtonXPesquisa_Click(object sender, EventArgs e)
-        {
-            FiltrarAcion?.Invoke(metroTextBoxPequisa.Text);
+            htmlLabelRodape.Text = GridTemplate.GetRodape(RodapeTexto, numero);
         }
 
         public int NumeroRegitros()
@@ -109,7 +107,16 @@ namespace GPApp.WinForms.Componentes
         {
             virtualGridPrincipal.SetCores();
         }
-        
+
+        #endregion
+
+        #region Handlers
+
+        private void MetroButtonPesquisar_Click(object sender, EventArgs e)
+        {
+            FiltrarAcion?.Invoke(metroTextBoxPequisa.Text);
+        }
+
         #endregion
     }
 }

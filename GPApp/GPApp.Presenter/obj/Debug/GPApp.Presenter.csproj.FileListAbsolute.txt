@@ -105,3 +105,11 @@ D:\Repositorio\gestaoprodutos\GPApp\GPApp.Presenter\obj\Debug\GPApp.Presenter.cs
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Presenter\obj\Debug\GPApp.Presenter.csproj.CopyComplete
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Presenter\obj\Debug\GPApp.Presenter.dll
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Presenter\obj\Debug\GPApp.Presenter.pdb
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Presenter\bin\Debug\GPApp.Wrapper.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Presenter\bin\Debug\GPApp.Wrapper.pdb
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Presenter\bin\Debug\GPApp.Repository.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Presenter\bin\Debug\GPApp.Dal.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Presenter\bin\Debug\GPApp.Helpers.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Presenter\bin\Debug\GPApp.Repository.pdb
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Presenter\bin\Debug\GPApp.Dal.pdb
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Presenter\bin\Debug\GPApp.Helpers.pdb

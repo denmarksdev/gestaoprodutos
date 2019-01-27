@@ -8,6 +8,7 @@
     <ProjectReference Include="..\GPApp.Dao\GPApp.Dal.csproj" />
     <ProjectReference Include="..\GPApp.Model\GPApp.Model.csproj" />
     <ProjectReference Include="..\GPApp.Shared\GPApp.Shared.csproj" />
+    <ProjectReference Include="..\GPApp.Wrapper\GPApp.Wrapper.csproj" />
   </ItemGroup>
 
 </Project>

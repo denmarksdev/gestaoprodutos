@@ -11,6 +11,6 @@ namespace GPApp.Dal.Dao
         Task<Produto> LocalizarPorChavePrimaria(Guid id);
         Task<IEnumerable<Produto>> TodosAsync();
         Task<List<string>> Atualiza(Produto produto);
-        Task<IEnumerable<Produto>> TodosComimagemAsync();
+        Task<IEnumerable<Produto>> TodosComImagemAsync();
     }
 }

@@ -1,4 +1,4 @@
-﻿using GestaoEficaz.Infraestrutura.Paginacao;
+﻿using GPApp.Shared.Paginacao;
 using System.Collections.Generic;
 
 namespace GPApp.Presenter.Grid

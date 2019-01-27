@@ -9,6 +9,7 @@
     ".NETStandard,Version=v2.0/": {
       "GPApp.Dal/1.0.0": {
         "dependencies": {
+          "GPApp.Helpers": "1.0.0",
           "GPApp.Model": "1.0.0",
           "GPApp.Shared": "1.0.0",
           "Microsoft.EntityFrameworkCore": "2.2.1",
@@ -994,6 +995,11 @@
           }
         }
       },
+      "GPApp.Helpers/1.0.0": {
+        "runtime": {
+          "GPApp.Helpers.dll": {}
+        }
+      },
       "GPApp.Model/1.0.0": {
         "runtime": {
           "GPApp.Model.dll": {}
@@ -1321,7 +1327,7 @@
     "System.ComponentModel.Annotations/4.5.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-IjDa643EO77A4CL9dhxfZ6zzGu+pM8Ar0NYPRMN3TvDiga4uGDzFHOj/ArpyNxxKyO5IFT2LZ0rK3kUog7g3jA==",
+      "sha512": "sha512-UxYQ3FGUOtzJ7LfSdnYSFd7+oEv6M8NgUatatIN2HxNtDdlcvFAf+VIq4Of9cDMJEJC0aSRv/x898RYhB4Yppg==",
       "path": "system.componentmodel.annotations/4.5.0",
       "hashPath": "system.componentmodel.annotations.4.5.0.nupkg.sha512"
     },
@@ -1625,6 +1631,11 @@
       "sha512": "sha512-Mk2mKmPi0nWaoiYeotq1dgeNK1fqWh61+EK+w4Wu8SWuTYLzpUnschb59bJtGywaPq7SmTuPf44wrXRwbIrukg==",
       "path": "system.xml.xdocument/4.0.11",
       "hashPath": "system.xml.xdocument.4.0.11.nupkg.sha512"
+    },
+    "GPApp.Helpers/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "GPApp.Model/1.0.0": {
       "type": "project",

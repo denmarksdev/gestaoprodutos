@@ -27,7 +27,7 @@ namespace GPApp.Repository
         {
             try
             {
-                return new Resultado<IEnumerable<Produto>>(await _dao.TodosComimagemAsync());
+                return new Resultado<IEnumerable<Produto>>(await _dao.TodosComImagemAsync());
             }
             catch (Exception ex)
             {
@@ -74,9 +74,5 @@ namespace GPApp.Repository
                 return new Resultado<List<string>>("Falha ao atualizar o produto o " +  produto.Nome, ex);
             }
         }
-
-        
-
-        
     }
 }

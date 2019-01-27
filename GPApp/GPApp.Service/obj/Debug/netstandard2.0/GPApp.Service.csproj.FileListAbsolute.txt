@@ -16,3 +16,7 @@ D:\Repositorio\gestaoprodutos\GPApp\GPApp.Service\bin\Debug\netstandard2.0\GPApp
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Service\bin\Debug\netstandard2.0\GPApp.Repository.dll
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Service\bin\Debug\netstandard2.0\GPApp.Repository.pdb
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Service\bin\Debug\netstandard2.0\GPApp.Dal.pdb
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Service\bin\Debug\netstandard2.0\GPApp.Helpers.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Service\bin\Debug\netstandard2.0\GPApp.Wrapper.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Service\bin\Debug\netstandard2.0\GPApp.Helpers.pdb
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Service\bin\Debug\netstandard2.0\GPApp.Wrapper.pdb

@@ -11,6 +11,9 @@ namespace GPApp.WinForms.Componentes
 {
     public partial class VirtualGrid : MetroGrid , IGridView
     {
+        private readonly List<string> _naoOrdenarColunas = new List<string>();
+
+        private const string COLUNA_SUFIXO = "Column";
         #region Construtor
 
         public VirtualGrid()
@@ -23,6 +26,8 @@ namespace GPApp.WinForms.Componentes
             BorderStyle = BorderStyle.None;
             AllowUserToResizeColumns = false;
             AllowUserToResizeRows = false;
+            AllowUserToAddRows = false;
+            AllowUserToDeleteRows = false;
         }
 
         #endregion
@@ -46,7 +51,6 @@ namespace GPApp.WinForms.Componentes
             try
             {
                 if (ErroPaginacao) return;
-
                 e.Value = GetValue?.Invoke(e.RowIndex, Columns[e.ColumnIndex].DataPropertyName);
             }
             catch (Exception)
@@ -59,7 +63,10 @@ namespace GPApp.WinForms.Componentes
 
         protected override void OnColumnHeaderMouseClick(DataGridViewCellMouseEventArgs e)
         {
-            OrderAction?.Invoke(Columns[e.ColumnIndex].DataPropertyName);
+            var nomePropriedade = Columns[e.ColumnIndex].DataPropertyName;
+            if (_naoOrdenarColunas.Contains(nomePropriedade)) return;
+
+            OrderAction?.Invoke(nomePropriedade);
 
             foreach (DataGridViewColumn coluna in Columns)
             {
@@ -113,15 +120,41 @@ namespace GPApp.WinForms.Componentes
             if (nomePropriedade == null) return default(T);
             if (Rows.Count == 0) return default(T);
             if (CurrentRow == null) return default(T);
-            if (!Columns.Contains(nomePropriedade + "Column")) return default(T);
-
-
-            return (T)CurrentRow.Cells[nomePropriedade + "Column"].Value;
+            if (!Columns.Contains(nomePropriedade + COLUNA_SUFIXO)) return default(T);
+                       
+            return (T)CurrentRow.Cells[nomePropriedade + COLUNA_SUFIXO].Value;
         }
 
         public void SetColunas(IList<ColunaInfo> colunas)
         {
-            throw new NotImplementedException();
+            foreach (ColunaInfo coluna in colunas)
+            {
+                var columnGrid = new DataGridViewColumn(new DataGridViewTextBoxCell())
+                {
+                    DataPropertyName = coluna.NomePropriedade,
+                    Name = coluna.NomePropriedade + COLUNA_SUFIXO,
+                    HeaderText = coluna.Titulo,
+                    SortMode = DataGridViewColumnSortMode.Programmatic
+                };
+                               
+                columnGrid.HeaderCell.Style.Alignment = DefineAlinhamento(coluna.TipoAlinhamento);
+                columnGrid.DefaultCellStyle.Alignment = columnGrid.HeaderCell.Style.Alignment;
+                columnGrid.DefaultCellStyle.SelectionBackColor = Color.FromArgb(CoresHelper.Primaria);
+                columnGrid.HeaderCell.Style.ForeColor =  Color.FromArgb(CoresHelper.Secundaria);
+
+                if (!coluna.PermitirOrdenar)
+                    _naoOrdenarColunas.Add(coluna.NomePropriedade);
+
+                if (coluna.Type != null) 
+                    columnGrid.ValueType = coluna.Type;
+                if (coluna.TipoAjuste != ColunaTipoAjuste.Nenhum)
+                    columnGrid.AutoSizeMode = DefineTipoAjusteColuna(coluna.TipoAjuste);
+                else if (coluna.Tamanho > 0)
+                    columnGrid.Width = coluna.Tamanho;
+
+                Columns.Add(columnGrid);
+            }
+            DefaultCellStyle.SelectionBackColor = Color.FromArgb(CoresHelper.Primaria);
         }
 
         public void SetCores()
@@ -138,6 +171,29 @@ namespace GPApp.WinForms.Componentes
         public void SetNumeroRegistros(int numero)
         {
             RowCount = numero;
+        }
+
+        private DataGridViewContentAlignment DefineAlinhamento(TipoAlinhamentoColuna tipoAlinhamento)
+        {
+            switch (tipoAlinhamento)
+            {
+                case TipoAlinhamentoColuna.Direita:
+                    return DataGridViewContentAlignment.MiddleRight;
+                case TipoAlinhamentoColuna.Centro:
+                    return DataGridViewContentAlignment.MiddleCenter;
+                default:
+                    return DataGridViewContentAlignment.MiddleLeft;
+            }
+        }
+
+        private DataGridViewAutoSizeColumnMode DefineTipoAjusteColuna(ColunaTipoAjuste tipoAjuste)
+        {
+            switch (tipoAjuste)
+            {
+                case ColunaTipoAjuste.Nenhum: return DataGridViewAutoSizeColumnMode.NotSet;
+                case ColunaTipoAjuste.Preencher: return DataGridViewAutoSizeColumnMode.Fill;
+                default:return DataGridViewAutoSizeColumnMode.None;
+            }
         }
 
         #endregion

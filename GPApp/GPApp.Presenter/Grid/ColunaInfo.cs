@@ -10,5 +10,6 @@ namespace GPApp.Presenter.Grid
         public Type Type { get; set; }
         public TipoAlinhamentoColuna TipoAlinhamento { get; set; }
         public ColunaTipoAjuste TipoAjuste { get; set; }
+        public bool PermitirOrdenar { get; set; }
     }
 }

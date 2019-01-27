@@ -23,3 +23,7 @@ D:\Repositorio\gestaoprodutos\GPApp\GPApp.Web\obj\Debug\netcoreapp2.2\GPApp.Web.
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Web\obj\Debug\netcoreapp2.2\GPApp.Web.pdb
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Web\bin\Debug\netcoreapp2.2\GPApp.Service.dll
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Web\bin\Debug\netcoreapp2.2\GPApp.Service.pdb
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Web\bin\Debug\netcoreapp2.2\GPApp.Helpers.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Web\bin\Debug\netcoreapp2.2\GPApp.Wrapper.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Web\bin\Debug\netcoreapp2.2\GPApp.Helpers.pdb
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Web\bin\Debug\netcoreapp2.2\GPApp.Wrapper.pdb

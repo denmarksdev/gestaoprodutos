@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Threading.Tasks;
 
-namespace GestaoEficaz.Infraestrutura.Paginacao
+namespace GPApp.Shared.Paginacao
 {
    public interface  IDataPageRetriever <T>
     {

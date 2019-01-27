@@ -69,14 +69,12 @@ namespace GPApp.Dal.Dao
                 }
 
                 db.Produtos.Update(produto); 
-
                 await db.SaveChangesAsync();
-
                 return imagensExcluidas;
             }
         }
 
-        public async Task<IEnumerable<Produto>> TodosComimagemAsync()
+        public async Task<IEnumerable<Produto>> TodosComImagemAsync()
         {
             using (var db = DatabaseManager.GetContext())
             {

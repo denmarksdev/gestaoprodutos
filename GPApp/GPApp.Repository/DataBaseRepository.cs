@@ -8,7 +8,7 @@ namespace GPApp.Repository
 {
     public class DataBaseRepository : IDataBaseRepository
     {
-        private DataBaseDao _dao = new DataBaseDao();
+        private readonly DataBaseDao _dao = new DataBaseDao();
 
         public Task<Resultado> IniciaAsync(BancoDadosConfig config)
         {

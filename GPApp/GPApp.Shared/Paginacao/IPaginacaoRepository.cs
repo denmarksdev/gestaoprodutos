@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace GestaoEficaz.Infraestrutura.Paginacao
+namespace GPApp.Shared.Paginacao
 {
     public interface IPaginacaoRepository<T>
     {
         string Pesquisa { get; set; }
-        string Order { get; set; }
+        string Ordem { get; set; }
         int Count { get; }
 
         IEnumerable<T> GetItens(int limit, int offset);

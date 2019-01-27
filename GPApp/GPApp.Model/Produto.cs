@@ -14,9 +14,9 @@ namespace GPApp.Model
         public DateTime DataCadastro { get; set; }
         public ProdutoEstoque EstoqueAtual { get; set; }
 
-        public virtual IList<ProdutoImagem> Imagens { get; set; }
-        public virtual IList<ProdutoEspecificacao> Especificacoes { get; set; }
-        public virtual IList<ProdutoEstoque> PosicoesEstoque { get; set; }
+        public virtual List<ProdutoImagem> Imagens { get; set; }
+        public virtual List<ProdutoEspecificacao> Especificacoes { get; set; }
+        public virtual List<ProdutoEstoque> PosicoesEstoque { get; set; }
                
         public Produto()
         {

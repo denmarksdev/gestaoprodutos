@@ -14,3 +14,7 @@ D:\Repositorio\gestaoprodutos\GPApp\GPApp.Repository\bin\Debug\netstandard2.0\GP
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Repository\obj\Debug\netstandard2.0\GPApp.Repository.csproj.CopyComplete
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Repository\obj\Debug\netstandard2.0\GPApp.Repository.dll
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Repository\obj\Debug\netstandard2.0\GPApp.Repository.pdb
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Repository\bin\Debug\netstandard2.0\GPApp.Helpers.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Repository\bin\Debug\netstandard2.0\GPApp.Wrapper.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Repository\bin\Debug\netstandard2.0\GPApp.Wrapper.pdb
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Repository\bin\Debug\netstandard2.0\GPApp.Helpers.pdb

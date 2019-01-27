@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace GestaoEficaz.Infraestrutura.Paginacao
+namespace GPApp.Shared.Paginacao
 {
     public class Cache<T>
     {
@@ -9,7 +9,7 @@ namespace GestaoEficaz.Infraestrutura.Paginacao
 
         private static int RegistrosPorPagina;
         private IList<DataPage> _cachePages;
-        private IDataPageRetriever<T> _dataSupply;
+        private readonly IDataPageRetriever<T> _dataSupply;
 
         #endregion
 
@@ -61,11 +61,6 @@ namespace GestaoEficaz.Infraestrutura.Paginacao
 
         private bool PaginaEmCacheSetItem(int rowIndex, ref T elemento)
         {
-            if (rowIndex == 60)
-            {
-                var s = "";
-            }
-
             foreach (var cache in _cachePages)
             {
                 if (ItemPertenceAoCachePagina(_cachePages.IndexOf(cache), rowIndex))
@@ -174,8 +169,8 @@ namespace GestaoEficaz.Infraestrutura.Paginacao
         public struct DataPage
         {
             public List<T> Itens { get; set; }
-            private int _menorIndice;
-            private int _maiorIndicehighestIndexValue;
+            private readonly int _menorIndice;
+            private readonly int _maiorIndicehighestIndexValue;
 
             public DataPage(List<T> itens, int rowIndex)
             {

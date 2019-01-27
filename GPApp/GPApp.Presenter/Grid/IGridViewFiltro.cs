@@ -4,6 +4,11 @@ namespace GPApp.Presenter.Grid
 {
     public interface IGridViewFiltro: IGridView
     {
+        /// <summary>
+        /// {Singular|Plural}
+        /// </summary>
+        string[] RodapeTexto { get; set; }
+
         Action AtivarFiltroAction { get; set; }
         Action<string> FiltrarAcion { get; set; }
         Action RecuperarPaginacaoAction { get; set; }

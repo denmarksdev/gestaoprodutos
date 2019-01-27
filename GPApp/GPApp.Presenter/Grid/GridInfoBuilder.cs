@@ -1,5 +1,4 @@
-﻿
-using GestaoEficaz.Infraestrutura.Paginacao;
+﻿using GPApp.Shared.Paginacao;
 using System;
 using System.Collections.Generic;
 
@@ -9,7 +8,7 @@ namespace GPApp.Presenter.Grid
     {
         #region Membros privados
 
-        private string _ordemSql;
+        private readonly string _ordemSql;
         private int _numeroLinhas = 30;
         private IPaginacaoRepository<T> _repo;
         private string _nomeColuna = null;
@@ -20,7 +19,8 @@ namespace GPApp.Presenter.Grid
         private string _chavePrimaria = "Id";
         private TipoAlinhamentoColuna _eAlinhamento = TipoAlinhamentoColuna.Esquerda;
         private ColunaTipoAjuste _modo = ColunaTipoAjuste.Nenhum;
-        private IList<ColunaInfo> _colunas = new List<ColunaInfo>();
+        private readonly IList<ColunaInfo> _colunas = new List<ColunaInfo>();
+        private bool _permitirOrdenar = true;
 
         #endregion
 
@@ -89,9 +89,15 @@ namespace GPApp.Presenter.Grid
             return this;
         }
                
-        public GridInfoBuilder<T> colunaChave(string chavePrimaria)
+        public GridInfoBuilder<T> ColunaChave(string chavePrimaria)
         {
             _chavePrimaria = chavePrimaria;
+            return this;
+        }
+
+        public GridInfoBuilder<T> PermitirOrdenar(bool permitir)
+        {
+            _permitirOrdenar = permitir;
             return this;
         }
 
@@ -108,7 +114,8 @@ namespace GPApp.Presenter.Grid
                 Titulo = _tituloColuna,
                 Type = _tipo,
                 TipoAlinhamento = _eAlinhamento,
-                TipoAjuste = _modo
+                TipoAjuste = _modo,
+                PermitirOrdenar = _permitirOrdenar
             });
 
             DefineValoresPadroesConfColuna();
@@ -124,11 +131,12 @@ namespace GPApp.Presenter.Grid
             _tamanho = -1;
             _eAlinhamento = TipoAlinhamentoColuna.Esquerda;
             _modo = ColunaTipoAjuste.Nenhum;
+            _permitirOrdenar = true;
         }
 
         public GridConfig<T> Build()
         {
-            _repo.Order = _ordemSql;
+            _repo.Ordem = _ordemSql;
 
             return new GridConfig<T>(_repo, _colunas, _numeroLinhas)
             {
@@ -139,4 +147,4 @@ namespace GPApp.Presenter.Grid
 
         #endregion
     }
-}
+}   

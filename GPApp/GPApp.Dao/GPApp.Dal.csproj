@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GPApp.Helpers\GPApp.Helpers.vbproj" />
     <ProjectReference Include="..\GPApp.Model\GPApp.Model.csproj" />
     <ProjectReference Include="..\GPApp.Shared\GPApp.Shared.csproj" />
   </ItemGroup>

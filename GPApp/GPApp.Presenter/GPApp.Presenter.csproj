@@ -33,14 +33,11 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\BasePresenter.cs" />
+    <Compile Include="Base\IView.cs" />
     <Compile Include="Grid\ColunaInfo.cs" />
     <Compile Include="Grid\ColunaTipoAjuste.cs" />
     <Compile Include="Grid\GridConfig.cs" />
@@ -49,12 +46,27 @@
     <Compile Include="Grid\IGridView.cs" />
     <Compile Include="Grid\IGridViewFiltro.cs" />
     <Compile Include="Grid\TipoAlinhamentoColuna.cs" />
+    <Compile Include="Modulos\Produtos\IProdutosView.cs" />
+    <Compile Include="Modulos\Produtos\ProdutoGridConfigBuilder.cs" />
+    <Compile Include="Modulos\Produtos\ProdutosPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GPApp.Model\GPApp.Model.csproj">
+      <Project>{E39F996A-1A28-40DD-8993-D46419C7F060}</Project>
+      <Name>GPApp.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GPApp.Repository\GPApp.Repository.csproj">
+      <Project>{BA52AF43-226B-4C14-862F-8C1F368E3F61}</Project>
+      <Name>GPApp.Repository</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GPApp.Shared\GPApp.Shared.csproj">
       <Project>{B68BCCB9-BB79-46EF-8563-5476B4881C49}</Project>
       <Name>GPApp.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GPApp.Wrapper\GPApp.Wrapper.csproj">
+      <Project>{0DE75004-5A6F-4921-A1C6-F3A89719D04B}</Project>
+      <Name>GPApp.Wrapper</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

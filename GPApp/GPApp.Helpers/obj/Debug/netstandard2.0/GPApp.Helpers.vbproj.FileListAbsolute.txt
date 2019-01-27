@@ -1,0 +1,9 @@
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Helpers\bin\Debug\netstandard2.0\GPApp.Helpers.deps.json
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Helpers\bin\Debug\netstandard2.0\GPApp.Helpers.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Helpers\bin\Debug\netstandard2.0\GPApp.Helpers.pdb
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Helpers\obj\Debug\netstandard2.0\GPApp.Helpers.vbprojAssemblyReference.cache
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Helpers\obj\Debug\netstandard2.0\GPApp.Helpers.vbproj.CoreCompileInputs.cache
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Helpers\obj\Debug\netstandard2.0\GPApp.Helpers.AssemblyInfoInputs.cache
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Helpers\obj\Debug\netstandard2.0\GPApp.Helpers.AssemblyInfo.vb
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Helpers\obj\Debug\netstandard2.0\GPApp.Helpers.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Helpers\obj\Debug\netstandard2.0\GPApp.Helpers.pdb

@@ -1224,6 +1224,16 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
+      "GPApp.Helpers/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/GPApp.Helpers.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GPApp.Helpers.dll": {}
+        }
+      },
       "GPApp.Model/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -2221,7 +2231,7 @@
       ]
     },
     "System.ComponentModel.Annotations/4.5.0": {
-      "sha512": "IjDa643EO77A4CL9dhxfZ6zzGu+pM8Ar0NYPRMN3TvDiga4uGDzFHOj/ArpyNxxKyO5IFT2LZ0rK3kUog7g3jA==",
+      "sha512": "UxYQ3FGUOtzJ7LfSdnYSFd7+oEv6M8NgUatatIN2HxNtDdlcvFAf+VIq4Of9cDMJEJC0aSRv/x898RYhB4Yppg==",
       "type": "package",
       "path": "system.componentmodel.annotations/4.5.0",
       "files": [
@@ -4723,6 +4733,11 @@
         "system.xml.xdocument.nuspec"
       ]
     },
+    "GPApp.Helpers/1.0.0": {
+      "type": "project",
+      "path": "../GPApp.Helpers/GPApp.Helpers.vbproj",
+      "msbuildProject": "../GPApp.Helpers/GPApp.Helpers.vbproj"
+    },
     "GPApp.Model/1.0.0": {
       "type": "project",
       "path": "../GPApp.Model/GPApp.Model.csproj",
@@ -4736,6 +4751,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "GPApp.Helpers >= 1.0.0",
       "GPApp.Model >= 1.0.0",
       "GPApp.Shared >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 2.2.1",
@@ -4777,6 +4793,9 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
+            "D:\\Repositorio\\gestaoprodutos\\GPApp\\GPApp.Helpers\\GPApp.Helpers.vbproj": {
+              "projectPath": "D:\\Repositorio\\gestaoprodutos\\GPApp\\GPApp.Helpers\\GPApp.Helpers.vbproj"
+            },
             "D:\\Repositorio\\gestaoprodutos\\GPApp\\GPApp.Model\\GPApp.Model.csproj": {
               "projectPath": "D:\\Repositorio\\gestaoprodutos\\GPApp\\GPApp.Model\\GPApp.Model.csproj"
             },

@@ -1,4 +1,4 @@
-﻿using GPApp.Dal.Dao;
+﻿using GPApp.Dal.Base;
 using GPApp.Model.Helpers;
 using GPApp.Shared.Dados;
 using System;
@@ -10,7 +10,7 @@ namespace GPApp.Repository
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-        private Lazy<IGenericDao<T>> _dao = new Lazy<IGenericDao<T>>(new Func<IGenericDao<T>>(Inicializa));
+        private readonly Lazy<IGenericDao<T>> _dao = new Lazy<IGenericDao<T>>(new Func<IGenericDao<T>>(Inicializa));
         private static IGenericDao<T> Inicializa()
         {
             return new GenericDao<T>();

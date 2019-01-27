@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using GPApp.WinForms.PontoPartida;
+using System;
 
 namespace GPApp.WinForms
 {
@@ -14,9 +11,8 @@ namespace GPApp.WinForms
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+           new Bootstrapper(IOCContainer.GetContainer())
+                .Start();
         }
     }
 }
