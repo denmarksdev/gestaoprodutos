@@ -6,7 +6,7 @@ import { ProdutoEditComponent } from './produtos/produto-edit/produto-edit.compo
 import { VitrineComponent } from './vitrine/vitrine/vitrine.component';
 
 const routes: Routes = [
-  { path:'' , redirectTo:'vitrine', pathMatch: 'full' },
+  { path:'' , redirectTo:'produtos', pathMatch: 'full' },
   { path: 'produtos', component: ProdutosComponent  },
   { path: 'produto' , component:ProdutoEditComponent  },
   { path: 'produto/:id', component: ProdutoEditComponent },

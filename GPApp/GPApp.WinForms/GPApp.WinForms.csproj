@@ -214,6 +214,7 @@
     <Compile Include="PontoPartida\IOCContainer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ConfigurationService.cs" />
     <Compile Include="Views\ProdutosView.cs">
       <SubType>Form</SubType>
     </Compile>

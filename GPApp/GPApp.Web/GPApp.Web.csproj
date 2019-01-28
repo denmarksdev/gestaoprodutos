@@ -14,6 +14,15 @@
     <None Remove="client\dist\client\3rdpartylicenses.txt" />
     <None Remove="client\dist\client\assets\imagens\bars-solid.svg" />
     <None Remove="client\dist\client\assets\imagens\sem-imagem.jpeg" />
+    <None Remove="client\dist\client\client\3rdpartylicenses.txt" />
+    <None Remove="client\dist\client\client\assets\imagens\bars-solid.svg" />
+    <None Remove="client\dist\client\client\assets\imagens\sem-imagem.jpeg" />
+    <None Remove="client\dist\client\client\favicon.ico" />
+    <None Remove="client\dist\client\client\index.html" />
+    <None Remove="client\dist\client\client\main.126aefcab64595173311.js" />
+    <None Remove="client\dist\client\client\polyfills.20d0bb3b90b253b298ff.js" />
+    <None Remove="client\dist\client\client\runtime.b57bf819d5bdce77f1c7.js" />
+    <None Remove="client\dist\client\client\styles.c88c22fa6aa96a3f7e3a.css" />
     <None Remove="client\dist\client\favicon.ico" />
     <None Remove="client\dist\client\index.html" />
     <None Remove="client\dist\client\main.8e73c733520e01201e03.js" />
@@ -30,6 +39,33 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Include="client\dist\client\assets\imagens\sem-imagem.jpeg">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="client\dist\client\client\3rdpartylicenses.txt">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="client\dist\client\client\assets\imagens\bars-solid.svg">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="client\dist\client\client\assets\imagens\sem-imagem.jpeg">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="client\dist\client\client\favicon.ico">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="client\dist\client\client\index.html">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="client\dist\client\client\main.126aefcab64595173311.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="client\dist\client\client\polyfills.20d0bb3b90b253b298ff.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="client\dist\client\client\runtime.b57bf819d5bdce77f1c7.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="client\dist\client\client\styles.c88c22fa6aa96a3f7e3a.css">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Include="client\dist\client\favicon.ico">

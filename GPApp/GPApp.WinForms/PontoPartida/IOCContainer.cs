@@ -3,7 +3,9 @@ using GPApp.Presenter.Modulos.Produtos;
 using GPApp.Repository;
 using GPApp.Service;
 using GPApp.Shared.Dados;
+using GPApp.Shared.Services;
 using GPApp.WinForms.Componentes;
+using GPApp.WinForms.Services;
 using GPApp.WinForms.Views;
 
 namespace GPApp.WinForms.PontoPartida
@@ -18,6 +20,7 @@ namespace GPApp.WinForms.PontoPartida
             ConfiguraGrid(Kernel);
             ConfiguraRepository(Kernel);
             ConfiguraService(Kernel);
+            
 
             return Kernel;
         }
@@ -25,6 +28,7 @@ namespace GPApp.WinForms.PontoPartida
         private static void ConfiguraService(Ninject.IKernel Kernel)
         {
             Kernel.Bind<IEmailService>().To<EmailService>();
+            Kernel.Bind<IConfiguracaoService>().To<ConfigurationService>();
         }
 
         private static void ConfiguraRepository(Ninject.IKernel Kernel)
