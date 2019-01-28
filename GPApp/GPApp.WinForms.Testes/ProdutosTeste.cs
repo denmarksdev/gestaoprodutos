@@ -28,9 +28,10 @@ namespace GPApp.WinForms.Testes
         }
 
         [Fact]
-        public void DesabilitaPesquisaGridView()
+        public void AcaoIncluirTest()
         {
-            Assert.False(_gridView.FiltroAtivo);
+            _mockView.Object.IncluirProdutoAction.Invoke();
+            _mockView.Verify(f => f.ExibeAbaEdicao());
         }
     }
 }

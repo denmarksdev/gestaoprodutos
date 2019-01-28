@@ -35,7 +35,7 @@ namespace GPApp.WinForms.Views
         #region Propriedades
 
         public Action LoadAction { get ; set ; }
-        public Action IncluirProdutAction { get ; set ; }
+        public Action IncluirProdutoAction { get ; set ; }
         public Action EnviarEmailAction { get ; set ; }
 
         #endregion
@@ -78,7 +78,7 @@ namespace GPApp.WinForms.Views
 
         private void MetroButtonIncluir_Click(object sender, EventArgs e)
         {
-            IncluirProdutAction?.Invoke();
+            IncluirProdutoAction?.Invoke();
         }
 
         private void MetroButtonEmail_Click(object sender, EventArgs e)

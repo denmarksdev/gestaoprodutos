@@ -7,7 +7,7 @@ namespace GPApp.Presenter.Modulos.Produtos
     public interface IProdutosView : IView
     {
         Action LoadAction { get; set; }
-        Action IncluirProdutAction { get; set; }
+        Action IncluirProdutoAction { get; set; }
         Action EnviarEmailAction { get; set; }
         void AdicionaGrid(IGridViewFiltro gridViewFiltro);
         void ExibeAbaEdicao();

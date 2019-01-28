@@ -26,7 +26,7 @@ namespace GPApp.Presenter.Modulos.Produtos
             _emailService = emailService;
 
             view.LoadAction = OnLoad;
-            view.IncluirProdutAction = OnIncluirProduto;
+            view.IncluirProdutoAction = OnIncluirProduto;
             view.EnviarEmailAction = OnEnviarEmail;
         }
                 

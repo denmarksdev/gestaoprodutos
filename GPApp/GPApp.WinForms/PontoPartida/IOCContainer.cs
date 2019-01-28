@@ -20,7 +20,6 @@ namespace GPApp.WinForms.PontoPartida
             ConfiguraGrid(Kernel);
             ConfiguraRepository(Kernel);
             ConfiguraService(Kernel);
-            
 
             return Kernel;
         }
