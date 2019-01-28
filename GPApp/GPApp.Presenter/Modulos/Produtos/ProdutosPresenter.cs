@@ -29,8 +29,7 @@ namespace GPApp.Presenter.Modulos.Produtos
             view.IncluirProdutAction = OnIncluirProduto;
             view.EnviarEmailAction = OnEnviarEmail;
         }
-
-        
+                
         #endregion
 
         #region Ações
@@ -46,6 +45,7 @@ namespace GPApp.Presenter.Modulos.Produtos
         }
         private async void OnEnviarEmail()
         {
+            // TODO: Criar envio de email
             //var resultado =  await _emailService.Envia(  EmailTemplate.GetEmailMarketing());
             //if (!resultado.Valido)
             //{

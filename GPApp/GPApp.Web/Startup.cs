@@ -55,7 +55,7 @@ namespace GPApp.Web
 
             await ConfiguraBaseDados(app);
 
-            app.UseMiddleware<RequestResponseLoggingMiddleware>();
+            //app.UseMiddleware<RequestResponseLoggingMiddleware>();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
             app.UseMvc();

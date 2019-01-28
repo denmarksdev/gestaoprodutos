@@ -2,6 +2,7 @@ import { Produto, ProdutoImagem, ProdutoEspecificacao } from './produto-model';
 import { ErroValidacao } from '../shared/model/erro';
 import { EMPTY_GUID } from '../shared/helpers/guid.helper';
 import { DateHelper } from '../shared/helpers/date.helper';
+import { parse } from 'url';
 
 export class ProdutoBo {
 
@@ -70,6 +71,8 @@ export class ProdutoBo {
     valida():Array<ErroValidacao> {
         let erros = new Array<ErroValidacao>();
 
+        
+
         if (this.produto.nome.length == 0){
             erros.push(new ErroValidacao("Nome", "Campo obrigatório"));
         }
@@ -78,17 +81,20 @@ export class ProdutoBo {
         }
         if (this.produto.preco == 0){
             erros.push(new ErroValidacao("Preço", "Deve ser maior que zero"));
-        }else if (this.produto.preco < this.produto.custo){
-            erros.push(new ErroValidacao("Preço", "Deve ser maior que o igual ao custo"));
+        }else if ( Number( this.produto.preco) < Number( this.produto.custo)){
+            erros.push(new ErroValidacao("Preço", "Deve ser maior que ou igual ao custo"));
         }
+
+        // console.log("Preço: " + this.produto.preco);
+        // console.log("Custo: " + this.produto.custo);
 
         if (this.produto.custo == 0){
             erros.push(new ErroValidacao("Custo", "Deve ser maior que zero"));
-        }else if (this.produto.custo > this.produto.preco){
+        }else if ( Number( this.produto.custo) >  Number( this.produto.preco)){
             erros.push(new ErroValidacao("Custo", "Deve ser menor ou igual ao preço"));
         }
 
-        if (this.produto.precoPromocional >  this.produto.preco ){
+        if ( Number(this.produto.precoPromocional) > Number(this.produto.preco)){
             erros.push(new ErroValidacao("PrecoPromocional", "Preço promocional deve ser menor que o preco de venda"));
         }
         

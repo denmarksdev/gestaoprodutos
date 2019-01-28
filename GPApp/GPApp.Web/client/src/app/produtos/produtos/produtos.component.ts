@@ -25,9 +25,4 @@ export class ProdutosComponent implements OnInit {
   incluirProduto(){
     this._router.navigate(['/produto']);
   }
-
-  onVitrine(){
-    this._router.navigate(['/vitrine']);
-  }
-
 }

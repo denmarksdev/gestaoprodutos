@@ -1,0 +1,33 @@
+.example-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .mat-sidenav {
+      width: 200px;
+      background-color: black;
+  }
+
+  .mat-sidenav-content {
+      padding: 10px;
+  }
+
+  .menu-opcoes {
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .mat-raised-button {
+      width: 88px;
+      margin-top: 8px;
+  }
+
+  svg {
+      width: 25px;
+  }

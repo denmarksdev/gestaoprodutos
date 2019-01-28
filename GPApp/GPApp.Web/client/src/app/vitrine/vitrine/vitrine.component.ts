@@ -23,8 +23,4 @@ export class VitrineComponent implements OnInit {
   formata(valor:number){
     console.log( formatCurrency( valor , "pt-BR", "R$", "BLR", "1.2-2"));
   }
-
-  onProdutos(){
-    this._router.navigate(["produtos"]);
-  }
 }

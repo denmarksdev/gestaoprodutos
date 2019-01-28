@@ -7,14 +7,49 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\dist\client\3rdpartylicenses.txt" />
-    <Content Remove="wwwroot\dist\client\assets\imagens\sem-imagem.jpeg" />
-    <Content Remove="wwwroot\dist\client\favicon.ico" />
-    <Content Remove="wwwroot\dist\client\index.html" />
-    <Content Remove="wwwroot\dist\client\main.f3d2738582a752617638.js" />
-    <Content Remove="wwwroot\dist\client\polyfills.20d0bb3b90b253b298ff.js" />
-    <Content Remove="wwwroot\dist\client\runtime.b57bf819d5bdce77f1c7.js" />
-    <Content Remove="wwwroot\dist\client\styles.c88c22fa6aa96a3f7e3a.css" />
+    <Content Remove="wwwroot\dist\client\main.d507ec790bfc7b4e082a.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="client\dist\client\3rdpartylicenses.txt" />
+    <None Remove="client\dist\client\assets\imagens\bars-solid.svg" />
+    <None Remove="client\dist\client\assets\imagens\sem-imagem.jpeg" />
+    <None Remove="client\dist\client\favicon.ico" />
+    <None Remove="client\dist\client\index.html" />
+    <None Remove="client\dist\client\main.8e73c733520e01201e03.js" />
+    <None Remove="client\dist\client\polyfills.20d0bb3b90b253b298ff.js" />
+    <None Remove="client\dist\client\runtime.b57bf819d5bdce77f1c7.js" />
+    <None Remove="client\dist\client\styles.c88c22fa6aa96a3f7e3a.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="client\dist\client\3rdpartylicenses.txt">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="client\dist\client\assets\imagens\bars-solid.svg">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="client\dist\client\assets\imagens\sem-imagem.jpeg">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="client\dist\client\favicon.ico">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="client\dist\client\index.html">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="client\dist\client\main.8e73c733520e01201e03.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="client\dist\client\polyfills.20d0bb3b90b253b298ff.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="client\dist\client\runtime.b57bf819d5bdce77f1c7.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="client\dist\client\styles.c88c22fa6aa96a3f7e3a.css">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -32,14 +67,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\dist\client\3rdpartylicenses.txt" />
-    <None Include="wwwroot\dist\client\assets\imagens\sem-imagem.jpeg" />
-    <None Include="wwwroot\dist\client\favicon.ico" />
-    <None Include="wwwroot\dist\client\index.html" />
-    <None Include="wwwroot\dist\client\main.f3d2738582a752617638.js" />
-    <None Include="wwwroot\dist\client\polyfills.20d0bb3b90b253b298ff.js" />
-    <None Include="wwwroot\dist\client\runtime.b57bf819d5bdce77f1c7.js" />
-    <None Include="wwwroot\dist\client\styles.c88c22fa6aa96a3f7e3a.css" />
+    <None Include="wwwroot\dist\client\assets\imagens\bars-solid.svg" />
   </ItemGroup>
 
 </Project>

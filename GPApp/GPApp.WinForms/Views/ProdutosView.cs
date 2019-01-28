@@ -81,11 +81,11 @@ namespace GPApp.WinForms.Views
             IncluirProdutAction?.Invoke();
         }
 
-        #endregion
-
         private void MetroButtonEmail_Click(object sender, EventArgs e)
         {
             EnviarEmailAction?.Invoke();
         }
+
+        #endregion
     }
 }

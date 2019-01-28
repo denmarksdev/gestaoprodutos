@@ -11,13 +11,13 @@ $cor-secundaria:rgb(106, 51, 141);
     display: flex;
     flex-wrap: wrap;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .item-vitrine {
     display: flex;
-    justify-content: center;
-    align-content: center;
     flex-direction: column;
+    justify-content: space-between;
     max-width: 250px;
     min-width: 250px;
     text-align: center;
@@ -51,6 +51,7 @@ $cor-secundaria:rgb(106, 51, 141);
     text-decoration-line: line-through;
     font-size: 12px;
     margin-right: 5px;
+    position: relative;
 }
 .imagem {
     margin: 0 auto;
@@ -66,4 +67,11 @@ $cor-secundaria:rgb(106, 51, 141);
     min-height: 50px;
     max-height: 50px;
     padding: 5px;
+}
+
+@media screen and (max-width: 540px){
+    .container-principal {
+        justify-content: center;
+    }
+
 }

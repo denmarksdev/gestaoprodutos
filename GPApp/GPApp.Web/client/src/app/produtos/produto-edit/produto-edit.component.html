@@ -1,8 +1,9 @@
 <div class="container-principal">
   <h1 class="titulo" >{{ titulo }}</h1>
+  <mat-progress-bar *ngIf="salvandoProduto" mode="indeterminate" aria-label="Salvando produto"></mat-progress-bar>
   <!-- Expander -->
   <mat-accordion>
-    <!-- Principal -->
+    <!-- Principal TODO:Componentizar seções --> 
     <mat-expansion-panel [expanded]="true">
       <mat-expansion-panel-header>
         <mat-panel-title>
@@ -13,7 +14,8 @@
         <mat-form-field>
             <input matInput placeholder="Código" 
                  (input)="produto.codigo = $event.target.value"
-                 [value]="produto.codigo">
+                 [value]="produto.codigo"
+                 autofocus>
         </mat-form-field>
         <mat-form-field>
            <input matInput placeholder="Nome" 
@@ -105,5 +107,5 @@
   <ul>
     <li class="erro" *ngFor="let erro of erros"><strong>{{ erro.campo }}</strong> {{ erro.descricao}}</li>
   </ul>
-  <mat-progress-bar *ngIf="salvandoProduto" mode="indeterminate" aria-label="Salvando produto"></mat-progress-bar>
+  
 </div>
