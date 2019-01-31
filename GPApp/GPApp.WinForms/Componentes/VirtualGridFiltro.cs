@@ -54,6 +54,7 @@ namespace GPApp.WinForms.Componentes
             get => virtualGridPrincipal.FormataCelulaFunc;
             set => virtualGridPrincipal.FormataCelulaFunc = value;
         }
+        public bool FiltroAtivo { get ; set ; }
 
         #endregion
 
@@ -95,7 +96,7 @@ namespace GPApp.WinForms.Componentes
         public void SetNumeroRegistros(int numero)
         {
             virtualGridPrincipal.SetNumeroRegistros(numero);
-            htmlLabelRodape.Text = GridTemplate.GetRodape(RodapeTexto, numero);
+            htmlLabelRodape.Text = GridTemplate.GetRodape(RodapeTexto, numero, FiltroAtivo);
         }
 
         public int NumeroRegitros()

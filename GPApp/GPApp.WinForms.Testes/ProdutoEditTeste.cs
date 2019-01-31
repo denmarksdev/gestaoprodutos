@@ -18,8 +18,8 @@ namespace GPApp.WinForms.Testes
         
         private readonly Mock<IProdutoEditView> _viewMock;
         private readonly Mock<IProdutoRepository> _repo;
-        private Mock<IEventAggregator> _eventAggregator;
-        private ProdutoEditPresenter _presenter;
+        private readonly Mock<IEventAggregator> _eventAggregator;
+        private readonly ProdutoEditPresenter _presenter;
 
         public ProdutoEditTeste()
         {

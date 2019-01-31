@@ -48,6 +48,7 @@ namespace GPApp.Presenter.Modulos.Produtos
             view.EnviarEmailAction = OnEnviarEmail;
 
             gridViewPresenter.GridView.FormataCelulaFunc = OnFormataCelula;
+            gridViewPresenter.FiltrouEvent += GridViewPresenter_FiltrouEvent;  
         }
 
         #endregion
@@ -56,15 +57,19 @@ namespace GPApp.Presenter.Modulos.Produtos
 
         private ColunaFormataInfo OnFormataCelula(ColunaFormataInfo info)
         {
-            switch (info.NomePropriedade)
+            if (info.Valor != null)
             {
-                case nameof(ProdutoLookup.Preco):
-                    info.Valor = ((decimal)info.Valor).ToString("C2", new CultureInfo("pt-BR"));
-                    break;
-                case nameof(ProdutoLookup.DataCadastro):
-                    info.Valor = ((DateTimeOffset)info.Valor).ToString("dd/MM/yyyy hh:mm:ss");
-                    break;
+                switch (info.NomePropriedade)
+                {
+                    case nameof(ProdutoLookup.Preco):
+                        info.Valor = ((decimal)info.Valor).ToString("C2", new CultureInfo("pt-BR"));
+                        break;
+                    case nameof(ProdutoLookup.DataCadastro):
+                        info.Valor = ((DateTimeOffset)info.Valor).ToString("dd/MM/yyyy hh:mm:ss");
+                        break;
+                }
             }
+
             return info;
         }
 
@@ -118,6 +123,16 @@ namespace GPApp.Presenter.Modulos.Produtos
         {
             View.ExibeAbaEdicao();
             View.ExibeBotoesAcaoAbaListagem(false);
+        }
+
+        #endregion
+
+        #region Handlers
+
+        private void GridViewPresenter_FiltrouEvent(object sender, bool filtroAtivo)
+        {
+            var texto = filtroAtivo ? "Desativar filtro" : "Filtrar";
+            View.SetTextoBotaoFiltrar(texto);
         }
 
         #endregion

@@ -10,7 +10,6 @@ namespace GPApp.Presenter.Grid
 
         private GridConfig<T> _gridInfo;
         public IGridViewFiltro GridView;
-        public bool FiltroAtivo { get; set; }
         public event EventHandler<Boolean> FiltrouEvent;
 
         #endregion
@@ -65,10 +64,10 @@ namespace GPApp.Presenter.Grid
 
         private async void OnFiltrarAction(string textoPesquisa)
         {
+            GridView.FiltroAtivo = !string.IsNullOrWhiteSpace(textoPesquisa);
             await Filtra(textoPesquisa);
             GridView.ExibePainelPesquisa(false);
-            FiltroAtivo = !string.IsNullOrWhiteSpace(textoPesquisa);
-            FiltrouEvent?.Invoke(this, FiltroAtivo);
+            FiltrouEvent?.Invoke(this, GridView.FiltroAtivo);
         }
 
         private void OnOrderAction(string nomePropriedade)
@@ -86,7 +85,6 @@ namespace GPApp.Presenter.Grid
         {
             GridView.SetNumeroRegistros(_gridInfo.DataRetriever.NumeroRegistros);
             GridView.AtualizarDesign();
-
         }
 
         public void SetColunaChave(string chave)
@@ -111,7 +109,8 @@ namespace GPApp.Presenter.Grid
         public async void LimpaFiltro()
         {
             await Filtra(string.Empty);
-            FiltroAtivo = false;
+            GridView.FiltroAtivo = false;
+            FiltrouEvent(this, false);
         }
 
         internal Task<IList<T>> GetItensAsync()
@@ -131,10 +130,15 @@ namespace GPApp.Presenter.Grid
             await LoadAsync();
         }
 
-        private void OnAtivarAction()
+        private  void OnAtivarAction()
         {
-            FiltroAtivo = !FiltroAtivo;
-            GridView.ExibePainelPesquisa(FiltroAtivo);
+            if (GridView.FiltroAtivo)
+            {
+                LimpaFiltro();
+            }
+
+            GridView.FiltroAtivo = !GridView.FiltroAtivo;
+            GridView.ExibePainelPesquisa(GridView.FiltroAtivo);
         }
 
         #endregion

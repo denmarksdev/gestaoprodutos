@@ -52,7 +52,7 @@
             this.metroPanelFiltro.HorizontalScrollbarBarColor = true;
             this.metroPanelFiltro.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanelFiltro.HorizontalScrollbarSize = 10;
-            this.metroPanelFiltro.Location = new System.Drawing.Point(96, 153);
+            this.metroPanelFiltro.Location = new System.Drawing.Point(96, 150);
             this.metroPanelFiltro.Name = "metroPanelFiltro";
             this.metroPanelFiltro.Size = new System.Drawing.Size(493, 26);
             this.metroPanelFiltro.TabIndex = 1;
@@ -115,7 +115,7 @@
             this.tableLayoutPanelGrid.Name = "tableLayoutPanelGrid";
             this.tableLayoutPanelGrid.RowCount = 2;
             this.tableLayoutPanelGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanelGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
             this.tableLayoutPanelGrid.Size = new System.Drawing.Size(678, 304);
             this.tableLayoutPanelGrid.TabIndex = 2;
             // 
@@ -127,9 +127,9 @@
             this.htmlLabelRodape.BackColor = System.Drawing.SystemColors.Window;
             this.htmlLabelRodape.Dock = System.Windows.Forms.DockStyle.Fill;
             this.htmlLabelRodape.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.htmlLabelRodape.Location = new System.Drawing.Point(3, 272);
+            this.htmlLabelRodape.Location = new System.Drawing.Point(3, 265);
             this.htmlLabelRodape.Name = "htmlLabelRodape";
-            this.htmlLabelRodape.Size = new System.Drawing.Size(672, 29);
+            this.htmlLabelRodape.Size = new System.Drawing.Size(672, 36);
             this.htmlLabelRodape.TabIndex = 1;
             this.htmlLabelRodape.Text = "Informações";
             // 
@@ -143,7 +143,7 @@
             this.metroPanelGrid.HorizontalScrollbarSize = 10;
             this.metroPanelGrid.Location = new System.Drawing.Point(3, 3);
             this.metroPanelGrid.Name = "metroPanelGrid";
-            this.metroPanelGrid.Size = new System.Drawing.Size(672, 263);
+            this.metroPanelGrid.Size = new System.Drawing.Size(672, 256);
             this.metroPanelGrid.TabIndex = 2;
             this.metroPanelGrid.VerticalScrollbarBarColor = true;
             this.metroPanelGrid.VerticalScrollbarHighlightOnWheel = false;
@@ -162,7 +162,7 @@
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(84)))), ((int)(((byte)(94)))), ((int)(((byte)(117)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(94)))), ((int)(((byte)(117)))));
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -183,6 +183,7 @@
             this.virtualGridPrincipal.ErroPaginacao = false;
             this.virtualGridPrincipal.ErroPagincaoAction = null;
             this.virtualGridPrincipal.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.virtualGridPrincipal.FormataCelulaFunc = null;
             this.virtualGridPrincipal.GetValue = null;
             this.virtualGridPrincipal.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.virtualGridPrincipal.Inicializa = null;
@@ -201,7 +202,7 @@
             this.virtualGridPrincipal.RowHeadersVisible = false;
             this.virtualGridPrincipal.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.virtualGridPrincipal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.virtualGridPrincipal.Size = new System.Drawing.Size(672, 263);
+            this.virtualGridPrincipal.Size = new System.Drawing.Size(672, 256);
             this.virtualGridPrincipal.TabIndex = 2;
             this.virtualGridPrincipal.VirtualMode = true;
             // 

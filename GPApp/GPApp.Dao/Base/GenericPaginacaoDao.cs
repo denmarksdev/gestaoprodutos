@@ -54,7 +54,14 @@ namespace GPApp.Dal.Base
 
         public int Count()
         {
-            return _dbSet.Count();
+            if  (string.IsNullOrEmpty(Pesquisa))
+                return _dbSet.Count();
+
+            var filtro = FiltroFunc?.Invoke();
+
+            return filtro == null 
+                ? _dbSet.Count() 
+                : _dbSet.Where(filtro).Count(); 
         }
 
         private IEnumerable<TEntity> ItensSemFiltro(int limit, int offset, params Expression<Func<TEntity, object>>[] includeProperties)
@@ -78,7 +85,7 @@ namespace GPApp.Dal.Base
             var filtro = FiltroFunc?.Invoke();
             if (filtro == null) return ItensSemFiltro(limit, offset);
 
-            return AddIncludes(includeProperties).Where(filtro);
+            return AddIncludes(includeProperties).Where(filtro).Skip(offset).Take(limit);
         }
 
         #endregion

@@ -30,5 +30,6 @@ namespace GPApp.Presenter.Modulos.Produtos
         void IncluirEspecificacao(ProdutoEspecificacaoWrapper produtoEspecificacaoWrapper);
         void ExcluirEspecificacao(ProdutoEspecificacaoWrapper produtoEspecificacaoWrapper);
         void ExibirProgressoSalvar(bool exibir);
+        void FocoPrincipal();
     }
 }

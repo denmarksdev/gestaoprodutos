@@ -45,16 +45,18 @@ namespace GPApp.WinForms.Views
             // 
             // metroButtonFiltrar
             // 
+            this.metroButtonFiltrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.metroButtonFiltrar.Location = new System.Drawing.Point(195, 27);
             this.metroButtonFiltrar.Name = "metroButtonFiltrar";
-            this.metroButtonFiltrar.Size = new System.Drawing.Size(75, 23);
+            this.metroButtonFiltrar.Size = new System.Drawing.Size(113, 23);
             this.metroButtonFiltrar.TabIndex = 1;
             this.metroButtonFiltrar.Text = "Filtrar";
             this.metroButtonFiltrar.UseSelectable = true;
             // 
             // metroButtonIncluir
             // 
-            this.metroButtonIncluir.Location = new System.Drawing.Point(276, 27);
+            this.metroButtonIncluir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.metroButtonIncluir.Location = new System.Drawing.Point(334, 27);
             this.metroButtonIncluir.Name = "metroButtonIncluir";
             this.metroButtonIncluir.Size = new System.Drawing.Size(75, 23);
             this.metroButtonIncluir.TabIndex = 4;
@@ -64,7 +66,8 @@ namespace GPApp.WinForms.Views
             // 
             // metroButtonEmail
             // 
-            this.metroButtonEmail.Location = new System.Drawing.Point(357, 27);
+            this.metroButtonEmail.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.metroButtonEmail.Location = new System.Drawing.Point(415, 27);
             this.metroButtonEmail.Name = "metroButtonEmail";
             this.metroButtonEmail.Size = new System.Drawing.Size(75, 23);
             this.metroButtonEmail.TabIndex = 5;

@@ -57,6 +57,17 @@ namespace GPApp.WinForms.Views
 
         #region Métodos
 
+        public void ExibirProgressoSalvar(bool exibir)
+        {
+            metroProgressSpinnerSalvar.Visible = exibir;
+            metroProgressSpinnerSalvar.Enabled = exibir;
+        }
+
+        public void FocoPrincipal()
+        {
+            throw new NotImplementedException();
+        }
+
         private void ConfiguracoesGridDeEspecificacoes()
         {
             metroGridEspecificacoes.BorderStyle = BorderStyle.FixedSingle;
@@ -331,11 +342,7 @@ namespace GPApp.WinForms.Views
             CancelarAction?.Invoke();
         }
 
-        public void ExibirProgressoSalvar(bool exibir)
-        {
-            metroProgressSpinnerSalvar.Visible = exibir;
-            metroProgressSpinnerSalvar.Enabled = exibir;
-        }
+
     }
 
     #endregion

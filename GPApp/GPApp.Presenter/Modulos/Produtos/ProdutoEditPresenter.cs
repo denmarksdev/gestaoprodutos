@@ -156,8 +156,6 @@ namespace GPApp.Presenter.Modulos.Produtos
             View.ConfiguraProdutoBindings(this);
         }
 
-        
-
         private void ConfiguraAcoesEspecificacao()
         {
             View.IncluirEspecificacaoAction = OnIncluirEspecificacao;
@@ -184,6 +182,7 @@ namespace GPApp.Presenter.Modulos.Produtos
             View.SelecionarPrimeiroCampoEdicao();
             View.InicializaBinding(Wrapper);
             ValidaModel();
+            View.FocoPrincipal();
         }
 
         private void VerificaErros(System.ComponentModel.PropertyChangedEventArgs e)

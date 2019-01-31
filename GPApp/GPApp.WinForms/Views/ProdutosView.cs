@@ -83,6 +83,11 @@ namespace GPApp.WinForms.Views
             panelEditProduto.Controls.Add(editControl);
         }
 
+        public void SetTextoBotaoFiltrar(string texto)
+        {
+            metroButtonFiltrar.Text = texto;
+        }
+
         #endregion
 
         #region Handlers

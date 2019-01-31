@@ -13,5 +13,6 @@ namespace GPApp.Presenter.Modulos.Produtos
         void ExibeAbaListagem();
         void AdicionaEditPresenter(IProdutoEditView editView);
         void ExibeBotoesAcaoAbaListagem(bool exibe);
+        void SetTextoBotaoFiltrar(string texto);
     }
 }

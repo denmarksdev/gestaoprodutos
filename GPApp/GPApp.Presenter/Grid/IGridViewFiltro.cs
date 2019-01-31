@@ -8,6 +8,7 @@ namespace GPApp.Presenter.Grid
         /// {Singular|Plural}
         /// </summary>
         string[] RodapeTexto { get; set; }
+        bool FiltroAtivo { get; set; }
 
         Action AtivarFiltroAction { get; set; }
         Action<string> FiltrarAcion { get; set; }
