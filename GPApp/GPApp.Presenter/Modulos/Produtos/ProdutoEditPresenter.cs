@@ -46,9 +46,6 @@ namespace GPApp.Presenter.Modulos.Produtos
 
         #region Propriedades
 
-        
-        
-
         private int _quantidade;
         public int Quantidade
         {
