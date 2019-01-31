@@ -14,6 +14,15 @@ namespace GPApp.Presenter.Modulos.Produtos
 {
     public class ProdutoEditPresenter : BasePresenterModel<ProdutoWrapper, IProdutoEditView>
     {
+        #region Membros privados
+
+        private readonly IDialogService _dialogService;
+        private readonly IArquivoService _arquivoService;
+        private readonly IProdutoRepository _produtoRepository;
+        private readonly IEventAggregator _eventAggregator;
+
+        #endregion
+
         #region Construtor
 
         public ProdutoEditPresenter(
@@ -37,12 +46,10 @@ namespace GPApp.Presenter.Modulos.Produtos
 
         #region Propriedades
 
-        private int _quantidade;
-        private readonly IDialogService _dialogService;
-        private readonly IArquivoService _arquivoService;
-        private readonly IProdutoRepository _produtoRepository;
-        private readonly IEventAggregator _eventAggregator;
+        
+        
 
+        private int _quantidade;
         public int Quantidade
         {
             get => _quantidade;
@@ -176,8 +183,6 @@ namespace GPApp.Presenter.Modulos.Produtos
             });
 
             Wrapper.PropertyChanged += PresenterPropertyChanged;
-
-            
 
             View.SelecionarPrimeiroCampoEdicao();
             View.InicializaBinding(Wrapper);
