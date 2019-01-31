@@ -82,7 +82,7 @@ namespace GPApp.Wrapper.Base
             return _originalValues.ContainsKey(propertyname);
         }
 
-        protected void SetValue<TValue>(TValue newValue, [CallerMemberName] string propertyName = null)
+        protected bool SetValue<TValue>(TValue newValue, [CallerMemberName] string propertyName = null)
         {
             var propertyInfo = Model.GetType().GetProperty(propertyName);
             var currentValue = propertyInfo.GetValue(Model, null);
@@ -93,7 +93,9 @@ namespace GPApp.Wrapper.Base
                 ValidacaoInterna();
                 OnPropertyChanged(propertyName);
                 OnPropertyChanged(propertyName + "IsChanged");
+                return true;
             }
+            return false;
         }
 
         private static bool CompararValores<TValue>(TValue newValue, object currentValue)

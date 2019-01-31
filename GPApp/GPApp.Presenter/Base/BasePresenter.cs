@@ -2,9 +2,8 @@
 
 namespace GPApp.Presenter.Base
 {
-    public class BasePresenter<T,I> : ViewModelBase where I : IView
+    public class BasePresenter<I> : ViewModelBase where I : IView
     {
-        public T Wrapper { get; set; }
         public  I View { get; private set; }
 
         public BasePresenter(I view)

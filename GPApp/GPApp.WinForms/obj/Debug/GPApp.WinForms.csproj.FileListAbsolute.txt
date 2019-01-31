@@ -204,3 +204,10 @@ D:\Repositorio\gestaoprodutos\GPApp\GPApp.WinForms\bin\Debug\System.Threading.Ta
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.WinForms\bin\Debug\System.ValueTuple.xml
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.WinForms\bin\Debug\GPApp.Service.dll
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.WinForms\bin\Debug\GPApp.Service.pdb
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.WinForms\bin\Debug\MaterialSkin.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.WinForms\obj\Debug\GPApp.WinForms.Views.ProdutoEditView.resources
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.WinForms\obj\Debug\GPApp.WinForms.Formulario.resources
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.WinForms\obj\Debug\GPApp.WinForms.Componentes.Expander.resources
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.WinForms\obj\Debug\GPApp.WinForms.Componentes.CustomEdit.resources
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.WinForms\obj\Debug\GPApp.WinForms.Componentes.CustomEditMultline.resources
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.WinForms\obj\Debug\GPApp.WinForms.Componentes.DialogView.resources

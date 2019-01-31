@@ -44,6 +44,11 @@ namespace GPApp.Shared.Helpers
             return $"imagens/produtos/{produtoId.ToString()}_{GetTamanhaoAbreviado(tamanho)}{imagem.Ordem}.{imagem.Sufixo}";
         }
 
+        public static byte[] Base64ToBytes(string base64)
+        {
+           return Convert.FromBase64String(base64);
+        }
+
         private static string GetTamanhaoAbreviado(Tamanho tamanho)
         {
             switch (tamanho)

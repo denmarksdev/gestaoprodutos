@@ -13,7 +13,7 @@ namespace GPApp.Model.Helpers
         }
 
         public Resultado(string mensagem)
-          : this(mensagem, (Exception)null, true)
+          : this(mensagem, exception: (Exception)null, valido: true)
         {
         }
 

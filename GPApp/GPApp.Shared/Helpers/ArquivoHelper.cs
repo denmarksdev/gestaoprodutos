@@ -35,10 +35,11 @@ namespace GPApp.Shared.Helpers
 
         public static string GetExtensaoArquivo(string fileName)
         {
-            return Path.GetExtension(fileName);
+            if (string.IsNullOrEmpty(fileName)) return string.Empty;
+            return Path.GetExtension(fileName).Replace(".", "");
         }
 
-        public static void  SalvarImagemAsync(string path, byte[] bytes)
+        public static void  SalvarImagem(string path, byte[] bytes)
         {
             File.WriteAllBytes(Path.Combine(GetDiretorioDeImagens(), path), bytes);
         }

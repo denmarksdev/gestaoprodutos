@@ -8,6 +8,9 @@ namespace GPApp.Wrapper
 		 public ProdutoEspecificacaoWrapper(ProdutoEspecificacao model): base(model)
 		 {
 		 }
+            public ProdutoEspecificacaoWrapper():base(new ProdutoEspecificacao())
+         {
+         }
 		 						
 		public System.String Nome
 		{

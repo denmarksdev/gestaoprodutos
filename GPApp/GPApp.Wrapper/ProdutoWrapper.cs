@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using GPApp.Model;
 using GPApp.Wrapper.Base;
+using GPApp.Shared.Extensions;
 
 namespace GPApp.Wrapper
 {
@@ -41,7 +42,14 @@ namespace GPApp.Wrapper
         public System.Decimal Preco
         {
             get { return GetValue<System.Decimal>(); }
-            set { SetValue(value); }
+            set {
+               if(SetValue(value))
+                {
+                    OnPropertyChanged(nameof(Custo));
+                    OnPropertyChanged(nameof(PrecoPromocional));
+                }
+            } 
+
         }
         public bool PrecoIsChanged => GetIsChanged(nameof(Preco));
         public System.Decimal PrecoOriginalValue => GetOriginalValue<System.Decimal>(nameof(Preco));
@@ -50,7 +58,13 @@ namespace GPApp.Wrapper
         public System.Decimal PrecoPromocional
         {
             get { return GetValue<System.Decimal>(); }
-            set { SetValue(value); }
+            set {
+               if (SetValue(value))
+                {
+                    OnPropertyChanged(nameof(Custo));
+                    OnPropertyChanged(nameof(Preco));
+                }
+            }
         }
         public bool PrecoPromocionalIsChanged => GetIsChanged(nameof(PrecoPromocional));
         public System.Decimal PrecoPromocionalOriginalValue => GetOriginalValue<System.Decimal>(nameof(PrecoPromocional));
@@ -59,7 +73,13 @@ namespace GPApp.Wrapper
         public System.Decimal Custo
         {
             get { return GetValue<System.Decimal>(); }
-            set { SetValue(value); }
+            set {
+               if ( SetValue(value))
+                {
+                    OnPropertyChanged(nameof(Preco));
+                    OnPropertyChanged(nameof(PrecoPromocional));
+                }
+            }
         }
         public bool CustoIsChanged => GetIsChanged(nameof(Custo));
         public System.Decimal CustoOriginalValue => GetOriginalValue<System.Decimal>(nameof(Custo));
@@ -116,8 +136,7 @@ namespace GPApp.Wrapper
             EstoqueAtual = new ProdutoEstoqueWrapper(model.EstoqueAtual);
             RegisterComplex(EstoqueAtual);
         }
-
-
+               
         protected override void InitializeCollentionProperties(Produto model)
         {
             if (model.Imagens == null) throw new ArgumentNullException("Imagens não pode ser nulo");
@@ -136,5 +155,45 @@ namespace GPApp.Wrapper
             RegisterCollection(PosicoesEstoque, model.PosicoesEstoque);
         }
 
+        public static ProdutoWrapper Empty = new ProdutoWrapper(new Produto
+        {
+            EstoqueAtual = new ProdutoEstoque()
+        });
+
+        public short GeraProximoOrdemImagem()
+        {
+            short ordem = Convert.ToInt16(
+                Imagens.Count == 0
+                ? 1
+                : Imagens.Max(i => i.Ordem) + 1);
+
+            return ordem;
+        }
+
+        public short GeraProximoOrdemEspecificacao()
+        {
+            short ordem = Convert.ToInt16(
+                Especificacoes.Count == 0
+                ? 1
+                : Especificacoes.Max(i => i.Ordem) + 1);
+
+            return ordem;
+        }
+
+        public void ReordenarImagens()
+        {
+            for (int i = 0; i < Imagens.Count; i++)
+            {
+                Imagens[i].Ordem = (i + 1).ToShort();
+            }
+        }
+
+        public void ReordenarEspecificacoes()
+        {
+            for (int i = 0; i < Especificacoes.Count - 1; i++)
+            {
+                Especificacoes[i].Ordem =  (i + 1).ToShort();
+            }
+        }
     }
 }

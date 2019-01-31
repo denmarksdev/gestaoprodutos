@@ -1,13 +1,15 @@
 ﻿using GPApp.Model.Lookups;
 using GPApp.Presenter.Grid;
 using GPApp.Repository;
+using GPApp.Shared.Paginacao;
 using GPApp.Wrapper;
 
 namespace GPApp.Presenter.Modulos.Produtos
 {
     public static class ProdutoGridConfigBuilder
     {
-        public static GridConfig<ProdutoLookupWrapper> Instancia()
+        public static GridConfig<ProdutoLookupWrapper> Instancia(
+            IPaginacaoRepository<ProdutoLookupWrapper> paginacaoRepository )
         {
             var wrapper = new ProdutoLookupWrapper(ProdutoLookup.Empty);
 
@@ -44,7 +46,7 @@ namespace GPApp.Presenter.Modulos.Produtos
                 .TamanhoColuna(150)
                 .BuildColuna()
 
-                .Repository( new ProdutoPaginacaoRepository())
+                .Repository(paginacaoRepository)
 
                 .Build();
         }

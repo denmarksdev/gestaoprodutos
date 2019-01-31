@@ -37,6 +37,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\BasePresenter.cs" />
+    <Compile Include="Base\BasePresenterModel.cs" />
     <Compile Include="Base\IView.cs" />
     <Compile Include="Grid\ColunaInfo.cs" />
     <Compile Include="Grid\ColunaTipoAjuste.cs" />
@@ -46,10 +47,14 @@
     <Compile Include="Grid\IGridView.cs" />
     <Compile Include="Grid\IGridViewFiltro.cs" />
     <Compile Include="Grid\TipoAlinhamentoColuna.cs" />
+    <Compile Include="Modulos\Produtos\IProdutoEditView.cs" />
     <Compile Include="Modulos\Produtos\IProdutosView.cs" />
+    <Compile Include="Modulos\Produtos\ProdutoEditPresenter.cs" />
     <Compile Include="Modulos\Produtos\ProdutoGridConfigBuilder.cs" />
     <Compile Include="Modulos\Produtos\ProdutosPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PubSub\EventAggregator.cs" />
+    <Compile Include="PubSub\Eventos\AtualizarGridProdutosEvent.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GPApp.Helpers\GPApp.Helpers.vbproj">
@@ -76,6 +81,9 @@
       <Project>{0DE75004-5A6F-4921-A1C6-F3A89719D04B}</Project>
       <Name>GPApp.Wrapper</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
 using GPApp.Presenter.Grid;
 using GPApp.Presenter.Modulos.Produtos;
@@ -16,7 +15,7 @@ namespace GPApp.WinForms.Views
         }
 
         #endregion
-
+    
         #region Overrrides
         protected override void OnLoad(EventArgs e)
         {
@@ -42,6 +41,12 @@ namespace GPApp.WinForms.Views
 
         #region Métodos
 
+        public void ExibeBotoesAcaoAbaListagem(bool exibe)
+        {
+            metroButtonIncluir.Visible = exibe;
+            metroButtonEmail.Visible = exibe;
+            metroButtonFiltrar.Visible = exibe;
+        }
 
         public void AdicionaGrid(IGridViewFiltro gridViewFiltro)
         {
@@ -65,9 +70,17 @@ namespace GPApp.WinForms.Views
             tabControlProdutos.SelectedTab = tabPageEdicao;
         }
 
-        public void ExibeAbaManutencao()
+        public void ExibeAbaListagem()
         {
-            tabControlProdutos.SelectedTab = tabPageManutencao;
+            tabControlProdutos.SelectedTab = tabPageListagem;
+        }
+
+        public void AdicionaEditPresenter(IProdutoEditView editView)
+        {
+            if (!(editView is Control editControl)) return;
+
+            editControl.Dock = DockStyle.Fill;
+            panelEditProduto.Controls.Add(editControl);
         }
 
         #endregion
@@ -85,6 +98,8 @@ namespace GPApp.WinForms.Views
         {
             EnviarEmailAction?.Invoke();
         }
+
+        
 
         #endregion
     }

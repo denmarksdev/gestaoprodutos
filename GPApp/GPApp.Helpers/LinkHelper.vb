@@ -24,7 +24,6 @@ Public Module LinqHelper
         Return ApplyOrder(Of T)(source, [property], "ThenByDescending")
     End Function
 
-
     Private Function ApplyOrder(Of T)(ByVal source As IQueryable(Of T), ByVal [property] As String, ByVal methodName As String) As IOrderedQueryable(Of T)
         Dim props As String() = [property].Split("."c)
         Dim type As Type = GetType(T)

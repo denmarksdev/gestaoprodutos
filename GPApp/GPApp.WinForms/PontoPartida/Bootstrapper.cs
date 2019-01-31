@@ -2,6 +2,7 @@
 using GPApp.Presenter.Modulos.Produtos;
 using GPApp.Shared.Dados;
 using GPApp.WinForms.Helpers;
+using GPApp.WinForms.Views;
 using MetroFramework.Forms;
 using Ninject;
 using System.Windows.Forms;
@@ -11,6 +12,9 @@ namespace GPApp.WinForms.PontoPartida
     class Bootstrapper
     {
         private readonly IKernel _ioc;
+
+        
+
         internal Bootstrapper(IKernel ioc)
         {
             _ioc = ioc;
@@ -32,6 +36,11 @@ namespace GPApp.WinForms.PontoPartida
                        
             var _presenter = _ioc.Get<ProdutosPresenter>();
             Application.Run(_presenter.GetUI<MetroForm>());
+        }
+
+        public void StartMock()
+        {
+            Application.Run(new Formulario()); ;
         }
     }
 }

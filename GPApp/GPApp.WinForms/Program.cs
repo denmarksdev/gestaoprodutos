@@ -1,4 +1,5 @@
 ﻿using GPApp.WinForms.PontoPartida;
+using MaterialSkin;
 using System;
 
 namespace GPApp.WinForms
@@ -11,8 +12,17 @@ namespace GPApp.WinForms
         [STAThread]
         static void Main()
         {
-           new Bootstrapper(IOCContainer.GetContainer())
-                .Start();
+            MaterialSkinManager
+                .Instance
+                .ColorScheme = new ColorScheme(
+                    Primary.BlueGrey800,
+                    Primary.BlueGrey900,
+                    Primary.BlueGrey500,
+                    Accent.LightBlue200,
+                    TextShade.WHITE);
+
+        new Bootstrapper(IOCContainer.GetContainer())
+                 .Start();
         }
     }
 }

@@ -30,30 +30,18 @@ namespace GPApp.WinForms.Views
         /// </summary>
         private void InitializeComponent()
         {
-            this.metroPanelGrid = new MetroFramework.Controls.MetroPanel();
             this.metroButtonFiltrar = new MetroFramework.Controls.MetroButton();
-            this.tabControlProdutos = new GPApp.WinForms.Componentes.TabControlCustom();
-            this.tabPageManutencao = new System.Windows.Forms.TabPage();
-            this.tabPageEdicao = new System.Windows.Forms.TabPage();
             this.metroButtonIncluir = new MetroFramework.Controls.MetroButton();
             this.metroButtonEmail = new MetroFramework.Controls.MetroButton();
+            this.tabControlProdutos = new GPApp.WinForms.Componentes.TabControlCustom();
+            this.tabPageListagem = new System.Windows.Forms.TabPage();
+            this.metroPanelGrid = new MetroFramework.Controls.MetroPanel();
+            this.tabPageEdicao = new System.Windows.Forms.TabPage();
+            this.panelEditProduto = new System.Windows.Forms.Panel();
             this.tabControlProdutos.SuspendLayout();
-            this.tabPageManutencao.SuspendLayout();
+            this.tabPageListagem.SuspendLayout();
+            this.tabPageEdicao.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // metroPanelGrid
-            // 
-            this.metroPanelGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroPanelGrid.HorizontalScrollbarBarColor = true;
-            this.metroPanelGrid.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanelGrid.HorizontalScrollbarSize = 10;
-            this.metroPanelGrid.Location = new System.Drawing.Point(3, 3);
-            this.metroPanelGrid.Name = "metroPanelGrid";
-            this.metroPanelGrid.Size = new System.Drawing.Size(970, 616);
-            this.metroPanelGrid.TabIndex = 2;
-            this.metroPanelGrid.VerticalScrollbarBarColor = true;
-            this.metroPanelGrid.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanelGrid.VerticalScrollbarSize = 10;
             // 
             // metroButtonFiltrar
             // 
@@ -63,38 +51,6 @@ namespace GPApp.WinForms.Views
             this.metroButtonFiltrar.TabIndex = 1;
             this.metroButtonFiltrar.Text = "Filtrar";
             this.metroButtonFiltrar.UseSelectable = true;
-            // 
-            // tabControlProdutos
-            // 
-            this.tabControlProdutos.Controls.Add(this.tabPageManutencao);
-            this.tabControlProdutos.Controls.Add(this.tabPageEdicao);
-            this.tabControlProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlProdutos.Location = new System.Drawing.Point(20, 60);
-            this.tabControlProdutos.Name = "tabControlProdutos";
-            this.tabControlProdutos.SelectedIndex = 0;
-            this.tabControlProdutos.Size = new System.Drawing.Size(984, 648);
-            this.tabControlProdutos.TabIndex = 3;
-            // 
-            // tabPageManutencao
-            // 
-            this.tabPageManutencao.BackColor = System.Drawing.Color.White;
-            this.tabPageManutencao.Controls.Add(this.metroPanelGrid);
-            this.tabPageManutencao.Location = new System.Drawing.Point(4, 22);
-            this.tabPageManutencao.Name = "tabPageManutencao";
-            this.tabPageManutencao.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageManutencao.Size = new System.Drawing.Size(976, 622);
-            this.tabPageManutencao.TabIndex = 0;
-            this.tabPageManutencao.Text = "Listagem";
-            // 
-            // tabPageEdicao
-            // 
-            this.tabPageEdicao.BackColor = System.Drawing.Color.White;
-            this.tabPageEdicao.Location = new System.Drawing.Point(4, 22);
-            this.tabPageEdicao.Name = "tabPageEdicao";
-            this.tabPageEdicao.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageEdicao.Size = new System.Drawing.Size(976, 622);
-            this.tabPageEdicao.TabIndex = 1;
-            this.tabPageEdicao.Text = "Edição";
             // 
             // metroButtonIncluir
             // 
@@ -116,6 +72,61 @@ namespace GPApp.WinForms.Views
             this.metroButtonEmail.UseSelectable = true;
             this.metroButtonEmail.Click += new System.EventHandler(this.MetroButtonEmail_Click);
             // 
+            // tabControlProdutos
+            // 
+            this.tabControlProdutos.Controls.Add(this.tabPageListagem);
+            this.tabControlProdutos.Controls.Add(this.tabPageEdicao);
+            this.tabControlProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlProdutos.Location = new System.Drawing.Point(20, 60);
+            this.tabControlProdutos.Name = "tabControlProdutos";
+            this.tabControlProdutos.SelectedIndex = 0;
+            this.tabControlProdutos.Size = new System.Drawing.Size(984, 648);
+            this.tabControlProdutos.TabIndex = 3;
+            // 
+            // tabPageListagem
+            // 
+            this.tabPageListagem.BackColor = System.Drawing.Color.White;
+            this.tabPageListagem.Controls.Add(this.metroPanelGrid);
+            this.tabPageListagem.Location = new System.Drawing.Point(4, 22);
+            this.tabPageListagem.Name = "tabPageListagem";
+            this.tabPageListagem.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageListagem.Size = new System.Drawing.Size(976, 622);
+            this.tabPageListagem.TabIndex = 0;
+            this.tabPageListagem.Text = "Listagem";
+            // 
+            // metroPanelGrid
+            // 
+            this.metroPanelGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroPanelGrid.HorizontalScrollbarBarColor = true;
+            this.metroPanelGrid.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanelGrid.HorizontalScrollbarSize = 10;
+            this.metroPanelGrid.Location = new System.Drawing.Point(3, 3);
+            this.metroPanelGrid.Name = "metroPanelGrid";
+            this.metroPanelGrid.Size = new System.Drawing.Size(970, 616);
+            this.metroPanelGrid.TabIndex = 2;
+            this.metroPanelGrid.VerticalScrollbarBarColor = true;
+            this.metroPanelGrid.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanelGrid.VerticalScrollbarSize = 10;
+            // 
+            // tabPageEdicao
+            // 
+            this.tabPageEdicao.BackColor = System.Drawing.Color.White;
+            this.tabPageEdicao.Controls.Add(this.panelEditProduto);
+            this.tabPageEdicao.Location = new System.Drawing.Point(4, 22);
+            this.tabPageEdicao.Name = "tabPageEdicao";
+            this.tabPageEdicao.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageEdicao.Size = new System.Drawing.Size(976, 622);
+            this.tabPageEdicao.TabIndex = 1;
+            this.tabPageEdicao.Text = "Edição";
+            // 
+            // panelEditProduto
+            // 
+            this.panelEditProduto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelEditProduto.Location = new System.Drawing.Point(3, 3);
+            this.panelEditProduto.Name = "panelEditProduto";
+            this.panelEditProduto.Size = new System.Drawing.Size(970, 616);
+            this.panelEditProduto.TabIndex = 0;
+            // 
             // ProdutosView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -129,7 +140,8 @@ namespace GPApp.WinForms.Views
             this.Name = "ProdutosView";
             this.Text = "ProdutosView";
             this.tabControlProdutos.ResumeLayout(false);
-            this.tabPageManutencao.ResumeLayout(false);
+            this.tabPageListagem.ResumeLayout(false);
+            this.tabPageEdicao.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -138,9 +150,10 @@ namespace GPApp.WinForms.Views
         private MetroFramework.Controls.MetroPanel metroPanelGrid;
         private MetroFramework.Controls.MetroButton metroButtonFiltrar;
         private TabControlCustom tabControlProdutos;
-        private System.Windows.Forms.TabPage tabPageManutencao;
+        private System.Windows.Forms.TabPage tabPageListagem;
         private System.Windows.Forms.TabPage tabPageEdicao;
         private MetroFramework.Controls.MetroButton metroButtonIncluir;
         private MetroFramework.Controls.MetroButton metroButtonEmail;
+        private System.Windows.Forms.Panel panelEditProduto;
     }
 }

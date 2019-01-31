@@ -24,9 +24,13 @@ namespace GPApp.Model.Lookups
             Preco = produto.Preco;
             DataCadastro = produto.DataCadastro;
 
-            Estoque = produto.PosicoesEstoque
+            var posicaoAtualEstoque =
+                produto.PosicoesEstoque
                          .OrderByDescending(e => e.Lancamento)
-                         .First().Quantidade;
+                         .FirstOrDefault();
+
+            if (posicaoAtualEstoque != null)
+                Estoque = posicaoAtualEstoque.Quantidade;
         }
 
         public static ProdutoLookup Empty
