@@ -30,11 +30,13 @@ namespace GPApp.Presenter.Modulos.Produtos
                 .NomeColuna(nameof(ProdutoLookup.Preco))
                 .TituloColuna("Preço")
                 .TipoColuna(wrapper.Nome.GetType())
+                .Alinhada(TipoAlinhamentoColuna.Direita)
                 .TamanhoColuna(100)
                 .BuildColuna()
 
                 .NomeColuna(nameof(ProdutoLookup.Estoque))
                 .TituloColuna(nameof(ProdutoLookup.Estoque))
+                .Alinhada(TipoAlinhamentoColuna.Direita)
                 .TamanhoColuna(100)
                 .TipoColuna(wrapper.Estoque.GetType())
                 .PermitirOrdenar(false)
@@ -43,6 +45,7 @@ namespace GPApp.Presenter.Modulos.Produtos
                 .NomeColuna(nameof(ProdutoLookup.DataCadastro))
                 .TituloColuna("Cadastrado em")
                 .TipoColuna(wrapper.DataCadastro.GetType())
+                .Alinhada(TipoAlinhamentoColuna.Centro)
                 .TamanhoColuna(150)
                 .BuildColuna()
 

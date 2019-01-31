@@ -39,6 +39,7 @@
     <Compile Include="Base\BasePresenter.cs" />
     <Compile Include="Base\BasePresenterModel.cs" />
     <Compile Include="Base\IView.cs" />
+    <Compile Include="Grid\ColunaFormataInfo.cs" />
     <Compile Include="Grid\ColunaInfo.cs" />
     <Compile Include="Grid\ColunaTipoAjuste.cs" />
     <Compile Include="Grid\GridConfig.cs" />

@@ -12,6 +12,7 @@ namespace GPApp.WinForms.Componentes
     public partial class VirtualGrid : MetroGrid , IGridView
     {
         private readonly List<string> _naoOrdenarColunas = new List<string>();
+        private  ColunaFormataInfo _formataInfo  = new ColunaFormataInfo();
 
         private const string COLUNA_SUFIXO = "Column";
         #region Construtor
@@ -41,6 +42,7 @@ namespace GPApp.WinForms.Componentes
         public Action ConsultaAction { get ; set ; }
         public Action ErroPagincaoAction { get ; set ; }
         public Func<Task<bool>> Inicializa { get ; set ; }
+        public Func<ColunaFormataInfo, ColunaFormataInfo> FormataCelulaFunc { get ; set ; }
 
         #endregion
 
@@ -79,8 +81,22 @@ namespace GPApp.WinForms.Componentes
         protected override void OnCellFormatting(DataGridViewCellFormattingEventArgs e)
         {
             base.OnCellFormatting(e);
-            e.CellStyle.SelectionBackColor = ColorTranslator.FromHtml(CoresHelper.Primaria);
-            e.CellStyle.SelectionForeColor = ColorTranslator.FromHtml(CoresHelper.Selecao);
+
+            _formataInfo.CorTexto = CoresHelper.Branco;
+            _formataInfo.CoreFundo = CoresHelper.Preto;
+            _formataInfo.CorFundoSelecao = CoresHelper.Primaria;
+            _formataInfo.CorTextoSelecao = CoresHelper.Branco;
+            _formataInfo.Valor = e.Value;
+            _formataInfo.NomePropriedade = this.Columns[e.ColumnIndex].DataPropertyName;
+            _formataInfo.IndexRow = e.RowIndex;
+
+            _formataInfo = FormataCelulaFunc?.Invoke(_formataInfo)??_formataInfo;
+
+            e.CellStyle.BackColor = ColorTranslator.FromHtml(_formataInfo.CoreFundo);
+            e.CellStyle.ForeColor = ColorTranslator.FromHtml(_formataInfo.CorTexto);
+            e.CellStyle.SelectionBackColor = ColorTranslator.FromHtml(_formataInfo.CorFundoSelecao);
+            e.CellStyle.SelectionForeColor = ColorTranslator.FromHtml(_formataInfo.CorTextoSelecao);
+            e.Value = _formataInfo.Valor;
         }
 
         protected override void OnColumnHeadersDefaultCellStyleChanged(EventArgs e)
@@ -159,12 +175,12 @@ namespace GPApp.WinForms.Componentes
 
         public void SetCores()
         {
-            BackgroundColor = ColorTranslator.FromHtml(CoresHelper.Selecao);
+            BackgroundColor = ColorTranslator.FromHtml(CoresHelper.Branco);
             DefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml(CoresHelper.Primaria);
-            GridColor = ColorTranslator.FromHtml(CoresHelper.Selecao);
+            GridColor = ColorTranslator.FromHtml(CoresHelper.Branco);
             RowsDefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml( CoresHelper.Primaria);
             DefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml(CoresHelper.Primaria);
-            ColumnHeadersDefaultCellStyle.ForeColor = ColorTranslator.FromHtml(CoresHelper.Selecao);
+            ColumnHeadersDefaultCellStyle.ForeColor = ColorTranslator.FromHtml(CoresHelper.Branco);
         }
 
         public void SetNumeroRegistros(int numero)

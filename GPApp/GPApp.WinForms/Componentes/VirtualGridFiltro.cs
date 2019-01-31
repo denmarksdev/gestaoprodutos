@@ -49,6 +49,11 @@ namespace GPApp.WinForms.Componentes
             set => virtualGridPrincipal.ErroPagincaoAction = value;
         }
         public string[] RodapeTexto { get; set; } = {"item", "itens"};
+        public Func<ColunaFormataInfo, ColunaFormataInfo> FormataCelulaFunc
+        {
+            get => virtualGridPrincipal.FormataCelulaFunc;
+            set => virtualGridPrincipal.FormataCelulaFunc = value;
+        }
 
         #endregion
 

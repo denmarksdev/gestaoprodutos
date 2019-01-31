@@ -1,4 +1,8 @@
-﻿using GPApp.Presenter.Base;
+﻿using System;
+using System.Globalization;
+using GPApp.Model;
+using GPApp.Model.Lookups;
+using GPApp.Presenter.Base;
 using GPApp.Presenter.Grid;
 using GPApp.Presenter.PubSub;
 using GPApp.Presenter.PubSub.Eventos;
@@ -42,11 +46,27 @@ namespace GPApp.Presenter.Modulos.Produtos
             view.LoadAction = OnLoad;
             view.IncluirProdutoAction = OnIncluirProduto;
             view.EnviarEmailAction = OnEnviarEmail;
+
+            gridViewPresenter.GridView.FormataCelulaFunc = OnFormataCelula;
         }
 
         #endregion
 
         #region Ações
+
+        private ColunaFormataInfo OnFormataCelula(ColunaFormataInfo info)
+        {
+            switch (info.NomePropriedade)
+            {
+                case nameof(ProdutoLookup.Preco):
+                    info.Valor = ((decimal)info.Valor).ToString("C2", new CultureInfo("pt-BR"));
+                    break;
+                case nameof(ProdutoLookup.DataCadastro):
+                    info.Valor = ((DateTimeOffset)info.Valor).ToString("dd/MM/yyyy hh:mm:ss");
+                    break;
+            }
+            return info;
+        }
 
         private async void OnAtualizaGrid(AtualizarGridProdutosEvent evento)
         {
@@ -54,8 +74,6 @@ namespace GPApp.Presenter.Modulos.Produtos
                 await _gridViewPresenter.LoadAsync();
             ExibeListagem();
         }
-
-        
 
         private async void OnLoad()
         {

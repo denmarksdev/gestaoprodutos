@@ -8,7 +8,7 @@ namespace GPApp.WinForms.Helpers
     {
 
         public static readonly Color Primaria = ColorTranslator.FromHtml(Shared.Helpers.CoresHelper.Primaria);
-        public static readonly Color Selecao = ColorTranslator.FromHtml(Shared.Helpers.CoresHelper.Selecao);
+        public static readonly Color Selecao = ColorTranslator.FromHtml(Shared.Helpers.CoresHelper.Branco);
         public static readonly Color Secundaria = ColorTranslator.FromHtml(Shared.Helpers.CoresHelper.Secundaria);
 
         public static void ConfiguraBotaoConfirmacao(MetroButton button)
