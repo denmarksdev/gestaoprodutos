@@ -29,29 +29,61 @@
         private void InitializeComponent()
         {
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
+            this.metroTextBoxEdit = new MetroFramework.Controls.MetroTextBox();
             this.panelLabel = new System.Windows.Forms.Panel();
             this.labelErro = new System.Windows.Forms.Label();
             this.materialLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.materialSingleLineTextField = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.metroPanel2.SuspendLayout();
             this.panelLabel.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroPanel2
             // 
+            this.metroPanel2.Controls.Add(this.metroTextBoxEdit);
             this.metroPanel2.Controls.Add(this.panelLabel);
-            this.metroPanel2.Controls.Add(this.materialSingleLineTextField);
             this.metroPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroPanel2.HorizontalScrollbarBarColor = true;
             this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel2.HorizontalScrollbarSize = 10;
             this.metroPanel2.Location = new System.Drawing.Point(0, 0);
             this.metroPanel2.Name = "metroPanel2";
-            this.metroPanel2.Size = new System.Drawing.Size(806, 49);
+            this.metroPanel2.Size = new System.Drawing.Size(806, 44);
             this.metroPanel2.TabIndex = 6;
             this.metroPanel2.VerticalScrollbarBarColor = true;
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel2.VerticalScrollbarSize = 10;
+            // 
+            // metroTextBoxEdit
+            // 
+            // 
+            // 
+            // 
+            this.metroTextBoxEdit.CustomButton.Image = null;
+            this.metroTextBoxEdit.CustomButton.Location = new System.Drawing.Point(784, 1);
+            this.metroTextBoxEdit.CustomButton.Name = "";
+            this.metroTextBoxEdit.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.metroTextBoxEdit.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTextBoxEdit.CustomButton.TabIndex = 1;
+            this.metroTextBoxEdit.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTextBoxEdit.CustomButton.UseSelectable = true;
+            this.metroTextBoxEdit.CustomButton.Visible = false;
+            this.metroTextBoxEdit.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.metroTextBoxEdit.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.metroTextBoxEdit.Lines = new string[0];
+            this.metroTextBoxEdit.Location = new System.Drawing.Point(0, 21);
+            this.metroTextBoxEdit.MaxLength = 32767;
+            this.metroTextBoxEdit.Name = "metroTextBoxEdit";
+            this.metroTextBoxEdit.PasswordChar = '\0';
+            this.metroTextBoxEdit.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTextBoxEdit.SelectedText = "";
+            this.metroTextBoxEdit.SelectionLength = 0;
+            this.metroTextBoxEdit.SelectionStart = 0;
+            this.metroTextBoxEdit.ShortcutsEnabled = true;
+            this.metroTextBoxEdit.Size = new System.Drawing.Size(806, 23);
+            this.metroTextBoxEdit.TabIndex = 4;
+            this.metroTextBoxEdit.UseSelectable = true;
+            this.metroTextBoxEdit.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroTextBoxEdit.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // panelLabel
             // 
@@ -90,25 +122,6 @@
             this.materialLabel.TabIndex = 0;
             this.materialLabel.Text = "Label";
             // 
-            // materialSingleLineTextField
-            // 
-            this.materialSingleLineTextField.BackColor = System.Drawing.Color.White;
-            this.materialSingleLineTextField.Depth = 0;
-            this.materialSingleLineTextField.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.materialSingleLineTextField.Hint = "";
-            this.materialSingleLineTextField.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.materialSingleLineTextField.Location = new System.Drawing.Point(0, 26);
-            this.materialSingleLineTextField.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField.Name = "materialSingleLineTextField";
-            this.materialSingleLineTextField.PasswordChar = '\0';
-            this.materialSingleLineTextField.SelectedText = "";
-            this.materialSingleLineTextField.SelectionLength = 0;
-            this.materialSingleLineTextField.SelectionStart = 0;
-            this.materialSingleLineTextField.Size = new System.Drawing.Size(806, 23);
-            this.materialSingleLineTextField.TabIndex = 2;
-            this.materialSingleLineTextField.Text = "Edit";
-            this.materialSingleLineTextField.UseSystemPasswordChar = false;
-            // 
             // CustomEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -116,7 +129,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.metroPanel2);
             this.Name = "CustomEdit";
-            this.Size = new System.Drawing.Size(806, 49);
+            this.Size = new System.Drawing.Size(806, 44);
             this.metroPanel2.ResumeLayout(false);
             this.panelLabel.ResumeLayout(false);
             this.panelLabel.PerformLayout();
@@ -130,6 +143,6 @@
         private System.Windows.Forms.Panel panelLabel;
         private System.Windows.Forms.Label labelErro;
         private MaterialSkin.Controls.MaterialLabel materialLabel;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField;
+        private MetroFramework.Controls.MetroTextBox metroTextBoxEdit;
     }
 }

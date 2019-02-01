@@ -45,13 +45,19 @@ namespace GPApp.WinForms.Views
             this.materialLabelPreview = new MaterialSkin.Controls.MaterialLabel();
             this.metroButtonIncluirImagem = new MetroFramework.Controls.MetroButton();
             this.metroGridImagens = new MetroFramework.Controls.MetroGrid();
+            this.ordemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.alterarImagemColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.ExcluirImagemColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.produtoImagemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBoxPreview = new System.Windows.Forms.PictureBox();
             this.metroTabPageEspecificações = new MetroFramework.Controls.MetroTabPage();
             this.metroButtonIncluirEspecificacao = new MetroFramework.Controls.MetroButton();
             this.metroGridEspecificacoes = new MetroFramework.Controls.MetroGrid();
+            this.ordemDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EspNomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnEspExcluir = new System.Windows.Forms.DataGridViewImageColumn();
+            this.produtoEspecificacaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.metroButtonSalvar = new MetroFramework.Controls.MetroButton();
             this.metroButtonCancelar = new MetroFramework.Controls.MetroButton();
@@ -66,23 +72,17 @@ namespace GPApp.WinForms.Views
             this.customEditMultlineDescricao = new GPApp.WinForms.Componentes.CustomEditMultline();
             this.customEditNome = new GPApp.WinForms.Componentes.CustomEdit();
             this.customEditCodigo = new GPApp.WinForms.Componentes.CustomEdit();
-            this.ordemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.produtoImagemBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ordemDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EspNomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.produtoEspecificacaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.metroTabControlProdutoEdit.SuspendLayout();
             this.metroTabPagePrincipal.SuspendLayout();
             this.metroTabPageImagens.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGridImagens)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.produtoImagemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).BeginInit();
             this.metroTabPageEspecificações.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGridEspecificacoes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.produtoEspecificacaoBindingSource)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProdutoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.produtoImagemBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.produtoEspecificacaoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // metroTabControlProdutoEdit
@@ -217,6 +217,14 @@ namespace GPApp.WinForms.Views
             this.metroGridImagens.Size = new System.Drawing.Size(345, 349);
             this.metroGridImagens.TabIndex = 8;
             // 
+            // ordemDataGridViewTextBoxColumn
+            // 
+            this.ordemDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ordemDataGridViewTextBoxColumn.DataPropertyName = "Ordem";
+            this.ordemDataGridViewTextBoxColumn.HeaderText = "Ordem";
+            this.ordemDataGridViewTextBoxColumn.Name = "ordemDataGridViewTextBoxColumn";
+            this.ordemDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // alterarImagemColumn
             // 
             this.alterarImagemColumn.HeaderText = "Alterar";
@@ -233,6 +241,10 @@ namespace GPApp.WinForms.Views
             this.ExcluirImagemColumn.Name = "ExcluirImagemColumn";
             this.ExcluirImagemColumn.ReadOnly = true;
             this.ExcluirImagemColumn.Width = 50;
+            // 
+            // produtoImagemBindingSource
+            // 
+            this.produtoImagemBindingSource.DataSource = typeof(GPApp.Model.ProdutoImagem);
             // 
             // pictureBoxPreview
             // 
@@ -327,12 +339,38 @@ namespace GPApp.WinForms.Views
             this.metroGridEspecificacoes.Size = new System.Drawing.Size(875, 372);
             this.metroGridEspecificacoes.TabIndex = 8;
             // 
+            // ordemDataGridViewTextBoxColumn1
+            // 
+            this.ordemDataGridViewTextBoxColumn1.DataPropertyName = "Ordem";
+            this.ordemDataGridViewTextBoxColumn1.HeaderText = "Ordem";
+            this.ordemDataGridViewTextBoxColumn1.Name = "ordemDataGridViewTextBoxColumn1";
+            this.ordemDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.ordemDataGridViewTextBoxColumn1.Width = 50;
+            // 
+            // EspNomeDataGridViewTextBoxColumn
+            // 
+            this.EspNomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.EspNomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.EspNomeDataGridViewTextBoxColumn.Name = "EspNomeDataGridViewTextBoxColumn";
+            this.EspNomeDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // descricaoDataGridViewTextBoxColumn
+            // 
+            this.descricaoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descricaoDataGridViewTextBoxColumn.DataPropertyName = "Descricao";
+            this.descricaoDataGridViewTextBoxColumn.HeaderText = "Descricao";
+            this.descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
+            // 
             // ColumnEspExcluir
             // 
             this.ColumnEspExcluir.HeaderText = "Excluir";
             this.ColumnEspExcluir.Image = ((System.Drawing.Image)(resources.GetObject("ColumnEspExcluir.Image")));
             this.ColumnEspExcluir.Name = "ColumnEspExcluir";
             this.ColumnEspExcluir.Width = 50;
+            // 
+            // produtoEspecificacaoBindingSource
+            // 
+            this.produtoEspecificacaoBindingSource.DataSource = typeof(GPApp.Model.ProdutoEspecificacao);
             // 
             // flowLayoutPanel1
             // 
@@ -351,7 +389,7 @@ namespace GPApp.WinForms.Views
             this.metroButtonSalvar.Location = new System.Drawing.Point(3, 3);
             this.metroButtonSalvar.Name = "metroButtonSalvar";
             this.metroButtonSalvar.Size = new System.Drawing.Size(87, 39);
-            this.metroButtonSalvar.TabIndex = 0;
+            this.metroButtonSalvar.TabIndex = 8;
             this.metroButtonSalvar.Text = "Salvar";
             this.metroButtonSalvar.UseCustomBackColor = true;
             this.metroButtonSalvar.UseSelectable = true;
@@ -364,7 +402,7 @@ namespace GPApp.WinForms.Views
             this.metroButtonCancelar.Location = new System.Drawing.Point(96, 3);
             this.metroButtonCancelar.Name = "metroButtonCancelar";
             this.metroButtonCancelar.Size = new System.Drawing.Size(87, 39);
-            this.metroButtonCancelar.TabIndex = 1;
+            this.metroButtonCancelar.TabIndex = 9;
             this.metroButtonCancelar.Text = "Cancelar";
             this.metroButtonCancelar.UseCustomBackColor = true;
             this.metroButtonCancelar.UseSelectable = true;
@@ -409,9 +447,10 @@ namespace GPApp.WinForms.Views
             this.customEditPrecoPromocional.LabelErroText = "";
             this.customEditPrecoPromocional.LabelText = "Preço promocional";
             this.customEditPrecoPromocional.Location = new System.Drawing.Point(3, 358);
+            this.customEditPrecoPromocional.MaxWidthEdit = 0;
             this.customEditPrecoPromocional.Name = "customEditPrecoPromocional";
             this.customEditPrecoPromocional.Size = new System.Drawing.Size(354, 49);
-            this.customEditPrecoPromocional.TabIndex = 5;
+            this.customEditPrecoPromocional.TabIndex = 6;
             // 
             // customEditQuantidade
             // 
@@ -419,9 +458,10 @@ namespace GPApp.WinForms.Views
             this.customEditQuantidade.LabelErroText = "";
             this.customEditQuantidade.LabelText = "Estoque";
             this.customEditQuantidade.Location = new System.Drawing.Point(396, 358);
+            this.customEditQuantidade.MaxWidthEdit = 0;
             this.customEditQuantidade.Name = "customEditQuantidade";
             this.customEditQuantidade.Size = new System.Drawing.Size(364, 49);
-            this.customEditQuantidade.TabIndex = 6;
+            this.customEditQuantidade.TabIndex = 7;
             // 
             // customEditPreco
             // 
@@ -429,9 +469,10 @@ namespace GPApp.WinForms.Views
             this.customEditPreco.LabelErroText = "";
             this.customEditPreco.LabelText = "Preço";
             this.customEditPreco.Location = new System.Drawing.Point(396, 292);
+            this.customEditPreco.MaxWidthEdit = 0;
             this.customEditPreco.Name = "customEditPreco";
             this.customEditPreco.Size = new System.Drawing.Size(364, 49);
-            this.customEditPreco.TabIndex = 4;
+            this.customEditPreco.TabIndex = 5;
             // 
             // customEditCusto
             // 
@@ -439,9 +480,10 @@ namespace GPApp.WinForms.Views
             this.customEditCusto.LabelErroText = "";
             this.customEditCusto.LabelText = "Custo";
             this.customEditCusto.Location = new System.Drawing.Point(3, 292);
+            this.customEditCusto.MaxWidthEdit = 0;
             this.customEditCusto.Name = "customEditCusto";
             this.customEditCusto.Size = new System.Drawing.Size(354, 49);
-            this.customEditCusto.TabIndex = 3;
+            this.customEditCusto.TabIndex = 4;
             // 
             // customEditMultlineDescricao
             // 
@@ -451,7 +493,7 @@ namespace GPApp.WinForms.Views
             this.customEditMultlineDescricao.Location = new System.Drawing.Point(3, 132);
             this.customEditMultlineDescricao.Name = "customEditMultlineDescricao";
             this.customEditMultlineDescricao.Size = new System.Drawing.Size(715, 124);
-            this.customEditMultlineDescricao.TabIndex = 2;
+            this.customEditMultlineDescricao.TabIndex = 3;
             // 
             // customEditNome
             // 
@@ -459,9 +501,10 @@ namespace GPApp.WinForms.Views
             this.customEditNome.LabelErroText = "";
             this.customEditNome.LabelText = "Nome";
             this.customEditNome.Location = new System.Drawing.Point(3, 69);
+            this.customEditNome.MaxWidthEdit = 0;
             this.customEditNome.Name = "customEditNome";
             this.customEditNome.Size = new System.Drawing.Size(715, 47);
-            this.customEditNome.TabIndex = 1;
+            this.customEditNome.TabIndex = 2;
             // 
             // customEditCodigo
             // 
@@ -469,56 +512,19 @@ namespace GPApp.WinForms.Views
             this.customEditCodigo.LabelErroText = "";
             this.customEditCodigo.LabelText = "Código";
             this.customEditCodigo.Location = new System.Drawing.Point(3, 16);
+            this.customEditCodigo.MaxWidthEdit = 0;
             this.customEditCodigo.Name = "customEditCodigo";
             this.customEditCodigo.Size = new System.Drawing.Size(238, 47);
-            this.customEditCodigo.TabIndex = 0;
-            // 
-            // ordemDataGridViewTextBoxColumn
-            // 
-            this.ordemDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ordemDataGridViewTextBoxColumn.DataPropertyName = "Ordem";
-            this.ordemDataGridViewTextBoxColumn.HeaderText = "Ordem";
-            this.ordemDataGridViewTextBoxColumn.Name = "ordemDataGridViewTextBoxColumn";
-            this.ordemDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // produtoImagemBindingSource
-            // 
-            this.produtoImagemBindingSource.DataSource = typeof(GPApp.Model.ProdutoImagem);
-            // 
-            // ordemDataGridViewTextBoxColumn1
-            // 
-            this.ordemDataGridViewTextBoxColumn1.DataPropertyName = "Ordem";
-            this.ordemDataGridViewTextBoxColumn1.HeaderText = "Ordem";
-            this.ordemDataGridViewTextBoxColumn1.Name = "ordemDataGridViewTextBoxColumn1";
-            this.ordemDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.ordemDataGridViewTextBoxColumn1.Width = 50;
-            // 
-            // EspNomeDataGridViewTextBoxColumn
-            // 
-            this.EspNomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            this.EspNomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.EspNomeDataGridViewTextBoxColumn.Name = "EspNomeDataGridViewTextBoxColumn";
-            this.EspNomeDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // descricaoDataGridViewTextBoxColumn
-            // 
-            this.descricaoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descricaoDataGridViewTextBoxColumn.DataPropertyName = "Descricao";
-            this.descricaoDataGridViewTextBoxColumn.HeaderText = "Descricao";
-            this.descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
-            // 
-            // produtoEspecificacaoBindingSource
-            // 
-            this.produtoEspecificacaoBindingSource.DataSource = typeof(GPApp.Model.ProdutoEspecificacao);
+            this.customEditCodigo.TabIndex = 1;
             // 
             // ProdutoEditView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.metroProgressSpinnerSalvar);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.metroTabControlProdutoEdit);
+            this.Controls.Add(this.metroProgressSpinnerSalvar);
             this.Name = "ProdutoEditView";
             this.Size = new System.Drawing.Size(889, 531);
             this.metroTabControlProdutoEdit.ResumeLayout(false);
@@ -526,13 +532,13 @@ namespace GPApp.WinForms.Views
             this.metroTabPageImagens.ResumeLayout(false);
             this.metroTabPageImagens.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGridImagens)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.produtoImagemBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).EndInit();
             this.metroTabPageEspecificações.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.metroGridEspecificacoes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.produtoEspecificacaoBindingSource)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ProdutoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.produtoImagemBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.produtoEspecificacaoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -28,6 +28,7 @@ namespace GPApp.WinForms.Views
             metroTabControlProdutoEdit.SelectedTab = metroTabPagePrincipal;
             ConfiguracoesGridDeImagens();
             ConfiguracoesGridDeEspecificacoes();
+            metroProgressSpinnerSalvar.BringToFront();
         }
 
         #endregion
@@ -63,10 +64,7 @@ namespace GPApp.WinForms.Views
             metroProgressSpinnerSalvar.Enabled = exibir;
         }
 
-        public void FocoPrincipal()
-        {
-            throw new NotImplementedException();
-        }
+        
 
         private void ConfiguracoesGridDeEspecificacoes()
         {
@@ -342,7 +340,10 @@ namespace GPApp.WinForms.Views
             CancelarAction?.Invoke();
         }
 
-
+        public void FocoPrincipal()
+        {
+            customEditCodigo.Focus();
+        }
     }
 
     #endregion

@@ -90,6 +90,7 @@ namespace GPApp.Presenter.Modulos.Produtos
         {
             _produtoEditPresenter.IncluirProduto();
             ExibeEdicao();
+            _produtoEditPresenter.View.FocoPrincipal();
         }
 
         private async void OnEnviarEmail()

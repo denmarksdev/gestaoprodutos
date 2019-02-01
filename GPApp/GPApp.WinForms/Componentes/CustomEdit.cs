@@ -1,4 +1,5 @@
 ﻿using MaterialSkin.Controls;
+using MetroFramework.Controls;
 using System.ComponentModel;
 using System.Windows.Forms;
 
@@ -19,9 +20,9 @@ namespace GPApp.WinForms.Componentes
         }
 
         [Browsable(false)]
-        public MaterialSingleLineTextField Edit
+        public MetroTextBox Edit
         {
-            get => materialSingleLineTextField;
+            get => metroTextBoxEdit;
         }
 
         [Browsable(true)]
@@ -38,6 +39,14 @@ namespace GPApp.WinForms.Componentes
         {
             get => labelErro.Text;
             set => labelErro.Text = value;
+        }
+
+        [Browsable(true)]
+        [DefaultValue(true)]
+        public int MaxWidthEdit
+        {
+            get => metroTextBoxEdit.MaximumSize.Width;
+            set => metroTextBoxEdit.MaximumSize = new System.Drawing.Size(value, metroTextBoxEdit.Height); 
         }
 
         public CustomEdit()
