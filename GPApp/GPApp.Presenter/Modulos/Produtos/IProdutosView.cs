@@ -8,11 +8,14 @@ namespace GPApp.Presenter.Modulos.Produtos
     {
         Action IncluirProdutoAction { get; set; }
         Action EnviarEmailAction { get; set; }
+        Action SincronizarComNuvemAction { get; set; }
+
         void AdicionaGrid(IGridViewFiltro gridViewFiltro);
         void ExibeAbaEdicao();
         void ExibeAbaListagem();
         void AdicionaEditPresenter(IProdutoEditView editView);
         void ExibeBotoesAcaoAbaListagem(bool exibe);
         void SetTextoBotaoFiltrar(string texto);
+        void HabilitarBotaoSincronizacaoNuvem(bool habilita);
     }
 }

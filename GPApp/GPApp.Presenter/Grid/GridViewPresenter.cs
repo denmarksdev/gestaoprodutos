@@ -26,13 +26,16 @@ namespace GPApp.Presenter.Grid
             GridView.AtivarFiltroAction = OnAtivarAction;
             GridView.ErroPagincaoAction = OnErroPaginacaoAction;
             GridView.AlterarAction = OnAlterar;
+            GridView.FormataCelulaFunc = OnFormataCelula;
         }
+
 
         #endregion
 
         #region Propriedades
 
         public Action<Object>  AlterarRegistroAction { get; set; }
+        public Func<ColunaFormataInfo<T>, ColunaFormataInfo>   ColunaFormatingAction { get; set; }
 
         #endregion
 
@@ -89,6 +92,16 @@ namespace GPApp.Presenter.Grid
             GridView.AtualizarDesign();
         }
 
+        private ColunaFormataInfo OnFormataCelula(ColunaFormataInfo info)
+        {
+            var infoModel = new ColunaFormataInfo<T>(info)
+            {
+                Model = _gridInfo.Cache.RecuperarItem(info.IndexRow)
+            };
+
+            var resultado = ColunaFormatingAction?.Invoke(infoModel) ?? info;
+            return resultado;
+        }
 
         #endregion
 

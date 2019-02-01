@@ -11,6 +11,7 @@ namespace GPApp.Model.Lookups
         public decimal Preco { get; set; }
         public DateTimeOffset DataCadastro { get; set; }
         public int Estoque { get; set; }
+        public  bool Sincronizado { get; set; }
 
         public ProdutoLookup()
         {
@@ -23,6 +24,7 @@ namespace GPApp.Model.Lookups
             Nome = produto.Nome;
             Preco = produto.Preco;
             DataCadastro = produto.DataCadastro;
+            Sincronizado = produto.Sincronizado;
 
             var posicaoAtualEstoque =
                 produto.PosicoesEstoque

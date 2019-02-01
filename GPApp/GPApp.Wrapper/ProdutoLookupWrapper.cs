@@ -62,5 +62,14 @@ namespace GPApp.Wrapper
 		}
 		public bool EstoqueIsChanged => GetIsChanged(nameof(Estoque));
 		public  System.Int32 EstoqueOriginalValue => GetOriginalValue< System.Int32>(nameof(Estoque));
-	}
+
+        public bool Sincronizado
+        {
+            get { return GetValue<bool>(); }
+            set { SetValue(value); }
+        }
+        public bool SincronizadoIsChanged => GetIsChanged(nameof(Estoque));
+        public bool SincronizadoOriginalValue => GetOriginalValue<bool>(nameof(Estoque));
+
+    }
 }

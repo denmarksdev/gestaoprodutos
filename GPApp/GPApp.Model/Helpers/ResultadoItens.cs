@@ -22,7 +22,6 @@ namespace GPApp.Model.Helpers
         }
         public void AdicionaItensIvalidos(params T[] itens)
         {
-            Valido = false;
             ItensInvalidos.AddRange(itens);
         }
 

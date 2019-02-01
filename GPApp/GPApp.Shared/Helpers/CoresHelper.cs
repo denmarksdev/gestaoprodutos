@@ -6,5 +6,6 @@
         public const string Secundaria = "#545E75";
         public const string Branco = "#FFFFFF";
         public const string Preto = "#000000";
+        public const string Danger = "#EA526F";
     }
 }

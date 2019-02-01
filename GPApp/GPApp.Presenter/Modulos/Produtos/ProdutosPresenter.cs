@@ -1,13 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using GPApp.Model;
 using GPApp.Model.Lookups;
 using GPApp.Presenter.Base;
 using GPApp.Presenter.Grid;
 using GPApp.Presenter.PubSub;
 using GPApp.Presenter.PubSub.Eventos;
+using GPApp.Repository;
 using GPApp.Service;
 using GPApp.Shared.Paginacao;
+using GPApp.Shared.Services;
 using GPApp.Wrapper;
 
 namespace GPApp.Presenter.Modulos.Produtos
@@ -21,6 +25,10 @@ namespace GPApp.Presenter.Modulos.Produtos
         private readonly ProdutoEditPresenter _produtoEditPresenter;
         private readonly IPaginacaoRepository<ProdutoLookupWrapper> _paginacaoRepository;
         private readonly IEventAggregator _eventAggregator;
+        private readonly IProdutoRepository _produtoRepository;
+        private readonly IProdutoClientService _produtoClientService;
+        private readonly IDialogService _dialogService;
+        private bool _sincronizandoComNuvem;
 
         #endregion
 
@@ -32,7 +40,11 @@ namespace GPApp.Presenter.Modulos.Produtos
             IEmailService emailService,
             ProdutoEditPresenter produtoEditPresenter,
             IPaginacaoRepository<ProdutoLookupWrapper> paginacaoRepository,
-            IEventAggregator eventAggregator
+            IEventAggregator eventAggregator,
+            IProdutoRepository produtoRepository,
+            IProdutoClientService produtoClientService,
+            IDialogService dialogService
+
         ) : base(view)
         {
             _gridViewPresenter = gridViewPresenter;
@@ -40,14 +52,18 @@ namespace GPApp.Presenter.Modulos.Produtos
             _produtoEditPresenter = produtoEditPresenter;
             _paginacaoRepository = paginacaoRepository;
             _eventAggregator = eventAggregator;
+            _produtoRepository = produtoRepository;
+            _produtoClientService = produtoClientService;
+            _dialogService = dialogService;
 
             _eventAggregator.Subscribe<AtualizarGridProdutosEvent>(OnAtualizaGrid);
 
             view.LoadAction = OnLoad;
             view.IncluirProdutoAction = OnIncluirProduto;
             view.EnviarEmailAction = OnEnviarEmail;
+            view.SincronizarComNuvemAction = OnSincronizarNuvem;
 
-            gridViewPresenter.GridView.FormataCelulaFunc = OnFormataCelula;
+            gridViewPresenter.ColunaFormatingAction = OnFormataCelula;
             gridViewPresenter.FiltrouEvent += GridViewPresenter_FiltrouEvent;
             gridViewPresenter.AlterarRegistroAction = OnAlterar;
         }
@@ -56,6 +72,53 @@ namespace GPApp.Presenter.Modulos.Produtos
 
         #region Ações
 
+        private async void OnSincronizarNuvem()
+        {
+            if (_sincronizandoComNuvem) return;
+
+            _sincronizandoComNuvem = true;
+            View.HabilitarBotaoSincronizacaoNuvem(false);
+
+            var resultadoProdutosNaoSincronizados = await _produtoRepository.BuscaProdutosNaoSincronizados();
+            if (!resultadoProdutosNaoSincronizados.Valido)
+            {
+                _dialogService.Mensagem(resultadoProdutosNaoSincronizados.Mensagem);
+                HabilitaSincronizacao();
+                return;
+            }
+
+            var produtos = resultadoProdutosNaoSincronizados.Valor;
+            var resultadoWeb = await _produtoClientService.SalvarProdutos(produtos);
+            if (resultadoWeb.Valido)
+            {
+               var produtosAtualizados = produtos.Where(p => !resultadoWeb.ItensInvalidos.Contains(p.Id));
+               var resposta = await _produtoRepository
+                    .AtualizaSincronizacaoAsync(
+                            produtosAtualizados.Select(p=> p.Id),
+                            resultadoWeb.DataAtualizacao);
+
+                if (!resposta.Valido)
+                    _dialogService.Mensagem(resposta.Mensagem);
+
+                if (resultadoWeb.ItensInvalidos.Count > 0)
+                    _dialogService.Mensagem(
+                        "Produtos que não foram atualizados:" +
+                        String.Join("\n", resultadoWeb.ItensInvalidos));
+            }
+            else
+            {
+                _dialogService.Mensagem(resultadoWeb.GetMensagem());
+            }
+
+            HabilitaSincronizacao();
+        }
+
+        private void HabilitaSincronizacao()
+        {
+            _sincronizandoComNuvem = false;
+            View.HabilitarBotaoSincronizacaoNuvem(true);
+        }
+
         private async void OnAlterar(object valor)
         {
             var id = new Guid(valor.ToString());
@@ -63,8 +126,13 @@ namespace GPApp.Presenter.Modulos.Produtos
             if (valido) ExibeEdicao();
         }
 
-        private ColunaFormataInfo OnFormataCelula(ColunaFormataInfo info)
+        private ColunaFormataInfo OnFormataCelula(ColunaFormataInfo<ProdutoLookupWrapper> info)
         {
+            if (!info.Model.Model.Sincronizado)
+            {
+                info.CorTexto = Shared.Helpers.CoresHelper.Danger;
+            }
+
             if (info.Valor != null)
             {
                 switch (info.NomePropriedade)
@@ -77,7 +145,6 @@ namespace GPApp.Presenter.Modulos.Produtos
                         break;
                 }
             }
-
             return info;
         }
 

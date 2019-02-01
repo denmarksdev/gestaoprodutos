@@ -92,5 +92,31 @@ namespace GPApp.Repository
         {
             throw new NotImplementedException();
         }
+
+        public async Task<Resultado<IEnumerable<Produto>>> BuscaProdutosNaoSincronizados()
+        {
+            try
+            {
+                IEnumerable<Produto> produtos = await _dao.BuscaProdutosNaoSincronizados();
+                return new Resultado<IEnumerable<Produto>>(produtos);
+            }
+            catch (Exception ex)
+            {
+                return new Resultado<IEnumerable<Produto>>("Falha ao localizar produtos não sincronizados", ex);
+            }
+        }
+
+        public async Task<Resultado> AtualizaSincronizacaoAsync(IEnumerable<Guid> ids, DateTimeOffset dataAtualizacao)
+        {
+            try
+            {
+                await _dao.AtualizaSincronizacaoAsync(ids, dataAtualizacao); 
+                return new Resultado();
+            }
+            catch (Exception ex)
+            {
+                return new Resultado("Falha ao atualizar sincronização", ex);
+            }
+        }
     }
 }

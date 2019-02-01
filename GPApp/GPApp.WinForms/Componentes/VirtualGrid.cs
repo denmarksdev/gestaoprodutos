@@ -88,8 +88,8 @@ namespace GPApp.WinForms.Componentes
         {
             base.OnCellFormatting(e);
 
-            _formataInfo.CorTexto = CoresHelper.Branco;
-            _formataInfo.CoreFundo = CoresHelper.Preto;
+            _formataInfo.CorTexto = CoresHelper.Preto;
+            _formataInfo.CoreFundo = CoresHelper.Branco;
             _formataInfo.CorFundoSelecao = CoresHelper.Primaria;
             _formataInfo.CorTextoSelecao = CoresHelper.Branco;
             _formataInfo.Valor = e.Value;

@@ -38,6 +38,7 @@ namespace GPApp.WinForms.Views
             this.metroPanelGrid = new MetroFramework.Controls.MetroPanel();
             this.tabPageEdicao = new System.Windows.Forms.TabPage();
             this.panelEditProduto = new System.Windows.Forms.Panel();
+            this.metroButtonSincronizarNuvem = new MetroFramework.Controls.MetroButton();
             this.tabControlProdutos.SuspendLayout();
             this.tabPageListagem.SuspendLayout();
             this.tabPageEdicao.SuspendLayout();
@@ -67,7 +68,7 @@ namespace GPApp.WinForms.Views
             // metroButtonEmail
             // 
             this.metroButtonEmail.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroButtonEmail.Location = new System.Drawing.Point(415, 27);
+            this.metroButtonEmail.Location = new System.Drawing.Point(563, 27);
             this.metroButtonEmail.Name = "metroButtonEmail";
             this.metroButtonEmail.Size = new System.Drawing.Size(75, 23);
             this.metroButtonEmail.TabIndex = 5;
@@ -130,11 +131,23 @@ namespace GPApp.WinForms.Views
             this.panelEditProduto.Size = new System.Drawing.Size(970, 616);
             this.panelEditProduto.TabIndex = 0;
             // 
+            // metroButtonSincronizarNuvem
+            // 
+            this.metroButtonSincronizarNuvem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.metroButtonSincronizarNuvem.Location = new System.Drawing.Point(415, 27);
+            this.metroButtonSincronizarNuvem.Name = "metroButtonSincronizarNuvem";
+            this.metroButtonSincronizarNuvem.Size = new System.Drawing.Size(142, 23);
+            this.metroButtonSincronizarNuvem.TabIndex = 6;
+            this.metroButtonSincronizarNuvem.Text = "Sincronizar com a nuvem";
+            this.metroButtonSincronizarNuvem.UseSelectable = true;
+            this.metroButtonSincronizarNuvem.Click += new System.EventHandler(this.MetroButtonSincronizarNuvem_Click);
+            // 
             // ProdutosView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 728);
+            this.Controls.Add(this.metroButtonSincronizarNuvem);
             this.Controls.Add(this.metroButtonEmail);
             this.Controls.Add(this.metroButtonIncluir);
             this.Controls.Add(this.tabControlProdutos);
@@ -158,5 +171,6 @@ namespace GPApp.WinForms.Views
         private MetroFramework.Controls.MetroButton metroButtonIncluir;
         private MetroFramework.Controls.MetroButton metroButtonEmail;
         private System.Windows.Forms.Panel panelEditProduto;
+        private MetroFramework.Controls.MetroButton metroButtonSincronizarNuvem;
     }
 }

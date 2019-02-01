@@ -17,5 +17,7 @@ namespace GPApp.Dal.Dao
         Task<IEnumerable<Produto>> TodosComImagemAsync();
 
         Task<Produto> LocalizarPorChavePrimaria(Guid id);
+        Task<IEnumerable<Produto>> BuscaProdutosNaoSincronizados();
+        Task AtualizaSincronizacaoAsync(IEnumerable<Guid> ids, DateTimeOffset dataAtualizacao);
     }
 }

@@ -36,6 +36,7 @@ namespace GPApp.WinForms.Views
         public Action LoadAction { get ; set ; }
         public Action IncluirProdutoAction { get ; set ; }
         public Action EnviarEmailAction { get ; set ; }
+        public Action SincronizarComNuvemAction { get ; set; }
 
         #endregion
 
@@ -88,6 +89,11 @@ namespace GPApp.WinForms.Views
             metroButtonFiltrar.Text = texto;
         }
 
+        public void HabilitarBotaoSincronizacaoNuvem(bool habilita)
+        {
+            metroButtonSincronizarNuvem.Enabled = habilita;
+        }
+
         #endregion
 
         #region Handlers
@@ -104,8 +110,12 @@ namespace GPApp.WinForms.Views
             EnviarEmailAction?.Invoke();
         }
 
-        
+        private void MetroButtonSincronizarNuvem_Click(object sender, EventArgs e)
+        {
+        }
 
         #endregion
+
+
     }
 }

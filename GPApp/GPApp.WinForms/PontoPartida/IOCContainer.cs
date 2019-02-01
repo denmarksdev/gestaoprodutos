@@ -35,6 +35,7 @@ namespace GPApp.WinForms.PontoPartida
             Kernel.Bind<IConfiguracaoService>().To<ConfigurationService>();
             Kernel.Bind<IDialogService>().To<DialogService>();
             Kernel.Bind<IArquivoService>().To<ArquivoService>();
+            Kernel.Bind<IProdutoClientService>().To<ProdutoClientService>();
         }
 
         private static void ConfiguraRepository(Ninject.IKernel Kernel)

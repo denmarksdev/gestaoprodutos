@@ -18,5 +18,7 @@ namespace GPApp.Repository
         Task<Resultado<IEnumerable<Produto>>> TodosAsyc();
 
         Task<Resultado<IEnumerable<Produto>>> TodosComImagemAsyc();
+        Task<Resultado<IEnumerable<Produto>>> BuscaProdutosNaoSincronizados();
+        Task<Resultado> AtualizaSincronizacaoAsync(IEnumerable<Guid> enumerable, DateTimeOffset dataAtualizacao);
     }
 }

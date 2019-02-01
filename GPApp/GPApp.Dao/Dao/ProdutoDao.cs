@@ -105,6 +105,30 @@ namespace GPApp.Dal.Dao
             }
         }
 
+        public async Task<IEnumerable<Produto>> BuscaProdutosNaoSincronizados()
+        {
+            using (var db = DatabaseManager.GetContext())
+            {
+                return await db.Produtos
+                    .Where(p=> !p.Sincronizado )
+                    .ToListAsync();
+            }
+        }
+
+        public async Task AtualizaSincronizacaoAsync(IEnumerable<Guid> ids, DateTimeOffset dataAtualizacao)
+        {
+            using (var db = DatabaseManager.GetContext())
+            {
+                var dbProdutos = db.Produtos.Where(p => ids.Contains(p.Id));
+                foreach (var dbProduto in dbProdutos )
+                {
+                    dbProduto.Sincronizado = true;
+                    dbProduto.UltimaAtualizacao = dataAtualizacao;
+                }
+                await db.SaveChangesAsync();
+            }
+        }
+
         #region Métodos auxiliares
 
         private void VerificarExclusaoDeEspecificacoes(Produto produto, GPDataContext db, Produto produtoDb)
@@ -127,7 +151,7 @@ namespace GPApp.Dal.Dao
                 imagensExcluidas.Add(ImagemHelper.GeraCaminho(imagem, ImagemHelper.Tamanho.Original, produto.Id));
             }
         }
-        
+
         #endregion
     }
 }

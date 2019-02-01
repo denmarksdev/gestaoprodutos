@@ -21,6 +21,7 @@ namespace GPApp.Presenter.Modulos.Produtos
         private readonly IArquivoService _arquivoService;
         private readonly IProdutoRepository _produtoRepository;
         private readonly IEventAggregator _eventAggregator;
+        private bool _processandoSincronizacaoWeb;
 
         #endregion
 

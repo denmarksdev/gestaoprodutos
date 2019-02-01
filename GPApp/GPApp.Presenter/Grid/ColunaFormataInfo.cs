@@ -12,4 +12,20 @@ namespace GPApp.Presenter.Grid
         public string CorTextoSelecao { get; set; }
         public int IndexRow { get; set; }
     }
+
+    public class ColunaFormataInfo<T> : ColunaFormataInfo
+    {
+        public ColunaFormataInfo(ColunaFormataInfo info)
+        {
+            NomePropriedade = info.NomePropriedade;
+            Valor = info.Valor;
+            CoreFundo = info.CoreFundo;
+            CorTexto = info.CorTexto;
+            CorFundoSelecao = info.CorFundoSelecao;
+            CorTextoSelecao = info.CorTextoSelecao;
+            IndexRow = info.IndexRow;
+        }
+
+        public T Model { get; set; }
+    }
 }
