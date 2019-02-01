@@ -55,6 +55,11 @@ namespace GPApp.WinForms.Componentes
             set => virtualGridPrincipal.FormataCelulaFunc = value;
         }
         public bool FiltroAtivo { get ; set ; }
+        public Action<object> AlterarAction
+        {
+            get => virtualGridPrincipal.AlterarAction;
+            set => virtualGridPrincipal.AlterarAction = value;
+        }
 
         #endregion
 

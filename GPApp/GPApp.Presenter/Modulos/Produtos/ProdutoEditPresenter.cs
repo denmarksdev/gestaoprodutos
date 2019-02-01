@@ -9,6 +9,7 @@ using GPApp.Shared.Services;
 using GPApp.Wrapper;
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace GPApp.Presenter.Modulos.Produtos
 {
@@ -77,7 +78,9 @@ namespace GPApp.Presenter.Modulos.Produtos
             var model = Wrapper.Model;
             Resultado resultado = null;
             if (model.Id == Guid.Empty)
-              resultado = await  _produtoRepository.IncluirAsync(model);
+                resultado = await _produtoRepository.IncluirAsync(model);
+            else
+                resultado = await _produtoRepository.AtualizaAsync(model);
 
             View.ExibirProgressoSalvar(false);
 
@@ -177,12 +180,35 @@ namespace GPApp.Presenter.Modulos.Produtos
                 EstoqueAtual = new ProdutoEstoque()
             });
 
+            PreparaCamposParaEdicao();
+        }
+
+        private void PreparaCamposParaEdicao()
+        {
+            Wrapper.PropertyChanged -= PresenterPropertyChanged;
             Wrapper.PropertyChanged += PresenterPropertyChanged;
+            Wrapper.Imagens.CollectionChanged += CollectionChanged;
+            Wrapper.Especificacoes.CollectionChanged += CollectionChanged;
 
             View.SelecionarPrimeiroCampoEdicao();
             View.InicializaBinding(Wrapper);
             ValidaModel();
             View.FocoPrincipal();
+        }
+
+        internal async Task<bool> Alterar(Guid id)
+        {
+            var resultado = await _produtoRepository.LocalizaPorChavePrimariaAsync(id) ;
+            if (resultado.Valido)
+            {
+                Wrapper = new ProdutoWrapper(resultado.Valor);
+                PreparaCamposParaEdicao();
+            }
+            else
+            {
+                _dialogService.Mensagem(resultado.Mensagem);
+            }
+            return resultado.Valido;
         }
 
         private void VerificaErros(System.ComponentModel.PropertyChangedEventArgs e)
@@ -196,8 +222,8 @@ namespace GPApp.Presenter.Modulos.Produtos
                     mensagemErro = erros.First();
                 }
                 View.SetMensagenErro(e.PropertyName, mensagemErro);
-                ValidaModel();
             }
+            ValidaModel();
         }
 
         private void ValidaModel()
@@ -227,6 +253,11 @@ namespace GPApp.Presenter.Modulos.Produtos
         private void PresenterPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
             VerificaErros(e);
+        }
+
+        private void CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+            ValidaModel();
         }
 
         #endregion

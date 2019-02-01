@@ -13,6 +13,8 @@ namespace GPApp.Presenter.Grid
         Action<string> OrderAction { get; set; }
         Action ConsultaAction { get; set; }
         Action ErroPagincaoAction { get; set; }
+        Action<object> AlterarAction { get; set; }
+
         Func<ColunaFormataInfo, ColunaFormataInfo> FormataCelulaFunc { get; set; }
 
         void SetNumeroRegistros(int numero);

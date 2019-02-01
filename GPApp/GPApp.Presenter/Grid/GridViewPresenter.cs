@@ -25,11 +25,23 @@ namespace GPApp.Presenter.Grid
             GridView.FiltrarAcion = OnFiltrarAction;
             GridView.AtivarFiltroAction = OnAtivarAction;
             GridView.ErroPagincaoAction = OnErroPaginacaoAction;
+            GridView.AlterarAction = OnAlterar;
         }
 
         #endregion
 
+        #region Propriedades
+
+        public Action<Object>  AlterarRegistroAction { get; set; }
+
+        #endregion
+
         #region Ações
+
+        private void OnAlterar(object valor)
+        {
+            AlterarRegistroAction?.Invoke(valor);
+        }
 
         private Task<bool> OnInicializaGrid()
         {
@@ -76,6 +88,7 @@ namespace GPApp.Presenter.Grid
             _gridInfo.Cache.CarregarDuasPaginas();
             GridView.AtualizarDesign();
         }
+
 
         #endregion
 

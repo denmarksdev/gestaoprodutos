@@ -11,6 +11,8 @@ namespace GPApp.WinForms.Componentes
 {
     public partial class VirtualGrid : MetroGrid , IGridView
     {
+        private string _colunaChave;
+
         private readonly List<string> _naoOrdenarColunas = new List<string>();
         private  ColunaFormataInfo _formataInfo  = new ColunaFormataInfo();
 
@@ -43,6 +45,7 @@ namespace GPApp.WinForms.Componentes
         public Action ErroPagincaoAction { get ; set ; }
         public Func<Task<bool>> Inicializa { get ; set ; }
         public Func<ColunaFormataInfo, ColunaFormataInfo> FormataCelulaFunc { get ; set ; }
+        public Action<object> AlterarAction { get ; set ; }
 
         #endregion
 
@@ -52,8 +55,11 @@ namespace GPApp.WinForms.Componentes
         {
             try
             {
+               var propriedade = Columns[e.ColumnIndex].DataPropertyName;
+
                 if (ErroPaginacao) return;
-                e.Value = GetValue?.Invoke(e.RowIndex, Columns[e.ColumnIndex].DataPropertyName);
+                if (propriedade == ColunaInfo.COLUNA_ALTERACAO) return;
+                e.Value = GetValue?.Invoke(e.RowIndex, propriedade) ;
             }
             catch (Exception)
             {
@@ -111,6 +117,18 @@ namespace GPApp.WinForms.Componentes
             ColumnHeadersHeight = 50;
         }
 
+        protected override void OnCellClick(DataGridViewCellEventArgs e)
+        {
+            if (Columns[e.ColumnIndex].DataPropertyName == ColunaInfo.COLUNA_ALTERACAO)
+            {
+                var valor = this[_colunaChave, e.RowIndex].Value;
+
+                AlterarAction?.Invoke(valor);
+            }
+
+            base.OnCellClick(e);
+        }
+
         #endregion
 
         #region Métodos
@@ -145,32 +163,69 @@ namespace GPApp.WinForms.Componentes
         {
             foreach (ColunaInfo coluna in colunas)
             {
-                var columnGrid = new DataGridViewColumn(new DataGridViewTextBoxCell())
-                {
-                    DataPropertyName = coluna.NomePropriedade,
-                    Name = coluna.NomePropriedade + COLUNA_SUFIXO,
-                    HeaderText = coluna.Titulo,
-                    SortMode = DataGridViewColumnSortMode.Programmatic
-                };
+                DataGridViewColumn columnGrid = CriaColuna(coluna);
 
+                columnGrid.DataPropertyName = coluna.NomePropriedade;
+                columnGrid.Name = coluna.NomePropriedade + COLUNA_SUFIXO;
+                columnGrid.HeaderText = coluna.Titulo;
+                columnGrid.SortMode = DataGridViewColumnSortMode.Programmatic;
                 columnGrid.HeaderCell.Style.Alignment = DefineAlinhamento(coluna.TipoAlinhamento);
                 columnGrid.DefaultCellStyle.Alignment = columnGrid.HeaderCell.Style.Alignment;
                 columnGrid.DefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml(CoresHelper.Primaria);
                 columnGrid.HeaderCell.Style.ForeColor = ColorTranslator.FromHtml(CoresHelper.Secundaria);
+                columnGrid.Visible = coluna.Exibir;
 
-                if (!coluna.PermitirOrdenar)
-                    _naoOrdenarColunas.Add(coluna.NomePropriedade);
+                ConfiguraColunasParaNaoOrdenar(coluna);
+                ConfiguraTipo(coluna, columnGrid);
+                AjustaTamanhoModoDimensionamento(coluna, columnGrid);
 
-                if (coluna.Type != null) 
-                    columnGrid.ValueType = coluna.Type;
-                if (coluna.TipoAjuste != ColunaTipoAjuste.Nenhum)
-                    columnGrid.AutoSizeMode = DefineTipoAjusteColuna(coluna.TipoAjuste);
-                else if (coluna.Tamanho > 0)
-                    columnGrid.Width = coluna.Tamanho;
+                if (coluna.ChavePrimaria)
+                {
+                    _colunaChave = columnGrid.Name;
+                }
 
                 Columns.Add(columnGrid);
             }
             DefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml(CoresHelper.Primaria);
+        }
+
+        private void AjustaTamanhoModoDimensionamento(ColunaInfo coluna, DataGridViewColumn columnGrid)
+        {
+            if (coluna.TipoAjuste != ColunaTipoAjuste.Nenhum)
+                columnGrid.AutoSizeMode = DefineTipoAjusteColuna(coluna.TipoAjuste);
+            else if (coluna.Tamanho > 0)
+                columnGrid.Width = coluna.Tamanho;
+        }
+
+        private static void ConfiguraTipo(ColunaInfo coluna, DataGridViewColumn columnGrid)
+        {
+            if (coluna.Type != null)
+                columnGrid.ValueType = coluna.Type;
+        }
+
+        private void ConfiguraColunasParaNaoOrdenar(ColunaInfo coluna)
+        {
+            if (!coluna.PermitirOrdenar)
+                _naoOrdenarColunas.Add(coluna.NomePropriedade);
+        }
+
+        private static DataGridViewColumn CriaColuna(ColunaInfo coluna)
+        {
+            DataGridViewColumn columnGrid;
+            if (coluna.NomePropriedade != ColunaInfo.COLUNA_ALTERACAO)
+            {
+                columnGrid = new DataGridViewTextBoxColumn();
+            }
+            else
+            {
+                columnGrid = new DataGridViewImageColumn
+                {
+                    Image = Properties.Resources.edit__1_,
+                    ImageLayout = DataGridViewImageCellLayout.Zoom
+                };
+            }
+
+            return columnGrid;
         }
 
         public void SetCores()

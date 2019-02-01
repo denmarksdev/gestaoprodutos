@@ -48,12 +48,20 @@ namespace GPApp.Presenter.Modulos.Produtos
             view.EnviarEmailAction = OnEnviarEmail;
 
             gridViewPresenter.GridView.FormataCelulaFunc = OnFormataCelula;
-            gridViewPresenter.FiltrouEvent += GridViewPresenter_FiltrouEvent;  
+            gridViewPresenter.FiltrouEvent += GridViewPresenter_FiltrouEvent;
+            gridViewPresenter.AlterarRegistroAction = OnAlterar;
         }
 
         #endregion
 
         #region Ações
+
+        private async void OnAlterar(object valor)
+        {
+            var id = new Guid(valor.ToString());
+            var valido = await _produtoEditPresenter.Alterar(id);
+            if (valido) ExibeEdicao();
+        }
 
         private ColunaFormataInfo OnFormataCelula(ColunaFormataInfo info)
         {

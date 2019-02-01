@@ -14,6 +14,12 @@ namespace GPApp.Presenter.Modulos.Produtos
             var wrapper = new ProdutoLookupWrapper(ProdutoLookup.Empty);
 
             return new GridInfoBuilder<ProdutoLookupWrapper>(nameof(ProdutoLookupWrapper.Nome))
+
+                .NomeColuna(nameof(ProdutoLookup.Id))
+                .Exibir(false)
+                .ChavePrimaria()
+                .BuildColuna()
+
                 .NomeColuna(nameof(ProdutoLookup.Codigo))
                 .TamanhoColuna(90)
                 .TituloColuna("Código")
@@ -48,6 +54,8 @@ namespace GPApp.Presenter.Modulos.Produtos
                 .Alinhada(TipoAlinhamentoColuna.Centro)
                 .TamanhoColuna(150)
                 .BuildColuna()
+
+                .IncluiColunaAlteracao()
 
                 .Repository(paginacaoRepository)
 

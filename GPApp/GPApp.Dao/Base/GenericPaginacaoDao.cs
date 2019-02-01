@@ -39,7 +39,7 @@ namespace GPApp.Dal.Base
             if (string.IsNullOrEmpty(Pesquisa))
                 return ItensSemFiltro(limit, offset, includeProperties);
 
-            return Filtra(limit, offset);
+            return Filtra(limit, offset, includeProperties);
         }
 
         public IEnumerable<TEntity> GetItens(Expression<Func<TEntity, bool>> predicate, params Expression<Func<TEntity, object>>[] includeProperties)

@@ -21,6 +21,8 @@ namespace GPApp.Presenter.Grid
         private ColunaTipoAjuste _modo = ColunaTipoAjuste.Nenhum;
         private readonly IList<ColunaInfo> _colunas = new List<ColunaInfo>();
         private bool _permitirOrdenar = true;
+        private bool _exibir = true;
+        private bool _ehChavePrimaria = false;
 
         #endregion
 
@@ -101,6 +103,24 @@ namespace GPApp.Presenter.Grid
             return this;
         }
 
+        public GridInfoBuilder<T> Exibir(bool exibir)
+        {
+            _exibir = exibir;
+            return this;
+        }
+
+        public GridInfoBuilder<T> ChavePrimaria()
+        {
+            _ehChavePrimaria = true;
+            return this;
+        }
+
+        public GridInfoBuilder<T> IncluiColunaAlteracao()
+        {
+            _colunas.Add(ColunaInfo.BuildColunaAlteracao());
+            return this;
+        }
+
         #endregion
 
         #region Métodos
@@ -115,7 +135,9 @@ namespace GPApp.Presenter.Grid
                 Type = _tipo,
                 TipoAlinhamento = _eAlinhamento,
                 TipoAjuste = _modo,
-                PermitirOrdenar = _permitirOrdenar
+                PermitirOrdenar = _permitirOrdenar,
+                ChavePrimaria = _ehChavePrimaria,
+                Exibir = _exibir
             });
 
             DefineValoresPadroesConfColuna();
@@ -132,6 +154,8 @@ namespace GPApp.Presenter.Grid
             _eAlinhamento = TipoAlinhamentoColuna.Esquerda;
             _modo = ColunaTipoAjuste.Nenhum;
             _permitirOrdenar = true;
+            _ehChavePrimaria = false;
+            _exibir = true;
         }
 
         public GridConfig<T> Build()

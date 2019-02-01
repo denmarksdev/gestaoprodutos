@@ -41,6 +41,13 @@ namespace GPApp.WinForms.Views
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroTabControlProdutoEdit = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPagePrincipal = new MetroFramework.Controls.MetroTabPage();
+            this.customEditPrecoPromocional = new GPApp.WinForms.Componentes.CustomEdit();
+            this.customEditQuantidade = new GPApp.WinForms.Componentes.CustomEdit();
+            this.customEditPreco = new GPApp.WinForms.Componentes.CustomEdit();
+            this.customEditCusto = new GPApp.WinForms.Componentes.CustomEdit();
+            this.customEditMultlineDescricao = new GPApp.WinForms.Componentes.CustomEditMultline();
+            this.customEditNome = new GPApp.WinForms.Componentes.CustomEdit();
+            this.customEditCodigo = new GPApp.WinForms.Componentes.CustomEdit();
             this.metroTabPageImagens = new MetroFramework.Controls.MetroTabPage();
             this.materialLabelPreview = new MaterialSkin.Controls.MaterialLabel();
             this.metroButtonIncluirImagem = new MetroFramework.Controls.MetroButton();
@@ -65,13 +72,6 @@ namespace GPApp.WinForms.Views
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.ProdutoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.metroProgressSpinnerSalvar = new MetroFramework.Controls.MetroProgressSpinner();
-            this.customEditPrecoPromocional = new GPApp.WinForms.Componentes.CustomEdit();
-            this.customEditQuantidade = new GPApp.WinForms.Componentes.CustomEdit();
-            this.customEditPreco = new GPApp.WinForms.Componentes.CustomEdit();
-            this.customEditCusto = new GPApp.WinForms.Componentes.CustomEdit();
-            this.customEditMultlineDescricao = new GPApp.WinForms.Componentes.CustomEditMultline();
-            this.customEditNome = new GPApp.WinForms.Componentes.CustomEdit();
-            this.customEditCodigo = new GPApp.WinForms.Componentes.CustomEdit();
             this.metroTabControlProdutoEdit.SuspendLayout();
             this.metroTabPagePrincipal.SuspendLayout();
             this.metroTabPageImagens.SuspendLayout();
@@ -94,7 +94,7 @@ namespace GPApp.WinForms.Views
             this.metroTabControlProdutoEdit.Location = new System.Drawing.Point(0, 0);
             this.metroTabControlProdutoEdit.Name = "metroTabControlProdutoEdit";
             this.metroTabControlProdutoEdit.SelectedIndex = 0;
-            this.metroTabControlProdutoEdit.Size = new System.Drawing.Size(889, 531);
+            this.metroTabControlProdutoEdit.Size = new System.Drawing.Size(889, 573);
             this.metroTabControlProdutoEdit.TabIndex = 0;
             this.metroTabControlProdutoEdit.UseSelectable = true;
             // 
@@ -112,12 +112,88 @@ namespace GPApp.WinForms.Views
             this.metroTabPagePrincipal.HorizontalScrollbarSize = 10;
             this.metroTabPagePrincipal.Location = new System.Drawing.Point(4, 38);
             this.metroTabPagePrincipal.Name = "metroTabPagePrincipal";
-            this.metroTabPagePrincipal.Size = new System.Drawing.Size(881, 489);
+            this.metroTabPagePrincipal.Size = new System.Drawing.Size(881, 531);
             this.metroTabPagePrincipal.TabIndex = 0;
             this.metroTabPagePrincipal.Text = "Principal";
             this.metroTabPagePrincipal.VerticalScrollbarBarColor = true;
             this.metroTabPagePrincipal.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPagePrincipal.VerticalScrollbarSize = 10;
+            // 
+            // customEditPrecoPromocional
+            // 
+            this.customEditPrecoPromocional.BackColor = System.Drawing.Color.White;
+            this.customEditPrecoPromocional.LabelErroText = "";
+            this.customEditPrecoPromocional.LabelText = "Preço promocional";
+            this.customEditPrecoPromocional.Location = new System.Drawing.Point(5, 411);
+            this.customEditPrecoPromocional.MaxWidthEdit = 0;
+            this.customEditPrecoPromocional.Name = "customEditPrecoPromocional";
+            this.customEditPrecoPromocional.Size = new System.Drawing.Size(354, 49);
+            this.customEditPrecoPromocional.TabIndex = 6;
+            // 
+            // customEditQuantidade
+            // 
+            this.customEditQuantidade.BackColor = System.Drawing.Color.White;
+            this.customEditQuantidade.LabelErroText = "";
+            this.customEditQuantidade.LabelText = "Estoque";
+            this.customEditQuantidade.Location = new System.Drawing.Point(398, 411);
+            this.customEditQuantidade.MaxWidthEdit = 0;
+            this.customEditQuantidade.Name = "customEditQuantidade";
+            this.customEditQuantidade.Size = new System.Drawing.Size(364, 49);
+            this.customEditQuantidade.TabIndex = 7;
+            // 
+            // customEditPreco
+            // 
+            this.customEditPreco.BackColor = System.Drawing.Color.White;
+            this.customEditPreco.LabelErroText = "";
+            this.customEditPreco.LabelText = "Preço";
+            this.customEditPreco.Location = new System.Drawing.Point(398, 345);
+            this.customEditPreco.MaxWidthEdit = 0;
+            this.customEditPreco.Name = "customEditPreco";
+            this.customEditPreco.Size = new System.Drawing.Size(364, 49);
+            this.customEditPreco.TabIndex = 5;
+            // 
+            // customEditCusto
+            // 
+            this.customEditCusto.BackColor = System.Drawing.Color.White;
+            this.customEditCusto.LabelErroText = "";
+            this.customEditCusto.LabelText = "Custo";
+            this.customEditCusto.Location = new System.Drawing.Point(5, 345);
+            this.customEditCusto.MaxWidthEdit = 0;
+            this.customEditCusto.Name = "customEditCusto";
+            this.customEditCusto.Size = new System.Drawing.Size(354, 49);
+            this.customEditCusto.TabIndex = 4;
+            // 
+            // customEditMultlineDescricao
+            // 
+            this.customEditMultlineDescricao.BackColor = System.Drawing.Color.White;
+            this.customEditMultlineDescricao.LabelErroText = "";
+            this.customEditMultlineDescricao.LabelText = "Descrição";
+            this.customEditMultlineDescricao.Location = new System.Drawing.Point(3, 132);
+            this.customEditMultlineDescricao.Name = "customEditMultlineDescricao";
+            this.customEditMultlineDescricao.Size = new System.Drawing.Size(759, 207);
+            this.customEditMultlineDescricao.TabIndex = 3;
+            // 
+            // customEditNome
+            // 
+            this.customEditNome.BackColor = System.Drawing.Color.White;
+            this.customEditNome.LabelErroText = "";
+            this.customEditNome.LabelText = "Nome";
+            this.customEditNome.Location = new System.Drawing.Point(3, 69);
+            this.customEditNome.MaxWidthEdit = 0;
+            this.customEditNome.Name = "customEditNome";
+            this.customEditNome.Size = new System.Drawing.Size(759, 47);
+            this.customEditNome.TabIndex = 2;
+            // 
+            // customEditCodigo
+            // 
+            this.customEditCodigo.BackColor = System.Drawing.Color.White;
+            this.customEditCodigo.LabelErroText = "";
+            this.customEditCodigo.LabelText = "Código";
+            this.customEditCodigo.Location = new System.Drawing.Point(3, 16);
+            this.customEditCodigo.MaxWidthEdit = 0;
+            this.customEditCodigo.Name = "customEditCodigo";
+            this.customEditCodigo.Size = new System.Drawing.Size(238, 47);
+            this.customEditCodigo.TabIndex = 1;
             // 
             // metroTabPageImagens
             // 
@@ -377,7 +453,7 @@ namespace GPApp.WinForms.Views
             this.flowLayoutPanel1.Controls.Add(this.metroButtonSalvar);
             this.flowLayoutPanel1.Controls.Add(this.metroButtonCancelar);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 478);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 520);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(889, 53);
             this.flowLayoutPanel1.TabIndex = 1;
@@ -441,82 +517,6 @@ namespace GPApp.WinForms.Views
             this.metroProgressSpinnerSalvar.Value = 99;
             this.metroProgressSpinnerSalvar.Visible = false;
             // 
-            // customEditPrecoPromocional
-            // 
-            this.customEditPrecoPromocional.BackColor = System.Drawing.Color.White;
-            this.customEditPrecoPromocional.LabelErroText = "";
-            this.customEditPrecoPromocional.LabelText = "Preço promocional";
-            this.customEditPrecoPromocional.Location = new System.Drawing.Point(3, 358);
-            this.customEditPrecoPromocional.MaxWidthEdit = 0;
-            this.customEditPrecoPromocional.Name = "customEditPrecoPromocional";
-            this.customEditPrecoPromocional.Size = new System.Drawing.Size(354, 49);
-            this.customEditPrecoPromocional.TabIndex = 6;
-            // 
-            // customEditQuantidade
-            // 
-            this.customEditQuantidade.BackColor = System.Drawing.Color.White;
-            this.customEditQuantidade.LabelErroText = "";
-            this.customEditQuantidade.LabelText = "Estoque";
-            this.customEditQuantidade.Location = new System.Drawing.Point(396, 358);
-            this.customEditQuantidade.MaxWidthEdit = 0;
-            this.customEditQuantidade.Name = "customEditQuantidade";
-            this.customEditQuantidade.Size = new System.Drawing.Size(364, 49);
-            this.customEditQuantidade.TabIndex = 7;
-            // 
-            // customEditPreco
-            // 
-            this.customEditPreco.BackColor = System.Drawing.Color.White;
-            this.customEditPreco.LabelErroText = "";
-            this.customEditPreco.LabelText = "Preço";
-            this.customEditPreco.Location = new System.Drawing.Point(396, 292);
-            this.customEditPreco.MaxWidthEdit = 0;
-            this.customEditPreco.Name = "customEditPreco";
-            this.customEditPreco.Size = new System.Drawing.Size(364, 49);
-            this.customEditPreco.TabIndex = 5;
-            // 
-            // customEditCusto
-            // 
-            this.customEditCusto.BackColor = System.Drawing.Color.White;
-            this.customEditCusto.LabelErroText = "";
-            this.customEditCusto.LabelText = "Custo";
-            this.customEditCusto.Location = new System.Drawing.Point(3, 292);
-            this.customEditCusto.MaxWidthEdit = 0;
-            this.customEditCusto.Name = "customEditCusto";
-            this.customEditCusto.Size = new System.Drawing.Size(354, 49);
-            this.customEditCusto.TabIndex = 4;
-            // 
-            // customEditMultlineDescricao
-            // 
-            this.customEditMultlineDescricao.BackColor = System.Drawing.Color.White;
-            this.customEditMultlineDescricao.LabelErroText = "";
-            this.customEditMultlineDescricao.LabelText = "Descrição";
-            this.customEditMultlineDescricao.Location = new System.Drawing.Point(3, 132);
-            this.customEditMultlineDescricao.Name = "customEditMultlineDescricao";
-            this.customEditMultlineDescricao.Size = new System.Drawing.Size(715, 124);
-            this.customEditMultlineDescricao.TabIndex = 3;
-            // 
-            // customEditNome
-            // 
-            this.customEditNome.BackColor = System.Drawing.Color.White;
-            this.customEditNome.LabelErroText = "";
-            this.customEditNome.LabelText = "Nome";
-            this.customEditNome.Location = new System.Drawing.Point(3, 69);
-            this.customEditNome.MaxWidthEdit = 0;
-            this.customEditNome.Name = "customEditNome";
-            this.customEditNome.Size = new System.Drawing.Size(715, 47);
-            this.customEditNome.TabIndex = 2;
-            // 
-            // customEditCodigo
-            // 
-            this.customEditCodigo.BackColor = System.Drawing.Color.White;
-            this.customEditCodigo.LabelErroText = "";
-            this.customEditCodigo.LabelText = "Código";
-            this.customEditCodigo.Location = new System.Drawing.Point(3, 16);
-            this.customEditCodigo.MaxWidthEdit = 0;
-            this.customEditCodigo.Name = "customEditCodigo";
-            this.customEditCodigo.Size = new System.Drawing.Size(238, 47);
-            this.customEditCodigo.TabIndex = 1;
-            // 
             // ProdutoEditView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -526,7 +526,7 @@ namespace GPApp.WinForms.Views
             this.Controls.Add(this.metroTabControlProdutoEdit);
             this.Controls.Add(this.metroProgressSpinnerSalvar);
             this.Name = "ProdutoEditView";
-            this.Size = new System.Drawing.Size(889, 531);
+            this.Size = new System.Drawing.Size(889, 573);
             this.metroTabControlProdutoEdit.ResumeLayout(false);
             this.metroTabPagePrincipal.ResumeLayout(false);
             this.metroTabPageImagens.ResumeLayout(false);
