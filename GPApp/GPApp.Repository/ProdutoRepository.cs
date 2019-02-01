@@ -62,17 +62,35 @@ namespace GPApp.Repository
             }
         }
 
-        public async Task<Resultado<List<string>>> AtualizaAsync(Produto produto)
+        public async Task<Resultado<IEnumerable<string>>> AtualizaAsync(Produto produto)
         {
             try
             {
                var imagensExcluidas = await _dao.Atualiza(produto);
-                return new Resultado<List<string>>(imagensExcluidas);
+                return new Resultado<IEnumerable<string>>(imagensExcluidas);
             }
             catch (Exception ex)
             {
-                return new Resultado<List<string>>("Falha ao atualizar o produto o " +  produto.Nome, ex);
+                return new Resultado<IEnumerable<string>>("Falha ao atualizar o produto o " +  produto.Nome, ex);
             }
+        }
+
+        public async Task<Resultado> IncluirAsync(IEnumerable<Produto> produtos)
+        {
+            try
+            {
+                await _dao.IncluirAsync(produtos);
+                return new Resultado();
+            }
+            catch (Exception ex)
+            {
+                return new Resultado("Falha ao incluir os produtos", ex);
+            }
+        }
+
+        public Task<Resultado<Dictionary<Guid, string>>> AtualizaAsync(IEnumerable<Produto> produto)
+        {
+            throw new NotImplementedException();
         }
     }
 }

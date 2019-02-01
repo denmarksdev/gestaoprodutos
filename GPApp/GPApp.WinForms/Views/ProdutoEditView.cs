@@ -63,7 +63,6 @@ namespace GPApp.WinForms.Views
             metroProgressSpinnerSalvar.Visible = exibir;
             metroProgressSpinnerSalvar.Enabled = exibir;
         }
-
         
 
         private void ConfiguracoesGridDeEspecificacoes()

@@ -6,6 +6,8 @@
         string EmailSMTP { get; set; }
         string PasswordSMTP { get; set; }
 
+        string BaseUrlApi { get; set; }
+
         void Configura();
     }
 }

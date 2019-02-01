@@ -9,9 +9,14 @@ namespace GPApp.Repository
     public interface IProdutoRepository
     {
         Task<Resultado> IncluirAsync(Produto produto);
+        Task<Resultado>IncluirAsync(IEnumerable<Produto> produtos);
+
+        Task<Resultado<IEnumerable<string>>> AtualizaAsync(Produto produto);
+        Task<Resultado<Dictionary<Guid,string>>> AtualizaAsync(IEnumerable<Produto> produto);
+
         Task<Resultado<Produto>> LocalizaPorChavePrimariaAsync(Guid id);
         Task<Resultado<IEnumerable<Produto>>> TodosAsyc();
-        Task<Resultado<List<string>>> AtualizaAsync(Produto produto);
+
         Task<Resultado<IEnumerable<Produto>>> TodosComImagemAsyc();
     }
 }

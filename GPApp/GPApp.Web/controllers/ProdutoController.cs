@@ -12,15 +12,12 @@ namespace GPApp.Web.controllers
     [ApiController]
     public class ProdutoController : ControllerBase
     {
-        private static string _id = string.Empty;
+        private readonly IProdutoService _service;
 
         public ProdutoController(IProdutoService service)
         {
             _service = service;
         }
-
-        private static List<Produto> _produtos = new List<Produto>();
-        private readonly IProdutoService _service;
 
         // GET: api/Produto
         [HttpGet]
@@ -42,6 +39,14 @@ namespace GPApp.Web.controllers
            return await _service.IncluiAsync(produto);
         }
 
+        // POST: api/Produto
+        [HttpPost("/envia")]
+        public async Task<IActionResult> PostProdutos([FromBody] IEnumerable<Produto> produtos)
+        {
+            return await _service.SalvarProdutosAsync(produtos);
+        }
+
+
         // PUT: api/Produto/5
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(Guid id, [FromBody] Produto produto)
@@ -54,19 +59,6 @@ namespace GPApp.Web.controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-        }
-
-        [HttpGet("email/{id}")]
-        public string Email(string id)
-        {
-            _id += id + " ";
-            return "https://gestaoprodutos.azurewebsites.net/imagens/produtos/sem-imagem.jpeg";
-        }
-
-        [HttpGet("email/")]
-        public string GetEmail()
-        {
-            return _id;
         }
     }
 }

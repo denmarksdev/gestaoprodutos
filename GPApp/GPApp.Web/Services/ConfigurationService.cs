@@ -16,12 +16,14 @@ namespace GPApp.Web.Services
         public string EmailSMTP { get;  set; }
 
         public string PasswordSMTP { get; set; }
+        public string BaseUrlApi { get ; set; }
 
         public void Configura()
         {
             SMTP = _configuration.GetValue<string>("SMTPConfig:SMTP");
             EmailSMTP = _configuration.GetValue<string>("SMTPConfig:Email");
             PasswordSMTP = _configuration.GetValue<string>("SMTPConfig:Password");
+            BaseUrlApi = _configuration.GetValue<string>("API:BaseUrl");
         }
     }
 }

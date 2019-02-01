@@ -8,9 +8,14 @@ namespace GPApp.Dal.Dao
     public interface IProdutoDao
     {
         Task IncluirAsync(Produto produto);
-        Task<Produto> LocalizarPorChavePrimaria(Guid id);
+        Task IncluirAsync(IEnumerable<Produto> produtos);
+
+        Task<IEnumerable<string>> Atualiza(Produto produto);
+        Task<IEnumerable<string>> Atualiza(IEnumerable<Produto> produtos);
+
         Task<IEnumerable<Produto>> TodosAsync();
-        Task<List<string>> Atualiza(Produto produto);
         Task<IEnumerable<Produto>> TodosComImagemAsync();
+
+        Task<Produto> LocalizarPorChavePrimaria(Guid id);
     }
 }
