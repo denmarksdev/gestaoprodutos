@@ -47,6 +47,7 @@ namespace GPApp.WinForms.Views
             metroButtonIncluir.Visible = exibe;
             metroButtonEmail.Visible = exibe;
             metroButtonFiltrar.Visible = exibe;
+            metroButtonSincronizarNuvem.Visible = exibe;
         }
 
         public void AdicionaGrid(IGridViewFiltro gridViewFiltro)
@@ -94,6 +95,12 @@ namespace GPApp.WinForms.Views
             metroButtonSincronizarNuvem.Enabled = habilita;
         }
 
+        public void ExibeProgressoWeb(bool exibir)
+        {
+            metroProgressBarSincronizar.Visible = exibir;
+            metroProgressBarSincronizar.Enabled = exibir;
+        }
+
         #endregion
 
         #region Handlers
@@ -112,10 +119,9 @@ namespace GPApp.WinForms.Views
 
         private void MetroButtonSincronizarNuvem_Click(object sender, EventArgs e)
         {
+            SincronizarComNuvemAction?.Invoke();
         }
 
         #endregion
-
-
     }
 }

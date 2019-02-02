@@ -11,7 +11,9 @@ namespace GPApp.Shared.Helpers
         public static void SalvarImagem(ProdutoImagem imagem, Tamanho tamanho, Guid produtoId)
         {
             byte fator = GeraFator(tamanho);
-            var clean64 = imagem.Dados.Split(',')[1];
+            var imageParts = imagem.Dados.Split(',');
+            string clean64 = ChecaImagemContemInformacoesAdicionaisBase64(imageParts);
+
             string filePath = GeraCaminho(imagem, tamanho, produtoId);
 
             try
@@ -32,6 +34,12 @@ namespace GPApp.Shared.Helpers
             }
         }
 
+        private static string ChecaImagemContemInformacoesAdicionaisBase64(string[] imageParts)
+        {
+            return imageParts.Length == 1
+                            ? imageParts[0]
+                            : imageParts[1];
+        }
 
         public static string GeraCaminho(ProdutoImagem imagem, Tamanho tamanho, Guid produtoId)
         {

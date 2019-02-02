@@ -12,7 +12,7 @@ namespace GPApp.Repository
         Task<Resultado>IncluirAsync(IEnumerable<Produto> produtos);
 
         Task<Resultado<IEnumerable<string>>> AtualizaAsync(Produto produto);
-        Task<Resultado<Dictionary<Guid,string>>> AtualizaAsync(IEnumerable<Produto> produto);
+        Task<Resultado<Dictionary<Guid, IEnumerable<string>>>> AtualizaAsync(IEnumerable<Produto> produto);
 
         Task<Resultado<Produto>> LocalizaPorChavePrimariaAsync(Guid id);
         Task<Resultado<IEnumerable<Produto>>> TodosAsyc();
@@ -20,5 +20,7 @@ namespace GPApp.Repository
         Task<Resultado<IEnumerable<Produto>>> TodosComImagemAsyc();
         Task<Resultado<IEnumerable<Produto>>> BuscaProdutosNaoSincronizados();
         Task<Resultado> AtualizaSincronizacaoAsync(IEnumerable<Guid> enumerable, DateTimeOffset dataAtualizacao);
+        Task<Resultado<int>> NumeroRegistrosSincronizarAsync();
+        Task<Resultado<IEnumerable<Guid>>> GetIdsCadastradosAsync(IEnumerable<Guid> ids);
     }
 }

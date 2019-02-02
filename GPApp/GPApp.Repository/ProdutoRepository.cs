@@ -39,7 +39,6 @@ namespace GPApp.Repository
         {
             try
             {
-                produto.PosicoesEstoque.Add(produto.EstoqueAtual);
                 await _dao.IncluirAsync(produto);
                 return new Resultado();
             }
@@ -62,18 +61,6 @@ namespace GPApp.Repository
             }
         }
 
-        public async Task<Resultado<IEnumerable<string>>> AtualizaAsync(Produto produto)
-        {
-            try
-            {
-               var imagensExcluidas = await _dao.Atualiza(produto);
-                return new Resultado<IEnumerable<string>>(imagensExcluidas);
-            }
-            catch (Exception ex)
-            {
-                return new Resultado<IEnumerable<string>>("Falha ao atualizar o produto o " +  produto.Nome, ex);
-            }
-        }
 
         public async Task<Resultado> IncluirAsync(IEnumerable<Produto> produtos)
         {
@@ -88,9 +75,31 @@ namespace GPApp.Repository
             }
         }
 
-        public Task<Resultado<Dictionary<Guid, string>>> AtualizaAsync(IEnumerable<Produto> produto)
+        public async Task<Resultado<IEnumerable<string>>> AtualizaAsync(Produto produto)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var imagensExcluidas = await _dao.Atualiza(produto);
+                return new Resultado<IEnumerable<string>>(imagensExcluidas);
+            }
+            catch (Exception ex)
+            {
+                return new Resultado<IEnumerable<string>>("Falha ao atualizar o produto o " + produto.Nome, ex);
+            }
+        }
+
+        public async Task<Resultado<Dictionary<Guid,IEnumerable<string>>>> AtualizaAsync(IEnumerable<Produto> itens)
+        {
+            try
+            {
+                var resultado = await _dao.Atualiza(itens);
+
+                return new Resultado<Dictionary<Guid, IEnumerable<string>>> (resultado);
+            }
+            catch (Exception ex)
+            {
+                return new Resultado<Dictionary<Guid, IEnumerable<string>>> ("Falha ao localizar produtos não sincronizados", ex);
+            }
         }
 
         public async Task<Resultado<IEnumerable<Produto>>> BuscaProdutosNaoSincronizados()
@@ -116,6 +125,32 @@ namespace GPApp.Repository
             catch (Exception ex)
             {
                 return new Resultado("Falha ao atualizar sincronização", ex);
+            }
+        }
+
+        public async Task<Resultado<int>> NumeroRegistrosSincronizarAsync()
+        {
+            try
+            {
+                int naoSincronizados = await _dao.ProdutoNaoSincronizadosAsync ();
+                return new Resultado<int>(naoSincronizados);
+            }
+            catch (Exception ex)
+            {
+                return new Resultado<int>("Produtos não sincronizados", ex);
+            }
+        }
+
+        public async Task<Resultado<IEnumerable<Guid>>> GetIdsCadastradosAsync(IEnumerable<Guid> itens)
+        {
+            try
+            {
+                IEnumerable<Guid> ids= await _dao.GetIdsCadastradosAsync(itens);
+                return new Resultado<IEnumerable<Guid>>(ids);
+            }
+            catch (Exception ex)
+            {
+                return new Resultado<IEnumerable<Guid>>("Fallha ao localizar IDs cadastrados", ex);
             }
         }
     }

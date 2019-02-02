@@ -17,5 +17,6 @@ namespace GPApp.Presenter.Modulos.Produtos
         void ExibeBotoesAcaoAbaListagem(bool exibe);
         void SetTextoBotaoFiltrar(string texto);
         void HabilitarBotaoSincronizacaoNuvem(bool habilita);
+        void ExibeProgressoWeb(bool exibir);
     }
 }

@@ -11,7 +11,7 @@ namespace GPApp.Dal.Dao
         Task IncluirAsync(IEnumerable<Produto> produtos);
 
         Task<IEnumerable<string>> Atualiza(Produto produto);
-        Task<IEnumerable<string>> Atualiza(IEnumerable<Produto> produtos);
+        Task<Dictionary<Guid, IEnumerable<string>>> Atualiza(IEnumerable<Produto> produtos);
 
         Task<IEnumerable<Produto>> TodosAsync();
         Task<IEnumerable<Produto>> TodosComImagemAsync();
@@ -19,5 +19,7 @@ namespace GPApp.Dal.Dao
         Task<Produto> LocalizarPorChavePrimaria(Guid id);
         Task<IEnumerable<Produto>> BuscaProdutosNaoSincronizados();
         Task AtualizaSincronizacaoAsync(IEnumerable<Guid> ids, DateTimeOffset dataAtualizacao);
+        Task<int> ProdutoNaoSincronizadosAsync();
+        Task<IEnumerable<Guid>> GetIdsCadastradosAsync(IEnumerable<Guid> ids);
     }
 }

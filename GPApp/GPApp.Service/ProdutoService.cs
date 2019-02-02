@@ -66,6 +66,7 @@ namespace GPApp.Service
                 {
                     var path = ArquivoHelper.GetDiretorioDeImagensDeProdutos();
                     imagem.Preview = GeraCaminhoNoClient(imagem, Tamanho.Pequeno, produto.Id);
+                    imagem.Dados = GeraCaminhoNoClient(imagem, Tamanho.Original, produto.Id);
                 }
             }
             return produto;
@@ -93,8 +94,16 @@ namespace GPApp.Service
                 produto.UltimaAtualizacao = DateTime.UtcNow;
             }
 
-            var produtosIncluir = produtos.Where(p => p.Id == Guid.Empty);
-            var produtosAtualizar = produtos.Where(p => p.Id != Guid.Empty);
+            var resultado = await _repo.GetIdsCadastradosAsync(produtos.Select(p => p.Id));
+            if (!resultado.Valido)
+            {
+                return new StatusCodeResult(StatusCodes.Status500InternalServerError);
+            }
+
+            var ids = resultado.Valor;
+            var produtosIncluir = produtos.Where(p => !ids.Contains(p.Id) );
+            var produtosAtualizar = produtos.Where(p => ids.Contains(p.Id));
+
             var resultadoIncluir = await _repo.IncluirAsync(produtosIncluir);
             var resultadoAtualizar = await _repo.AtualizaAsync(produtosAtualizar);
 
@@ -113,7 +122,7 @@ namespace GPApp.Service
 
             if (resultadoAtualizar.Valido)
             {
-                ExcluirImagens(resultadoAtualizar.Valor.Select(i => i.Value));
+                ExcluirImagens(resultadoAtualizar.Valor.SelectMany(i => i.Value));
                 var idsInvalidos = resultadoAtualizar.Valor.Select(i => i.Key);
 
                 foreach (var produto in produtosAtualizar.Where( p=> !idsInvalidos.Contains(p.Id)))

@@ -77,6 +77,7 @@ namespace GPApp.Presenter.Modulos.Produtos
             if (_sincronizandoComNuvem) return;
 
             _sincronizandoComNuvem = true;
+            View.ExibeProgressoWeb(true);
             View.HabilitarBotaoSincronizacaoNuvem(false);
 
             var resultadoProdutosNaoSincronizados = await _produtoRepository.BuscaProdutosNaoSincronizados();
@@ -91,11 +92,11 @@ namespace GPApp.Presenter.Modulos.Produtos
             var resultadoWeb = await _produtoClientService.SalvarProdutos(produtos);
             if (resultadoWeb.Valido)
             {
-               var produtosAtualizados = produtos.Where(p => !resultadoWeb.ItensInvalidos.Contains(p.Id));
-               var resposta = await _produtoRepository
-                    .AtualizaSincronizacaoAsync(
-                            produtosAtualizados.Select(p=> p.Id),
-                            resultadoWeb.DataAtualizacao);
+                var produtosAtualizados = produtos.Where(p => !resultadoWeb.ItensInvalidos.Contains(p.Id));
+                var resposta = await _produtoRepository
+                     .AtualizaSincronizacaoAsync(
+                             produtosAtualizados.Select(p => p.Id),
+                             resultadoWeb.DataAtualizacao);
 
                 if (!resposta.Valido)
                     _dialogService.Mensagem(resposta.Mensagem);
@@ -111,12 +112,14 @@ namespace GPApp.Presenter.Modulos.Produtos
             }
 
             HabilitaSincronizacao();
+            await _gridViewPresenter.LoadAsync();
         }
 
         private void HabilitaSincronizacao()
         {
             _sincronizandoComNuvem = false;
             View.HabilitarBotaoSincronizacaoNuvem(true);
+            View.ExibeProgressoWeb(false);
         }
 
         private async void OnAlterar(object valor)
@@ -158,7 +161,10 @@ namespace GPApp.Presenter.Modulos.Produtos
         private async void OnLoad()
         {
             View.AdicionaEditPresenter(_produtoEditPresenter.View);
+            View.ExibeProgressoWeb(false);
+
             await ConfiguraGrid();
+            await VerificaSincronizacaoNuvem();
         }
 
         private void OnIncluirProduto()
@@ -201,14 +207,24 @@ namespace GPApp.Presenter.Modulos.Produtos
             View.ExibeBotoesAcaoAbaListagem(false);
         }
 
+        private async System.Threading.Tasks.Task VerificaSincronizacaoNuvem()
+        {
+            var resultado = await _produtoRepository.NumeroRegistrosSincronizarAsync();
+            if (resultado.Valido)
+            {
+                View.HabilitarBotaoSincronizacaoNuvem(resultado.Valor > 0);
+            }
+        }
+
         #endregion
 
         #region Handlers
 
-        private void GridViewPresenter_FiltrouEvent(object sender, bool filtroAtivo)
+        private async void GridViewPresenter_FiltrouEvent(object sender, bool filtroAtivo)
         {
             var texto = filtroAtivo ? "Desativar filtro" : "Filtrar";
             View.SetTextoBotaoFiltrar(texto);
+            await VerificaSincronizacaoNuvem();
         }
 
         #endregion

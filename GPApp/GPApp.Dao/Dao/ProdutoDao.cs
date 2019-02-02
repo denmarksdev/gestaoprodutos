@@ -2,7 +2,6 @@
 using GPApp.Shared.Helpers;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,6 +14,7 @@ namespace GPApp.Dal.Dao
         {
             using (var db = DatabaseManager.GetContext())
             {
+                IncluiPosicaoEstoque(produto);
                 await db.Produtos.AddAsync(produto);
                 await db.SaveChangesAsync();
             }
@@ -24,6 +24,10 @@ namespace GPApp.Dal.Dao
         {
             using (var db = DatabaseManager.GetContext())
             {
+                foreach (var pro in produtos)
+                {
+                    IncluiPosicaoEstoque(pro);
+                }
                 await db.Produtos.AddRangeAsync(produtos);
                 await db.SaveChangesAsync();
             }
@@ -36,6 +40,8 @@ namespace GPApp.Dal.Dao
                 var imagensExcluidas = new List<string>();
                 var produtoDb = await LocalizarPorChavePrimaria(produto.Id);
 
+                AtualizaPosicaoEstoque(produto, produtoDb);
+
                 VerificarExclusaoDeImagens(produto, db, imagensExcluidas, produtoDb);
                 VerificarExclusaoDeEspecificacoes(produto, db, produtoDb);
 
@@ -45,10 +51,11 @@ namespace GPApp.Dal.Dao
             }
         }
 
-        public async Task<IEnumerable<string>> Atualiza(IEnumerable<Produto> produtos)
+        public async Task<Dictionary<Guid, IEnumerable<string>>> Atualiza(IEnumerable<Produto> produtos)
         {
             var ids = produtos.Select(p => p.Id);
-            List<string> imagensAExcluir = new List<string>();
+
+            var itensAExcluir = new Dictionary<Guid, IEnumerable<string>>();
 
             using (var db = DatabaseManager.GetContext())
             {
@@ -56,16 +63,19 @@ namespace GPApp.Dal.Dao
                                           .Where(p => ids.Contains(p.Id))
                                           .ToDictionaryAsync(p => p.Id);
 
+                List<string> imagensAExcluir = new List<string>();
                 foreach (var produto in produtos)
                 {
                     var produtoDb = dbProdutos[produto.Id];
                     VerificarExclusaoDeImagens(produto, db, imagensAExcluir, produtoDb);
                     VerificarExclusaoDeEspecificacoes(produto, db, produtoDb);
+                    itensAExcluir.Add(produto.Id, imagensAExcluir);
+                    AtualizaPosicaoEstoque(produto, produtoDb);
                 }
 
                 db.Produtos.UpdateRange(produtos);
             }
-            return imagensAExcluir;
+            return itensAExcluir; 
         }
                 
         public async Task<IEnumerable<Produto>> TodosComImagemAsync()
@@ -96,10 +106,11 @@ namespace GPApp.Dal.Dao
                     .FirstOrDefaultAsync(p => p.Id == id);
 
                 var estoqueAtual = await db.Estoques
-                                        .OrderBy(p => p.Lancamento)
+                                        .Where(e=> e.ProdutoId == id)           
+                                        .OrderByDescending(p => p.Lancamento)
                                         .FirstOrDefaultAsync();
 
-                produto.EstoqueAtual = estoqueAtual;
+                produto.EstoqueAtual = estoqueAtual?? new ProdutoEstoque();
 
                 return produto;
             }
@@ -109,9 +120,26 @@ namespace GPApp.Dal.Dao
         {
             using (var db = DatabaseManager.GetContext())
             {
-                return await db.Produtos
-                    .Where(p=> !p.Sincronizado )
-                    .ToListAsync();
+                var produtos = await db.Produtos
+                              .Where(p => !p.Sincronizado)
+                              .Select(p => new Produto
+                              {
+                                  Id = p.Id,
+                                  Nome = p.Nome,
+                                  Codigo = p.Codigo,
+                                  Descricao = p.Descricao,
+                                  Preco = p.Preco,
+                                  PrecoPromocional = p.PrecoPromocional,
+                                  Custo = p.Custo,
+                                  DataCadastro = p.DataCadastro,
+                                  EstoqueAtual = p.PosicoesEstoque.OrderByDescending(e=> e.Lancamento).FirstOrDefault(),
+                                  Imagens = p.Imagens,
+                                  Especificacoes = p.Especificacoes,
+                                  PosicoesEstoque = new List<ProdutoEstoque>()
+                              })
+                              .ToListAsync();
+
+                return produtos;
             }
         }
 
@@ -126,6 +154,28 @@ namespace GPApp.Dal.Dao
                     dbProduto.UltimaAtualizacao = dataAtualizacao;
                 }
                 await db.SaveChangesAsync();
+            }
+        }
+
+        public async Task<IEnumerable<Guid>> GetIdsCadastradosAsync(IEnumerable<Guid> ids)
+        {
+            using (var db = DatabaseManager.GetContext())
+            {
+                return await db.Produtos
+                        .AsNoTracking()
+                        .Where(p => ids.Contains(p.Id))
+                        .Select(p=> p.Id)
+                        .ToListAsync();
+            }
+        }
+
+        public async Task<int> ProdutoNaoSincronizadosAsync()
+        {
+            using (var db = DatabaseManager.GetContext())
+            {
+                return await db.Produtos
+                    .Where(p => !p.Sincronizado)
+                    .CountAsync();
             }
         }
 
@@ -149,6 +199,28 @@ namespace GPApp.Dal.Dao
 
                 imagensExcluidas.Add(ImagemHelper.GeraCaminho(imagem, ImagemHelper.Tamanho.Pequeno, produto.Id));
                 imagensExcluidas.Add(ImagemHelper.GeraCaminho(imagem, ImagemHelper.Tamanho.Original, produto.Id));
+            }
+        }
+
+
+        private static void IncluiPosicaoEstoque(Produto produto)
+        {
+            var estoque = new ProdutoEstoque
+            {
+                Lancamento = DateTime.UtcNow,
+                Quantidade = produto.EstoqueAtual.Quantidade
+            };
+
+            
+            produto.PosicoesEstoque.Clear();
+            produto.PosicoesEstoque.Add(estoque);
+        }
+
+        private static void AtualizaPosicaoEstoque(Produto produto, Produto produtoDb)
+        {
+            if (produtoDb.EstoqueAtual.Quantidade != produto.EstoqueAtual.Quantidade)
+            {
+                IncluiPosicaoEstoque(produto);
             }
         }
 

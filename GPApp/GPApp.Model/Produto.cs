@@ -24,5 +24,7 @@ namespace GPApp.Model
             Especificacoes = new List<ProdutoEspecificacao>();
             PosicoesEstoque = new List<ProdutoEstoque>();
         }
+
+        
     }
 }

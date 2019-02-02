@@ -40,7 +40,7 @@ namespace GPApp.Web.controllers
         }
 
         // POST: api/Produto
-        [HttpPost("/envia")]
+        [HttpPost("envia")]
         public async Task<IActionResult> PostProdutos([FromBody] IEnumerable<Produto> produtos)
         {
             return await _service.SalvarProdutosAsync(produtos);

@@ -211,3 +211,4 @@ D:\Repositorio\gestaoprodutos\GPApp\GPApp.WinForms\obj\Debug\GPApp.WinForms.Comp
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.WinForms\obj\Debug\GPApp.WinForms.Componentes.CustomEdit.resources
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.WinForms\obj\Debug\GPApp.WinForms.Componentes.CustomEditMultline.resources
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.WinForms\obj\Debug\GPApp.WinForms.Componentes.DialogView.resources
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.WinForms\bin\Debug\Newtonsoft.Json.pdb

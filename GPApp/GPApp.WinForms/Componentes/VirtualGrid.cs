@@ -11,12 +11,16 @@ namespace GPApp.WinForms.Componentes
 {
     public partial class VirtualGrid : MetroGrid , IGridView
     {
-        private string _colunaChave;
-
-        private readonly List<string> _naoOrdenarColunas = new List<string>();
-        private  ColunaFormataInfo _formataInfo  = new ColunaFormataInfo();
+        #region Membros privados
 
         private const string COLUNA_SUFIXO = "Column";
+        private const string COLUNA_ALTERACAO = ColunaInfo.COLUNA_ALTERACAO + COLUNA_SUFIXO;
+        private string _colunaChave;
+        private readonly List<string> _naoOrdenarColunas = new List<string>();
+        private ColunaFormataInfo _formataInfo = new ColunaFormataInfo();
+
+        #endregion
+
         #region Construtor
 
         public VirtualGrid()
@@ -127,6 +131,21 @@ namespace GPApp.WinForms.Componentes
             }
 
             base.OnCellClick(e);
+        }
+
+        protected override void OnCellMouseEnter(DataGridViewCellEventArgs e)
+        {
+            if (  Columns.Contains(COLUNA_ALTERACAO) && e.ColumnIndex == Columns[COLUNA_ALTERACAO].Index )
+            {
+                this.Cursor = Cursors.Hand;
+            }
+            base.OnCellMouseEnter(e);
+        }
+
+        protected override void OnCellMouseLeave(DataGridViewCellEventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+            base.OnCellMouseLeave(e);
         }
 
         #endregion

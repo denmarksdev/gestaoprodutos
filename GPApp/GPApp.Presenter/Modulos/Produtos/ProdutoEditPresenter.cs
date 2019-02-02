@@ -76,8 +76,10 @@ namespace GPApp.Presenter.Modulos.Produtos
 
             View.ExibirProgressoSalvar(true);
 
+            Wrapper.Sincronizado = false;
+
             var model = Wrapper.Model;
-            Resultado resultado = null;
+            Resultado resultado;
             if (model.Id == Guid.Empty)
                 resultado = await _produtoRepository.IncluirAsync(model);
             else
@@ -193,6 +195,7 @@ namespace GPApp.Presenter.Modulos.Produtos
 
             View.SelecionarPrimeiroCampoEdicao();
             View.InicializaBinding(Wrapper);
+            Quantidade = Wrapper.EstoqueAtual.Quantidade;
             ValidaModel();
             View.FocoPrincipal();
         }

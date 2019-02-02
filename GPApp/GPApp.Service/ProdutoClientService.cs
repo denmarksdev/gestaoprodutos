@@ -15,7 +15,7 @@ namespace GPApp.Service
 
         public ProdutoClientService(IConfiguracaoService configuracaoService)
         {
-            _baseUrl = configuracaoService.BaseUrlApi + "/produtos";
+            _baseUrl = configuracaoService.BaseUrlApi + "/produto";
         }
 
         public async Task<ResultadoItens<Guid>> SalvarProdutos(IEnumerable<Produto> produtos)
@@ -23,7 +23,7 @@ namespace GPApp.Service
             using (var client = new HttpClient())
             {
                 string json = Newtonsoft.Json.JsonConvert.SerializeObject(produtos);
-                var content = new StringContent(json, UTF8Encoding.UTF8);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
                 var resposta = await client.PostAsync(_baseUrl + "/envia", content);
 
                 if (resposta.IsSuccessStatusCode)

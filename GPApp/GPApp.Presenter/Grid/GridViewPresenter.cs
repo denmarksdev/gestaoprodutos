@@ -26,7 +26,7 @@ namespace GPApp.Presenter.Grid
             GridView.AtivarFiltroAction = OnAtivarAction;
             GridView.ErroPagincaoAction = OnErroPaginacaoAction;
             GridView.AlterarAction = OnAlterar;
-            GridView.FormataCelulaFunc = OnFormataCelula;
+            GridView.FormataCelulaFunc = OnFormataCelulaAction;
         }
 
 
@@ -92,7 +92,7 @@ namespace GPApp.Presenter.Grid
             GridView.AtualizarDesign();
         }
 
-        private ColunaFormataInfo OnFormataCelula(ColunaFormataInfo info)
+        private ColunaFormataInfo OnFormataCelulaAction(ColunaFormataInfo info)
         {
             var infoModel = new ColunaFormataInfo<T>(info)
             {

@@ -206,7 +206,7 @@ namespace GPApp.WinForms.Views
             this.metroTabPageImagens.HorizontalScrollbarSize = 10;
             this.metroTabPageImagens.Location = new System.Drawing.Point(4, 38);
             this.metroTabPageImagens.Name = "metroTabPageImagens";
-            this.metroTabPageImagens.Size = new System.Drawing.Size(881, 489);
+            this.metroTabPageImagens.Size = new System.Drawing.Size(881, 531);
             this.metroTabPageImagens.TabIndex = 1;
             this.metroTabPageImagens.Text = "Imagens";
             this.metroTabPageImagens.VerticalScrollbarBarColor = true;
@@ -218,12 +218,12 @@ namespace GPApp.WinForms.Views
             this.materialLabelPreview.AutoSize = true;
             this.materialLabelPreview.BackColor = System.Drawing.Color.White;
             this.materialLabelPreview.Depth = 0;
-            this.materialLabelPreview.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabelPreview.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabelPreview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabelPreview.Location = new System.Drawing.Point(413, 37);
             this.materialLabelPreview.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabelPreview.Name = "materialLabelPreview";
-            this.materialLabelPreview.Size = new System.Drawing.Size(60, 18);
+            this.materialLabelPreview.Size = new System.Drawing.Size(61, 19);
             this.materialLabelPreview.TabIndex = 11;
             this.materialLabelPreview.Text = "Preview";
             // 
@@ -342,7 +342,7 @@ namespace GPApp.WinForms.Views
             this.metroTabPageEspecificações.HorizontalScrollbarSize = 10;
             this.metroTabPageEspecificações.Location = new System.Drawing.Point(4, 38);
             this.metroTabPageEspecificações.Name = "metroTabPageEspecificações";
-            this.metroTabPageEspecificações.Size = new System.Drawing.Size(881, 489);
+            this.metroTabPageEspecificações.Size = new System.Drawing.Size(881, 531);
             this.metroTabPageEspecificações.TabIndex = 2;
             this.metroTabPageEspecificações.Text = "Especificações";
             this.metroTabPageEspecificações.VerticalScrollbarBarColor = true;

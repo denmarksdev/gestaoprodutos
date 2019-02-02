@@ -19,6 +19,9 @@ namespace GPApp.WinForms.Testes
         private readonly GridViewPresenter<ProdutoLookupWrapper> _gridView;
         private readonly ProdutosPresenter _presenter;
         private readonly Mock<IProdutosView> _mockView;
+        private readonly Mock<IProdutoRepository> _produtoRepoMock;
+        private readonly Mock<IProdutoClientService> _clientServiceMock;
+        private readonly Mock<IDialogService> _dialogServiceMock;
         private readonly Mock<IEventAggregator> _eventAggregatorMock;
         private readonly Mock<IEmailService> _emailService;
         private static Mock<IProdutoEditView> _produtoEditViewMock;
@@ -27,11 +30,21 @@ namespace GPApp.WinForms.Testes
         {
             _emailService = new Mock<IEmailService>();
             _mockView = CriaMockView();
+            _produtoRepoMock = new Mock<IProdutoRepository>();
+            _produtoRepoMock.SetupAllProperties();
+            _produtoRepoMock.Setup(f => f.NumeroRegistrosSincronizarAsync())
+                .ReturnsAsync(new Model.Helpers.Resultado<int>(2));
+            
+            _clientServiceMock = new Mock<IProdutoClientService>();
+            _clientServiceMock.SetupAllProperties();
+            _dialogServiceMock = new Mock<IDialogService>();
+            _dialogServiceMock.SetupAllProperties();
             _eventAggregatorMock = new Mock<IEventAggregator>();
             _eventAggregatorMock.SetupAllProperties();
             var gridMock = CriaGridMock();
             var produtoEditPresenter = CriaProdutoEditPresenter();
             var paginacaoRepoMock = ConfiguraPagincaoRepo();
+          
 
             _gridView = new GridViewPresenter<ProdutoLookupWrapper>(gridMock.Object);
             _presenter = new ProdutosPresenter(
@@ -40,7 +53,12 @@ namespace GPApp.WinForms.Testes
                 _emailService.Object,
                 produtoEditPresenter,
                 paginacaoRepoMock.Object,
-                _eventAggregatorMock.Object);
+                _eventAggregatorMock.Object,
+                _produtoRepoMock.Object,
+                _clientServiceMock.Object,
+                _dialogServiceMock.Object
+                );
+                
         }
                
         [Fact]
@@ -56,6 +74,7 @@ namespace GPApp.WinForms.Testes
         {
             _mockView.Object.LoadAction.Invoke();
             _mockView.Verify(f => f.AdicionaEditPresenter(It.IsAny<IProdutoEditView>()));
+            _mockView.Verify(f => f.ExibeProgressoWeb(false));
         }
 
         [Fact]

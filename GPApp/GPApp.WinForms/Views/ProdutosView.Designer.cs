@@ -33,14 +33,16 @@ namespace GPApp.WinForms.Views
             this.metroButtonFiltrar = new MetroFramework.Controls.MetroButton();
             this.metroButtonIncluir = new MetroFramework.Controls.MetroButton();
             this.metroButtonEmail = new MetroFramework.Controls.MetroButton();
+            this.metroButtonSincronizarNuvem = new MetroFramework.Controls.MetroButton();
             this.tabControlProdutos = new GPApp.WinForms.Componentes.TabControlCustom();
             this.tabPageListagem = new System.Windows.Forms.TabPage();
             this.metroPanelGrid = new MetroFramework.Controls.MetroPanel();
+            this.metroProgressBarSincronizar = new MetroFramework.Controls.MetroProgressBar();
             this.tabPageEdicao = new System.Windows.Forms.TabPage();
             this.panelEditProduto = new System.Windows.Forms.Panel();
-            this.metroButtonSincronizarNuvem = new MetroFramework.Controls.MetroButton();
             this.tabControlProdutos.SuspendLayout();
             this.tabPageListagem.SuspendLayout();
+            this.metroPanelGrid.SuspendLayout();
             this.tabPageEdicao.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,6 +78,17 @@ namespace GPApp.WinForms.Views
             this.metroButtonEmail.UseSelectable = true;
             this.metroButtonEmail.Click += new System.EventHandler(this.MetroButtonEmail_Click);
             // 
+            // metroButtonSincronizarNuvem
+            // 
+            this.metroButtonSincronizarNuvem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.metroButtonSincronizarNuvem.Location = new System.Drawing.Point(415, 27);
+            this.metroButtonSincronizarNuvem.Name = "metroButtonSincronizarNuvem";
+            this.metroButtonSincronizarNuvem.Size = new System.Drawing.Size(142, 23);
+            this.metroButtonSincronizarNuvem.TabIndex = 6;
+            this.metroButtonSincronizarNuvem.Text = "Sincronizar com a nuvem";
+            this.metroButtonSincronizarNuvem.UseSelectable = true;
+            this.metroButtonSincronizarNuvem.Click += new System.EventHandler(this.MetroButtonSincronizarNuvem_Click);
+            // 
             // tabControlProdutos
             // 
             this.tabControlProdutos.Controls.Add(this.tabPageListagem);
@@ -100,6 +113,7 @@ namespace GPApp.WinForms.Views
             // 
             // metroPanelGrid
             // 
+            this.metroPanelGrid.Controls.Add(this.metroProgressBarSincronizar);
             this.metroPanelGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroPanelGrid.HorizontalScrollbarBarColor = true;
             this.metroPanelGrid.HorizontalScrollbarHighlightOnWheel = false;
@@ -111,6 +125,15 @@ namespace GPApp.WinForms.Views
             this.metroPanelGrid.VerticalScrollbarBarColor = true;
             this.metroPanelGrid.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanelGrid.VerticalScrollbarSize = 10;
+            // 
+            // metroProgressBarSincronizar
+            // 
+            this.metroProgressBarSincronizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroProgressBarSincronizar.Location = new System.Drawing.Point(848, 590);
+            this.metroProgressBarSincronizar.Name = "metroProgressBarSincronizar";
+            this.metroProgressBarSincronizar.ProgressBarStyle = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.metroProgressBarSincronizar.Size = new System.Drawing.Size(119, 23);
+            this.metroProgressBarSincronizar.TabIndex = 2;
             // 
             // tabPageEdicao
             // 
@@ -131,17 +154,6 @@ namespace GPApp.WinForms.Views
             this.panelEditProduto.Size = new System.Drawing.Size(970, 616);
             this.panelEditProduto.TabIndex = 0;
             // 
-            // metroButtonSincronizarNuvem
-            // 
-            this.metroButtonSincronizarNuvem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroButtonSincronizarNuvem.Location = new System.Drawing.Point(415, 27);
-            this.metroButtonSincronizarNuvem.Name = "metroButtonSincronizarNuvem";
-            this.metroButtonSincronizarNuvem.Size = new System.Drawing.Size(142, 23);
-            this.metroButtonSincronizarNuvem.TabIndex = 6;
-            this.metroButtonSincronizarNuvem.Text = "Sincronizar com a nuvem";
-            this.metroButtonSincronizarNuvem.UseSelectable = true;
-            this.metroButtonSincronizarNuvem.Click += new System.EventHandler(this.MetroButtonSincronizarNuvem_Click);
-            // 
             // ProdutosView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -157,6 +169,7 @@ namespace GPApp.WinForms.Views
             this.Text = "ProdutosView";
             this.tabControlProdutos.ResumeLayout(false);
             this.tabPageListagem.ResumeLayout(false);
+            this.metroPanelGrid.ResumeLayout(false);
             this.tabPageEdicao.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -172,5 +185,6 @@ namespace GPApp.WinForms.Views
         private MetroFramework.Controls.MetroButton metroButtonEmail;
         private System.Windows.Forms.Panel panelEditProduto;
         private MetroFramework.Controls.MetroButton metroButtonSincronizarNuvem;
+        private MetroFramework.Controls.MetroProgressBar metroProgressBarSincronizar;
     }
 }
