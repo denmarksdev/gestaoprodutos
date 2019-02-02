@@ -20,3 +20,5 @@ D:\Repositorio\gestaoprodutos\GPApp\GPApp.Service\bin\Debug\netstandard2.0\GPApp
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Service\bin\Debug\netstandard2.0\GPApp.Wrapper.dll
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Service\bin\Debug\netstandard2.0\GPApp.Helpers.pdb
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Service\bin\Debug\netstandard2.0\GPApp.Wrapper.pdb
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Service\obj\Debug\netstandard2.0\GPApp.Service.Properties.Resources.resources
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Service\obj\Debug\netstandard2.0\GPApp.Service.csproj.GenerateResource.cache

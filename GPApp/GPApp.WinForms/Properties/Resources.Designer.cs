@@ -99,5 +99,25 @@ namespace GPApp.WinForms.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional //EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+        ///&lt;!--Campaing monitor recomenda o transitional (2012)--&gt;
+        ///
+        ///&lt;html&gt;
+        ///
+        ///&lt;head&gt;
+        ///    &lt;meta charset=&quot;utf-8&quot;&gt;
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+        ///    &lt;title&gt;Convite do ByteBank&lt;/title&gt;
+        ///    &lt;!-- Use the latest (edge) version of IE rendering engine --&gt;
+        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+        ///    &lt;link href=&quot;https://fonts.googleapis. [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Template1 {
+            get {
+                return ResourceManager.GetString("Template1", resourceCulture);
+            }
+        }
     }
 }

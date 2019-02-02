@@ -9,6 +9,7 @@ namespace GPApp.WinForms.Services
         public string EmailSMTP { get; set; }
         public string PasswordSMTP { get; set; }
         public string BaseUrlApi { get; set; }
+        public int PortaSMTP { get ; set ; }
 
         public void Configura()
         {
@@ -16,6 +17,8 @@ namespace GPApp.WinForms.Services
             EmailSMTP = ConfigurationManager.AppSettings[nameof(EmailSMTP)];
             PasswordSMTP = ConfigurationManager.AppSettings[nameof(PasswordSMTP)];
             BaseUrlApi  = ConfigurationManager.AppSettings[nameof(BaseUrlApi)];
+            int.TryParse(ConfigurationManager.AppSettings[nameof(PortaSMTP)], out int porta);
+            PortaSMTP = porta;
         }
 
         public ConfigurationService()

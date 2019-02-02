@@ -5,6 +5,7 @@
         string SMTP { get; set; }
         string EmailSMTP { get; set; }
         string PasswordSMTP { get; set; }
+        int PortaSMTP { get; set; }
 
         string BaseUrlApi { get; set; }
 

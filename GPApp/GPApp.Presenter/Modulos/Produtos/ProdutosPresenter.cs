@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using GPApp.Helpers;
 using GPApp.Model;
 using GPApp.Model.Lookups;
 using GPApp.Presenter.Base;
@@ -156,6 +157,7 @@ namespace GPApp.Presenter.Modulos.Produtos
             if (evento.Atualizar)
                 await _gridViewPresenter.LoadAsync();
             ExibeListagem();
+            await VerificaSincronizacaoNuvem();
         }
 
         private async void OnLoad()
@@ -176,11 +178,20 @@ namespace GPApp.Presenter.Modulos.Produtos
 
         private async void OnEnviarEmail()
         {
-            // TODO: Criar envio de email
-            //var resultado =  await _emailService.Envia(  EmailTemplate.GetEmailMarketing());
-            //if (!resultado.Valido)
-            //{
-            //}
+            var resultado  = await _produtoRepository.TodosComImagemAsyc();
+            if (!resultado.Valido) return;
+
+            var produtos = resultado.Valor;
+            var propaganda = new Propaganda
+            {
+            };
+
+            //TODO: Criar envio de email
+            var resultadoEmail = await _emailService.Envia(propaganda);
+                
+            if (!resultado.Valido)
+            {
+            }
         }
 
         #endregion
@@ -224,7 +235,6 @@ namespace GPApp.Presenter.Modulos.Produtos
         {
             var texto = filtroAtivo ? "Desativar filtro" : "Filtrar";
             View.SetTextoBotaoFiltrar(texto);
-            await VerificaSincronizacaoNuvem();
         }
 
         #endregion
