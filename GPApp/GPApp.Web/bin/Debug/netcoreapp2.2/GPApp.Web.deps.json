@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "ddc3df0597dd5afe59021b62a75317c296e0045f"
+    "signature": "76abc4f74fa3939ed1917ae3f5e2b37a73551441"
   },
   "compilationOptions": {
     "defines": [
@@ -550,25 +550,23 @@
           "lib/netstandard1.0/Remotion.Linq.dll": {}
         }
       },
-      "SixLabors.Core/1.0.0-beta0006": {
+      "SixLabors.Core/1.0.0-beta0007": {
         "dependencies": {
-          "System.Buffers": "4.5.0",
-          "System.Memory": "4.5.1",
           "System.Runtime.CompilerServices.Unsafe": "4.5.1"
         },
         "runtime": {
-          "lib/netcoreapp2.0/SixLabors.Core.dll": {
-            "assemblyVersion": "0.1.0.0",
-            "fileVersion": "0.1.0.0"
+          "lib/netcoreapp2.1/SixLabors.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         },
         "compile": {
-          "lib/netcoreapp2.0/SixLabors.Core.dll": {}
+          "lib/netcoreapp2.1/SixLabors.Core.dll": {}
         }
       },
-      "SixLabors.ImageSharp/1.0.0-beta0005": {
+      "SixLabors.ImageSharp/1.0.0-beta0006": {
         "dependencies": {
-          "SixLabors.Core": "1.0.0-beta0006",
+          "SixLabors.Core": "1.0.0-beta0007",
           "System.Runtime.CompilerServices.Unsafe": "4.5.1"
         },
         "runtime": {
@@ -871,8 +869,7 @@
           "Microsoft.EntityFrameworkCore.Relational": "2.2.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.2.1",
           "Microsoft.EntityFrameworkCore.Sqlite": "2.2.1",
-          "Npgsql.EntityFrameworkCore.PostgreSQL": "2.2.0",
-          "SixLabors.ImageSharp": "1.0.0-beta0005"
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "2.2.0"
         },
         "runtime": {
           "GPApp.Dal.dll": {}
@@ -929,7 +926,7 @@
       "GPApp.Shared/1.0.0": {
         "dependencies": {
           "GPApp.Model": "1.0.0",
-          "SixLabors.ImageSharp": "1.0.0-beta0005",
+          "SixLabors.ImageSharp": "1.0.0-beta0006",
           "System.IO.FileSystem": "4.3.0"
         },
         "runtime": {
@@ -4042,7 +4039,7 @@
     "NETStandard.Library/2.0.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
+      "sha512": "sha512-7vMMOlh8tGaMGLfPUx+jrTZ9ba/GUYgGlvWpAYwOxsh4dN5uD4Zk1iAiAIl174PHqF9mL1PANa4tAcVc2+Urhg==",
       "path": "netstandard.library/2.0.3",
       "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
     },
@@ -4081,19 +4078,19 @@
       "path": "remotion.linq/2.2.0",
       "hashPath": "remotion.linq.2.2.0.nupkg.sha512"
     },
-    "SixLabors.Core/1.0.0-beta0006": {
+    "SixLabors.Core/1.0.0-beta0007": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-AY/aNmjmsU6OftAA8ownjARTy7A8+Q+HjJMAOpIwhIxacOIGF8JhwUDAZw/g70+hfcjkbCzIKYwEF1vdanWz/g==",
-      "path": "sixlabors.core/1.0.0-beta0006",
-      "hashPath": "sixlabors.core.1.0.0-beta0006.nupkg.sha512"
+      "sha512": "sha512-s9aPl6yxwcvoKRD0u0zjkCISZCCifbUi9/XVFjdvlx5Pt7vRYmGV0anq1EEftUjIEHbEu5aNBipbUSBIV2CE7w==",
+      "path": "sixlabors.core/1.0.0-beta0007",
+      "hashPath": "sixlabors.core.1.0.0-beta0007.nupkg.sha512"
     },
-    "SixLabors.ImageSharp/1.0.0-beta0005": {
+    "SixLabors.ImageSharp/1.0.0-beta0006": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-mcaaf6v9WF1r25gmBQujFu/S20yotMRJSwqUaWj4LNS7OUUtBejPmfaWnejGeSQgZWDR4qjNTXY/namjDAgQiA==",
-      "path": "sixlabors.imagesharp/1.0.0-beta0005",
-      "hashPath": "sixlabors.imagesharp.1.0.0-beta0005.nupkg.sha512"
+      "sha512": "sha512-VHDX00uAzPWj5qFYE5xJZyr5Cx4Jtd3p2dfX7swSrzlQoPEZPXXwQ+O3Fc4hNWvaNvR1NAiXSb27Ts6yv3lMDw==",
+      "path": "sixlabors.imagesharp/1.0.0-beta0006",
+      "hashPath": "sixlabors.imagesharp.1.0.0-beta0006.nupkg.sha512"
     },
     "SQLitePCLRaw.bundle_green/1.1.11": {
       "type": "package",
@@ -5862,7 +5859,7 @@
     "System.Runtime.InteropServices.RuntimeInformation/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-cbz4YJMqRDR7oLeMRbdYv7mYzc++17lNhScCX0goO2XpGWdvAt60CGN+FHdePUEHCe/Jy9jUlvNAiNdM+7jsOw==",
+      "sha512": "sha512-wxzT9Fixa+Y9+W6LoOvlNLNw6+n2mX6/tqJ7N8S9ro8qWT0gSsRY9lOgqnmkMxRWiBglgVYQM+6CDWMmjRfhTQ==",
       "path": "system.runtime.interopservices.runtimeinformation/4.3.0",
       "hashPath": "system.runtime.interopservices.runtimeinformation.4.3.0.nupkg.sha512"
     },

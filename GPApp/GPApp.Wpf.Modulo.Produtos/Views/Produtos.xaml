@@ -1,0 +1,133 @@
+﻿<UserControl x:Class="GPApp.Wpf.Modulo.Produtos.Views.Produtos"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"         
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             MinWidth="300"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+
+    <UserControl.Resources>
+        <Style TargetType="Button" BasedOn="{StaticResource  MaterialDesignRaisedAccentButton}"  >
+            <Setter Property="Margin" Value="0,0,10,0"></Setter>
+         </Style>
+    </UserControl.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0"
+            Style="{StaticResource MaterialDesignDisplay1TextBlock}">
+            Produtos
+        </TextBlock>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Button
+                Width="100"
+                Command="{Binding FiltrarCommand}">
+                Filtrar
+            </Button>
+            <Button
+                Width="100"
+                Command="{Binding IncluirCommand}">
+                Incluir
+            </Button>
+
+            <materialDesign:Badged VerticalAlignment="Center"
+           Margin="0,0,15,0"
+                Badge="3">
+                <Button
+                    Command="{Binding SincronizarNuvemCommand}">
+                    Sincronizar com a nuvem
+                </Button>
+            </materialDesign:Badged>
+            <Button
+                Width="120"
+                Command="{Binding EnviarEmailCommand}">
+                Enviar email
+            </Button>
+        </StackPanel>
+
+        <DataGrid Grid.Row="2"
+            Margin="0 8 0 0"
+            ItemsSource="{Binding Produtos}"
+            CanUserSortColumns="True"
+            CanUserAddRows="False"
+            AutoGenerateColumns="False"
+            materialDesign:DataGridAssist.CellPadding="13 8 8 8"
+            materialDesign:DataGridAssist.ColumnHeaderPadding="8">
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Binding="{Binding Codigo}"
+                    Header="Código"
+                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
+                <!-- if you want to use the pop up style (MaterialDesignDataGridTextColumnPopupEditingStyle), you must use MaterialDataGridTextColumn -->
+                <materialDesign:MaterialDataGridTextColumn
+                    Binding="{Binding Nome}"
+                    Header="Nome"
+                    Width="*"
+                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}" />
+                <!-- set a max length to get an indicator in the editor -->
+                <materialDesign:MaterialDataGridTextColumn
+                      Binding="{Binding Description}"
+                      Header="Preço"
+                      Width="100"
+                      EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}" />
+                <materialDesign:MaterialDataGridTextColumn
+                      Binding="{Binding Estoque}"
+                      Header="Estoque"
+                      EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}" />
+                <materialDesign:MaterialDataGridTextColumn
+                      Binding="{Binding DataCadastro}"
+                      Header="Cadastrado em"
+                      Width="150"
+                      EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}" />
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button
+                                   Command="{Binding AlterarCommand}"
+                                    Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+                                    HorizontalAlignment="Left"
+                                    ToolTip="MaterialDesignFloatingActionMiniButton">
+                                    <materialDesign:PackIcon
+                                            Kind="Edit"
+                                            Height="24"
+                                            Width="24" />
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="2" 
+                    Orientation="Horizontal"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+            <TextBox 
+                    MinWidth="200"
+                    materialDesign:HintAssist.Hint="Pesquisar"  
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <Button
+                Style="{StaticResource MaterialDesignRaisedButton}"
+                Command="{Binding PesquisarCommand}"
+                Width="100"
+                Margin="10,0,0,0"
+                ToolTip="Resource name: MaterialDesignRaisedButton">
+                Pesquisar
+            </Button>
+        </StackPanel>
+
+        <TextBlock Grid.Row="3"
+            Style="{StaticResource MaterialDesignTitleTextBlock}">
+            Numero produtos
+        </TextBlock>
+
+    </Grid>
+    
+</UserControl>

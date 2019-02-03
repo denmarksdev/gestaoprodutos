@@ -3189,24 +3189,22 @@
           }
         }
       },
-      "SixLabors.Core/1.0.0-beta0006": {
+      "SixLabors.Core/1.0.0-beta0007": {
         "type": "package",
         "dependencies": {
-          "System.Buffers": "4.5.0",
-          "System.Memory": "4.5.1",
           "System.Runtime.CompilerServices.Unsafe": "4.5.1"
         },
         "compile": {
-          "lib/netcoreapp2.0/SixLabors.Core.dll": {}
+          "lib/netcoreapp2.1/SixLabors.Core.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp2.0/SixLabors.Core.dll": {}
+          "lib/netcoreapp2.1/SixLabors.Core.dll": {}
         }
       },
-      "SixLabors.ImageSharp/1.0.0-beta0005": {
+      "SixLabors.ImageSharp/1.0.0-beta0006": {
         "type": "package",
         "dependencies": {
-          "SixLabors.Core": "1.0.0-beta0006",
+          "SixLabors.Core": "1.0.0-beta0007",
           "System.Runtime.CompilerServices.Unsafe": "4.5.1"
         },
         "compile": {
@@ -4942,8 +4940,7 @@
           "Microsoft.EntityFrameworkCore.Relational": "2.2.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.2.1",
           "Microsoft.EntityFrameworkCore.Sqlite": "2.2.1",
-          "Npgsql.EntityFrameworkCore.PostgreSQL": "2.2.0",
-          "SixLabors.ImageSharp": "1.0.0-beta0005"
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "2.2.0"
         },
         "compile": {
           "bin/placeholder/GPApp.Dal.dll": {}
@@ -5010,7 +5007,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "GPApp.Model": "1.0.0",
-          "SixLabors.ImageSharp": "1.0.0-beta0005",
+          "SixLabors.ImageSharp": "1.0.0-beta0006",
           "System.IO.FileSystem": "4.3.0"
         },
         "compile": {
@@ -8272,7 +8269,7 @@
       ]
     },
     "NETStandard.Library/2.0.3": {
-      "sha512": "st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
+      "sha512": "7vMMOlh8tGaMGLfPUx+jrTZ9ba/GUYgGlvWpAYwOxsh4dN5uD4Zk1iAiAIl174PHqF9mL1PANa4tAcVc2+Urhg==",
       "type": "package",
       "path": "netstandard.library/2.0.3",
       "files": [
@@ -8792,37 +8789,41 @@
         "version.txt"
       ]
     },
-    "SixLabors.Core/1.0.0-beta0006": {
-      "sha512": "AY/aNmjmsU6OftAA8ownjARTy7A8+Q+HjJMAOpIwhIxacOIGF8JhwUDAZw/g70+hfcjkbCzIKYwEF1vdanWz/g==",
+    "SixLabors.Core/1.0.0-beta0007": {
+      "sha512": "s9aPl6yxwcvoKRD0u0zjkCISZCCifbUi9/XVFjdvlx5Pt7vRYmGV0anq1EEftUjIEHbEu5aNBipbUSBIV2CE7w==",
       "type": "package",
-      "path": "sixlabors.core/1.0.0-beta0006",
+      "path": "sixlabors.core/1.0.0-beta0007",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netcoreapp2.0/SixLabors.Core.dll",
         "lib/netcoreapp2.0/SixLabors.Core.xml",
-        "lib/netstandard1.1/SixLabors.Core.dll",
-        "lib/netstandard1.1/SixLabors.Core.xml",
-        "sixlabors.core.1.0.0-beta0006.nupkg.sha512",
+        "lib/netcoreapp2.1/SixLabors.Core.dll",
+        "lib/netcoreapp2.1/SixLabors.Core.xml",
+        "lib/netstandard1.3/SixLabors.Core.dll",
+        "lib/netstandard1.3/SixLabors.Core.xml",
+        "lib/netstandard2.0/SixLabors.Core.dll",
+        "lib/netstandard2.0/SixLabors.Core.xml",
+        "sixlabors.core.1.0.0-beta0007.nupkg.sha512",
         "sixlabors.core.nuspec"
       ]
     },
-    "SixLabors.ImageSharp/1.0.0-beta0005": {
-      "sha512": "mcaaf6v9WF1r25gmBQujFu/S20yotMRJSwqUaWj4LNS7OUUtBejPmfaWnejGeSQgZWDR4qjNTXY/namjDAgQiA==",
+    "SixLabors.ImageSharp/1.0.0-beta0006": {
+      "sha512": "VHDX00uAzPWj5qFYE5xJZyr5Cx4Jtd3p2dfX7swSrzlQoPEZPXXwQ+O3Fc4hNWvaNvR1NAiXSb27Ts6yv3lMDw==",
       "type": "package",
-      "path": "sixlabors.imagesharp/1.0.0-beta0005",
+      "path": "sixlabors.imagesharp/1.0.0-beta0006",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "lib/net472/SixLabors.ImageSharp.dll",
+        "lib/net472/SixLabors.ImageSharp.xml",
         "lib/netcoreapp2.1/SixLabors.ImageSharp.dll",
         "lib/netcoreapp2.1/SixLabors.ImageSharp.xml",
-        "lib/netstandard1.1/SixLabors.ImageSharp.dll",
-        "lib/netstandard1.1/SixLabors.ImageSharp.xml",
         "lib/netstandard1.3/SixLabors.ImageSharp.dll",
         "lib/netstandard1.3/SixLabors.ImageSharp.xml",
         "lib/netstandard2.0/SixLabors.ImageSharp.dll",
         "lib/netstandard2.0/SixLabors.ImageSharp.xml",
-        "sixlabors.imagesharp.1.0.0-beta0005.nupkg.sha512",
+        "sixlabors.imagesharp.1.0.0-beta0006.nupkg.sha512",
         "sixlabors.imagesharp.nuspec"
       ]
     },
@@ -11827,7 +11828,7 @@
       ]
     },
     "System.Runtime.InteropServices.RuntimeInformation/4.3.0": {
-      "sha512": "cbz4YJMqRDR7oLeMRbdYv7mYzc++17lNhScCX0goO2XpGWdvAt60CGN+FHdePUEHCe/Jy9jUlvNAiNdM+7jsOw==",
+      "sha512": "wxzT9Fixa+Y9+W6LoOvlNLNw6+n2mX6/tqJ7N8S9ro8qWT0gSsRY9lOgqnmkMxRWiBglgVYQM+6CDWMmjRfhTQ==",
       "type": "package",
       "path": "system.runtime.interopservices.runtimeinformation/4.3.0",
       "files": [

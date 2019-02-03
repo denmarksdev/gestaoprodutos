@@ -1,7 +1,6 @@
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Model\bin\Debug\netstandard2.0\GPApp.Model.deps.json
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Model\bin\Debug\netstandard2.0\GPApp.Model.dll
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Model\bin\Debug\netstandard2.0\GPApp.Model.pdb
-D:\Repositorio\gestaoprodutos\GPApp\GPApp.Model\obj\Debug\netstandard2.0\GPApp.Model.csprojAssemblyReference.cache
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Model\obj\Debug\netstandard2.0\GPApp.Model.csproj.CoreCompileInputs.cache
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Model\obj\Debug\netstandard2.0\GPApp.Model.AssemblyInfoInputs.cache
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Model\obj\Debug\netstandard2.0\GPApp.Model.AssemblyInfo.cs
