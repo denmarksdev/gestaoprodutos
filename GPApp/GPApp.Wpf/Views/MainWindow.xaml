@@ -3,11 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:prism="http://prismlibrary.com/"
         xmlns:const="clr-namespace:GPApp.Shared.Constantes;assembly=GPApp.Shared"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         prism:ViewModelLocator.AutoWireViewModel="True"
         MinWidth="1024"
         MinHeight="724"     
         Title="{Binding Title}" Height="350" Width="525">
-    <Grid Margin="10">
-        <ContentControl prism:RegionManager.RegionName="{x:Static const:RegionNames.MAIN_REGION}" />
-    </Grid>
+
+    <materialDesign:DialogHost Identifier="RootDialog" >
+        <Grid Margin="10">
+            <ContentControl prism:RegionManager.RegionName="{x:Static const:RegionNames.MAIN_REGION}" />
+        </Grid>
+    </materialDesign:DialogHost>
+        
 </Window>

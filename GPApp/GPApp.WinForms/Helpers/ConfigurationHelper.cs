@@ -1,15 +1,14 @@
 ﻿
 using System.Configuration;
+using GPApp.Shared.Constantes;
 
 namespace GPApp.WinForms.Helpers
 {
     public static class ConfigurationHelper
     {
-        public const string CONEXAO_PRINCIPAL = "conexaoPrincipal";
-
         public static string GetConnectionString()
         {
-            var conexaoDB = ConfigurationManager.ConnectionStrings[CONEXAO_PRINCIPAL];
+            var conexaoDB = ConfigurationManager.ConnectionStrings[ContantesGlobais.CONEXAO_PRINCIPAL];
             return conexaoDB.ConnectionString;
         }
 

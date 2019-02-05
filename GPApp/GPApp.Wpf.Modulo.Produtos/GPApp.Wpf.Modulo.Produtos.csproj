@@ -15,8 +15,8 @@
     <WarningLevel>4</WarningLevel>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
     <TargetFrameworkProfile />
-   <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-   <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,6 +45,9 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converters\ImagemConverter.cs" />
+    <Compile Include="Converters\IntegerConverter.cs" />
+    <Compile Include="Converters\RealValueConverter.cs" />
     <Compile Include="ProdutosModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -97,6 +100,10 @@
     <ProjectReference Include="..\GPApp.Model\GPApp.Model.csproj">
       <Project>{e39f996a-1a28-40dd-8993-d46419c7f060}</Project>
       <Name>GPApp.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GPApp.Repository\GPApp.Repository.csproj">
+      <Project>{BA52AF43-226B-4C14-862F-8C1F368E3F61}</Project>
+      <Name>GPApp.Repository</Name>
     </ProjectReference>
     <ProjectReference Include="..\GPApp.Shared\GPApp.Shared.csproj">
       <Project>{B68BCCB9-BB79-46EF-8563-5476B4881C49}</Project>

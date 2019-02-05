@@ -18,6 +18,7 @@ namespace GPApp.Web.Services
         public string PasswordSMTP { get; set; }
         public string BaseUrlApi { get ; set; }
         public int PortaSMTP { get ; set ; }
+        public string ConnectionString { get ; set ; }
 
         public void Configura()
         {
@@ -26,6 +27,7 @@ namespace GPApp.Web.Services
             PasswordSMTP = _configuration.GetValue<string>("SMTPConfig:Password");
             PortaSMTP = _configuration.GetValue<int>("SMTPConfig:Porta");
             BaseUrlApi = _configuration.GetValue<string>("API:BaseUrl");
+            ConnectionString = _configuration.GetValue<string>("ConnectionStrings:AppDataContext");
         }
     }
 }

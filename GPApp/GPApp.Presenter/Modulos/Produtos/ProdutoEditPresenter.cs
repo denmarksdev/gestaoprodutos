@@ -120,7 +120,7 @@ namespace GPApp.Presenter.Modulos.Produtos
 
         private void OnExcluirImagem(ProdutoImagemWrapper imagem)
         {
-            _dialogService.Confirmacao($"Excluir imagem nª {imagem.Ordem} ?", () =>
+            _dialogService.Confirmacao($"Excluir imagem nª {imagem.Ordem}?", () =>
             {
                 View.ExcluirImage(imagem);
                 var indice = (Wrapper.Imagens.Count > 0) ? 0 : -1;
@@ -141,7 +141,7 @@ namespace GPApp.Presenter.Modulos.Produtos
 
         private void OnExcluirEspecificacao(ProdutoEspecificacaoWrapper esp)
         {
-            _dialogService.Confirmacao($"Excluir especificação nº {esp.Ordem}", () =>
+            _dialogService.Confirmacao($"Excluir especificação nº {esp.Ordem}?", () =>
             {
                 View.ExcluirEspecificacao(esp);
                 Wrapper.ReordenarEspecificacoes();

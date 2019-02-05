@@ -69,6 +69,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModels\SplashScreenViewModel.cs" />
+    <Compile Include="Views\SplashScreen.xaml.cs">
+      <DependentUpon>SplashScreen.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Dialog\DialogView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -77,11 +85,21 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Dialog\DialogView.xaml.cs">
+      <DependentUpon>DialogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\DialogViewModel.cs" />
+    <Compile Include="Services\ConfigurationService.cs" />
+    <Compile Include="Services\DialogService.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\SplashScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -135,6 +153,10 @@
     <ProjectReference Include="..\GPApp.Model\GPApp.Model.csproj">
       <Project>{e39f996a-1a28-40dd-8993-d46419c7f060}</Project>
       <Name>GPApp.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GPApp.Repository\GPApp.Repository.csproj">
+      <Project>{BA52AF43-226B-4C14-862F-8C1F368E3F61}</Project>
+      <Name>GPApp.Repository</Name>
     </ProjectReference>
     <ProjectReference Include="..\GPApp.Shared\GPApp.Shared.csproj">
       <Project>{b68bccb9-bb79-46ef-8563-5476b4881c49}</Project>

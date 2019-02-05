@@ -190,7 +190,7 @@ namespace GPApp.Wrapper
 
         public void ReordenarEspecificacoes()
         {
-            for (int i = 0; i < Especificacoes.Count - 1; i++)
+            for (int i = 0; i < Especificacoes.Count; i++)
             {
                 Especificacoes[i].Ordem =  (i + 1).ToShort();
             }

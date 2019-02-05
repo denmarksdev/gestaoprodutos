@@ -2,6 +2,7 @@
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Regions;
+using System.Linq;
 
 namespace GPApp.Wpf.Modulo.Produtos
 {
@@ -16,14 +17,14 @@ namespace GPApp.Wpf.Modulo.Produtos
 
         public void OnInitialized(IContainerProvider containerProvider)
         {
- 
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<Views.Produtos, ViewModels.ProdutosViewModel>();
             containerRegistry.RegisterForNavigation<Views.ProdutoEdit, ViewModels.ProdutoEditViewModel>();
-            _regionManager.RequestNavigate(RegionNames.MAIN_REGION, nameof(Views.Produtos));
+
+            _regionManager.RequestNavigate(RegionNames.MAIN_REGION, RegionNames.SPLASH_SCREEN);
         }
     }
 }

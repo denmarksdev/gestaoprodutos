@@ -18,6 +18,7 @@ namespace GPApp.Wpf.Modulo.Produtos.Views
             ExpanderImagens.Expanded += ExpanderExpanded;
             ExpanderEspecificacoes.Expanded += ExpanderExpanded;
 
+
             _expanders = new[]
             {
                 ExpanderPrincipal,
@@ -35,5 +36,7 @@ namespace GPApp.Wpf.Modulo.Produtos.Views
                 expand.IsExpanded = false;
             }
         }
+
+        
     }
 }

@@ -21,6 +21,8 @@ namespace GPApp.Repository
             {
                 FiltroFunc = OnFiltro
             };
+
+            Ordem = nameof(ProdutoLookupWrapper.Codigo);
         }
 
         private Expression<Func<Produto, bool>> OnFiltro()

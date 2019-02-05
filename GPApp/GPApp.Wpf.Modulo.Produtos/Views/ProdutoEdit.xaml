@@ -4,224 +4,302 @@
              xmlns:prism="http://prismlibrary.com/"             
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:wrapper="clr-namespace:GPApp.Wrapper;assembly=GPApp.Wrapper"
-             prism:ViewModelLocator.AutoWireViewModel="True">
-    <StackPanel MaxWidth="800">
+             xmlns:converter="clr-namespace:GPApp.Wpf.Modulo.Produtos.Converters"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             x:Name="ProdutoEditView">
 
-        <TextBlock
+    <UserControl.Resources>
+        <converter:ImagemConverter x:Key="convImage" />
+        <converter:RealValueConverter x:Key="convReal"/>
+        <converter:IntegerConverter x:Key="convInt" />
+
+        <Style 
+            TargetType="TextBox" 
+            BasedOn="{StaticResource MaterialDesignFloatingHintTextBox}" >
+            <Setter Property="Margin" Value="0,0,0,10"/>
+        </Style>
+
+    </UserControl.Resources>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" >
+        <StackPanel MaxWidth="800">
+            <TextBlock
             Style="{StaticResource MaterialDesignDisplay1TextBlock}"
             Text="{Binding Operacao}"/>
 
-        <materialDesign:Card
+            <materialDesign:Card
             Background="{DynamicResource MaterialDesignBackground}">
-            <StackPanel>
-                <Expander
+
+                <StackPanel>
+                    <Expander
                     x:Name="ExpanderPrincipal"
                     HorizontalAlignment="Stretch"
                     Header="Principal">
-                    <StackPanel Margin="10">
-                        <TextBox
-                        Width="200"
-                        MaxLength="50"
-                        HorizontalAlignment="Left"
-                        materialDesign:HintAssist.Hint="Código"
-                        Text="{Binding Wrapper.Codigo, Mode=TwoWay , UpdateSourceTrigger=PropertyChanged}"
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                        <TextBox
-                        materialDesign:HintAssist.Hint="Nome"
-                        Text="{Binding Wrapper.Nome, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                        <StackPanel Margin="10">
+                            <TextBox
+                                Width="200"
+                                MaxLength="50"
+                                HorizontalAlignment="Left"
+                                materialDesign:HintAssist.Hint="Código"
+                                Margin="0,0,0,15"
+                                Text="{Binding Wrapper.Codigo, Mode=TwoWay , UpdateSourceTrigger=PropertyChanged}"
+                                Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                            <TextBox
+                                Margin="0,0,0,15"
+                                materialDesign:HintAssist.Hint="Nome"
+                                Text="{Binding Wrapper.Nome, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                            <TextBox
+                                Margin="0,0,0,15"
+                                Style="{StaticResource MaterialDesignFilledTextFieldTextBox}"
+                                HorizontalAlignment="Left"
+                                AcceptsReturn="True"
+                                TextWrapping="Wrap"
+                                MinWidth="600"
+                                MaxWidth="600"
+                                Text="{Binding Wrapper.Descricao, Mode=TwoWay}"
+                                materialDesign:HintAssist.Hint="Descrição" />
 
-                        <TextBox
-                            Style="{StaticResource MaterialDesignFilledTextFieldTextBox}"
-                            HorizontalAlignment="Left"
-                            AcceptsReturn="True"
-                            TextWrapping="Wrap"
-                            MinWidth="600"
-                            MaxWidth="600"
-                            Text="{Binding Wrapper.Descricao, Mode=TwoWay}"
-                            materialDesign:HintAssist.Hint="Descrição" />
+                            <TextBox
+                                Width="150"          
+                                Margin="0,0,0,15"
+                                HorizontalAlignment="Left"
+                                materialDesign:HintAssist.Hint="Custo"
+                                Text="{Binding Wrapper.Custo, Mode=TwoWay, Converter={StaticResource convReal}}"
+                                Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
 
-                        <TextBox
-                        Width="100"
-                        HorizontalAlignment="Left"
-                        materialDesign:HintAssist.Hint="Custo"
-                        Text="{Binding Wrapper.Custo, Mode=TwoWay}"
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                            <TextBox
+                                Width="150"
+                                Margin="0,0,0,15"
+                                HorizontalAlignment="Left"
+                                materialDesign:HintAssist.Hint="Preço"
+                                Text="{Binding Wrapper.Preco, Mode=TwoWay, Converter={StaticResource convReal}}"
+                                Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
 
-                        <TextBox
-                        Width="100"
-                        HorizontalAlignment="Left"
-                        materialDesign:HintAssist.Hint="Preço"
-                        Text="{Binding Wrapper.Preco, Mode=TwoWay}"
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                            <TextBox
+                                Width="150"
+                                Margin="0,0,0,15"
+                                HorizontalAlignment="Left"
+                                materialDesign:HintAssist.Hint="Preço promocional"
+                                Text="{Binding Wrapper.PrecoPromocional, Mode=TwoWay, Converter={StaticResource convReal}}"
+                                Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
 
-                        <TextBox
-                        Width="100"
-                        HorizontalAlignment="Left"
-                        materialDesign:HintAssist.Hint="Preço promocional"
-                        Text="{Binding Wrapper.PrecoPromocional, Mode=TwoWay}"
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                            <TextBox
+                                Margin="0,0,0,15"
+                                Width="150"
+                                materialDesign:HintAssist.Hint="Estoque"
+                                HorizontalAlignment="Left"
+                                Text="{Binding Wrapper.EstoqueAtual.Quantidade, Mode=TwoWay, Converter={StaticResource convInt}}"
+                                Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
 
-                        <TextBox
-                        
-                        materialDesign:HintAssist.Hint="Estoque"
-                        Text="{Binding Wrapper.EsotqueAtual.Estoque, Mode=TwoWay}"
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-
-                    </StackPanel>
-                </Expander>
-                <Border
+                        </StackPanel>
+                    </Expander>
+                    <Border
                   Background="{DynamicResource MaterialDesignDivider}"
                   Height="1"
                   HorizontalAlignment="Stretch"
                   SnapsToDevicePixels="True" />
-                <Expander x:Name="ExpanderImagens"
+                    <Expander x:Name="ExpanderImagens"
                     
                     HorizontalAlignment="Stretch"
                     Header="Imagens">
-                    <StackPanel Margin="10">
-                        <Button
-                        Style="{StaticResource MaterialDesignRaisedButton}"
-                        Command="{Binding PesquisarCommand}"
-                        Width="80"
-                        HorizontalAlignment="Left"
-                        ToolTip="Resource name: MaterialDesignRaisedButton">
-                            Incluir
-                        </Button>
-                        <StackPanel Orientation="Horizontal">
+                        <StackPanel Margin="10">
+                            <Button    
+                            Style="{StaticResource MaterialDesignRaisedButton}"
+                            Command="{Binding IncluirImagemCommand}"
+                            Width="80"
+                            HorizontalAlignment="Left"
+                            ToolTip="Resource name: MaterialDesignRaisedButton">
+                                Incluir
+                            </Button>
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+
+                                <ListView
+                                    Grid.Column="0"
+                                    Margin="0,0,10,0"
+                                    SelectedItem="{Binding ImagemSelecionada}"
+                                    ItemsSource="{Binding Wrapper.Imagens}"
+                                    Grid.IsSharedSizeScope="True">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate
+                                            DataType="{x:Type wrapper:ProdutoImagemWrapper}">
+                                            <Border
+                                            x:Name="Border"
+                                            Padding="8"
+                                            BorderThickness="0 0 0 1"
+                                            BorderBrush="{DynamicResource MaterialDesignDivider}">
+
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition />
+                                                        <ColumnDefinition />
+                                                        <ColumnDefinition Width="50" />
+                                                        <ColumnDefinition Width="50" />
+                                                    </Grid.ColumnDefinitions>
+
+                                                    <TextBlock Grid.Column="0"
+                                                           VerticalAlignment="Center">
+                                                    <Run Text="Imagem Nª" />
+                                                    <Run Text="{Binding Ordem}" FontWeight="Bold" />
+                                                    </TextBlock>
+
+                                                    <Image Grid.Column="1" 
+                                                       VerticalAlignment="Center"
+                                                       HorizontalAlignment="Center"
+                                                       Source="{Binding Dados, Converter={StaticResource convImage}}"
+                                                       Width="100"
+                                                       Height="100"/>
+
+                                                    <Button Grid.Column="2"
+                                                        VerticalAlignment="Center"
+                                                        Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+                                                        HorizontalAlignment="Left"
+                                                        ToolTip="Alterar imagem"
+                                                        Command="{Binding Path= DataContext.AlterarImagemCommand ,RelativeSource={RelativeSource  AncestorType={x:Type ItemsControl }}}"
+                                                        CommandParameter="{Binding Ordem}">
+                                                        <materialDesign:PackIcon
+                                                        Kind="Edit"
+                                                        Height="24"
+                                                        Width="24" />
+                                                    </Button>
+
+                                                    <Button Grid.Column="3"
+                                                        VerticalAlignment="Center"
+                                                        Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+                                                        HorizontalAlignment="Left"
+                                                        ToolTip="Excluir imagem"
+                                                        Margin="5,0,0,0"
+                                                        Command="{Binding Path= DataContext.ExcluirImagemCommand ,RelativeSource={RelativeSource  AncestorType={x:Type ItemsControl }}}" 
+                                                        CommandParameter="{Binding Ordem}">
+                                                        <materialDesign:PackIcon
+                                                        Kind="Delete"
+                                                        Height="24"
+                                                        Width="24" />
+                                                    </Button>
+
+                                                </Grid>
+                                            </Border>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                    
+                                </ListView>
+
+                                <!--<ItemsControl Grid.Column="0"
+                                              Margin="0,0,10,0"
+                                              ItemsSource="{Binding Wrapper.Imagens}"
+                                              Selector.SelectionChanged="ItemsControl_SelectionChanged"
+                                              Grid.IsSharedSizeScope="True">
+                                    <ItemsControl.ItemTemplate>
+                                        
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>-->
+
+                                <Image Grid.Column="1"
+                                Source="{Binding ImagemSelecionada.Dados, Converter={StaticResource convImage}}" Stretch="Uniform">
+                                </Image>
+                            </Grid>
+                        </StackPanel>
+                    </Expander>
+                    <Border
+                Background="{DynamicResource MaterialDesignDivider}"
+                Height="1"
+                HorizontalAlignment="Stretch"
+                SnapsToDevicePixels="True" />
+                    <Expander x:Name="ExpanderEspecificacoes"
+                          HorizontalAlignment="Stretch"
+                          Header="Especificações">
+                        <StackPanel Margin="10">
+                            <Button
+                            Style="{StaticResource MaterialDesignRaisedButton}"
+                            Command="{Binding IncluirEspecificacaoCommand}"
+                            HorizontalAlignment="Left"
+                            Width="80"
+                            ToolTip="Resource name: MaterialDesignRaisedButton">
+                                Incluir
+                            </Button>
                             <ItemsControl
-                        ItemsSource="{Binding Wrapper.Imagens}"
+                        ItemsSource="{Binding Wrapper.Especificacoes}"
                         Grid.IsSharedSizeScope="True">
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate
-                                DataType="{x:Type wrapper:ProdutoImagemWrapper}">
+                                DataType="{x:Type wrapper:ProdutoEspecificacaoWrapper}">
                                         <Border
                                     x:Name="Border"
                                     Padding="8"
                                     BorderThickness="0 0 0 1"
                                     BorderBrush="{DynamicResource MaterialDesignDivider}">
 
-                                            <Grid>
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition />
-                                                    <ColumnDefinition />
-                                                    <ColumnDefinition />
-                                                </Grid.ColumnDefinitions>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock
+                                                VerticalAlignment="Center"
+                                                Style="{StaticResource MaterialDesignSubheadingTextBlock}" >
+                                                <Run Text="Especificação n°"/>
+                                                <Run Text="{Binding Ordem , Mode=TwoWay}" FontWeight="Bold" />
+                                                </TextBlock>
 
-                                                <Image Grid.Column="0" 
-                                            Source="{Binding Dados}"
-                                               Width="100"
-                                               Height="100"/>
-                                                <TextBlock Grid.Column="1"
-                                            Text="{Binding Ordem}"/>
+                                                <TextBox materialDesign:HintAssist.Hint="Nome"
+                                                     VerticalAlignment="Center"
+                                                     MinWidth="200"
+                                                     Margin="10,0,10,0"
+                                                     Text="{Binding Nome, Mode=TwoWay}"
+                                                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
 
-                                                <Button Grid.Column="2"
-                                            Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
-                                            HorizontalAlignment="Left"
-                                            ToolTip="MaterialDesignFloatingActionMiniButton"
-                                            Command="{Binding AlterarImagemCommand}" CommandParameter="{Binding Ordem}">
+                                                <TextBox
+                                                materialDesign:HintAssist.Hint="Descrição"
+                                                VerticalAlignment="Center"
+                                                MinWidth="300"
+                                                Margin="10,0,10,0"
+                                                Text="{Binding Descricao, Mode=TwoWay}"
+                                                Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+
+                                                <Button  Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                                                 ToolTip="Excluir especificação"
+                                                 Command="{Binding Path= DataContext.ExcluirEspecificacaoCommand, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"
+                                                 CommandParameter="{Binding Ordem}">
                                                     <materialDesign:PackIcon
-                                                Kind="Edit"
-                                                Height="24"
-                                                Width="24" />
+                                                    Kind="Delete"
+                                                    Height="24"
+                                                    Width="24" />
                                                 </Button>
 
-                                                <Button Grid.Column="3"
-                                            Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
-                                            HorizontalAlignment="Left"
-                                            ToolTip="MaterialDesignFloatingActionMiniButton"
-                                            Command="{Binding ExcluirImagemCommand}" CommandParameter="{Binding Ordem}">
-                                                    <materialDesign:PackIcon
-                                                Kind="Delete"
-                                                Height="24"
-                                                Width="24" />
-                                                </Button>
-                                            </Grid>
+                                            </StackPanel>
                                         </Border>
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
                             </ItemsControl>
-                            <Image 
-                            VerticalAlignment="Center"
-                            HorizontalAlignment="Center"
-                            Width="300"
-                            Height="300"
-                            Source="{Binding ImagemSelecionada.Dados}">
-                            </Image>
+
                         </StackPanel>
-                    </StackPanel>
-                </Expander>
-                <Border
-                Background="{DynamicResource MaterialDesignDivider}"
-                Height="1"
-                HorizontalAlignment="Stretch"
-                SnapsToDevicePixels="True" />
-                <Expander x:Name="ExpanderEspecificacoes"
-                HorizontalAlignment="Stretch"
-                Header="Especificações">
-                    <StackPanel Margin="10">
-                        <Button
-                        Style="{StaticResource MaterialDesignRaisedButton}"
-                        Command="{Binding IncluirEspecificalcaoCommand}"
-                        HorizontalAlignment="Left"
-                        Width="80"
-                        ToolTip="Resource name: MaterialDesignRaisedButton">
-                            Incluir
-                        </Button>
-                        <ItemsControl
-                        ItemsSource="{Binding Wrapper.Especificacoes}"
-                        Grid.IsSharedSizeScope="True">
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate
-                                DataType="{x:Type wrapper:ProdutoEspecificacaoWrapper}">
-                                    <Border
-                                    x:Name="Border"
-                                    Padding="8"
-                                    BorderThickness="0 0 0 1"
-                                    BorderBrush="{DynamicResource MaterialDesignDivider}">
+                    </Expander>
 
-                                        <StackPanel Orientation="Horizontal">
+                </StackPanel>
 
-                                            <TextBlock
-                                            Style="{StaticResource MaterialDesignSubheadingTextBlock}"
-                                            Text="{Binding Ordem}" />
+            </materialDesign:Card>
 
-                                            <TextBox
-                                            materialDesign:HintAssist.Hint="Nome"
-                                            Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <StackPanel Orientation="Horizontal">
 
-                                            <TextBox
-                                            materialDesign:HintAssist.Hint="Descrição"
-                                            Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <Button           
+                Margin="0,10,0,10"
+                Width="100"
+                HorizontalAlignment="Left"
+                Command="{Binding SalvarCommand}">
+                    Salvar
+                </Button>
 
-
-                                            <Button  Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
-                                                 ToolTip="MaterialDesignFloatingActionMiniLightButton"
-                                                 Command="{Binding ExcluirEspecificacaoCommand}"
-                                                 >
-                                                <materialDesign:PackIcon
-                                                Kind="Delete"
-                                                Height="24"
-                                                Width="24" />
-                                            </Button>
-                                        </StackPanel>
-                                    </Border>
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
-                        </ItemsControl>
-
-                    </StackPanel>
-                </Expander>
-                
+                <Button           
+                Margin="15,10,0,10"
+                Width="100"
+                HorizontalAlignment="Left"
+                Style="{StaticResource MaterialDesignRaisedAccentButton}"
+                Command="{Binding VoltarCommand}">
+                    Voltar
+                </Button>
             </StackPanel>
-        </materialDesign:Card>
-        <Button
-            Margin="0,10,0,10"
-            Width="100"
-            HorizontalAlignment="Left"
-            Command="{Binding SalvarCommand}">
-            Salvar
-        </Button>
-    </StackPanel>
 
+        </StackPanel>
+    </ScrollViewer>
 </UserControl>

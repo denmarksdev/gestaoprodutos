@@ -45,6 +45,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GPApp.Wpf", "GPApp.Wpf\GPAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GPApp.Wpf.Modulo.Produtos", "GPApp.Wpf.Modulo.Produtos\GPApp.Wpf.Modulo.Produtos.csproj", "{933B814F-3925-4DED-BE1B-0F3FAF7DB489}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GPApp.Wpf.Testes", "GPApp.Wpf.Testes\GPApp.Wpf.Testes.csproj", "{7B34644A-1968-406E-805B-4A5FBE86D182}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		AppVeyor|Any CPU = AppVeyor|Any CPU
@@ -130,6 +132,12 @@ Global
 		{933B814F-3925-4DED-BE1B-0F3FAF7DB489}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{933B814F-3925-4DED-BE1B-0F3FAF7DB489}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{933B814F-3925-4DED-BE1B-0F3FAF7DB489}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B34644A-1968-406E-805B-4A5FBE86D182}.AppVeyor|Any CPU.ActiveCfg = Release|Any CPU
+		{7B34644A-1968-406E-805B-4A5FBE86D182}.AppVeyor|Any CPU.Build.0 = Release|Any CPU
+		{7B34644A-1968-406E-805B-4A5FBE86D182}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B34644A-1968-406E-805B-4A5FBE86D182}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B34644A-1968-406E-805B-4A5FBE86D182}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B34644A-1968-406E-805B-4A5FBE86D182}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -151,6 +159,7 @@ Global
 		{6609F28A-5788-4D1D-85DE-36518B41D450} = {FFB0AB52-CA58-47A3-B58E-FE52E859A863}
 		{FC2CAA7A-2A12-4C65-8CC4-A35A0CD6A7B6} = {6609F28A-5788-4D1D-85DE-36518B41D450}
 		{933B814F-3925-4DED-BE1B-0F3FAF7DB489} = {6609F28A-5788-4D1D-85DE-36518B41D450}
+		{7B34644A-1968-406E-805B-4A5FBE86D182} = {6609F28A-5788-4D1D-85DE-36518B41D450}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {45D0EDA0-163C-4370-B5DD-CACC1500F216}

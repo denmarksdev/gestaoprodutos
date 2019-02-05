@@ -7,6 +7,8 @@
         string PasswordSMTP { get; set; }
         int PortaSMTP { get; set; }
 
+        string ConnectionString { get; set; }
+
         string BaseUrlApi { get; set; }
 
         void Configura();

@@ -2,7 +2,6 @@
 using GPApp.Presenter.Modulos.Produtos;
 using GPApp.Shared.Dados;
 using GPApp.WinForms.Helpers;
-using GPApp.WinForms.Views;
 using MetroFramework.Forms;
 using Ninject;
 using System.Windows.Forms;
@@ -12,8 +11,6 @@ namespace GPApp.WinForms.PontoPartida
     class Bootstrapper
     {
         private readonly IKernel _ioc;
-
-        
 
         internal Bootstrapper(IKernel ioc)
         {

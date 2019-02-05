@@ -27,15 +27,13 @@ namespace GPApp.Shared.Paginacao
 
         public void CarregarDuasPaginas()
         {
-            _cachePages?.Clear();
-
-
-            _cachePages = new List<DataPage>
-         {
-                new DataPage(_dataSupply.SupplyPageOfData(DataPage.MapearLimiteInferior(0), RegistrosPorPagina), 0),
-               new DataPage(_dataSupply.SupplyPageOfData(DataPage.MapearLimiteInferior(RegistrosPorPagina), RegistrosPorPagina), RegistrosPorPagina)
-         };
-        }
+          _cachePages?.Clear();
+          _cachePages = new List<DataPage>
+          {
+             new DataPage(_dataSupply.SupplyPageOfData(DataPage.MapearLimiteInferior(0), RegistrosPorPagina), 0),
+             new DataPage(_dataSupply.SupplyPageOfData(DataPage.MapearLimiteInferior(RegistrosPorPagina), RegistrosPorPagina ), RegistrosPorPagina)
+          };
+        } 
 
         public void LimparCache()
         {
@@ -205,7 +203,6 @@ namespace GPApp.Shared.Paginacao
                 return MapearLimiteInferior(rowIndex) + RegistrosPorPagina - 1;
             }
         }
-
 
         #endregion
     }

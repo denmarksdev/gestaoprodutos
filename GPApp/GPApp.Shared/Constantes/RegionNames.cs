@@ -4,6 +4,9 @@
     {
         public static string MAIN_REGION = "ContentRegion";
 
-        public static string EDIT_PRODUTO = "ProdutoEdit";
+        public static string EDIT_PRODUTO = "ProdutoEdit",
+                             PRODUTOS = "Produtos";
+
+        public static string SPLASH_SCREEN = "SplashScreen";
     }
 }

@@ -6,3 +6,4 @@ D:\Repositorio\gestaoprodutos\GPApp\GPApp.Model\obj\Debug\netstandard2.0\GPApp.M
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Model\obj\Debug\netstandard2.0\GPApp.Model.AssemblyInfo.cs
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Model\obj\Debug\netstandard2.0\GPApp.Model.dll
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Model\obj\Debug\netstandard2.0\GPApp.Model.pdb
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Model\obj\Debug\netstandard2.0\GPApp.Model.csprojAssemblyReference.cache

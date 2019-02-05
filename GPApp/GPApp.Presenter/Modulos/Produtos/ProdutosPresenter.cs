@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using GPApp.Helpers;
 using GPApp.Model;
 using GPApp.Model.Lookups;
 using GPApp.Presenter.Base;
@@ -231,7 +229,7 @@ namespace GPApp.Presenter.Modulos.Produtos
 
         #region Handlers
 
-        private async void GridViewPresenter_FiltrouEvent(object sender, bool filtroAtivo)
+        private void GridViewPresenter_FiltrouEvent(object sender, bool filtroAtivo)
         {
             var texto = filtroAtivo ? "Desativar filtro" : "Filtrar";
             View.SetTextoBotaoFiltrar(texto);
