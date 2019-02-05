@@ -1,4 +1,6 @@
-﻿using GPApp.Repository;
+﻿using GPApp.Model;
+using GPApp.Repository;
+using GPApp.Service;
 using GPApp.Shared.Constantes;
 using GPApp.Shared.Paginacao;
 using GPApp.Shared.Services;
@@ -7,6 +9,8 @@ using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Regions;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 
@@ -20,6 +24,7 @@ namespace GPApp.Wpf.Modulo.Produtos.ViewModels
         private readonly IPaginacaoRepository<ProdutoLookupWrapper> _paginacaoRepository;
         private readonly IProdutoRepository _produtoRepository;
         private readonly IDialogService _dialogService;
+        private readonly IProdutoClientService _produtoClientService;
 
         #endregion
 
@@ -29,15 +34,25 @@ namespace GPApp.Wpf.Modulo.Produtos.ViewModels
             IRegionManager regionManager,
             IPaginacaoRepository<ProdutoLookupWrapper> paginacaoRepository,
             IProdutoRepository produtoRepository,
-            IDialogService dialogService
-         )
-        {
+            IDialogService dialogService,
+            IProdutoClientService produtoClientService
+         ){
             _regionManager = regionManager;
             _paginacaoRepository = paginacaoRepository;
             _produtoRepository = produtoRepository;
             _dialogService = dialogService;
+            _produtoClientService = produtoClientService;
 
+            ConfigurarCommands();
 
+            ExibirPesquisa = Visibility.Hidden;
+            ExibirDesativarFiltro = Visibility.Hidden;
+
+            PropertyChanged += ViewModelPropertyChanged;
+        }
+
+        private void ConfigurarCommands()
+        {
             IncluirCommand = new DelegateCommand(OnIncluir);
             AlterarCommand = new DelegateCommand<Guid?>(OnAlterar);
 
@@ -45,11 +60,6 @@ namespace GPApp.Wpf.Modulo.Produtos.ViewModels
             FiltrarCommand = new DelegateCommand(OnFiltrarCommand, PodeFiltrar);
             PesquisarCommand = new DelegateCommand(OnPesquisar);
             DesativarFiltroCommand = new DelegateCommand(OnDesativarFiltro);
-
-            ExibirPesquisa = Visibility.Hidden;
-            ExibirDesativarFiltro = Visibility.Hidden;
-
-            PropertyChanged += ViewModelPropertyChanged;
         }
 
         #endregion
@@ -105,6 +115,20 @@ namespace GPApp.Wpf.Modulo.Produtos.ViewModels
         {
             get { return _textoPesquisa; }
             set { SetProperty(ref _textoPesquisa, value); }
+        }
+
+        private bool _processandoSincronizacao;
+        public bool ProcessandoSincronizacao
+        {
+            get { return _processandoSincronizacao; }
+            set { SetProperty(ref _processandoSincronizacao, value); }
+        }
+
+        private bool _sincronizacaoConcluida;
+        public bool SincronizacaoConcluida
+        {
+            get { return _sincronizacaoConcluida; }
+            set { SetProperty(ref _sincronizacaoConcluida, value); }
         }
 
         #endregion
@@ -167,8 +191,44 @@ namespace GPApp.Wpf.Modulo.Produtos.ViewModels
                 param);
         }
 
-        private void OnSincronizarNuvem()
+        private async void OnSincronizarNuvem()
         {
+            if (ProcessandoSincronizacao) return;
+
+            ProcessandoSincronizacao = true;
+
+            var resultado = await _produtoRepository.BuscaProdutosNaoSincronizados();
+            if (!resultado.Valido)
+            {
+                _dialogService.Mensagem(resultado.Mensagem);
+                return;
+            }
+
+            var produtos = resultado.Valor;
+            var resultadoWeb = await _produtoClientService.SalvarProdutos(produtos);
+            if (resultadoWeb.Valido)
+            {
+                var produtosAtualizados = produtos.Where(p => !resultadoWeb.ItensInvalidos.Contains(p.Id));
+                var resposta = await _produtoRepository
+                     .AtualizaSincronizacaoAsync(
+                             produtosAtualizados.Select(p => p.Id),
+                             resultadoWeb.DataAtualizacao);
+
+                
+
+                if (resultadoWeb.ItensInvalidos.Count > 0)
+                    _dialogService.Mensagem(
+                        "Produtos que não foram atualizados:" +
+                        String.Join("\n", resultadoWeb.ItensInvalidos));
+            }
+            else
+            {
+                _dialogService.Mensagem(resultadoWeb.GetMensagem());
+            }
+
+            await SetNumeroREgistrosSincronizarNuvem();
+            ProcessandoSincronizacao = false;
+            SincronizacaoConcluida = true;
         }
 
         #endregion

@@ -22,7 +22,5 @@
                 IsIndeterminate="True" />
         </materialDesign:Card>
 
-
-
     </StackPanel>
 </UserControl>

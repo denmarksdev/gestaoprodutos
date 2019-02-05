@@ -1,4 +1,5 @@
 ﻿using GPApp.Repository;
+using GPApp.Service;
 using GPApp.Shared.Dados;
 using GPApp.Shared.Paginacao;
 using GPApp.Shared.Services;
@@ -33,6 +34,8 @@ namespace GPApp.Wpf
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<Views.SplashScreen, SplashScreenViewModel>();
+
+            containerRegistry.Register<IProdutoClientService, ProdutoClientService>();
 
             containerRegistry.Register<IDialogService, DialogService>();
             containerRegistry.Register<IArquivoService, ArquivoService>();

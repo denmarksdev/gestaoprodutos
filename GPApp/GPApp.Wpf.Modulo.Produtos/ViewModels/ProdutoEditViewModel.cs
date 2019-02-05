@@ -50,6 +50,7 @@ namespace GPApp.Wpf.Modulo.Produtos.ViewModels
             SalvarCommand = new DelegateCommand(OnSalvar, PodeSalvar);
             VoltarCommand = new DelegateCommand(() =>
                 _regionManager.RequestNavigate(RegionNames.MAIN_REGION, RegionNames.PRODUTOS));
+
         }
        
         #endregion

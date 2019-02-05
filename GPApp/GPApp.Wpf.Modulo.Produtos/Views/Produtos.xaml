@@ -21,41 +21,87 @@
             <RowDefinition Height="30" />
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0"
-            Style="{StaticResource MaterialDesignDisplay1TextBlock}">
+        <Border Grid.Row="0" BorderBrush="Black" BorderThickness="0,0,0,2">
+            <TextBlock Grid.Row="0"
+            Style="{StaticResource MaterialDesignDisplay1TextBlock}" >
             Produtos
-        </TextBlock>
-
+            </TextBlock>
+        </Border>
+        
         <StackPanel Grid.Row="1" Orientation="Horizontal">
-            <Button
-                Width="100"
-                Command="{Binding FiltrarCommand}">
-                Filtrar
-            </Button>
             <Button
                 Width="100"
                 Command="{Binding IncluirCommand}">
                 Incluir
             </Button>
 
+            <Button
+                Width="100"
+                Margin="50,0,0,0"
+                Command="{Binding FiltrarCommand}">
+                Filtrar
+            </Button>
+
             <materialDesign:Badged VerticalAlignment="Center"
-            Margin="0,0,15,0"
-                Badge="{Binding NumeroRegistrosSincronizar}">
+                                   Margin="10,0,15,0"
+                                   Badge="{Binding NumeroRegistrosSincronizar}">
+
                 <Button
-                    Command="{Binding SincronizarNuvemCommand}">
-                    Sincronizar com a nuvem
+                    Style="{StaticResource MaterialDesignFloatingActionLightButton}"
+                    Margin="0 0 0 0"
+                    Width="50"
+                    Height="50"
+                    ToolTip="Sincronizar com a nuvem"
+                    Command="{Binding SincronizarNuvemCommand}"
+                    materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+                    materialDesign:ButtonProgressAssist.IsIndicatorVisible="{Binding ProcessandoSincronizacao}"
+                    materialDesign:ButtonProgressAssist.Value="-1">
+                    <!-- simple example of toggling/animating pack icon with a data trigger-->
+                    <materialDesign:PackIcon
+                        Height="24"
+                        Width="24">
+                        <materialDesign:PackIcon.Style>
+                            <Style
+                                TargetType="materialDesign:PackIcon"
+                                BasedOn="{StaticResource {x:Type materialDesign:PackIcon}}">
+                                <Setter Property="Kind" Value="CloudSync" />
+                                <Style.Triggers>
+                                    <DataTrigger
+                                        Binding="{Binding SincronizacaoConcluida}"
+                                        Value="True">
+                                        <Setter
+                                            Property="Kind"
+                                            Value="Check" />
+                                        <DataTrigger.EnterActions>
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation
+                                                        Storyboard.TargetProperty="Opacity"
+                                                        From="0"
+                                                        To="1"
+                                                        Duration="0:0:0.8" />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </DataTrigger.EnterActions>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </materialDesign:PackIcon.Style>
+                    </materialDesign:PackIcon>
                 </Button>
             </materialDesign:Badged>
-            <Button
+            <!--TODO:Implementar-->
+            <!--<Button
                 Width="120"
                 Command="{Binding EnviarEmailCommand}">
                 Enviar email
-            </Button>
+            </Button>-->
         </StackPanel>
 
         <DataGrid x:Name="DataGridProdutos" Grid.Row="2"
             Margin="0 8 0 0"
-            ItemsSource="{Binding Produtos}"
+            EnableRowVirtualization="True"
+            ItemsSource="{Binding Produtos, IsAsync=True}"
             CanUserSortColumns="True"
             CanUserAddRows="False"
             IsReadOnly="True"
@@ -75,7 +121,7 @@
                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}" />
                 <!-- set a max length to get an indicator in the editor -->
                 <materialDesign:MaterialDataGridTextColumn
-                      Binding="{Binding Description}"
+                      Binding="{Binding Preco, StringFormat='C2',ConverterCulture='pt-BR'}"
                       Header="Preço"
                       Width="100"
                       EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}" />
