@@ -196,7 +196,7 @@ namespace GPApp.WinForms.Testes
             _viewMock.Object.CancelarAction.Invoke();
             _eventAggregator.Verify(f => f.Publish(It.IsAny<AtualizarGridProdutosEvent>()));
         }
-
+            
         #region Métodos auxiliares
 
         private void DefineProdurtoValido()
@@ -213,6 +213,11 @@ namespace GPApp.WinForms.Testes
             public void BuscaCamimhoImagem(Action<string> OkAction)
             {
                 OkAction?.Invoke("imagemMock.jpeg");
+            }
+
+            public void BuscaCamimhoImagem(Action<string, byte[]> okAction)
+            {
+                throw new NotImplementedException();
             }
 
             public void Confirmacao(string mensagem, Action OkAction, string titulo = "Atenção")

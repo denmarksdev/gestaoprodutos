@@ -142,7 +142,6 @@ D:\Repositorio\gestaoprodutos\GPApp\GPApp.Wpf.Testes\bin\Debug\Microsoft.Extensi
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Wpf.Testes\bin\Debug\Microsoft.Data.Sqlite.dll
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Wpf.Testes\bin\Debug\Microsoft.Extensions.Primitives.dll
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Wpf.Testes\bin\Debug\System.Buffers.dll
-D:\Repositorio\gestaoprodutos\GPApp\GPApp.Wpf.Testes\bin\Debug\Newtonsoft.Json.dll
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Wpf.Testes\bin\Debug\SQLitePCLRaw.core.dll
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Wpf.Testes\bin\Debug\GPApp.Shared.pdb
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Wpf.Testes\bin\Debug\GPApp.Wpf.Modulo.Produtos.pdb
@@ -176,3 +175,5 @@ D:\Repositorio\gestaoprodutos\GPApp\GPApp.Wpf.Testes\bin\Debug\xunit.runner.visu
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Wpf.Testes\bin\Debug\xunit.runner.reporters.net452.dll
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Wpf.Testes\bin\Debug\xunit.runner.utility.net452.dll
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Wpf.Testes\bin\Debug\System.ComponentModel.Annotations.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Wpf.Testes\bin\Debug\GPApp.Service.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Wpf.Testes\bin\Debug\GPApp.Service.pdb

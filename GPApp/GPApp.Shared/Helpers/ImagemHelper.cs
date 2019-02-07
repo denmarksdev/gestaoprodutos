@@ -57,6 +57,11 @@ namespace GPApp.Shared.Helpers
            return Convert.FromBase64String(base64);
         }
 
+        public static string BytesToBase64(byte[] bytes)
+        {
+            return Convert.ToBase64String(bytes);
+        }
+
         private static string GetTamanhaoAbreviado(Tamanho tamanho)
         {
             switch (tamanho)

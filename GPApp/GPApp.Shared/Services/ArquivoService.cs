@@ -11,6 +11,11 @@ namespace GPApp.Shared.Services
             return Convert.ToBase64String(bytes);
         }
 
+        public string GetImagemBase64(byte[] bytes)
+        {
+            return Convert.ToBase64String(bytes);
+        }
+
         public byte[] GetImagemBytes(string path)
         {
             return File.ReadAllBytes(path);

@@ -14,6 +14,7 @@ namespace GPApp.Dal.Dao
                 if (config == null)
                     throw new ArgumentException("A configuração do banco de dados deve ser fornecida", nameof(config));
 
+
                 DatabaseManager.SetDataBaseConfig(config);
                 await DatabaseManager.MigrarDadoAsync();
                 return new Resultado("Migração efetuada com sucesso");

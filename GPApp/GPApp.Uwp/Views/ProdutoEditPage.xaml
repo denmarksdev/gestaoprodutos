@@ -1,0 +1,250 @@
+﻿<prism:SessionStateAwarePage
+    x:Class="GPApp.Uwp.Views.ProdutoEditPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls" 
+    xmlns:prism="using:Prism.Windows.Mvvm"
+    xmlns:modelUWP="using:GPApp.Uwp.Logica.Model"
+    xmlns:wrapper="using:GPApp.Wrapper"
+    xmlns:converters="using:GPApp.Uwp.Converters"
+    mc:Ignorable="d"
+    x:Name="Pagina"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,0,0,0">
+
+    <prism:SessionStateAwarePage.Resources>
+
+        <Style TargetType="TextBox">
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="Margin" Value="10,0,10,0" />
+        </Style>
+
+        <converters:VisibilidadeConverter x:Key="convVisibilidade" />
+        <converters:DecimaConverter x:Key="convDecimal" />
+        <converters:IntegerConverter x:Key="convInteger" />
+
+    </prism:SessionStateAwarePage.Resources>
+
+    <StackPanel 
+        VerticalAlignment="Top"
+        Width="800">
+
+        <Border Grid.Row="1"  BorderThickness="0,0,0,2" BorderBrush="Black" >
+            <TextBlock Style="{StaticResource HeaderTextBlockStyle}">Novo produto</TextBlock>
+        </Border>
+
+        <ProgressBar 
+            IsEnabled="{x:Bind ViewModel.ExibirProgressBar }"
+            Visibility="{x:Bind ViewModel.ExibirProgressBar, Converter={StaticResource convVisibilidade}}"
+            IsIndeterminate="True" 
+            Value="50" 
+            Margin="0,10,0,10" LargeChange="30"  />
+
+        <controls:Expander 
+            x:Name="ExpanderPrincipal"
+            IsExpanded="True"
+            Margin="0,10,0,0"
+            Header="Principal">
+
+            <controls:Expander.Content >
+                <StackPanel  Width="800" Padding="10" >
+
+                    <TextBox Header="Código" 
+                             Text="{x:Bind ViewModel.Wrapper.Codigo,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             MinWidth="200" />
+
+                    <TextBox MinWidth="600"
+                             Text="{x:Bind ViewModel.Wrapper.Nome,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             Header="Nome" />
+
+                    <TextBox MinWidth="700"
+                             Text="{x:Bind ViewModel.Wrapper.Descricao,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             Header="Descrição"
+                             TextWrapping="Wrap"
+                             MinHeight="100"
+                             AcceptsReturn="True"/>
+
+                    <TextBox Header="Custo"  
+                             Text="{x:Bind ViewModel.Wrapper.Custo,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource convDecimal}}"
+                             MinWidth="200"
+                              />
+
+                    <TextBox Header="Preço"  
+                             Text="{x:Bind ViewModel.Wrapper.Preco,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource convDecimal}}"
+                             MinWidth="200"
+                              />
+
+                    <TextBox Header="Preço promocional"  
+                             Text="{x:Bind ViewModel.Wrapper.PrecoPromocional,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource convDecimal}}"
+                             MinWidth="200"
+                              />
+
+                    <TextBox Header="Estoque"  
+                             Text="{x:Bind ViewModel.Wrapper.EstoqueAtual.Quantidade,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource convInteger}}"
+                             MinWidth="200"
+                              />
+
+                </StackPanel>
+            </controls:Expander.Content>
+
+        </controls:Expander>
+
+        <controls:Expander 
+            x:Name="ExpanderImagens"
+            Margin="0,1,0,0"
+            Header="Imagens">
+
+            <Grid Width="800" Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition  />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <Button Grid.Row="0" Grid.Column="0"
+                        Style="{StaticResource AccentButtonStyle}"
+                        Command="{x:Bind ViewModel.IncluirImagemCommand}"
+                        Content="Incluir" />
+
+                <ListView Grid.Row="1" Grid.Column="0"
+                          MaxHeight="500"
+                          SelectedItem="{x:Bind ViewModel.ImagemSelecionada, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                          ItemsSource="{x:Bind ViewModel.Imagens}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="modelUWP:ProdutoImageUWPWrapper">
+                            <StackPanel Orientation="Horizontal" Margin="2">
+
+                                <TextBlock 
+                                    TextAlignment="Center">
+                                    <Run Text="Imagem nº" />
+                                    <Run FontSize="16" 
+                                         FontWeight="Bold"
+                                         Text="{Binding Ordem , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                </TextBlock>
+
+                                <Image 
+                                    Source="{Binding Image }" 
+                                    Stretch="Uniform" 
+                                    Margin="5,0,5,0"
+                                    Width="100"
+                                    Height="100"/>
+
+                                <Border CornerRadius="5" 
+                                        BorderBrush="Black" 
+                                        BorderThickness="1" 
+                                        Width="42" 
+                                        Height="42"
+                                        Margin="5,0,5,0"
+                                        HorizontalAlignment="Right">
+                                    <Button 
+                                        BorderBrush="Transparent" 
+                                        ToolTipService.ToolTip="Alterar imagem"
+                                        Command="{Binding ElementName=Pagina, Path=ViewModel.AlterarImagemCommand }"
+                                        CommandParameter="{x:Bind Ordem}">
+                                        <SymbolIcon Symbol="Edit" />
+                                    </Button>
+                                </Border>
+
+                                <Border CornerRadius="5"
+                                        BorderBrush="Black" 
+                                        BorderThickness="1" 
+                                        Width="42" 
+                                        Height="42"
+                                        Background="#FFFF7A7A" 
+                                        Margin="5,0,5,0"
+                                        HorizontalAlignment="Right">
+                                    <Button  BorderBrush="Transparent" 
+                                             Command="{Binding ElementName=Pagina, Path=ViewModel.ExcluirImagemCommand }"
+                                             CommandParameter="{x:Bind Ordem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                             ToolTipService.ToolTip="Excluir imagem">
+                                        <SymbolIcon Symbol="Delete" />
+                                    </Button>
+                                </Border>
+
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <Image  Grid.Row="1" Grid.Column="1"
+                        Source="{x:Bind ViewModel.ImagemSelecionada.Image ,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+            </Grid>
+
+        </controls:Expander>
+
+        <controls:Expander
+            x:Name="ExpanderEspecificacoes"
+            Header="Especificações" Margin="0,0,0,0">
+
+            <StackPanel Width="800" Padding="10">
+
+                <Button Grid.Row="0" Grid.Column="0"
+                        Style="{StaticResource AccentButtonStyle}"
+                        Command="{x:Bind ViewModel.IncluirEspecificacaoCommand}"
+                        Content="Incluir" />
+
+                <ListView
+                    ItemsSource="{x:Bind ViewModel.Wrapper.Especificacoes }">
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="wrapper:ProdutoEspecificacaoWrapper">
+
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock 
+                                    VerticalAlignment="Center" 
+                                    HorizontalAlignment="Center" 
+                                    TextAlignment="Center">
+                                    <Run Text="Espec. nº" />
+                                    <Run FontSize="16" 
+                                         FontWeight="Bold" 
+                                         Text="{Binding Ordem,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged }" />
+                                </TextBlock>
+
+                                <TextBox 
+                                    Header="Nome" 
+                                    MaxWidth="250"
+                                    Text="{x:Bind Nome, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                                <TextBox 
+                                    Header="Descrição" 
+                                    MaxWidth="350"
+                                    Text="{x:Bind Descricao, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+
+                                <Border CornerRadius="5"
+                                        BorderBrush="Black" 
+                                        BorderThickness="1" 
+                                        Width="42" 
+                                        Height="42"
+                                        Background="#FFFF7A7A" 
+                                        Margin="5,0,5,0"
+                                        HorizontalAlignment="Right">
+                                    <Button  BorderBrush="Transparent" 
+                                             Command="{Binding ElementName=Pagina, Path=ViewModel.ExcluirEspecificacaoCommand}"
+                                             CommandParameter="{x:Bind Ordem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                             ToolTipService.ToolTip="Excluir especificação">
+                                        <SymbolIcon Symbol="Delete" />
+                                    </Button>
+                                </Border>
+                            </StackPanel>
+
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+
+        </controls:Expander>
+
+        <Button Command="{x:Bind ViewModel.SalvarCommand}"
+                Content="Salvar"
+                Margin="0,10,0,0"
+                Style="{StaticResource AccentButtonStyle}"/>
+
+    </StackPanel>
+
+</prism:SessionStateAwarePage>

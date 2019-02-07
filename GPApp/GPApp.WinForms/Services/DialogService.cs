@@ -19,6 +19,11 @@ namespace GPApp.WinForms.Services
                 okAction?.Invoke(openFileDialog.FileName);
         }
 
+        public void BuscaCamimhoImagem(Action<string, byte[]> okAction)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Confirmacao(string mensagem, Action okAction, string titulo = "Atenção")
         {
             var dialogWindow = new DialogView(titulo, mensagem);

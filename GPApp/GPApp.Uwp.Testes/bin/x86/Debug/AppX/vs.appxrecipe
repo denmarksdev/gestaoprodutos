@@ -1,0 +1,476 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>DESKTOP-HM8BM5L</Machine>
+    <WindowsUser>denwo</WindowsUser>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetOsVersion>10.0</TargetOsVersion>
+    <TargetOsDescription>Windows 10.0</TargetOsDescription>
+    <SolutionConfiguration>Debug|x86</SolutionConfiguration>
+    <PackageArchitecture>x86</PackageArchitecture>
+    <PackageIdentityName>eb60621b-25a3-48a8-844b-24b2b606df14</PackageIdentityName>
+    <PackageIdentityPublisher>CN=denwo</PackageIdentityPublisher>
+    <IntermediateOutputPath>D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp.Testes\obj\x86\Debug\</IntermediateOutputPath>
+    <RemoteDeploymentType>
+    </RemoteDeploymentType>
+    <PackageRegistrationPath>
+    </PackageRegistrationPath>
+    <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
+    <DeployOptionalPackages>false</DeployOptionalPackages>
+    <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
+    <LayoutDir>D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp.Testes\bin\x86\Debug\AppX</LayoutDir>
+    <RegisteredManifestChecksum>375F8D86DDC25372EEE1136C7828C07FF69F416269981108B261885F5E0B24F3</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>eb60621b-25a3-48a8-844b-24b2b606df14_1.0.0.0_x86__8gxx6v61rss6c</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>eb60621b-25a3-48a8-844b-24b2b606df14_8gxx6v61rss6c!vstest.executionengine.universal.App</RegisteredUserModeAppID>
+    <RegisteredPackageID>eb60621b-25a3-48a8-844b-24b2b606df14</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=denwo</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp.Testes\bin\x86\Debug\Core\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-02-07T03:02:55.852</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp.Testes\bin\x86\Debug\GPApp.Uwp.Testes.exe">
+      <PackagePath>entrypoint\GPApp.Uwp.Testes.exe</PackagePath>
+      <Modified>2019-02-07T03:02:55.058</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp.Testes\bin\x86\Debug\GPApp.Uwp.Testes.pdb">
+      <PackagePath>GPApp.Uwp.Testes.pdb</PackagePath>
+      <Modified>2019-02-07T03:02:55.058</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp.Logica\bin\x86\Debug\GPApp.Uwp.Logica.pdb">
+      <PackagePath>GPApp.Uwp.Logica.pdb</PackagePath>
+      <Modified>2019-02-07T03:01:08.899</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\TestPlatform.Universal\16.0\References\CommonConfiguration\neutral\testhost.dll">
+      <PackagePath>testhost.dll</PackagePath>
+      <Modified>2019-01-16T21:02:06.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\castle.core\4.3.1\lib\netstandard1.5\Castle.Core.dll">
+      <PackagePath>Castle.Core.dll</PackagePath>
+      <Modified>2018-06-20T18:07:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.data.sqlite.core\2.2.1\lib\netstandard2.0\Microsoft.Data.Sqlite.dll">
+      <PackagePath>Microsoft.Data.Sqlite.dll</PackagePath>
+      <Modified>2018-12-12T02:19:50.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.dotnet.platformabstractions\2.1.0\lib\netstandard1.3\Microsoft.DotNet.PlatformAbstractions.dll">
+      <PackagePath>Microsoft.DotNet.PlatformAbstractions.dll</PackagePath>
+      <Modified>2018-05-16T00:01:34.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.entityframeworkcore\2.2.1\lib\netstandard2.0\Microsoft.EntityFrameworkCore.dll">
+      <PackagePath>Microsoft.EntityFrameworkCore.dll</PackagePath>
+      <Modified>2018-12-12T02:19:54.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.entityframeworkcore.abstractions\2.2.1\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Abstractions.dll">
+      <PackagePath>Microsoft.EntityFrameworkCore.Abstractions.dll</PackagePath>
+      <Modified>2018-12-12T02:19:50.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.entityframeworkcore.relational\2.2.1\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Relational.dll">
+      <PackagePath>Microsoft.EntityFrameworkCore.Relational.dll</PackagePath>
+      <Modified>2018-12-12T02:19:58.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.entityframeworkcore.sqlite.core\2.2.1\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Sqlite.dll">
+      <PackagePath>Microsoft.EntityFrameworkCore.Sqlite.dll</PackagePath>
+      <Modified>2018-12-12T02:20:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.entityframeworkcore.sqlserver\2.2.1\lib\netstandard2.0\Microsoft.EntityFrameworkCore.SqlServer.dll">
+      <PackagePath>Microsoft.EntityFrameworkCore.SqlServer.dll</PackagePath>
+      <Modified>2018-12-12T02:20:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.extensions.caching.abstractions\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll">
+      <PackagePath>Microsoft.Extensions.Caching.Abstractions.dll</PackagePath>
+      <Modified>2018-11-11T02:26:38.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.extensions.caching.memory\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Caching.Memory.dll">
+      <PackagePath>Microsoft.Extensions.Caching.Memory.dll</PackagePath>
+      <Modified>2018-11-11T02:26:46.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.extensions.configuration\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll">
+      <PackagePath>Microsoft.Extensions.Configuration.dll</PackagePath>
+      <Modified>2018-11-11T02:27:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.extensions.configuration.abstractions\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll">
+      <PackagePath>Microsoft.Extensions.Configuration.Abstractions.dll</PackagePath>
+      <Modified>2018-11-11T02:26:38.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.extensions.configuration.binder\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Binder.dll">
+      <PackagePath>Microsoft.Extensions.Configuration.Binder.dll</PackagePath>
+      <Modified>2018-11-11T02:27:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.extensions.dependencyinjection\2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.dll">
+      <PackagePath>Microsoft.Extensions.DependencyInjection.dll</PackagePath>
+      <Modified>2018-11-11T02:26:38.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.extensions.dependencyinjection.abstractions\2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll">
+      <PackagePath>Microsoft.Extensions.DependencyInjection.Abstractions.dll</PackagePath>
+      <Modified>2018-11-11T02:26:36.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.extensions.dependencymodel\2.1.0\lib\netstandard1.6\Microsoft.Extensions.DependencyModel.dll">
+      <PackagePath>Microsoft.Extensions.DependencyModel.dll</PackagePath>
+      <Modified>2018-05-16T00:01:34.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.extensions.logging\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Logging.dll">
+      <PackagePath>Microsoft.Extensions.Logging.dll</PackagePath>
+      <Modified>2018-11-11T02:27:18.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.extensions.logging.abstractions\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll">
+      <PackagePath>Microsoft.Extensions.Logging.Abstractions.dll</PackagePath>
+      <Modified>2018-11-11T02:26:40.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.extensions.options\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Options.dll">
+      <PackagePath>Microsoft.Extensions.Options.dll</PackagePath>
+      <Modified>2018-11-11T02:26:38.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.extensions.primitives\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll">
+      <PackagePath>Microsoft.Extensions.Primitives.dll</PackagePath>
+      <Modified>2018-11-11T02:26:36.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\moq\4.10.1\lib\netstandard1.3\Moq.dll">
+      <PackagePath>Moq.dll</PackagePath>
+      <Modified>2018-12-03T21:19:18.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\mstest.testframework\1.4.0\lib\uap10.0\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll">
+      <PackagePath>Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</PackagePath>
+      <Modified>2018-11-21T09:17:10.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\mstest.testframework\1.4.0\lib\uap10.0\Microsoft.VisualStudio.TestPlatform.TestFramework.dll">
+      <PackagePath>Microsoft.VisualStudio.TestPlatform.TestFramework.dll</PackagePath>
+      <Modified>2018-11-21T09:08:56.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\newtonsoft.json\9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+      <Modified>2016-06-14T02:06:14.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\npgsql\4.0.4\lib\netstandard2.0\Npgsql.dll">
+      <PackagePath>Npgsql.dll</PackagePath>
+      <Modified>2018-12-06T23:52:38.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\npgsql.entityframeworkcore.postgresql\2.2.0\lib\netstandard2.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll">
+      <PackagePath>Npgsql.EntityFrameworkCore.PostgreSQL.dll</PackagePath>
+      <Modified>2018-12-07T21:49:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\prism.core\7.0.0.336-pre\lib\uap10.0\Prism.dll">
+      <PackagePath>Prism.dll</PackagePath>
+      <Modified>2017-12-07T19:19:00.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\prism.windows\7.0.0.336-pre\lib\uap10.0\Prism.Windows.dll">
+      <PackagePath>Prism.Windows.dll</PackagePath>
+      <Modified>2017-12-07T19:19:34.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\remotion.linq\2.2.0\lib\portable-net45+win+wpa81+wp80\Remotion.Linq.dll">
+      <PackagePath>Remotion.Linq.dll</PackagePath>
+      <Modified>2018-02-07T00:25:00.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.2.2\runtimes\win10-x86\lib\uap10.0.15138\System.Runtime.dll">
+      <PackagePath>System.Runtime.dll</PackagePath>
+      <Modified>2018-10-31T13:00:10.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\sixlabors.core\1.0.0-beta0007\lib\netstandard2.0\SixLabors.Core.dll">
+      <PackagePath>SixLabors.Core.dll</PackagePath>
+      <Modified>2019-01-25T02:13:54.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\sixlabors.imagesharp\1.0.0-beta0006\lib\netstandard2.0\SixLabors.ImageSharp.dll">
+      <PackagePath>SixLabors.ImageSharp.dll</PackagePath>
+      <Modified>2019-01-25T08:08:26.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\sqlitepclraw.bundle_green\1.1.11\lib\uap10.0\SQLitePCLRaw.batteries_green.dll">
+      <PackagePath>SQLitePCLRaw.batteries_green.dll</PackagePath>
+      <Modified>2018-05-02T14:43:56.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\sqlitepclraw.bundle_green\1.1.11\lib\uap10.0\SQLitePCLRaw.batteries_v2.dll">
+      <PackagePath>SQLitePCLRaw.batteries_v2.dll</PackagePath>
+      <Modified>2018-05-02T14:43:56.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\sqlitepclraw.core\1.1.11\lib\uap10.0\SQLitePCLRaw.core.dll">
+      <PackagePath>SQLitePCLRaw.core.dll</PackagePath>
+      <Modified>2018-05-02T14:43:54.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\sqlitepclraw.lib.e_sqlite3.v140\1.1.11\runtimes\win10-x86\native\e_sqlite3.dll">
+      <PackagePath>e_sqlite3.dll</PackagePath>
+      <Modified>2018-05-02T14:44:46.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\sqlitepclraw.provider.e_sqlite3.uwp10\1.1.11\lib\uap10.0\SQLitePCLRaw.provider.e_sqlite3.dll">
+      <PackagePath>SQLitePCLRaw.provider.e_sqlite3.dll</PackagePath>
+      <Modified>2018-05-02T14:44:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\system.data.sqlclient\4.6.0\runtimes\win\lib\uap10.0.16299\System.Data.SqlClient.dll">
+      <PackagePath>System.Data.SqlClient.dll</PackagePath>
+      <Modified>2018-11-10T17:13:38.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\system.interactive.async\3.2.0\lib\netstandard2.0\System.Interactive.Async.dll">
+      <PackagePath>System.Interactive.Async.dll</PackagePath>
+      <Modified>2018-07-11T16:48:42.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\system.runtime.compilerservices.unsafe\4.5.1\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll">
+      <PackagePath>System.Runtime.CompilerServices.Unsafe.dll</PackagePath>
+      <Modified>2018-06-06T16:29:04.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Model\bin\Debug\netstandard2.0\GPApp.Model.dll">
+      <PackagePath>GPApp.Model.dll</PackagePath>
+      <Modified>2019-02-07T02:23:34.779</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Repository\bin\Debug\netstandard2.0\GPApp.Repository.dll">
+      <PackagePath>GPApp.Repository.dll</PackagePath>
+      <Modified>2019-02-07T02:23:36.118</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Shared\bin\Debug\netstandard2.0\GPApp.Shared.dll">
+      <PackagePath>GPApp.Shared.dll</PackagePath>
+      <Modified>2019-02-07T02:23:35.221</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp.Logica\bin\x86\Debug\GPApp.Uwp.Logica.dll">
+      <PackagePath>GPApp.Uwp.Logica.dll</PackagePath>
+      <Modified>2019-02-07T03:01:08.899</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Wrapper\bin\Debug\netstandard2.0\GPApp.Wrapper.dll">
+      <PackagePath>GPApp.Wrapper.dll</PackagePath>
+      <Modified>2019-02-07T02:23:35.865</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Repository\bin\Debug\netstandard2.0\GPApp.Dal.dll">
+      <PackagePath>GPApp.Dal.dll</PackagePath>
+      <Modified>2019-02-07T02:23:35.726</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Repository\bin\Debug\netstandard2.0\GPApp.Helpers.dll">
+      <PackagePath>GPApp.Helpers.dll</PackagePath>
+      <Modified>2019-02-05T19:21:39.337</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\moq\4.10.1\lib\netstandard1.3\Moq.pdb">
+      <PackagePath>Moq.pdb</PackagePath>
+      <Modified>2018-12-03T21:19:18.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\npgsql\4.0.4\lib\netstandard2.0\Npgsql.pdb">
+      <PackagePath>Npgsql.pdb</PackagePath>
+      <Modified>2018-12-06T23:52:38.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\npgsql.entityframeworkcore.postgresql\2.2.0\lib\netstandard2.0\Npgsql.EntityFrameworkCore.PostgreSQL.pdb">
+      <PackagePath>Npgsql.EntityFrameworkCore.PostgreSQL.pdb</PackagePath>
+      <Modified>2018-12-07T21:49:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Model\bin\Debug\netstandard2.0\GPApp.Model.pdb">
+      <PackagePath>GPApp.Model.pdb</PackagePath>
+      <Modified>2019-02-07T02:23:34.789</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Repository\bin\Debug\netstandard2.0\GPApp.Repository.pdb">
+      <PackagePath>GPApp.Repository.pdb</PackagePath>
+      <Modified>2019-02-07T02:23:36.130</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Shared\bin\Debug\netstandard2.0\GPApp.Shared.pdb">
+      <PackagePath>GPApp.Shared.pdb</PackagePath>
+      <Modified>2019-02-07T02:23:35.231</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Wrapper\bin\Debug\netstandard2.0\GPApp.Wrapper.pdb">
+      <PackagePath>GPApp.Wrapper.pdb</PackagePath>
+      <Modified>2019-02-07T02:23:35.864</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Repository\bin\Debug\netstandard2.0\GPApp.Dal.pdb">
+      <PackagePath>GPApp.Dal.pdb</PackagePath>
+      <Modified>2019-02-07T02:23:35.725</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Repository\bin\Debug\netstandard2.0\GPApp.Helpers.pdb">
+      <PackagePath>GPApp.Helpers.pdb</PackagePath>
+      <Modified>2019-02-05T19:21:39.352</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\bin\10.0.17763.0\XamlCompiler\Microsoft.UI.Xaml.Markup.winmd">
+      <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
+      <Modified>2018-10-23T03:33:40.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\TestPlatform.Universal\16.0\Redist\CommonConfiguration\neutral\Microsoft.TestPlatform.CommunicationUtilities.dll">
+      <PackagePath>Microsoft.TestPlatform.CommunicationUtilities.dll</PackagePath>
+      <Modified>2019-01-16T21:02:06.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\TestPlatform.Universal\16.0\Redist\CommonConfiguration\neutral\Microsoft.TestPlatform.CoreUtilities.dll">
+      <PackagePath>Microsoft.TestPlatform.CoreUtilities.dll</PackagePath>
+      <Modified>2019-01-16T21:02:06.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\TestPlatform.Universal\16.0\Redist\CommonConfiguration\neutral\Microsoft.TestPlatform.CrossPlatEngine.dll">
+      <PackagePath>Microsoft.TestPlatform.CrossPlatEngine.dll</PackagePath>
+      <Modified>2019-01-16T21:02:06.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\TestPlatform.Universal\16.0\Redist\CommonConfiguration\neutral\Microsoft.TestPlatform.PlatformAbstractions.dll">
+      <PackagePath>Microsoft.TestPlatform.PlatformAbstractions.dll</PackagePath>
+      <Modified>2019-01-16T21:02:06.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\TestPlatform.Universal\16.0\Redist\CommonConfiguration\neutral\Microsoft.TestPlatform.Utilities.dll">
+      <PackagePath>Microsoft.TestPlatform.Utilities.dll</PackagePath>
+      <Modified>2019-01-16T21:02:06.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\TestPlatform.Universal\16.0\Redist\CommonConfiguration\neutral\Microsoft.VisualStudio.TestPlatform.Common.dll">
+      <PackagePath>Microsoft.VisualStudio.TestPlatform.Common.dll</PackagePath>
+      <Modified>2019-01-16T21:02:06.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\TestPlatform.Universal\16.0\Redist\CommonConfiguration\neutral\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll">
+      <PackagePath>Microsoft.VisualStudio.TestPlatform.ObjectModel.dll</PackagePath>
+      <Modified>2019-01-16T21:02:06.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\TestPlatform.Universal\16.0\Redist\CommonConfiguration\x86\msdia140.dll">
+      <PackagePath>msdia140.dll</PackagePath>
+      <Modified>2019-01-16T21:02:06.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\mstest.testadapter\1.4.0\build\_common\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll">
+      <PackagePath>Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll</PackagePath>
+      <Modified>2018-11-21T09:12:40.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\mstest.testadapter\1.4.0\build\_common\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll">
+      <PackagePath>Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll</PackagePath>
+      <Modified>2018-11-21T09:10:58.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\mstest.testadapter\1.4.0\build\uap10.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll">
+      <PackagePath>Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll</PackagePath>
+      <Modified>2018-11-21T09:14:14.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp.Testes\Properties\UnitTestApp.rd.xml">
+      <PackagePath>Properties\UnitTestApp.rd.xml</PackagePath>
+      <Modified>2019-02-05T23:10:10.237</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp.Testes\Assets\LockScreenLogo.scale-200.png">
+      <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
+      <Modified>2019-01-29T13:41:26.838</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp.Testes\Assets\SplashScreen.scale-200.png">
+      <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-01-29T13:41:26.838</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp.Testes\Assets\Square150x150Logo.scale-200.png">
+      <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-01-29T13:41:26.838</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp.Testes\Assets\Square44x44Logo.scale-200.png">
+      <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-01-29T13:41:26.838</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp.Testes\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-01-29T13:41:26.838</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp.Testes\Assets\StoreLogo.png">
+      <PackagePath>Assets\StoreLogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-01-29T13:41:26.838</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp.Testes\Assets\Wide310x150Logo.scale-200.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-01-29T13:41:26.838</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp.Testes\bin\x86\Debug\GPApp.Uwp.Testes.xr.xml">
+      <PackagePath>GPApp.Uwp.Testes.xr.xml</PackagePath>
+      <Modified>2019-02-05T23:10:49.854</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp.Testes\bin\x86\Debug\UnitTestApp.xbf">
+      <PackagePath>UnitTestApp.xbf</PackagePath>
+      <Modified>2019-02-07T03:02:54.924</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17763.0\Windows.winmd">
+      <PackagePath>WinMetadata\Windows.winmd</PackagePath>
+      <Modified>2018-10-23T02:44:28.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp.Testes\bin\x86\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2019-02-07T02:13:14.524</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp.Testes\bin\x86\Debug\Core\GPApp.Uwp.Testes.exe">
+      <PackagePath>GPApp.Uwp.Testes.exe</PackagePath>
+      <Modified>2019-02-07T03:02:55.849</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.net.uwpcoreruntimesdk\2.2.2\build\..\tools\Appx\Microsoft.NET.CoreRuntime.2.2.appx">
+      <Name>Microsoft.NET.CoreRuntime.2.2</Name>
+      <Version>2.2.26926.4</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.CoreRuntime.2.2, MinVersion = 2.2.26926.4, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.net.uwpcoreruntimesdk\2.2.2\build\..\tools\Appx\Microsoft.NET.CoreRuntime.2.2.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x64.microsoft.net.uwpcoreruntimesdk\2.2.2\build\..\tools\Appx\Microsoft.NET.CoreRuntime.2.2.appx">
+      <Name>Microsoft.NET.CoreRuntime.2.2</Name>
+      <Version>2.2.26926.4</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.CoreRuntime.2.2, MinVersion = 2.2.26926.4, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x64.microsoft.net.uwpcoreruntimesdk\2.2.2\build\..\tools\Appx\Microsoft.NET.CoreRuntime.2.2.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-arm.microsoft.net.uwpcoreruntimesdk\2.2.2\build\..\tools\Appx\Microsoft.NET.CoreRuntime.2.2.appx">
+      <Name>Microsoft.NET.CoreRuntime.2.2</Name>
+      <Version>2.2.26926.4</Version>
+      <Architecture>arm</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.CoreRuntime.2.2, MinVersion = 2.2.26926.4, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-arm.microsoft.net.uwpcoreruntimesdk\2.2.2\build\..\tools\Appx\Microsoft.NET.CoreRuntime.2.2.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.net.uwpcoreruntimesdk\2.2.2\build\..\tools\Appx\Microsoft.NET.CoreFramework.Debug.2.2.appx">
+      <Name>Microsoft.NET.CoreFramework.Debug.2.2</Name>
+      <Version>2.2.26926.4</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.CoreFramework.Debug.2.2, MinVersion = 2.2.26926.4, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.net.uwpcoreruntimesdk\2.2.2\build\..\tools\Appx\Microsoft.NET.CoreFramework.Debug.2.2.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x64.microsoft.net.uwpcoreruntimesdk\2.2.2\build\..\tools\Appx\Microsoft.NET.CoreFramework.Debug.2.2.appx">
+      <Name>Microsoft.NET.CoreFramework.Debug.2.2</Name>
+      <Version>2.2.26926.4</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.CoreFramework.Debug.2.2, MinVersion = 2.2.26926.4, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x64.microsoft.net.uwpcoreruntimesdk\2.2.2\build\..\tools\Appx\Microsoft.NET.CoreFramework.Debug.2.2.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-arm.microsoft.net.uwpcoreruntimesdk\2.2.2\build\..\tools\Appx\Microsoft.NET.CoreFramework.Debug.2.2.appx">
+      <Name>Microsoft.NET.CoreFramework.Debug.2.2</Name>
+      <Version>2.2.26926.4</Version>
+      <Architecture>arm</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.CoreFramework.Debug.2.2, MinVersion = 2.2.26926.4, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-arm.microsoft.net.uwpcoreruntimesdk\2.2.2\build\..\tools\Appx\Microsoft.NET.CoreFramework.Debug.2.2.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00.Debug</Name>
+      <Version>14.0.27305.0</Version>
+      <Architecture>ARM</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.27305.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\ARM\Microsoft.VCLibs.ARM.Debug.14.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00.Debug</Name>
+      <Version>14.0.27305.0</Version>
+      <Architecture>ARM64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.27305.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\ARM64\Microsoft.VCLibs.ARM64.Debug.14.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00.Debug</Name>
+      <Version>14.0.27305.0</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.27305.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\x64\Microsoft.VCLibs.x64.Debug.14.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00.Debug</Name>
+      <Version>14.0.27305.0</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.27305.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\x86\Microsoft.VCLibs.x86.Debug.14.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+  </ItemGroup>
+</Project>

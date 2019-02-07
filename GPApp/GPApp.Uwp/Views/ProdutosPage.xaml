@@ -1,0 +1,104 @@
+﻿<prism:SessionStateAwarePage
+    x:Class="GPApp.Uwp.Views.ProdutosPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:prism="using:Prism.Windows.Mvvm"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:wrapper="using:GPApp.Wrapper"
+    mc:Ignorable="d"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <prism:SessionStateAwarePage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="10,0,0,0"/>
+        </Style>
+    </prism:SessionStateAwarePage.Resources>
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0"
+                    Margin="0,10,0,0"
+                    Orientation="Horizontal">
+            <Button Content="Incluir"
+                    Style="{StaticResource AccentButtonStyle}"
+                    Command="{x:Bind ViewModel.IncluirCommand}"/>
+            <Button Content="Filtrar" 
+                    Command="{x:Bind ViewModel.FiltrarCommand}"/>
+            <Button Content="Sincronizar na nuvem"
+                    Command="{x:Bind ViewModel.SincronizarNuvemCommand}"/>
+        </StackPanel>
+
+        <Border Grid.Row="1"  BorderThickness="0,0,0,2" BorderBrush="Black" >
+            <TextBlock Style="{StaticResource HeaderTextBlockStyle}">Produtos</TextBlock>
+        </Border>
+
+        <GridView Grid.Row="2"
+            ItemsSource="{x:Bind ViewModel.Produtos}">
+            <GridView.ItemTemplate>
+                <DataTemplate x:DataType="wrapper:ProdutoLookupWrapper">
+                    <StackPanel>
+                        <TextBlock >
+                            <Run  FontWeight="Bold" Text="Código" />
+                            <Run Text="{x:Bind DataCadastro}" />
+                        </TextBlock>
+                        <TextBlock >
+                            <Run  FontWeight="Bold" Text="Código" />
+                            <Run Text="{x:Bind Codigo}" />
+                        </TextBlock>
+                        <TextBlock >
+                            <Run  FontWeight="Bold" Text="Nome" />
+                            <Run Text="{x:Bind Nome}" />
+                        </TextBlock>
+                        <TextBlock >
+                            <Run  FontWeight="Bold" Text="Preço" />
+                            <Run Text="{x:Bind Preco}" />
+                        </TextBlock>
+                        <TextBlock >
+                            <Run  FontWeight="Bold" Text="Estoque" />
+                            <Run Text="{x:Bind Estoque}" />
+                        </TextBlock>
+                        <Button HorizontalAlignment="Right" 
+                                Content="Aterar"
+                                Command="{Binding ViewModel.AlterarCommand , RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView> 
+
+        <StackPanel Grid.Row="2"
+                    Orientation="Horizontal"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Visibility="{x:Bind ViewModel.ExibirPesquisa}"
+                    >
+            <TextBox  MinWidth="200"
+                      BorderBrush="{StaticResource SystemControlForegroundAccentBrush}"
+                      Text="{x:Bind ViewModel.Pesquisa}" />
+
+            <Button Command="{x:Bind ViewModel.PesquisarCommand }"
+                    Style="{StaticResource AccentButtonStyle}"
+                    Content="Pesquisar" />
+        </StackPanel>
+
+        <Button Grid.Row="2" 
+                Content="Desativar filtro"
+                Style="{StaticResource AccentButtonStyle}"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Right"
+                Margin="10"
+                Visibility="{x:Bind ViewModel.ExibirDesativarFiltro}"/>
+
+        <TextBlock Grid.Row="4"
+                   Style="{StaticResource TitleTextBlockStyle}"
+                   Text="{x:Bind ViewModel.NumeroProdutos}" />
+
+    </Grid>
+</prism:SessionStateAwarePage>

@@ -1,7 +1,9 @@
 ﻿using GPApp.Model;
 using GPApp.Model.Helpers;
 using GPApp.Repository;
+using GPApp.Service;
 using GPApp.Shared.Paginacao;
+using GPApp.Shared.Services;
 using GPApp.Wpf.Modulo.Produtos.ViewModels;
 using GPApp.Wrapper;
 using Moq;
@@ -15,6 +17,8 @@ namespace GPApp.Wpf.Testes
     {
         private readonly Mock<IRegionNavigationService> _regionService;
         private NavigationContext _navContext;
+        private Mock<IDialogService> _dialogService;
+        private readonly Mock<IProdutoClientService> _clienteService;
         private Mock<IProdutoRepository> _produtoRepo;
 
         public ProdutosViewModel ViewModel { get; }
@@ -35,10 +39,18 @@ namespace GPApp.Wpf.Testes
             _regionService.SetupAllProperties();
             _navContext = new NavigationContext(_regionService.Object, new System.Uri("http://teste.com"));
 
+            _dialogService = new Mock<IDialogService>();
+            _dialogService.SetupAllProperties();
+
+            _clienteService = new Mock<IProdutoClientService>();
+            _clienteService.SetupAllProperties();
+
             ViewModel = new ProdutosViewModel(
                     regionManagerMock.Object,
                     paginacaoRepositoryMock.Object,
-                    _produtoRepo.Object);
+                    _produtoRepo.Object,
+                    _dialogService.Object,
+                    _clienteService.Object);
         }
 
         [Fact]

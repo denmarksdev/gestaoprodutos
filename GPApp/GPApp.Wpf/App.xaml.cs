@@ -10,9 +10,7 @@ using GPApp.Wpf.Views;
 using GPApp.Wrapper;
 using Prism.Ioc;
 using Prism.Modularity;
-using Prism.Regions;
 using System;
-using System.Linq;
 using System.Windows;
 
 namespace GPApp.Wpf

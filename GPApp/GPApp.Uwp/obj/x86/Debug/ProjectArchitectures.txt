@@ -1,0 +1,2 @@
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp.Logica\GPApp.Uwp.Logica.csproj;x86
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp\GPApp.Uwp.csproj;x86
