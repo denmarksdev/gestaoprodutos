@@ -30,13 +30,13 @@
     <AppXManifest Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-02-07T03:20:14.550</Modified>
+      <Modified>2019-02-07T15:41:34.250</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp\bin\x86\Debug\GPApp.Uwp.exe">
       <PackagePath>entrypoint\GPApp.Uwp.exe</PackagePath>
-      <Modified>2019-02-07T03:20:13.454</Modified>
+      <Modified>2019-02-07T15:41:32.980</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\castle.core\4.3.1\lib\netstandard1.5\Castle.Core.dll">
       <PackagePath>Castle.Core.dll</PackagePath>
@@ -288,7 +288,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Repository\bin\Debug\netstandard2.0\GPApp.Repository.dll">
       <PackagePath>GPApp.Repository.dll</PackagePath>
-      <Modified>2019-02-07T02:23:36.118</Modified>
+      <Modified>2019-02-07T15:41:24.374</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Shared\bin\Debug\netstandard2.0\GPApp.Shared.dll">
       <PackagePath>GPApp.Shared.dll</PackagePath>
@@ -296,11 +296,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp.Logica\bin\x86\Debug\GPApp.Uwp.Logica.dll">
       <PackagePath>GPApp.Uwp.Logica.dll</PackagePath>
-      <Modified>2019-02-07T03:07:09.957</Modified>
+      <Modified>2019-02-07T15:41:25.306</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Wrapper\bin\Debug\netstandard2.0\GPApp.Wrapper.dll">
       <PackagePath>GPApp.Wrapper.dll</PackagePath>
-      <Modified>2019-02-07T02:23:35.865</Modified>
+      <Modified>2019-02-07T15:41:24.081</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Repository\bin\Debug\netstandard2.0\GPApp.Dal.dll">
       <PackagePath>GPApp.Dal.dll</PackagePath>
@@ -366,23 +366,23 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp\bin\x86\Debug\GPApp.Uwp.xr.xml">
       <PackagePath>GPApp.Uwp.xr.xml</PackagePath>
-      <Modified>2019-02-07T03:17:11.371</Modified>
+      <Modified>2019-02-07T15:01:16.530</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2019-02-07T03:20:13.279</Modified>
+      <Modified>2019-02-07T15:41:32.788</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2019-02-07T03:20:13.279</Modified>
+      <Modified>2019-02-07T15:41:32.789</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp\bin\x86\Debug\Views\ProdutoEditPage.xbf">
       <PackagePath>Views\ProdutoEditPage.xbf</PackagePath>
-      <Modified>2019-02-07T03:20:13.277</Modified>
+      <Modified>2019-02-07T15:41:32.786</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp\bin\x86\Debug\Views\ProdutosPage.xbf">
       <PackagePath>Views\ProdutosPage.xbf</PackagePath>
-      <Modified>2019-02-07T03:20:13.280</Modified>
+      <Modified>2019-02-07T15:41:32.790</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17763.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -522,7 +522,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2019-02-07T03:17:12.447</Modified>
+      <Modified>2019-02-07T15:41:33.509</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\xunit.runner.visualstudio\2.4.1\build\uap10.0\xunit.runner.visualstudio.uwp.testadapter.dll">
       <PackagePath>xunit.runner.visualstudio.uwp.testadapter.dll</PackagePath>
@@ -546,7 +546,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp\bin\x86\Debug\Core\GPApp.Uwp.exe">
       <PackagePath>GPApp.Uwp.exe</PackagePath>
-      <Modified>2019-02-07T03:20:14.547</Modified>
+      <Modified>2019-02-07T15:41:34.246</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

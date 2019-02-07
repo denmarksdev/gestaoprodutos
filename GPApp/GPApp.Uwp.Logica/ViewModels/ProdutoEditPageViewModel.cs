@@ -227,12 +227,24 @@ namespace GPApp.Uwp.Logica.ViewModels
 
         #region Navegação
 
-        public void OnNavigatedTo(NavigatedToEventArgs e, Dictionary<string, object> viewModelState)
+        public async void OnNavigatedTo(NavigatedToEventArgs e, Dictionary<string, object> viewModelState)
         {
             if (!(e.Parameter is NavegacaoParametro<Produto> param)) return;
 
             if (param.Operacao == ContantesGlobais.OPERACAO_ALTERACAO)
             {
+                Wrapper = new ProdutoWrapper(param.Item);
+
+
+                Imagens = new ObservableCollection<ProdutoImageUWPWrapper>(
+                                 param.Item.Imagens.Select(i => new ProdutoImageUWPWrapper(i)));
+                foreach (var imagem in Imagens)
+                {
+                    await imagem.InitImage();
+                }
+
+                param.Item.Imagens.Clear();
+                Wrapper.Imagens.Clear();
             }
             else
             {

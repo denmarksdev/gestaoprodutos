@@ -6,7 +6,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:wrapper="using:GPApp.Wrapper"
+    x:Name="Pagina"
     mc:Ignorable="d"
+   
     prism:ViewModelLocator.AutoWireViewModel="True"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -14,6 +16,7 @@
         <Style TargetType="Button">
             <Setter Property="Margin" Value="10,0,0,0"/>
         </Style>
+
     </prism:SessionStateAwarePage.Resources>
 
     <Grid Margin="10">
@@ -27,12 +30,12 @@
         <StackPanel Grid.Row="0"
                     Margin="0,10,0,0"
                     Orientation="Horizontal">
-            <Button x:ConnectionId='14' Content="Incluir"
+            <Button x:ConnectionId='15' Content="Incluir"
                     Style="{StaticResource AccentButtonStyle}"
                                                                />
-            <Button x:ConnectionId='15' Content="Filtrar" 
+            <Button x:ConnectionId='16' Content="Filtrar" 
                                                                />
-            <Button x:ConnectionId='16' Content="Sincronizar na nuvem"
+            <Button x:ConnectionId='17' Content="Sincronizar na nuvem"
                                                                         />
         </StackPanel>
 
@@ -44,30 +47,44 @@
                                                      >
             <GridView.ItemTemplate>
                 <DataTemplate                                          >
-                    <StackPanel x:ConnectionId='8'>
+                    <StackPanel x:ConnectionId='8' Margin="10">
                         <TextBlock >
-                            <Run  FontWeight="Bold" Text="Código" />
-                            <Run x:ConnectionId='13'                              />
+                            <Run  FontWeight="Bold" Text="Cadastrado em" />
+                            <Run x:ConnectionId='14'                                                            />
                         </TextBlock>
                         <TextBlock >
                             <Run  FontWeight="Bold" Text="Código" />
-                            <Run x:ConnectionId='12'                        />
+                            <Run x:ConnectionId='13'                        />
                         </TextBlock>
                         <TextBlock >
                             <Run  FontWeight="Bold" Text="Nome" />
-                            <Run x:ConnectionId='11'                      />
+                            <Run x:ConnectionId='12'                      />
                         </TextBlock>
                         <TextBlock >
                             <Run  FontWeight="Bold" Text="Preço" />
-                            <Run x:ConnectionId='10'                       />
+                            <Run x:ConnectionId='11'                       />
                         </TextBlock>
                         <TextBlock >
                             <Run  FontWeight="Bold" Text="Estoque" />
-                            <Run x:ConnectionId='9'                         />
+                            <Run x:ConnectionId='10'                         />
                         </TextBlock>
-                        <Button HorizontalAlignment="Right" 
-                                Content="Aterar"
-                                Command="{Binding ViewModel.AlterarCommand , RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+
+                        <Border 
+                            HorizontalAlignment="Right" 
+                            CornerRadius="2" 
+                            BorderBrush="Black" 
+                            BorderThickness="1">
+                            
+                            <Button x:ConnectionId='9' 
+                                Background="Transparent"
+                                BorderBrush="Transparent" 
+                                ToolTipService.ToolTip="Alterar imagem"
+                                Command="{Binding ElementName=Pagina, Path=ViewModel.AlterarCommand }"
+                                                              >
+                                <SymbolIcon  Symbol="Edit"  />
+                            </Button>
+                        </Border>
+                        
                     </StackPanel>
                 </DataTemplate>
             </GridView.ItemTemplate>

@@ -6,7 +6,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:wrapper="using:GPApp.Wrapper"
+    x:Name="Pagina"
     mc:Ignorable="d"
+   
     prism:ViewModelLocator.AutoWireViewModel="True"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -14,6 +16,7 @@
         <Style TargetType="Button">
             <Setter Property="Margin" Value="10,0,0,0"/>
         </Style>
+
     </prism:SessionStateAwarePage.Resources>
 
     <Grid Margin="10">
@@ -44,10 +47,10 @@
             ItemsSource="{x:Bind ViewModel.Produtos}">
             <GridView.ItemTemplate>
                 <DataTemplate x:DataType="wrapper:ProdutoLookupWrapper">
-                    <StackPanel>
+                    <StackPanel Margin="10">
                         <TextBlock >
-                            <Run  FontWeight="Bold" Text="Código" />
-                            <Run Text="{x:Bind DataCadastro}" />
+                            <Run  FontWeight="Bold" Text="Cadastrado em" />
+                            <Run Text="{x:Bind  DataCadastro.DateTime.ToLongDateString() }" />
                         </TextBlock>
                         <TextBlock >
                             <Run  FontWeight="Bold" Text="Código" />
@@ -65,9 +68,23 @@
                             <Run  FontWeight="Bold" Text="Estoque" />
                             <Run Text="{x:Bind Estoque}" />
                         </TextBlock>
-                        <Button HorizontalAlignment="Right" 
-                                Content="Aterar"
-                                Command="{Binding ViewModel.AlterarCommand , RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+
+                        <Border 
+                            HorizontalAlignment="Right" 
+                            CornerRadius="2" 
+                            BorderBrush="Black" 
+                            BorderThickness="1">
+                            
+                            <Button 
+                                Background="Transparent"
+                                BorderBrush="Transparent" 
+                                ToolTipService.ToolTip="Alterar imagem"
+                                Command="{Binding ElementName=Pagina, Path=ViewModel.AlterarCommand }"
+                                CommandParameter="{x:Bind Id}">
+                                <SymbolIcon  Symbol="Edit"  />
+                            </Button>
+                        </Border>
+                        
                     </StackPanel>
                 </DataTemplate>
             </GridView.ItemTemplate>

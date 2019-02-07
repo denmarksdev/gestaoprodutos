@@ -10,6 +10,8 @@ using System;
 using GPApp.Shared.Constantes;
 using GPApp.Model;
 using GPApp.Model.Helpers;
+using GPApp.Repository;
+using GPApp.Shared.Services;
 
 namespace GPApp.Uwp.Logica.ViewModels
 {
@@ -19,6 +21,8 @@ namespace GPApp.Uwp.Logica.ViewModels
 
         private readonly INavigationService _navigationService;
         private readonly IPaginacaoRepository<ProdutoLookupWrapper> _paginacaoRepository;
+        private readonly IProdutoRepository _produtoRepository;
+        private readonly IDialogService _dialogService;
 
         #endregion
 
@@ -26,18 +30,26 @@ namespace GPApp.Uwp.Logica.ViewModels
 
         public ProdutosPageViewModel(
             INavigationService navigationService,
-            IPaginacaoRepository<ProdutoLookupWrapper> paginacaoRepository
+            IPaginacaoRepository<ProdutoLookupWrapper> paginacaoRepository,
+            IProdutoRepository produtoRepository,
+            IDialogService dialogService
          ){
             _navigationService = navigationService;
             _paginacaoRepository = paginacaoRepository;
+            _produtoRepository = produtoRepository;
+            _dialogService = dialogService;
 
             ExibirPesquisa = Visibility.Collapsed;
             ExibirDesativarFiltro = Visibility.Collapsed;
 
-            IncluirCommand = new DelegateCommand(OnIncluirCommand);
+            IncluirCommand = new DelegateCommand(OnIncluir);
+
+            AlterarCommand = new DelegateCommand<Guid?>(OnAlterar);
 
             PropertyChanged += ViewModelPropertyChanged;
         }
+
+        
 
         #endregion
 
@@ -54,7 +66,25 @@ namespace GPApp.Uwp.Logica.ViewModels
         #endregion
 
         #region Ações
-        private void OnIncluirCommand()
+
+        private async void OnAlterar(Guid? id)
+        {
+            if (!id.HasValue) return;
+
+            var resultado = await _produtoRepository.LocalizaPorChavePrimariaAsync(id.Value);
+            if (!resultado.Valido)
+            {
+                _dialogService.Mensagem(resultado.Mensagem);
+                return;
+            }
+            var produto = resultado.Valor;
+            _navigationService.Navigate(
+                RegionNames.EDIT_PRODUTO,
+                new NavegacaoParametro<Produto>(
+                    ContantesGlobais.OPERACAO_ALTERACAO, produto));
+        }
+
+        private void OnIncluir()
         {
             _navigationService.Navigate(
                 RegionNames.EDIT_PRODUTO, 
