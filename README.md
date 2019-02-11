@@ -48,6 +48,4 @@ Sistema de cadastro de produtos utilizando conhecimentos em C# Angular 2+ e ASPN
 - [Brian Lagunas - **Prism Library** ](https://prismlibrary.github.io/) 
 - [Microsoft.Toolkit - **Microsoft.Toolkit.Uwp.UI.Controls**](https://github.com/windows-toolkit/WindowsCommunityToolkit)
 - [Daniel Cazzulino, kzu - **Moq4**](https://github.com/moq/moq4)
-- [James Newkirk,Brad Wilson - **XUnit**](https://github.com/xunit/xunit)
-
-  
+- [James Newkirk, Brad Wilson - **XUnit**](https://github.com/xunit/xunit)
