@@ -140,9 +140,6 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <Content Include="appsettings.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <PRIResource Include="Configuracao.resw" />
     <None Include="GPApp.Uwp_TemporaryKey.pfx" />
   </ItemGroup>

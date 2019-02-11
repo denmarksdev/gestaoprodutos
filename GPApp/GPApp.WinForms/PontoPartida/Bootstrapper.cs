@@ -23,7 +23,7 @@ namespace GPApp.WinForms.PontoPartida
             Application.SetCompatibleTextRenderingDefault(false);
 
             var database = _ioc.Get<IDataBaseRepository>();
-            var resultado = database.IniciaAsync(new BancoDadosConfig(BancoDados.SqlServer, ConfigurationHelper.GetConnectionString())).Result;
+            var resultado = database.IniciaAsync(new BancoDadosConfig(BancoDados.Sqlite, ConfigurationHelper.GetConnectionString())).Result;
 
             if (!resultado.Valido)
             {

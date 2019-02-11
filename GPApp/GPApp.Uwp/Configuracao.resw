@@ -118,8 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BaseUrlApi" xml:space="preserve">
-    <value> https://gestaoprodutos.azurewebsites.net/api/v1</value>
-    <comment>https://localhost:44310/api/v1</comment>
+    <value>https://localhost:44310/api/v1</value>
   </data>
   <data name="ConnectionString" xml:space="preserve">
     <value>Data Source=gpapp_uwp.db</value>

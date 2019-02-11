@@ -36,7 +36,7 @@ namespace GPApp.Wpf.ViewModels
 
         public async void OnNavigatedTo(NavigationContext navigationContext)
         {
-            var config = new BancoDadosConfig(BancoDados.SqlServer, _configuracaoService.ConnectionString);
+            var config = new BancoDadosConfig(BancoDados.Sqlite, _configuracaoService.ConnectionString);
             var resultado =  await _dataBaseRepository.IniciaAsync(config);
             if (resultado.Valido)
             {
