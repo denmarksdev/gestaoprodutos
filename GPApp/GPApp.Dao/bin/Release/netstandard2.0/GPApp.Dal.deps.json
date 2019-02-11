@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "594690bbb7b670510838a0899042b48b6d9028bc"
+    "signature": "c4cdb7cea941df34a770f91f94b3c424af49893a"
   },
   "compilationOptions": {},
   "targets": {
@@ -17,8 +17,7 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "2.2.1",
           "Microsoft.EntityFrameworkCore.Sqlite": "2.2.1",
           "NETStandard.Library": "2.0.3",
-          "Npgsql.EntityFrameworkCore.PostgreSQL": "2.2.0",
-          "SixLabors.ImageSharp": "1.0.0-beta0005"
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "2.2.0"
         },
         "runtime": {
           "GPApp.Dal.dll": {}
@@ -292,7 +291,7 @@
       "Microsoft.NETCore.Targets/1.1.0": {},
       "Microsoft.Win32.Registry/4.5.0": {
         "dependencies": {
-          "System.Buffers": "4.5.0",
+          "System.Buffers": "4.4.0",
           "System.Memory": "4.5.1",
           "System.Security.AccessControl": "4.5.0",
           "System.Security.Principal.Windows": "4.5.0"
@@ -405,24 +404,23 @@
       "runtime.win-arm64.runtime.native.System.Data.SqlClient.sni/4.4.0": {},
       "runtime.win-x64.runtime.native.System.Data.SqlClient.sni/4.4.0": {},
       "runtime.win-x86.runtime.native.System.Data.SqlClient.sni/4.4.0": {},
-      "SixLabors.Core/1.0.0-beta0006": {
+      "SixLabors.Core/1.0.0-beta0007": {
         "dependencies": {
-          "NETStandard.Library": "2.0.3",
-          "System.Buffers": "4.5.0",
+          "System.Buffers": "4.4.0",
           "System.Memory": "4.5.1",
-          "System.Numerics.Vectors": "4.4.0",
+          "System.Numerics.Vectors": "4.5.0",
           "System.Runtime.CompilerServices.Unsafe": "4.5.1"
         },
         "runtime": {
-          "lib/netstandard1.1/SixLabors.Core.dll": {
-            "assemblyVersion": "0.1.0.0",
-            "fileVersion": "0.1.0.0"
+          "lib/netstandard2.0/SixLabors.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
-      "SixLabors.ImageSharp/1.0.0-beta0005": {
+      "SixLabors.ImageSharp/1.0.0-beta0006": {
         "dependencies": {
-          "SixLabors.Core": "1.0.0-beta0006",
+          "SixLabors.Core": "1.0.0-beta0007",
           "System.Runtime.CompilerServices.Unsafe": "4.5.1"
         },
         "runtime": {
@@ -470,11 +468,11 @@
           }
         }
       },
-      "System.Buffers/4.5.0": {
+      "System.Buffers/4.4.0": {
         "runtime": {
           "lib/netstandard2.0/System.Buffers.dll": {
-            "assemblyVersion": "4.0.3.0",
-            "fileVersion": "4.6.26515.6"
+            "assemblyVersion": "4.0.2.0",
+            "fileVersion": "4.6.25519.3"
           }
         }
       },
@@ -504,7 +502,7 @@
       "System.Data.SqlClient/4.6.0": {
         "dependencies": {
           "Microsoft.Win32.Registry": "4.5.0",
-          "System.Buffers": "4.5.0",
+          "System.Buffers": "4.4.0",
           "System.Diagnostics.DiagnosticSource": "4.5.0",
           "System.Memory": "4.5.1",
           "System.Security.Principal.Windows": "4.5.0",
@@ -674,8 +672,8 @@
       },
       "System.Memory/4.5.1": {
         "dependencies": {
-          "System.Buffers": "4.5.0",
-          "System.Numerics.Vectors": "4.4.0",
+          "System.Buffers": "4.4.0",
+          "System.Numerics.Vectors": "4.5.0",
           "System.Runtime.CompilerServices.Unsafe": "4.5.1"
         },
         "runtime": {
@@ -685,11 +683,11 @@
           }
         }
       },
-      "System.Numerics.Vectors/4.4.0": {
+      "System.Numerics.Vectors/4.5.0": {
         "runtime": {
           "lib/netstandard2.0/System.Numerics.Vectors.dll": {
-            "assemblyVersion": "4.1.3.0",
-            "fileVersion": "4.6.25519.3"
+            "assemblyVersion": "4.1.4.0",
+            "fileVersion": "4.6.26515.6"
           }
         }
       },
@@ -1008,7 +1006,7 @@
       "GPApp.Shared/1.0.0": {
         "dependencies": {
           "GPApp.Model": "1.0.0",
-          "SixLabors.ImageSharp": "1.0.0-beta0005",
+          "SixLabors.ImageSharp": "1.0.0-beta0006",
           "System.IO.FileSystem": "4.3.0"
         },
         "runtime": {
@@ -1180,7 +1178,7 @@
     "Microsoft.NETCore.Platforms/1.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-bLpT1f/SFlO1CzqXG12KnJzpZs6lv24uX2Rzi4Fmm0noJpNlnWRVryuO3yK18Ca04t/YHcO1e1Z0WDfjseqNzw==",
+      "sha512": "sha512-kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "path": "microsoft.netcore.platforms/1.1.0",
       "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
     },
@@ -1194,14 +1192,14 @@
     "Microsoft.Win32.Registry/4.5.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-vduxuHEqRgRrTE8wYG8Wxj/+6wwzddOmZzjKZx6rFMc/91aUBxI5etAFYxesoNaIja5NpgSTcnk6cN8BeYXf9A==",
+      "sha512": "sha512-+FWlwd//+Tt56316p00hVePBCouXyEzT86Jb3+AuRotTND0IYn0OO3obs1gnQEs/txEnt+rF2JBGLItTG+Be6A==",
       "path": "microsoft.win32.registry/4.5.0",
       "hashPath": "microsoft.win32.registry.4.5.0.nupkg.sha512"
     },
     "NETStandard.Library/2.0.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
+      "sha512": "sha512-7vMMOlh8tGaMGLfPUx+jrTZ9ba/GUYgGlvWpAYwOxsh4dN5uD4Zk1iAiAIl174PHqF9mL1PANa4tAcVc2+Urhg==",
       "path": "netstandard.library/2.0.3",
       "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
     },
@@ -1268,19 +1266,19 @@
       "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
     },
-    "SixLabors.Core/1.0.0-beta0006": {
+    "SixLabors.Core/1.0.0-beta0007": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-AY/aNmjmsU6OftAA8ownjARTy7A8+Q+HjJMAOpIwhIxacOIGF8JhwUDAZw/g70+hfcjkbCzIKYwEF1vdanWz/g==",
-      "path": "sixlabors.core/1.0.0-beta0006",
-      "hashPath": "sixlabors.core.1.0.0-beta0006.nupkg.sha512"
+      "sha512": "sha512-s9aPl6yxwcvoKRD0u0zjkCISZCCifbUi9/XVFjdvlx5Pt7vRYmGV0anq1EEftUjIEHbEu5aNBipbUSBIV2CE7w==",
+      "path": "sixlabors.core/1.0.0-beta0007",
+      "hashPath": "sixlabors.core.1.0.0-beta0007.nupkg.sha512"
     },
-    "SixLabors.ImageSharp/1.0.0-beta0005": {
+    "SixLabors.ImageSharp/1.0.0-beta0006": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-mcaaf6v9WF1r25gmBQujFu/S20yotMRJSwqUaWj4LNS7OUUtBejPmfaWnejGeSQgZWDR4qjNTXY/namjDAgQiA==",
-      "path": "sixlabors.imagesharp/1.0.0-beta0005",
-      "hashPath": "sixlabors.imagesharp.1.0.0-beta0005.nupkg.sha512"
+      "sha512": "sha512-VHDX00uAzPWj5qFYE5xJZyr5Cx4Jtd3p2dfX7swSrzlQoPEZPXXwQ+O3Fc4hNWvaNvR1NAiXSb27Ts6yv3lMDw==",
+      "path": "sixlabors.imagesharp/1.0.0-beta0006",
+      "hashPath": "sixlabors.imagesharp.1.0.0-beta0006.nupkg.sha512"
     },
     "SQLitePCLRaw.bundle_green/1.1.11": {
       "type": "package",
@@ -1303,12 +1301,12 @@
       "path": "system.appcontext/4.1.0",
       "hashPath": "system.appcontext.4.1.0.nupkg.sha512"
     },
-    "System.Buffers/4.5.0": {
+    "System.Buffers/4.4.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-pL2ChpaRRWI/p4LXyy4RgeWlYF2sgfj/pnVMvBqwNFr5cXg7CXNnWZWxrOONLg8VGdFB8oB+EG2Qw4MLgTOe+A==",
-      "path": "system.buffers/4.5.0",
-      "hashPath": "system.buffers.4.5.0.nupkg.sha512"
+      "sha512": "sha512-Ii2bedd4HVzddupdU35n3ygohUPlNn7MDimBOYcwWNce2NizQ1fCSaQJY1Tzv80aMqOGpVcU4wZr/Xe50xcTwg==",
+      "path": "system.buffers/4.4.0",
+      "hashPath": "system.buffers.4.4.0.nupkg.sha512"
     },
     "System.Collections/4.0.11": {
       "type": "package",
@@ -1429,12 +1427,12 @@
       "path": "system.memory/4.5.1",
       "hashPath": "system.memory.4.5.1.nupkg.sha512"
     },
-    "System.Numerics.Vectors/4.4.0": {
+    "System.Numerics.Vectors/4.5.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-gdRrUJs1RrjW3JB5p82hYjA67xoeFLvh0SdSIWjTiN8qExlbFt/RtXwVYNc5BukJ/f9OKzQQS6gakzbJeHTqHg==",
-      "path": "system.numerics.vectors/4.4.0",
-      "hashPath": "system.numerics.vectors.4.4.0.nupkg.sha512"
+      "sha512": "sha512-QQTlPTl06J/iiDbJCiepZ4H//BVraReU4O4EoRw1U02H5TLUIT7xn3GnDp9AXPSlJUDyFs4uWjWafNX6WrAojQ==",
+      "path": "system.numerics.vectors/4.5.0",
+      "hashPath": "system.numerics.vectors.4.5.0.nupkg.sha512"
     },
     "System.ObjectModel/4.0.12": {
       "type": "package",
@@ -1551,14 +1549,14 @@
     "System.Security.AccessControl/4.5.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-aVjTe36YkO8FzfNhMLoPEzv3gF9rphoW9ngFhG/MH4zzEPLx07sNrgCLwMP4Wx2leI6qarMrGv21OwQXYUKLmw==",
+      "sha512": "sha512-vW8Eoq0TMyz5vAG/6ce483x/CP83fgm4SJe5P8Tb1tZaobcvPrbMEL7rhH1DRdrYbbb6F0vq3OlzmK0Pkwks5A==",
       "path": "system.security.accesscontrol/4.5.0",
       "hashPath": "system.security.accesscontrol.4.5.0.nupkg.sha512"
     },
     "System.Security.Principal.Windows/4.5.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-WA9ETb/pY3BjnxKjBUHEgO59B7d/nnmjHFsqjJ2eDT780nD769CT1/bw2ia0Z6W7NqlcqokE6sKGKa6uw88XGA==",
+      "sha512": "sha512-U77HfRXlZlOeIXd//Yoj6Jnk8AXlbeisf1oq1os+hxOGVnuG+lGSfGqTwTZBoORFF6j/0q7HXIl8cqwQ9aUGqQ==",
       "path": "system.security.principal.windows/4.5.0",
       "hashPath": "system.security.principal.windows.4.5.0.nupkg.sha512"
     },

@@ -49,7 +49,7 @@ namespace GPApp.WinForms.Views
             // metroButtonFiltrar
             // 
             this.metroButtonFiltrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroButtonFiltrar.Location = new System.Drawing.Point(195, 27);
+            this.metroButtonFiltrar.Location = new System.Drawing.Point(296, 27);
             this.metroButtonFiltrar.Name = "metroButtonFiltrar";
             this.metroButtonFiltrar.Size = new System.Drawing.Size(113, 23);
             this.metroButtonFiltrar.TabIndex = 1;
@@ -59,7 +59,7 @@ namespace GPApp.WinForms.Views
             // metroButtonIncluir
             // 
             this.metroButtonIncluir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroButtonIncluir.Location = new System.Drawing.Point(334, 27);
+            this.metroButtonIncluir.Location = new System.Drawing.Point(177, 27);
             this.metroButtonIncluir.Name = "metroButtonIncluir";
             this.metroButtonIncluir.Size = new System.Drawing.Size(75, 23);
             this.metroButtonIncluir.TabIndex = 4;
@@ -76,6 +76,7 @@ namespace GPApp.WinForms.Views
             this.metroButtonEmail.TabIndex = 5;
             this.metroButtonEmail.Text = "Enviar email";
             this.metroButtonEmail.UseSelectable = true;
+            this.metroButtonEmail.Visible = false;
             this.metroButtonEmail.Click += new System.EventHandler(this.MetroButtonEmail_Click);
             // 
             // metroButtonSincronizarNuvem

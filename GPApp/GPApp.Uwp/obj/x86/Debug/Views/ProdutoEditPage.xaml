@@ -32,7 +32,7 @@
         Width="800">
 
         <Border Grid.Row="1"  BorderThickness="0,0,0,2" BorderBrush="Black" >
-            <TextBlock Style="{StaticResource HeaderTextBlockStyle}">Novo produto</TextBlock>
+            <TextBlock x:ConnectionId='26' Style="{StaticResource HeaderTextBlockStyle}"                                  />
         </Border>
 
         <ProgressBar x:ConnectionId='2' 

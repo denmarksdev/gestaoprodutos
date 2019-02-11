@@ -242,12 +242,6 @@
     <Compile Include="Componentes\VirtualGridFiltro.Designer.cs">
       <DependentUpon>VirtualGridFiltro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formulario.Designer.cs">
-      <DependentUpon>Formulario.cs</DependentUpon>
-    </Compile>
     <Compile Include="Helpers\BindingHelper.cs" />
     <Compile Include="Helpers\ConfigurationHelper.cs" />
     <Compile Include="Helpers\CoresHelper.cs" />
@@ -288,9 +282,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Componentes\VirtualGridFiltro.resx">
       <DependentUpon>VirtualGridFiltro.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formulario.resx">
-      <DependentUpon>Formulario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

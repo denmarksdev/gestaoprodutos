@@ -214,8 +214,6 @@ namespace GPApp.Wpf.Modulo.Produtos.ViewModels
                              produtosAtualizados.Select(p => p.Id),
                              resultadoWeb.DataAtualizacao);
 
-                
-
                 if (resultadoWeb.ItensInvalidos.Count > 0)
                     _dialogService.Mensagem(
                         "Produtos que não foram atualizados:" +

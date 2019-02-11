@@ -20,3 +20,5 @@ D:\Repositorio\gestaoprodutos\GPApp\GPApp.Service\obj\Release\netstandard2.0\GPA
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Service\obj\Release\netstandard2.0\GPApp.Service.csproj.CopyComplete
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Service\obj\Release\netstandard2.0\GPApp.Service.dll
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Service\obj\Release\netstandard2.0\GPApp.Service.pdb
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Service\obj\Release\netstandard2.0\GPApp.Service.Properties.Resources.resources
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Service\obj\Release\netstandard2.0\GPApp.Service.csproj.GenerateResource.cache

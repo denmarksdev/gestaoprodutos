@@ -12963,11 +12963,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Repositorio\\gestaoprodutos\\GPApp\\GPApp.Wpf.Modulo.Produtos\\GPApp.Wpf.Modulo.Produtos.csproj",
+      "projectUniqueName": "D:\\GP\\GPApp\\GPApp.Wpf.Modulo.Produtos\\GPApp.Wpf.Modulo.Produtos.csproj",
       "projectName": "GPApp.Wpf.Modulo.Produtos",
-      "projectPath": "D:\\Repositorio\\gestaoprodutos\\GPApp\\GPApp.Wpf.Modulo.Produtos\\GPApp.Wpf.Modulo.Produtos.csproj",
+      "projectPath": "D:\\GP\\GPApp\\GPApp.Wpf.Modulo.Produtos\\GPApp.Wpf.Modulo.Produtos.csproj",
       "packagesPath": "C:\\Users\\denwo\\.nuget\\packages\\",
-      "outputPath": "D:\\Repositorio\\gestaoprodutos\\GPApp\\GPApp.Wpf.Modulo.Produtos\\obj\\",
+      "outputPath": "D:\\GP\\GPApp\\GPApp.Wpf.Modulo.Produtos\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -12988,20 +12988,20 @@
       "frameworks": {
         "net461": {
           "projectReferences": {
-            "D:\\Repositorio\\gestaoprodutos\\GPApp\\GPApp.Model\\GPApp.Model.csproj": {
-              "projectPath": "D:\\Repositorio\\gestaoprodutos\\GPApp\\GPApp.Model\\GPApp.Model.csproj"
+            "D:\\GP\\GPApp\\GPApp.Model\\GPApp.Model.csproj": {
+              "projectPath": "D:\\GP\\GPApp\\GPApp.Model\\GPApp.Model.csproj"
             },
-            "D:\\Repositorio\\gestaoprodutos\\GPApp\\GPApp.Repository\\GPApp.Repository.csproj": {
-              "projectPath": "D:\\Repositorio\\gestaoprodutos\\GPApp\\GPApp.Repository\\GPApp.Repository.csproj"
+            "D:\\GP\\GPApp\\GPApp.Repository\\GPApp.Repository.csproj": {
+              "projectPath": "D:\\GP\\GPApp\\GPApp.Repository\\GPApp.Repository.csproj"
             },
-            "D:\\Repositorio\\gestaoprodutos\\GPApp\\GPApp.Service\\GPApp.Service.csproj": {
-              "projectPath": "D:\\Repositorio\\gestaoprodutos\\GPApp\\GPApp.Service\\GPApp.Service.csproj"
+            "D:\\GP\\GPApp\\GPApp.Service\\GPApp.Service.csproj": {
+              "projectPath": "D:\\GP\\GPApp\\GPApp.Service\\GPApp.Service.csproj"
             },
-            "D:\\Repositorio\\gestaoprodutos\\GPApp\\GPApp.Shared\\GPApp.Shared.csproj": {
-              "projectPath": "D:\\Repositorio\\gestaoprodutos\\GPApp\\GPApp.Shared\\GPApp.Shared.csproj"
+            "D:\\GP\\GPApp\\GPApp.Shared\\GPApp.Shared.csproj": {
+              "projectPath": "D:\\GP\\GPApp\\GPApp.Shared\\GPApp.Shared.csproj"
             },
-            "D:\\Repositorio\\gestaoprodutos\\GPApp\\GPApp.Wrapper\\GPApp.Wrapper.csproj": {
-              "projectPath": "D:\\Repositorio\\gestaoprodutos\\GPApp\\GPApp.Wrapper\\GPApp.Wrapper.csproj"
+            "D:\\GP\\GPApp\\GPApp.Wrapper\\GPApp.Wrapper.csproj": {
+              "projectPath": "D:\\GP\\GPApp\\GPApp.Wrapper\\GPApp.Wrapper.csproj"
             }
           }
         }

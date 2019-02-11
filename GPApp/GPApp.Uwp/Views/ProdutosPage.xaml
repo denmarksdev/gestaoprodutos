@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:wrapper="using:GPApp.Wrapper"
+    xmlns:converters="using:GPApp.Uwp.Converters"
     x:Name="Pagina"
     mc:Ignorable="d"
    
@@ -16,7 +17,7 @@
         <Style TargetType="Button">
             <Setter Property="Margin" Value="10,0,0,0"/>
         </Style>
-
+        <converters:VisibilidadeConverter x:Key="convVisibilidade" />
     </prism:SessionStateAwarePage.Resources>
 
     <Grid Margin="10">
@@ -27,30 +28,53 @@
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
 
+
         <StackPanel Grid.Row="0"
                     Margin="0,10,0,0"
                     Orientation="Horizontal">
             <Button Content="Incluir"
+                    VerticalAlignment="Bottom"
                     Style="{StaticResource AccentButtonStyle}"
                     Command="{x:Bind ViewModel.IncluirCommand}"/>
             <Button Content="Filtrar" 
+                    VerticalAlignment="Bottom"
                     Command="{x:Bind ViewModel.FiltrarCommand}"/>
-            <Button Content="Sincronizar na nuvem"
+            <StackPanel>
+                <Border Width="auto"
+                        HorizontalAlignment="Right"
+                        Margin="10,0,0,0"
+                        Padding="5"
+                        CornerRadius="15"
+                        BorderBrush="#FFBFD6D6"
+                        BorderThickness="2"
+                        
+                        Background="#FF3C3737" >
+                    <TextBlock Text="{x:Bind ViewModel.NumeroProdutosSincronizar }" 
+                               Foreground="White" />
+                </Border>
+                
+                <Button Content="Sincronizar na nuvem"
                     Command="{x:Bind ViewModel.SincronizarNuvemCommand}"/>
+                <ProgressBar Margin="0,10,0,10" IsIndeterminate="True" Visibility="Collapsed" />
+            </StackPanel>
+            
         </StackPanel>
 
-        <Border Grid.Row="1"  BorderThickness="0,0,0,2" BorderBrush="Black" >
-            <TextBlock Style="{StaticResource HeaderTextBlockStyle}">Produtos</TextBlock>
-        </Border>
+        <StackPanel Grid.Row="1">
+            <Border BorderThickness="0,0,0,2" BorderBrush="Black" >
+                <TextBlock Style="{StaticResource HeaderTextBlockStyle}">Produtos</TextBlock>
+            </Border>
+            
+        </StackPanel>
 
         <GridView Grid.Row="2"
             ItemsSource="{x:Bind ViewModel.Produtos}">
             <GridView.ItemTemplate>
                 <DataTemplate x:DataType="wrapper:ProdutoLookupWrapper">
-                    <StackPanel Margin="10">
+                    <StackPanel Margin="10" BorderBrush="Black" Padding="5" BorderThickness="1" >
                         <TextBlock >
                             <Run  FontWeight="Bold" Text="Cadastrado em" />
-                            <Run Text="{x:Bind  DataCadastro.DateTime.ToLongDateString() }" />
+                            <Run Text="{x:Bind  DataCadastro.DateTime.ToLongDateString()}" />
                         </TextBlock>
                         <TextBlock >
                             <Run  FontWeight="Bold" Text="Código" />
@@ -74,31 +98,30 @@
                             CornerRadius="2" 
                             BorderBrush="Black" 
                             BorderThickness="1">
-                            
+
                             <Button 
                                 Background="Transparent"
                                 BorderBrush="Transparent" 
+                                VerticalAlignment="Bottom"
                                 ToolTipService.ToolTip="Alterar imagem"
                                 Command="{Binding ElementName=Pagina, Path=ViewModel.AlterarCommand }"
                                 CommandParameter="{x:Bind Id}">
                                 <SymbolIcon  Symbol="Edit"  />
                             </Button>
                         </Border>
-                        
                     </StackPanel>
                 </DataTemplate>
             </GridView.ItemTemplate>
-        </GridView> 
+        </GridView>
 
         <StackPanel Grid.Row="2"
                     Orientation="Horizontal"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center"
-                    Visibility="{x:Bind ViewModel.ExibirPesquisa}"
-                    >
+                    Visibility="{x:Bind ViewModel.ExibirPesquisa, Mode=TwoWay, Converter={StaticResource convVisibilidade}}">
             <TextBox  MinWidth="200"
                       BorderBrush="{StaticResource SystemControlForegroundAccentBrush}"
-                      Text="{x:Bind ViewModel.Pesquisa}" />
+                      Text="{x:Bind ViewModel.Pesquisa, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
             <Button Command="{x:Bind ViewModel.PesquisarCommand }"
                     Style="{StaticResource AccentButtonStyle}"
@@ -110,12 +133,16 @@
                 Style="{StaticResource AccentButtonStyle}"
                 VerticalAlignment="Bottom"
                 HorizontalAlignment="Right"
+                Command="{x:Bind ViewModel.DesativarFiltroCommand}"
                 Margin="10"
-                Visibility="{x:Bind ViewModel.ExibirDesativarFiltro}"/>
+                Visibility="{x:Bind ViewModel.ExibirDesativarFiltro , 
+                                Mode=TwoWay, 
+                                UpdateSourceTrigger=PropertyChanged, 
+                                Converter={StaticResource convVisibilidade}}"/>
 
         <TextBlock Grid.Row="4"
                    Style="{StaticResource TitleTextBlockStyle}"
-                   Text="{x:Bind ViewModel.NumeroProdutos}" />
+                   Text="{x:Bind ViewModel.NumeroProdutos , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
     </Grid>
 </prism:SessionStateAwarePage>

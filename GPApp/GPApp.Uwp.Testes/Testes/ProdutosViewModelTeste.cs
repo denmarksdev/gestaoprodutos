@@ -1,7 +1,9 @@
 ﻿using GPApp.Model;
 using GPApp.Model.Helpers;
+using GPApp.Repository;
 using GPApp.Shared.Constantes;
 using GPApp.Shared.Paginacao;
+using GPApp.Shared.Services;
 using GPApp.Uwp.Logica.ViewModels;
 using GPApp.Wrapper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -16,7 +18,9 @@ namespace GPApp.Uwp.Testes.Testes
     public class ProdutosViewModelTeste
     {
         private readonly Mock<INavigationService> _navigationMock;
-        private Mock<IPaginacaoRepository<ProdutoLookupWrapper>> _paginacoaRepository;
+        private readonly Mock<IPaginacaoRepository<ProdutoLookupWrapper>> _paginacoaRepository;
+        private readonly Mock<IProdutoRepository> _produtoRepository;
+        private readonly Mock<IDialogService> _dialogMock;
         private  readonly ProdutosPageViewModel _viewModel;
 
         public ProdutosViewModelTeste()
@@ -27,9 +31,17 @@ namespace GPApp.Uwp.Testes.Testes
             _paginacoaRepository = new Mock<IPaginacaoRepository<ProdutoLookupWrapper>>();
             _paginacoaRepository.SetupAllProperties();
 
+            _produtoRepository = new Mock<IProdutoRepository>();
+            _produtoRepository.SetupAllProperties();
+
+            _dialogMock = new Mock<IDialogService>();
+            _dialogMock.SetupAllProperties();
+
             _viewModel = new ProdutosPageViewModel(
                 _navigationMock.Object,
-                _paginacoaRepository.Object
+                _paginacoaRepository.Object,
+                _produtoRepository.Object,
+                _dialogMock.Object
             );
         }
 

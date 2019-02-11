@@ -7064,7 +7064,7 @@
       ]
     },
     "System.Security.Cryptography.Pkcs/4.5.0": {
-      "sha512": "1vv2x8cok3NAolee/nb6X/6PnTx+OBKUM3kt1Rlgg04uQ+IMwjc88xFIfJdwbYcvjlOtzT7CHba1pqVAu9tj/w==",
+      "sha512": "TGQX51gxpY3K3I6LJlE2LAftVlIMqJf0cBGhz68Y89jjk3LJCB6SrwiD+YN1fkqemBvWGs+GjyMJukl6d6goyQ==",
       "type": "package",
       "path": "system.security.cryptography.pkcs/4.5.0",
       "files": [
@@ -8166,11 +8166,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Repositorio\\gestaoprodutos\\GPApp\\GPApp.Service\\GPApp.Service.csproj",
+      "projectUniqueName": "D:\\GP\\GPApp\\GPApp.Service\\GPApp.Service.csproj",
       "projectName": "GPApp.Service",
-      "projectPath": "D:\\Repositorio\\gestaoprodutos\\GPApp\\GPApp.Service\\GPApp.Service.csproj",
+      "projectPath": "D:\\GP\\GPApp\\GPApp.Service\\GPApp.Service.csproj",
       "packagesPath": "C:\\Users\\denwo\\.nuget\\packages\\",
-      "outputPath": "D:\\Repositorio\\gestaoprodutos\\GPApp\\GPApp.Service\\obj\\",
+      "outputPath": "D:\\GP\\GPApp\\GPApp.Service\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Xamarin\\NuGet\\",
@@ -8191,14 +8191,14 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "D:\\Repositorio\\gestaoprodutos\\GPApp\\GPApp.Model\\GPApp.Model.csproj": {
-              "projectPath": "D:\\Repositorio\\gestaoprodutos\\GPApp\\GPApp.Model\\GPApp.Model.csproj"
+            "D:\\GP\\GPApp\\GPApp.Model\\GPApp.Model.csproj": {
+              "projectPath": "D:\\GP\\GPApp\\GPApp.Model\\GPApp.Model.csproj"
             },
-            "D:\\Repositorio\\gestaoprodutos\\GPApp\\GPApp.Repository\\GPApp.Repository.csproj": {
-              "projectPath": "D:\\Repositorio\\gestaoprodutos\\GPApp\\GPApp.Repository\\GPApp.Repository.csproj"
+            "D:\\GP\\GPApp\\GPApp.Repository\\GPApp.Repository.csproj": {
+              "projectPath": "D:\\GP\\GPApp\\GPApp.Repository\\GPApp.Repository.csproj"
             },
-            "D:\\Repositorio\\gestaoprodutos\\GPApp\\GPApp.Shared\\GPApp.Shared.csproj": {
-              "projectPath": "D:\\Repositorio\\gestaoprodutos\\GPApp\\GPApp.Shared\\GPApp.Shared.csproj"
+            "D:\\GP\\GPApp\\GPApp.Shared\\GPApp.Shared.csproj": {
+              "projectPath": "D:\\GP\\GPApp\\GPApp.Shared\\GPApp.Shared.csproj"
             }
           }
         }

@@ -4,7 +4,7 @@
 library
 C#
 .cs
-D:\Repositorio\gestaoprodutos\GPApp\GPApp.Wpf.Modulo.Produtos\obj\Debug\
+D:\GP\GPApp\GPApp.Wpf.Modulo.Produtos\obj\Debug\
 GPApp.Wpf.Modulo.Produtos
 none
 false
@@ -13,8 +13,8 @@ DEBUG;TRACE
 2-1327245805
 
 11884961938
-236-441222348
+236-2134473302
 Views\ProdutoEdit.xaml;Views\Produtos.xaml;
 
-False
+True
 

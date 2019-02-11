@@ -37,7 +37,6 @@ namespace GPApp.WinForms.PontoPartida
 
         public void StartMock()
         {
-            Application.Run(new Formulario()); ;
         }
     }
 }

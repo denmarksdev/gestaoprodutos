@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\Repositorio\gestaoprodutos\GPApp\GPApp.Wpf\obj\Debug\
+D:\GP\GPApp\GPApp.Wpf\obj\Debug\
 GPApp.Wpf
 none
 false
 DEBUG;TRACE
-D:\Repositorio\gestaoprodutos\GPApp\GPApp.Wpf\App.xaml
+D:\GP\GPApp\GPApp.Wpf\App.xaml
 355376803
 
 121026673223
-239-1841201613
+239-1824585906
 Dialog\DialogView.xaml;Views\MainWindow.xaml;Views\SplashScreen.xaml;
 
 False

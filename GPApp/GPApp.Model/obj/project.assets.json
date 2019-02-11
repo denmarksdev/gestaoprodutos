@@ -186,11 +186,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Repositorio\\gestaoprodutos\\GPApp\\GPApp.Model\\GPApp.Model.csproj",
+      "projectUniqueName": "D:\\GP\\GPApp\\GPApp.Model\\GPApp.Model.csproj",
       "projectName": "GPApp.Model",
-      "projectPath": "D:\\Repositorio\\gestaoprodutos\\GPApp\\GPApp.Model\\GPApp.Model.csproj",
+      "projectPath": "D:\\GP\\GPApp\\GPApp.Model\\GPApp.Model.csproj",
       "packagesPath": "C:\\Users\\denwo\\.nuget\\packages\\",
-      "outputPath": "D:\\Repositorio\\gestaoprodutos\\GPApp\\GPApp.Model\\obj\\",
+      "outputPath": "D:\\GP\\GPApp\\GPApp.Model\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Xamarin\\NuGet\\",

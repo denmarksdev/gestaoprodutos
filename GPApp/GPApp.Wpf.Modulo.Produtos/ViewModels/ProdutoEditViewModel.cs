@@ -143,7 +143,6 @@ namespace GPApp.Wpf.Modulo.Produtos.ViewModels
                 Wrapper.Imagens.Add(imagem);
                 ImagemSelecionada = imagem;
             });
-            
         }
 
         private void OnAlterarImagem(short? ordem)

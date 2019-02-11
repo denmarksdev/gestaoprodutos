@@ -1,36 +1,20 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 
 namespace GPApp.Shared.Paginacao
 {
-    public class VirtualizingCollection<T> : IList<T>, IList
+    public class VirtualizingCollection<T> : IList<T>, IList , INotifyCollectionChanged
     {
         public IDataPageRetriever<T> DataRetriever { get; }
         public Cache<T> Cache { get; }
 
         #region Constructors
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="VirtualizingCollection&lt;T&gt;"/> class.
-        /// </summary>
-        /// <param name="itemsProvider">The items provider.</param>
-        /// <param name="pageSize">Size of the page.</param>
-        /// <param name="pageTimeout">The page timeout.</param>
-        public VirtualizingCollection(IPaginacaoRepository<T> itemsProvider, int pageSize, int pageTimeout)
-        {
-            _itemsProvider = itemsProvider;
-            _pageSize = pageSize;
-            _pageTimeout = pageTimeout;
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="VirtualizingCollection&lt;T&gt;"/> class.
-        /// </summary>
-        /// <param name="itemsProvider">The items provider.</param>
-        /// <param name="pageSize">Size of the page.</param>
         public VirtualizingCollection(IPaginacaoRepository<T> itemsProvider, int pageSize)
         {
             _itemsProvider = itemsProvider;
@@ -38,11 +22,7 @@ namespace GPApp.Shared.Paginacao
             DataRetriever = new DataRetriever<T>(itemsProvider);
             Cache = new Cache<T>(DataRetriever, pageSize);
             Cache.CarregarDuasPaginas();
-
-        }
-
-        public VirtualizingCollection()
-        {
+            LoadCount();
         }
 
         public void Reload()
@@ -53,39 +33,15 @@ namespace GPApp.Shared.Paginacao
 
         private readonly IPaginacaoRepository<T> _itemsProvider;
 
-
         #endregion
 
-        #region ItemsProvider
-
-        #endregion
 
         #region PageSize
 
         private readonly int _pageSize = 100;
-
-        /// <summary>
-        /// Gets the size of the page.
-        /// </summary>
-        /// <value>The size of the page.</value>
         public int PageSize
         {
             get { return _pageSize; }
-        }
-
-        #endregion
-
-        #region PageTimeout
-
-        private readonly long _pageTimeout = 10000;
-
-        /// <summary>
-        /// Gets the page timeout.
-        /// </summary>
-        /// <value>The page timeout.</value>
-        public long PageTimeout
-        {
-            get { return _pageTimeout; }
         }
 
         #endregion
@@ -95,15 +51,6 @@ namespace GPApp.Shared.Paginacao
         #region Count
 
         private int _count = -1;
-
-        /// <summary>
-        /// Gets the number of elements contained in the <see cref="T:System.Collections.Generic.ICollection`1"/>.
-        /// The first time this property is accessed, it will fetch the count from the IItemsProvider.
-        /// </summary>
-        /// <value></value>
-        /// <returns>
-        /// The number of elements contained in the <see cref="T:System.Collections.Generic.ICollection`1"/>.
-        /// </returns>
         public virtual int Count
         {
             get
@@ -124,47 +71,13 @@ namespace GPApp.Shared.Paginacao
 
         #region Indexer
 
-        /// <summary>
-        /// Gets the item at the specified index. This property will fetch
-        /// the corresponding page from the IItemsProvider if required.
-        /// </summary>
-        /// <value></value>
         public T this[int index]
         {
             get
             {
                 if (_processando) return default(T);
-
                 Console.WriteLine("Indice: " + index);
-
                 return Cache.RecuperarItem(index);
-
-                // determine which page and offset within page
-                int pageIndex = index / PageSize;
-                int pageOffset = index % PageSize;
-
-                // request primary page
-                RequestPage(pageIndex);
-
-                //// if accessing upper 50% then request next page
-                //if (pageOffset > PageSize / 2 && pageIndex < Count / PageSize)
-                //    RequestPage(pageIndex + 1);
-
-                //// if accessing lower 50% then request prev page
-                //if (pageOffset < PageSize / 2 && pageIndex > 0)
-                //    RequestPage(pageIndex - 1);
-
-                // remove stale pages
-                CleanUpPages();
-
-                // defensive check in case of async load
-                if (_pages[pageIndex] == null)
-                    return default(T);
-                if (_pages[pageIndex].Count == 0)
-                    return default(T);
-
-                // return requested item
-                return _pages[pageIndex][pageOffset];
             }
             set { throw new NotSupportedException(); }
         }
@@ -179,15 +92,6 @@ namespace GPApp.Shared.Paginacao
 
         #region IEnumerator<T>, IEnumerator
 
-        /// <summary>
-        /// Returns an enumerator that iterates through the collection.
-        /// </summary>
-        /// <remarks>
-        /// This method should be avoided on large collections due to poor performance.
-        /// </remarks>
-        /// <returns>
-        /// A <see cref="T:System.Collections.Generic.IEnumerator`1"/> that can be used to iterate through the collection.
-        /// </returns>
         public IEnumerator<T> GetEnumerator()
         {
             for (int i = 0; i < Count; i++)
@@ -196,12 +100,6 @@ namespace GPApp.Shared.Paginacao
             }
         }
 
-        /// <summary>
-        /// Returns an enumerator that iterates through a collection.
-        /// </summary>
-        /// <returns>
-        /// An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate through the collection.
-        /// </returns>
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
@@ -211,13 +109,6 @@ namespace GPApp.Shared.Paginacao
 
         #region Add
 
-        /// <summary>
-        /// Not supported.
-        /// </summary>
-        /// <param name="item">The object to add to the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param>
-        /// <exception cref="T:System.NotSupportedException">
-        /// The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only.
-        /// </exception>
         public void Add(T item)
         {
             throw new NotSupportedException();
@@ -237,13 +128,6 @@ namespace GPApp.Shared.Paginacao
             return Contains((T)value);
         }
 
-        /// <summary>
-        /// Not supported.
-        /// </summary>
-        /// <param name="item">The object to locate in the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param>
-        /// <returns>
-        /// Always false.
-        /// </returns>
         public bool Contains(T item)
         {
             return false;
@@ -253,12 +137,7 @@ namespace GPApp.Shared.Paginacao
 
         #region Clear
 
-        /// <summary>
-        /// Not supported.
-        /// </summary>
-        /// <exception cref="T:System.NotSupportedException">
-        /// The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only.
-        /// </exception>
+        
         public void Clear()
         {
             throw new NotSupportedException();
@@ -273,13 +152,6 @@ namespace GPApp.Shared.Paginacao
             return IndexOf((T)value);
         }
 
-        /// <summary>
-        /// Not supported
-        /// </summary>
-        /// <param name="item">The object to locate in the <see cref="T:System.Collections.Generic.IList`1"/>.</param>
-        /// <returns>
-        /// Always -1.
-        /// </returns>
         public int IndexOf(T item)
         {
             return -1;
@@ -442,6 +314,10 @@ namespace GPApp.Shared.Paginacao
         private readonly Dictionary<int, DateTime> _pageTouchTimes = new Dictionary<int, DateTime>();
 
         private bool _processando;
+
+        public event NotifyCollectionChangedEventHandler CollectionChanged;
+
+
         /// <summary>
         /// Cleans up any stale pages that have not been accessed in the period dictated by PageTimeout.
         /// </summary>
@@ -455,21 +331,17 @@ namespace GPApp.Shared.Paginacao
 
             LoadCount();
 
-             
+            CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
 
             _processando = false;
-
-            //List<int> keys = new List<int>(_pageTouchTimes.Keys);
-            //foreach (int key in keys)
-            //{
-            //    // page 0 is a special case, since WPF ItemsControl access the first item frequently
-            //    if (key != 0 && (DateTime.Now - _pageTouchTimes[key]).TotalMilliseconds > PageTimeout)
-            //    {
-            //        _pages.Remove(key);
-            //        _pageTouchTimes.Remove(key);
-            //        Trace.WriteLine("Removed Page: " + key);
-            //    }
-            //}
+        }
+        protected virtual void OnCollectionChanged(CollectionChangeEventArgs ccevent)
+        {
+            NotifyCollectionChangedEventHandler handler = this.CollectionChanged;
+            if (handler != null)
+            {
+                var e = new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset); 
+            }
         }
 
         /// <summary>
@@ -530,20 +402,11 @@ namespace GPApp.Shared.Paginacao
 
         #region Fetch methods
 
-        /// <summary>
-        /// Fetches the requested page from the IItemsProvider.
-        /// </summary>
-        /// <param name="pageIndex">Index of the page.</param>
         /// <returns></returns>
         protected IList<T> FetchPage(int pageIndex)
         {
             return _itemsProvider.GetItens(PageSize, pageIndex * PageSize).ToList();
         }
-
-        /// <summary>
-        /// Fetches the count of itmes from the IItemsProvider.
-        /// </summary>
-        /// <returns></returns>
         protected int FetchCount()
         {
             return _itemsProvider.Count;

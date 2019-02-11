@@ -30,13 +30,13 @@
     <AppXManifest Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-02-07T15:41:34.250</Modified>
+      <Modified>2019-02-11T19:46:39.717</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp\bin\x86\Debug\GPApp.Uwp.exe">
       <PackagePath>entrypoint\GPApp.Uwp.exe</PackagePath>
-      <Modified>2019-02-07T15:41:32.980</Modified>
+      <Modified>2019-02-11T18:31:07.245</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\castle.core\4.3.1\lib\netstandard1.5\Castle.Core.dll">
       <PackagePath>Castle.Core.dll</PackagePath>
@@ -53,6 +53,174 @@
     <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\commonservicelocator\1.3.0\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll">
       <PackagePath>Microsoft.Practices.ServiceLocation.dll</PackagePath>
       <Modified>2014-05-05T14:25:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.antiforgery\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Antiforgery.dll">
+      <PackagePath>Microsoft.AspNetCore.Antiforgery.dll</PackagePath>
+      <Modified>2018-11-12T19:33:18.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.authentication.abstractions\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.Abstractions.dll">
+      <PackagePath>Microsoft.AspNetCore.Authentication.Abstractions.dll</PackagePath>
+      <Modified>2018-11-12T19:29:06.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.authentication.core\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.Core.dll">
+      <PackagePath>Microsoft.AspNetCore.Authentication.Core.dll</PackagePath>
+      <Modified>2018-11-12T19:29:10.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.authorization\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Authorization.dll">
+      <PackagePath>Microsoft.AspNetCore.Authorization.dll</PackagePath>
+      <Modified>2018-11-12T19:39:28.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.authorization.policy\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Authorization.Policy.dll">
+      <PackagePath>Microsoft.AspNetCore.Authorization.Policy.dll</PackagePath>
+      <Modified>2018-11-12T19:39:32.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.cors\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Cors.dll">
+      <PackagePath>Microsoft.AspNetCore.Cors.dll</PackagePath>
+      <Modified>2018-11-12T19:38:58.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.cryptography.internal\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Cryptography.Internal.dll">
+      <PackagePath>Microsoft.AspNetCore.Cryptography.Internal.dll</PackagePath>
+      <Modified>2018-11-12T19:32:50.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.dataprotection\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.DataProtection.dll">
+      <PackagePath>Microsoft.AspNetCore.DataProtection.dll</PackagePath>
+      <Modified>2018-11-12T19:32:54.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.dataprotection.abstractions\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.DataProtection.Abstractions.dll">
+      <PackagePath>Microsoft.AspNetCore.DataProtection.Abstractions.dll</PackagePath>
+      <Modified>2018-11-12T19:32:50.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.diagnostics.abstractions\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Diagnostics.Abstractions.dll">
+      <PackagePath>Microsoft.AspNetCore.Diagnostics.Abstractions.dll</PackagePath>
+      <Modified>2018-11-12T19:38:16.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.hosting.abstractions\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Hosting.Abstractions.dll">
+      <PackagePath>Microsoft.AspNetCore.Hosting.Abstractions.dll</PackagePath>
+      <Modified>2018-11-12T19:30:22.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.hosting.server.abstractions\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll">
+      <PackagePath>Microsoft.AspNetCore.Hosting.Server.Abstractions.dll</PackagePath>
+      <Modified>2018-11-12T19:30:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.html.abstractions\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Html.Abstractions.dll">
+      <PackagePath>Microsoft.AspNetCore.Html.Abstractions.dll</PackagePath>
+      <Modified>2018-11-12T19:28:42.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.http\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.dll">
+      <PackagePath>Microsoft.AspNetCore.Http.dll</PackagePath>
+      <Modified>2018-11-12T19:29:06.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.http.abstractions\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Abstractions.dll">
+      <PackagePath>Microsoft.AspNetCore.Http.Abstractions.dll</PackagePath>
+      <Modified>2018-11-12T19:29:00.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.http.extensions\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Extensions.dll">
+      <PackagePath>Microsoft.AspNetCore.Http.Extensions.dll</PackagePath>
+      <Modified>2018-11-12T19:29:06.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.http.features\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Features.dll">
+      <PackagePath>Microsoft.AspNetCore.Http.Features.dll</PackagePath>
+      <Modified>2018-11-12T19:28:58.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.jsonpatch\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.JsonPatch.dll">
+      <PackagePath>Microsoft.AspNetCore.JsonPatch.dll</PackagePath>
+      <Modified>2018-11-12T19:28:34.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.localization\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Localization.dll">
+      <PackagePath>Microsoft.AspNetCore.Localization.dll</PackagePath>
+      <Modified>2018-11-12T19:39:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.mvc\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.dll">
+      <PackagePath>Microsoft.AspNetCore.Mvc.dll</PackagePath>
+      <Modified>2018-11-12T19:40:34.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.mvc.abstractions\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Abstractions.dll">
+      <PackagePath>Microsoft.AspNetCore.Mvc.Abstractions.dll</PackagePath>
+      <Modified>2018-11-12T19:40:10.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.mvc.apiexplorer\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.ApiExplorer.dll">
+      <PackagePath>Microsoft.AspNetCore.Mvc.ApiExplorer.dll</PackagePath>
+      <Modified>2018-11-12T19:40:14.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.mvc.core\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Core.dll">
+      <PackagePath>Microsoft.AspNetCore.Mvc.Core.dll</PackagePath>
+      <Modified>2018-11-12T19:40:12.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.mvc.cors\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Cors.dll">
+      <PackagePath>Microsoft.AspNetCore.Mvc.Cors.dll</PackagePath>
+      <Modified>2018-11-12T19:40:16.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.mvc.dataannotations\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.DataAnnotations.dll">
+      <PackagePath>Microsoft.AspNetCore.Mvc.DataAnnotations.dll</PackagePath>
+      <Modified>2018-11-12T19:40:14.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.mvc.formatters.json\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Formatters.Json.dll">
+      <PackagePath>Microsoft.AspNetCore.Mvc.Formatters.Json.dll</PackagePath>
+      <Modified>2018-11-12T19:40:14.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.mvc.localization\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Localization.dll">
+      <PackagePath>Microsoft.AspNetCore.Mvc.Localization.dll</PackagePath>
+      <Modified>2018-11-12T19:40:28.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.mvc.razor\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Razor.dll">
+      <PackagePath>Microsoft.AspNetCore.Mvc.Razor.dll</PackagePath>
+      <Modified>2018-11-12T19:40:28.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.mvc.razor.extensions\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll">
+      <PackagePath>Microsoft.AspNetCore.Mvc.Razor.Extensions.dll</PackagePath>
+      <Modified>2018-11-12T19:29:40.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.mvc.razorpages\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.RazorPages.dll">
+      <PackagePath>Microsoft.AspNetCore.Mvc.RazorPages.dll</PackagePath>
+      <Modified>2018-11-12T19:40:32.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.mvc.taghelpers\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.TagHelpers.dll">
+      <PackagePath>Microsoft.AspNetCore.Mvc.TagHelpers.dll</PackagePath>
+      <Modified>2018-11-12T19:40:30.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.mvc.viewfeatures\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.ViewFeatures.dll">
+      <PackagePath>Microsoft.AspNetCore.Mvc.ViewFeatures.dll</PackagePath>
+      <Modified>2018-11-12T19:40:26.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.razor\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Razor.dll">
+      <PackagePath>Microsoft.AspNetCore.Razor.dll</PackagePath>
+      <Modified>2018-11-12T19:29:26.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.razor.language\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Razor.Language.dll">
+      <PackagePath>Microsoft.AspNetCore.Razor.Language.dll</PackagePath>
+      <Modified>2018-11-12T19:29:28.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.razor.runtime\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Razor.Runtime.dll">
+      <PackagePath>Microsoft.AspNetCore.Razor.Runtime.dll</PackagePath>
+      <Modified>2018-11-12T19:29:32.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.responsecaching.abstractions\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll">
+      <PackagePath>Microsoft.AspNetCore.ResponseCaching.Abstractions.dll</PackagePath>
+      <Modified>2018-11-12T19:37:50.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.routing\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Routing.dll">
+      <PackagePath>Microsoft.AspNetCore.Routing.dll</PackagePath>
+      <Modified>2018-11-12T19:38:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.routing.abstractions\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Routing.Abstractions.dll">
+      <PackagePath>Microsoft.AspNetCore.Routing.Abstractions.dll</PackagePath>
+      <Modified>2018-11-12T19:38:16.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.aspnetcore.webutilities\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.WebUtilities.dll">
+      <PackagePath>Microsoft.AspNetCore.WebUtilities.dll</PackagePath>
+      <Modified>2018-11-12T19:29:00.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.codeanalysis.common\2.8.0\lib\netstandard1.3\Microsoft.CodeAnalysis.dll">
+      <PackagePath>Microsoft.CodeAnalysis.dll</PackagePath>
+      <Modified>2018-04-30T19:29:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.codeanalysis.csharp\2.8.0\lib\netstandard1.3\Microsoft.CodeAnalysis.CSharp.dll">
+      <PackagePath>Microsoft.CodeAnalysis.CSharp.dll</PackagePath>
+      <Modified>2018-04-30T19:29:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.codeanalysis.razor\2.2.0\lib\netstandard2.0\Microsoft.CodeAnalysis.Razor.dll">
+      <PackagePath>Microsoft.CodeAnalysis.Razor.dll</PackagePath>
+      <Modified>2018-11-12T19:29:30.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.data.sqlite.core\2.2.1\lib\netstandard2.0\Microsoft.Data.Sqlite.dll">
       <PackagePath>Microsoft.Data.Sqlite.dll</PackagePath>
@@ -114,6 +282,30 @@
       <PackagePath>Microsoft.Extensions.DependencyModel.dll</PackagePath>
       <Modified>2018-05-16T00:01:34.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.extensions.fileproviders.abstractions\2.2.0\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Abstractions.dll">
+      <PackagePath>Microsoft.Extensions.FileProviders.Abstractions.dll</PackagePath>
+      <Modified>2018-11-11T02:26:38.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.extensions.fileproviders.composite\2.2.0\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Composite.dll">
+      <PackagePath>Microsoft.Extensions.FileProviders.Composite.dll</PackagePath>
+      <Modified>2018-11-11T02:27:00.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.extensions.filesystemglobbing\2.2.0\lib\netstandard2.0\Microsoft.Extensions.FileSystemGlobbing.dll">
+      <PackagePath>Microsoft.Extensions.FileSystemGlobbing.dll</PackagePath>
+      <Modified>2018-11-11T02:26:36.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.extensions.hosting.abstractions\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Hosting.Abstractions.dll">
+      <PackagePath>Microsoft.Extensions.Hosting.Abstractions.dll</PackagePath>
+      <Modified>2018-11-12T19:30:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.extensions.localization\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Localization.dll">
+      <PackagePath>Microsoft.Extensions.Localization.dll</PackagePath>
+      <Modified>2018-11-12T19:39:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.extensions.localization.abstractions\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Localization.Abstractions.dll">
+      <PackagePath>Microsoft.Extensions.Localization.Abstractions.dll</PackagePath>
+      <Modified>2018-11-12T19:39:16.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.extensions.logging\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Logging.dll">
       <PackagePath>Microsoft.Extensions.Logging.dll</PackagePath>
       <Modified>2018-11-11T02:27:18.000</Modified>
@@ -121,6 +313,10 @@
     <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.extensions.logging.abstractions\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll">
       <PackagePath>Microsoft.Extensions.Logging.Abstractions.dll</PackagePath>
       <Modified>2018-11-11T02:26:40.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.extensions.objectpool\2.2.0\lib\netstandard2.0\Microsoft.Extensions.ObjectPool.dll">
+      <PackagePath>Microsoft.Extensions.ObjectPool.dll</PackagePath>
+      <Modified>2018-11-11T02:26:48.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.extensions.options\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Options.dll">
       <PackagePath>Microsoft.Extensions.Options.dll</PackagePath>
@@ -130,9 +326,17 @@
       <PackagePath>Microsoft.Extensions.Primitives.dll</PackagePath>
       <Modified>2018-11-11T02:26:36.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.extensions.webencoders\2.2.0\lib\netstandard2.0\Microsoft.Extensions.WebEncoders.dll">
+      <PackagePath>Microsoft.Extensions.WebEncoders.dll</PackagePath>
+      <Modified>2018-11-12T19:28:40.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.identity.client\1.1.2-preview0008\lib\win81\Microsoft.Identity.Client.dll">
       <PackagePath>Microsoft.Identity.Client.dll</PackagePath>
       <Modified>2018-02-02T20:02:08.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.net.http.headers\2.2.0\lib\netstandard2.0\Microsoft.Net.Http.Headers.dll">
+      <PackagePath>Microsoft.Net.Http.Headers.dll</PackagePath>
+      <Modified>2018-11-12T19:28:58.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.toolkit\5.0.0\lib\netstandard2.0\Microsoft.Toolkit.dll">
       <PackagePath>Microsoft.Toolkit.dll</PackagePath>
@@ -158,6 +362,10 @@
       <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls.dll</PackagePath>
       <Modified>2018-10-31T06:09:14.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.win32.registry\4.5.0\runtimes\win\lib\netstandard2.0\Microsoft.Win32.Registry.dll">
+      <PackagePath>Microsoft.Win32.Registry.dll</PackagePath>
+      <Modified>2018-05-15T16:29:36.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\microsoft.xaml.behaviors.uwp.managed\1.1.0\lib\uap10.0\Microsoft.Xaml.Interactions.dll">
       <PackagePath>Microsoft.Xaml.Interactions.dll</PackagePath>
       <Modified>2016-02-22T16:59:50.000</Modified>
@@ -170,9 +378,13 @@
       <PackagePath>Moq.dll</PackagePath>
       <Modified>2018-12-03T21:19:18.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\newtonsoft.json\10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll">
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\newtonsoft.json\12.0.1\lib\netstandard2.0\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
-      <Modified>2017-06-18T16:57:10.000</Modified>
+      <Modified>2018-11-27T20:07:34.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\newtonsoft.json.bson\1.0.1\lib\netstandard1.3\Newtonsoft.Json.Bson.dll">
+      <PackagePath>Newtonsoft.Json.Bson.dll</PackagePath>
+      <Modified>2017-03-22T14:01:20.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\npgsql\4.0.4\lib\netstandard2.0\Npgsql.dll">
       <PackagePath>Npgsql.dll</PackagePath>
@@ -246,6 +458,22 @@
       <PackagePath>System.Runtime.CompilerServices.Unsafe.dll</PackagePath>
       <Modified>2018-06-06T16:29:04.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\system.security.cryptography.pkcs\4.5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.Pkcs.dll">
+      <PackagePath>System.Security.Cryptography.Pkcs.dll</PackagePath>
+      <Modified>2018-05-15T16:29:54.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\system.security.cryptography.xml\4.5.0\lib\netstandard2.0\System.Security.Cryptography.Xml.dll">
+      <PackagePath>System.Security.Cryptography.Xml.dll</PackagePath>
+      <Modified>2018-05-15T16:29:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\system.security.permissions\4.5.0\lib\netstandard2.0\System.Security.Permissions.dll">
+      <PackagePath>System.Security.Permissions.dll</PackagePath>
+      <Modified>2018-05-15T16:29:40.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\system.text.encodings.web\4.5.0\lib\netstandard2.0\System.Text.Encodings.Web.dll">
+      <PackagePath>System.Text.Encodings.Web.dll</PackagePath>
+      <Modified>2018-05-15T16:29:52.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\unity\5.2.1\lib\netstandard2.0\CommonServiceLocator.dll">
       <PackagePath>CommonServiceLocator.dll</PackagePath>
       <Modified>2017-11-14T21:22:14.000</Modified>
@@ -284,27 +512,31 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Model\bin\Debug\netstandard2.0\GPApp.Model.dll">
       <PackagePath>GPApp.Model.dll</PackagePath>
-      <Modified>2019-02-07T02:23:34.779</Modified>
+      <Modified>2019-02-11T12:33:23.089</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Repository\bin\Debug\netstandard2.0\GPApp.Repository.dll">
       <PackagePath>GPApp.Repository.dll</PackagePath>
-      <Modified>2019-02-07T15:41:24.374</Modified>
+      <Modified>2019-02-11T12:33:24.330</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Shared\bin\Debug\netstandard2.0\GPApp.Shared.dll">
       <PackagePath>GPApp.Shared.dll</PackagePath>
-      <Modified>2019-02-07T02:23:35.221</Modified>
+      <Modified>2019-02-11T12:33:23.468</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp.Logica\bin\x86\Debug\GPApp.Uwp.Logica.dll">
       <PackagePath>GPApp.Uwp.Logica.dll</PackagePath>
-      <Modified>2019-02-07T15:41:25.306</Modified>
+      <Modified>2019-02-11T18:22:13.334</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Wrapper\bin\Debug\netstandard2.0\GPApp.Wrapper.dll">
       <PackagePath>GPApp.Wrapper.dll</PackagePath>
-      <Modified>2019-02-07T15:41:24.081</Modified>
+      <Modified>2019-02-11T12:33:24.087</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Repository\bin\Debug\netstandard2.0\GPApp.Dal.dll">
       <PackagePath>GPApp.Dal.dll</PackagePath>
-      <Modified>2019-02-07T02:23:35.726</Modified>
+      <Modified>2019-02-11T12:33:23.825</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp.Logica\bin\x86\Debug\GPApp.Service.dll">
+      <PackagePath>GPApp.Service.dll</PackagePath>
+      <Modified>2019-02-11T12:33:24.717</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Repository\bin\Debug\netstandard2.0\GPApp.Helpers.dll">
       <PackagePath>GPApp.Helpers.dll</PackagePath>
@@ -366,23 +598,23 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp\bin\x86\Debug\GPApp.Uwp.xr.xml">
       <PackagePath>GPApp.Uwp.xr.xml</PackagePath>
-      <Modified>2019-02-07T15:01:16.530</Modified>
+      <Modified>2019-02-08T16:51:57.264</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2019-02-07T15:41:32.788</Modified>
+      <Modified>2019-02-11T19:46:37.945</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2019-02-07T15:41:32.789</Modified>
+      <Modified>2019-02-11T19:46:37.945</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp\bin\x86\Debug\Views\ProdutoEditPage.xbf">
       <PackagePath>Views\ProdutoEditPage.xbf</PackagePath>
-      <Modified>2019-02-07T15:41:32.786</Modified>
+      <Modified>2019-02-11T19:46:37.942</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp\bin\x86\Debug\Views\ProdutosPage.xbf">
       <PackagePath>Views\ProdutosPage.xbf</PackagePath>
-      <Modified>2019-02-07T15:41:32.790</Modified>
+      <Modified>2019-02-11T19:46:37.946</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17763.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -522,7 +754,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2019-02-07T15:41:33.509</Modified>
+      <Modified>2019-02-08T17:58:52.873</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\denwo\.nuget\packages\xunit.runner.visualstudio\2.4.1\build\uap10.0\xunit.runner.visualstudio.uwp.testadapter.dll">
       <PackagePath>xunit.runner.visualstudio.uwp.testadapter.dll</PackagePath>
@@ -546,7 +778,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp\bin\x86\Debug\Core\GPApp.Uwp.exe">
       <PackagePath>GPApp.Uwp.exe</PackagePath>
-      <Modified>2019-02-07T15:41:34.246</Modified>
+      <Modified>2019-02-11T19:46:39.702</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

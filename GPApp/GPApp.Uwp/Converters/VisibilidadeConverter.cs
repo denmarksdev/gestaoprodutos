@@ -16,7 +16,8 @@ namespace GPApp.Uwp.Converters
 
         public object ConvertBack(object value, Type targetType, object parameter, string language)
         {
-            throw new NotImplementedException();
+            var visibilidade = (Visibility)value;
+            return (visibilidade == Visibility.Visible);
         }
     }
 }

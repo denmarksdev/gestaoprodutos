@@ -11,6 +11,7 @@ using GPApp.Shared.Helpers;
 using GPApp.Shared.Services;
 using GPApp.Uwp.Logica.Model;
 using GPApp.Wrapper;
+using GPApp.Wrapper.Base;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Windows.Navigation;
@@ -43,6 +44,8 @@ namespace GPApp.Uwp.Logica.ViewModels
             _navigationService = navigationService;
 
             ConfigurarCommands();
+
+            PropertyChanged += ViewModelPropertyChanged;
         }
 
         #endregion
@@ -62,6 +65,22 @@ namespace GPApp.Uwp.Logica.ViewModels
 
         #region Propriedades
 
+
+        private bool _imagensForamAlteradas;
+        public bool ImagensForamAlteradas
+        {
+            get { return _imagensForamAlteradas; }
+            set { SetProperty(ref _imagensForamAlteradas, value); }
+        }
+
+
+        private string _titulo;
+        public string Titulo
+        {
+            get { return _titulo; }
+            set { SetProperty(ref _titulo, value); }
+        }
+
         private ProdutoWrapper _wrapper;
         public ProdutoWrapper Wrapper
         {
@@ -69,8 +88,8 @@ namespace GPApp.Uwp.Logica.ViewModels
             set { SetProperty(ref _wrapper, value); }
         }
 
-        private ObservableCollection<ProdutoImageUWPWrapper> _imagens;
-        public ObservableCollection<ProdutoImageUWPWrapper> Imagens
+        private ChangeTrackingCollection<ProdutoImageUWPWrapper> _imagens;
+        public ChangeTrackingCollection<ProdutoImageUWPWrapper> Imagens
         {
             get { return _imagens; }
             set { SetProperty(ref _imagens, value); }
@@ -90,7 +109,6 @@ namespace GPApp.Uwp.Logica.ViewModels
             set { SetProperty(ref _exibeProgressBar, value); }
         }
 
-
         #endregion
 
         #region Ações
@@ -99,7 +117,7 @@ namespace GPApp.Uwp.Logica.ViewModels
         {
             return Wrapper != null &&
                    Wrapper.IsValid &&
-                   Wrapper.IsChanged;
+                   Wrapper.IsChanged || ImagensForamAlteradas;
         }
 
         private async void OnSalvar()
@@ -193,7 +211,7 @@ namespace GPApp.Uwp.Logica.ViewModels
                 imagem.Dados = _arquivoService.GetImagemBase64(bytes);
                 imagem.Sufixo = ArquivoHelper.GetExtensaoArquivo(path);
 
-                await ImagemSelecionada.InitImage();
+                await imagem.InitImage();
 
                 ImagemSelecionada = imagem;
             });
@@ -233,10 +251,10 @@ namespace GPApp.Uwp.Logica.ViewModels
 
             if (param.Operacao == ContantesGlobais.OPERACAO_ALTERACAO)
             {
+                Titulo = "Alterar produto";
+
                 Wrapper = new ProdutoWrapper(param.Item);
-
-
-                Imagens = new ObservableCollection<ProdutoImageUWPWrapper>(
+                Imagens = new ChangeTrackingCollection<ProdutoImageUWPWrapper>(
                                  param.Item.Imagens.Select(i => new ProdutoImageUWPWrapper(i)));
                 foreach (var imagem in Imagens)
                 {
@@ -248,16 +266,25 @@ namespace GPApp.Uwp.Logica.ViewModels
             }
             else
             {
+                Titulo = "Incluir produto";
+
                 Wrapper = new ProdutoWrapper(new Produto
                 {
                     DataCadastro = DateTime.UtcNow,
                     EstoqueAtual = new ProdutoEstoque()
                 });
-                Imagens = new ObservableCollection<ProdutoImageUWPWrapper>(new List<ProdutoImageUWPWrapper>());
+                Imagens = new ChangeTrackingCollection<ProdutoImageUWPWrapper>(new List<ProdutoImageUWPWrapper>());
             }
 
             Wrapper.PropertyChanged -= ViewModelPropertyChanged;
             Wrapper.PropertyChanged += ViewModelPropertyChanged;
+            Imagens.CollectionChanged += Imagens_CollectionChanged;
+            
+        }
+
+        private void Imagens_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+            ImagensForamAlteradas = true;
         }
 
         public void OnNavigatingFrom(NavigatingFromEventArgs e, Dictionary<string, object> viewModelState, bool suspending)
@@ -269,6 +296,11 @@ namespace GPApp.Uwp.Logica.ViewModels
         #region Handlers
 
         private void ViewModelPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            RaiseSalvarCommand();
+        }
+
+        private void RaiseSalvarCommand()
         {
             ((DelegateCommand)SalvarCommand).RaiseCanExecuteChanged();
         }

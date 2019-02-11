@@ -34,3 +34,5 @@ D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp.Logica\bin\x86\Debug\GPApp.Helpers
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp.Logica\bin\x86\Debug\GPApp.Repository.pdb
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp.Logica\bin\x86\Debug\GPApp.Dal.pdb
 D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp.Logica\bin\x86\Debug\GPApp.Helpers.pdb
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp.Logica\bin\x86\Debug\GPApp.Service.dll
+D:\Repositorio\gestaoprodutos\GPApp\GPApp.Uwp.Logica\bin\x86\Debug\GPApp.Service.pdb

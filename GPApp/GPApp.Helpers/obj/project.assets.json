@@ -186,11 +186,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Repositorio\\gestaoprodutos\\GPApp\\GPApp.Helpers\\GPApp.Helpers.vbproj",
+      "projectUniqueName": "D:\\GP\\GPApp\\GPApp.Helpers\\GPApp.Helpers.vbproj",
       "projectName": "GPApp.Helpers",
-      "projectPath": "D:\\Repositorio\\gestaoprodutos\\GPApp\\GPApp.Helpers\\GPApp.Helpers.vbproj",
+      "projectPath": "D:\\GP\\GPApp\\GPApp.Helpers\\GPApp.Helpers.vbproj",
       "packagesPath": "C:\\Users\\denwo\\.nuget\\packages\\",
-      "outputPath": "D:\\Repositorio\\gestaoprodutos\\GPApp\\GPApp.Helpers\\obj\\",
+      "outputPath": "D:\\GP\\GPApp\\GPApp.Helpers\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Xamarin\\NuGet\\",
