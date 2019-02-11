@@ -26,11 +26,11 @@ Sistema de cadastro de produtos utilizando conhecimentos em C# Angular 2+ e ASPN
 # Configuração base dados SqlServer e Postgresql
 
 ## ASP.Net Core
-- **appsettings.json** e **Startup.cs* no método **ConfiguraBaseDados** 
+- **appsettings.json** e **Startup.cs** no método **ConfiguraBaseDados** 
 ### Windows Forms
-- **app.config** e **Bootstrapper.cs* no método **start**
+- **app.config** e **Bootstrapper.cs** no método **start**
 ### WPF 
-- **app.config** e **SplashScreenViewModel* no método **OnNavigatedTo**
+- **app.config** e **SplashScreenViewModel** no método **OnNavigatedTo**
 ### UWP
 - **Configuracao.resw** e **App.xaml** no método **OnLaunchApplicationAsync** 
 
