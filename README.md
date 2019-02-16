@@ -23,7 +23,7 @@ Sistema de cadastro de produtos utilizando conhecimentos em C# Angular 2+ e ASPN
 1. No **visual Studio 2017+** botão direito do mouse na solução e escolher a opção **Restore Nuget Packages**
 1. Novamente botão direito do mouse na solução em **properties > Commom Properties > Startup Project** selecione a opção **Multiple startup projects**, marcar a **Action** como **Start** nos projetos **GPApp.UWP, GPApp.WPF, GPApp.WEB e GPApp.WinForms**
 
-# Configuração base dados SqlServer e Postgresql
+# Configuração da base dados SqlServer e Postgresql
 
 ## ASP.Net Core
 - **appsettings.json** e **Startup.cs** no método **ConfiguraBaseDados** 
