@@ -5,7 +5,7 @@ Sistema de cadastro de produtos utilizando conhecimentos em C# Angular 2+ e ASPN
 
 ![](https://github.com/denmarksdev/gestaoprodutos/blob/master/Docs/GPApp.jpg?raw=true "Gestão de produtos APP")
 
-# Requirimentos
+# Requerimentos
 
 - [NPM 6.4.1](https://www.npmjs.com/)
 - [Angular CLI 7.2.2](https://cli.angular.io/) 
