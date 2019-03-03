@@ -1,5 +1,5 @@
 # Gestão de Produtos
-Sistema de cadastro de produtos utilizando conhecimentos em C# Angular 2+ e ASPNET.CORE
+Sistema de cadastro de produtos utilizando conhecimentos em C#, Angular 2+ e ASPNET.CORE
 
 # Visão geral
 
